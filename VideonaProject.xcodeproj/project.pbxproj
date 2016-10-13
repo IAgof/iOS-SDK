@@ -8,12 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		A9BD5FC11D9120F40080CE97 /* VideonaProject.h in Headers */ = {isa = PBXBuildFile; fileRef = A9BD5FC01D9120F40080CE97 /* VideonaProject.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A9BD5FCF1D91210C0080CE97 /* Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BD5FC81D91210C0080CE97 /* Audio.swift */; };
+		A9BD5FD01D91210C0080CE97 /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BD5FC91D91210C0080CE97 /* Media.swift */; };
+		A9BD5FD11D91210C0080CE97 /* Music.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BD5FCA1D91210C0080CE97 /* Music.swift */; };
+		A9BD5FD21D91210C0080CE97 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BD5FCB1D91210C0080CE97 /* Profile.swift */; };
+		A9BD5FD31D91210C0080CE97 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BD5FCC1D91210C0080CE97 /* Project.swift */; };
+		A9BD5FD41D91210C0080CE97 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BD5FCD1D91210C0080CE97 /* Utils.swift */; };
+		A9BD5FD51D91210C0080CE97 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BD5FCE1D91210C0080CE97 /* Video.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A9BD5FBD1D9120F40080CE97 /* VideonaProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VideonaProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9BD5FC01D9120F40080CE97 /* VideonaProject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideonaProject.h; sourceTree = "<group>"; };
 		A9BD5FC21D9120F40080CE97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A9BD5FC81D91210C0080CE97 /* Audio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Audio.swift; sourceTree = "<group>"; };
+		A9BD5FC91D91210C0080CE97 /* Media.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
+		A9BD5FCA1D91210C0080CE97 /* Music.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Music.swift; sourceTree = "<group>"; };
+		A9BD5FCB1D91210C0080CE97 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		A9BD5FCC1D91210C0080CE97 /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
+		A9BD5FCD1D91210C0080CE97 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		A9BD5FCE1D91210C0080CE97 /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +61,13 @@
 			isa = PBXGroup;
 			children = (
 				A9BD5FC01D9120F40080CE97 /* VideonaProject.h */,
+				A9BD5FC81D91210C0080CE97 /* Audio.swift */,
+				A9BD5FC91D91210C0080CE97 /* Media.swift */,
+				A9BD5FCA1D91210C0080CE97 /* Music.swift */,
+				A9BD5FCB1D91210C0080CE97 /* Profile.swift */,
+				A9BD5FCC1D91210C0080CE97 /* Project.swift */,
+				A9BD5FCD1D91210C0080CE97 /* Utils.swift */,
+				A9BD5FCE1D91210C0080CE97 /* Video.swift */,
 				A9BD5FC21D9120F40080CE97 /* Info.plist */,
 			);
 			path = VideonaProject;
@@ -130,6 +151,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9BD5FD01D91210C0080CE97 /* Media.swift in Sources */,
+				A9BD5FD21D91210C0080CE97 /* Profile.swift in Sources */,
+				A9BD5FCF1D91210C0080CE97 /* Audio.swift in Sources */,
+				A9BD5FD31D91210C0080CE97 /* Project.swift in Sources */,
+				A9BD5FD11D91210C0080CE97 /* Music.swift in Sources */,
+				A9BD5FD51D91210C0080CE97 /* Video.swift in Sources */,
+				A9BD5FD41D91210C0080CE97 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,6 +258,7 @@
 		A9BD5FC61D9120F40080CE97 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -240,12 +269,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.videona.VideonaProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		A9BD5FC71D9120F40080CE97 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
