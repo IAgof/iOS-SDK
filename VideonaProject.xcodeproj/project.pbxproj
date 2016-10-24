@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A956A10D1DBDED22002BDB26 /* AddVideoToProjectUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A956A1061DBDED22002BDB26 /* AddVideoToProjectUseCase.swift */; };
+		A956A10E1DBDED22002BDB26 /* AVQualityParse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A956A1071DBDED22002BDB26 /* AVQualityParse.swift */; };
+		A956A10F1DBDED22002BDB26 /* CATextLayerAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A956A1081DBDED22002BDB26 /* CATextLayerAttributes.swift */; };
+		A956A1101DBDED22002BDB26 /* CompatibleQualityInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A956A1091DBDED22002BDB26 /* CompatibleQualityInteractor.swift */; };
+		A956A1111DBDED22002BDB26 /* GetActualProjectAVCompositionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A956A10A1DBDED22002BDB26 /* GetActualProjectAVCompositionUseCase.swift */; };
+		A956A1121DBDED22002BDB26 /* GetActualProjectTextCALayerAnimationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A956A10B1DBDED22002BDB26 /* GetActualProjectTextCALayerAnimationUseCase.swift */; };
+		A956A1131DBDED22002BDB26 /* GetImageByTextUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A956A10C1DBDED22002BDB26 /* GetImageByTextUseCase.swift */; };
+		A9B0073E1DAFC9F100BFAD68 /* VideonaComposition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B0073D1DAFC9F100BFAD68 /* VideonaComposition.swift */; };
 		A9BD5FC11D9120F40080CE97 /* VideonaProject.h in Headers */ = {isa = PBXBuildFile; fileRef = A9BD5FC01D9120F40080CE97 /* VideonaProject.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A9BD5FCF1D91210C0080CE97 /* Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BD5FC81D91210C0080CE97 /* Audio.swift */; };
 		A9BD5FD01D91210C0080CE97 /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BD5FC91D91210C0080CE97 /* Media.swift */; };
@@ -18,6 +26,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A956A1061DBDED22002BDB26 /* AddVideoToProjectUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddVideoToProjectUseCase.swift; sourceTree = "<group>"; };
+		A956A1071DBDED22002BDB26 /* AVQualityParse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVQualityParse.swift; sourceTree = "<group>"; };
+		A956A1081DBDED22002BDB26 /* CATextLayerAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CATextLayerAttributes.swift; sourceTree = "<group>"; };
+		A956A1091DBDED22002BDB26 /* CompatibleQualityInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompatibleQualityInteractor.swift; sourceTree = "<group>"; };
+		A956A10A1DBDED22002BDB26 /* GetActualProjectAVCompositionUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetActualProjectAVCompositionUseCase.swift; sourceTree = "<group>"; };
+		A956A10B1DBDED22002BDB26 /* GetActualProjectTextCALayerAnimationUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetActualProjectTextCALayerAnimationUseCase.swift; sourceTree = "<group>"; };
+		A956A10C1DBDED22002BDB26 /* GetImageByTextUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetImageByTextUseCase.swift; sourceTree = "<group>"; };
+		A9B0073D1DAFC9F100BFAD68 /* VideonaComposition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideonaComposition.swift; sourceTree = "<group>"; };
 		A9BD5FBD1D9120F40080CE97 /* VideonaProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VideonaProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9BD5FC01D9120F40080CE97 /* VideonaProject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideonaProject.h; sourceTree = "<group>"; };
 		A9BD5FC21D9120F40080CE97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -61,6 +77,13 @@
 			isa = PBXGroup;
 			children = (
 				A9BD5FC01D9120F40080CE97 /* VideonaProject.h */,
+				A956A1061DBDED22002BDB26 /* AddVideoToProjectUseCase.swift */,
+				A956A1071DBDED22002BDB26 /* AVQualityParse.swift */,
+				A956A1081DBDED22002BDB26 /* CATextLayerAttributes.swift */,
+				A956A1091DBDED22002BDB26 /* CompatibleQualityInteractor.swift */,
+				A956A10A1DBDED22002BDB26 /* GetActualProjectAVCompositionUseCase.swift */,
+				A956A10B1DBDED22002BDB26 /* GetActualProjectTextCALayerAnimationUseCase.swift */,
+				A956A10C1DBDED22002BDB26 /* GetImageByTextUseCase.swift */,
 				A9BD5FC81D91210C0080CE97 /* Audio.swift */,
 				A9BD5FC91D91210C0080CE97 /* Media.swift */,
 				A9BD5FCA1D91210C0080CE97 /* Music.swift */,
@@ -68,6 +91,7 @@
 				A9BD5FCC1D91210C0080CE97 /* Project.swift */,
 				A9BD5FCD1D91210C0080CE97 /* Utils.swift */,
 				A9BD5FCE1D91210C0080CE97 /* Video.swift */,
+				A9B0073D1DAFC9F100BFAD68 /* VideonaComposition.swift */,
 				A9BD5FC21D9120F40080CE97 /* Info.plist */,
 			);
 			path = VideonaProject;
@@ -154,10 +178,18 @@
 				A9BD5FD01D91210C0080CE97 /* Media.swift in Sources */,
 				A9BD5FD21D91210C0080CE97 /* Profile.swift in Sources */,
 				A9BD5FCF1D91210C0080CE97 /* Audio.swift in Sources */,
+				A956A1111DBDED22002BDB26 /* GetActualProjectAVCompositionUseCase.swift in Sources */,
+				A956A1121DBDED22002BDB26 /* GetActualProjectTextCALayerAnimationUseCase.swift in Sources */,
 				A9BD5FD31D91210C0080CE97 /* Project.swift in Sources */,
+				A956A1101DBDED22002BDB26 /* CompatibleQualityInteractor.swift in Sources */,
+				A956A10E1DBDED22002BDB26 /* AVQualityParse.swift in Sources */,
 				A9BD5FD11D91210C0080CE97 /* Music.swift in Sources */,
+				A9B0073E1DAFC9F100BFAD68 /* VideonaComposition.swift in Sources */,
 				A9BD5FD51D91210C0080CE97 /* Video.swift in Sources */,
+				A956A1131DBDED22002BDB26 /* GetImageByTextUseCase.swift in Sources */,
+				A956A10F1DBDED22002BDB26 /* CATextLayerAttributes.swift in Sources */,
 				A9BD5FD41D91210C0080CE97 /* Utils.swift in Sources */,
+				A956A10D1DBDED22002BDB26 /* AddVideoToProjectUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,6 +341,7 @@
 				A9BD5FC71D9120F40080CE97 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

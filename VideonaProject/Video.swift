@@ -7,13 +7,14 @@
 //
 
 import Foundation
+import AVFoundation
 
 public class Video: Media {
     
     private var isSplit:Bool!
     private var position:Int!
-    public var textToVideo:String?
-    public var textPositionToVideo:Int?
+    public var textToVideo:String = ""
+    public var textPositionToVideo:Int = 0
     public var originAudioLevel:Float = 1
     public var secondAudioLevel:Float = 0
     
