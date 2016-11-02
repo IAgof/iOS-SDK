@@ -37,7 +37,8 @@ public class GetActualProjectAVCompositionUseCase: NSObject {
             for count in 0...(videosArray.count - 1){
                 let video = videosArray[count]
                 // 2 - Get Video asset
-                let videoURL: NSURL = NSURL.init(fileURLWithPath: video.getMediaPath())
+//                let videoURL: NSURL = NSURL.init(fileURLWithPath: video.getMediaPath())
+                let videoURL: NSURL = video.videoURL
                 let videoAsset = AVAsset.init(URL: videoURL)
                 
                 do {

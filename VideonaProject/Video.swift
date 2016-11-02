@@ -11,6 +11,7 @@ import AVFoundation
 
 public class Video: Media {
     
+    public var videoURL:NSURL = NSURL()
     private var isSplit:Bool!
     private var position:Int!
     public var textToVideo:String = ""
@@ -37,6 +38,7 @@ public class Video: Media {
         copy.textPositionToVideo = textPositionToVideo
         copy.originAudioLevel = originAudioLevel
         copy.secondAudioLevel = secondAudioLevel
+        copy.videoURL = videoURL
         
         return copy
     }
