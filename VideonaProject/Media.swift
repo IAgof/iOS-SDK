@@ -46,18 +46,7 @@ public class Media: NSObject {
         self.title = title
         self.mediaPath = mediaPath
     }
-    
-    public func mediaRecordedFinished(){
-        let urlAsset = NSURL(fileURLWithPath: mediaPath)
-        let asset = AVAsset(URL: urlAsset)
         
-        fileStartTime = 0.0
-        fileStopTime = asset.duration.seconds
-        trimStartTime = fileStartTime
-        trimStopTime = fileStopTime
-        duration = asset.duration.seconds
-    }
-    
     public func getTitle() -> String {
         return title!
     }

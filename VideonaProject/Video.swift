@@ -43,6 +43,16 @@ public class Video: Media {
         return copy
     }
     
+    public func mediaRecordedFinished(){
+        let asset = AVAsset(URL: videoURL)
+        
+        fileStartTime = 0.0
+        fileStopTime = asset.duration.seconds
+        trimStartTime = fileStartTime
+        trimStopTime = fileStopTime
+        duration = asset.duration.seconds
+    }
+    
     public func getIsSplit() -> Bool {
         return isSplit
     }
