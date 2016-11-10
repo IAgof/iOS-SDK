@@ -71,7 +71,8 @@ public class GetActualProjectAVCompositionUseCase: NSObject {
             }
             
             if isMusicSet{
-                setMusicToProject(mixComposition,
+                setMusicToProject(audioMixParam,
+                                  mixComposition: mixComposition,
                                   musicPath: project.getMusic().getMusicResourceId())
             }
             
@@ -190,8 +191,11 @@ public class GetActualProjectAVCompositionUseCase: NSObject {
         }
     }
     
-    public func setMusicToProject(mixComposition:AVMutableComposition,
-                           musicPath:String){
+    public func setMusicToProject(mixAudioParams:[AVMutableAudioMixInputParameters],
+                                  mixComposition:AVMutableComposition,
+                                  musicPath:String){
+        var audioParams = mixAudioParams
+        
         let audioURL = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource(musicPath, ofType: "mp3")!)
         let audioAsset = AVAsset.init(URL: audioURL)
         
@@ -201,6 +205,10 @@ public class GetActualProjectAVCompositionUseCase: NSObject {
             try audioTrack.insertTimeRange(CMTimeRangeMake(kCMTimeZero, mixComposition.duration),
                                            ofTrack: audioAsset.tracksWithMediaType(AVMediaTypeAudio)[0] ,
                                            atTime: kCMTimeZero)
+            let musicParam: AVMutableAudioMixInputParameters = AVMutableAudioMixInputParameters(track: audioTrack)
+            musicParam.trackID = audioTrack.trackID
+            musicParam.setVolume(1, atTime: kCMTimeZero)
+            audioParams.append(musicParam)
         } catch _ {
             Utils().debugLog("Error trying to create audioTrack")
         }
