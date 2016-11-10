@@ -15,43 +15,43 @@ public class GetActualProjectAVCompositionUseCase: NSObject {
     
     public func getComposition(project:Project) -> VideoComposition{
         var videoTotalTime:CMTime = kCMTimeZero
-
+        
         let isMusicSet = project.isMusicSet
         let isVoiceOverSet = project.isVoiceOverSet
         
         // - Create AVMutableComposition object. This object will hold your AVMutableCompositionTrack instances.
         let mixComposition = AVMutableComposition()
+        var videoComposition:AVMutableVideoComposition?
 
         let audioMix: AVMutableAudioMix = AVMutableAudioMix()
         var audioMixParam: [AVMutableAudioMixInputParameters] = []
         
-        var videoComposition:AVMutableVideoComposition?
-        
-        let videoTrack = mixComposition.addMutableTrackWithMediaType(AVMediaTypeVideo,
-                                                                     preferredTrackID: Int32(kCMPersistentTrackID_Invalid))
-        let audioTrack = mixComposition.addMutableTrackWithMediaType(AVMediaTypeAudio,
-                                                                     preferredTrackID: Int32(kCMPersistentTrackID_Invalid))
         let videosArray = project.getVideoList()
         // - Add assets to the composition
         if videosArray.count>0 {
             for count in 0...(videosArray.count - 1){
+                let videoTrack = mixComposition.addMutableTrackWithMediaType(AVMediaTypeVideo,
+                                                                             preferredTrackID: Int32(kCMPersistentTrackID_Invalid))
+                let audioTrack = mixComposition.addMutableTrackWithMediaType(AVMediaTypeAudio,
+                                                                             preferredTrackID: Int32(kCMPersistentTrackID_Invalid))
                 let video = videosArray[count]
                 // 2 - Get Video asset
-//                let videoURL: NSURL = NSURL.init(fileURLWithPath: video.getMediaPath())
+                //                let videoURL: NSURL = NSURL.init(fileURLWithPath: video.getMediaPath())
                 let videoURL: NSURL = video.videoURL
                 let videoAsset = AVAsset.init(URL: videoURL)
                 
                 do {
                     let startTime = CMTimeMake(Int64(video.getStartTime() * 1000), 1000)
-
                     let stopTime = CMTimeMake(Int64(video.getStopTime() * 1000), 1000)
+                    let duration = stopTime - startTime
+                    let range = CMTimeRangeMake(startTime, duration)
                     
-                    try videoTrack.insertTimeRange(CMTimeRangeMake(startTime,  stopTime),
+                    try videoTrack.insertTimeRange(range,
                                                    ofTrack: videoAsset.tracksWithMediaType(AVMediaTypeVideo)[0] ,
                                                    atTime: videoTotalTime)
                     
                     if isMusicSet == false {
-                        try audioTrack.insertTimeRange(CMTimeRangeMake(startTime, stopTime),
+                        try audioTrack.insertTimeRange(range,
                                                        ofTrack: videoAsset.tracksWithMediaType(AVMediaTypeAudio)[0] ,
                                                        atTime: videoTotalTime)
                         let videoParam: AVMutableAudioMixInputParameters = AVMutableAudioMixInputParameters(track: audioTrack)
@@ -59,15 +59,12 @@ public class GetActualProjectAVCompositionUseCase: NSObject {
                         videoParam.setVolume(project.projectOutputAudioLevel, atTime: kCMTimeZero)
                         audioMixParam.append(videoParam)
                     }
-                    videoTotalTime = CMTimeAdd(videoTotalTime, (stopTime - startTime))
-
-                    mixComposition.removeTimeRange(CMTimeRangeMake((videoTotalTime), (stopTime + videoTotalTime)))
-                    Utils().debugLog("remove final range from (stopTime + videoTotalTime): \((stopTime.seconds + videoTotalTime.seconds)) \n to (videoAsset.duration + videoTotalTime): \((videoAsset.duration.seconds + videoTotalTime.seconds)) ")
-
+                    videoTotalTime = CMTimeAdd(videoTotalTime, duration)
+                    videoTotalTime = CMTimeSubtract(videoTotalTime,  CMTimeMakeWithSeconds(1, 600))
+                    
                     Utils().debugLog("el tiempo total del video es: \(videoTotalTime.seconds)")
                 } catch _ {
                     Utils().debugLog("Error trying to create videoTrack")
-                    //                completionHandler("Error trying to create videoTrack",0.0)
                 }
                 
                 compositionInSeconds = videoTotalTime.seconds
@@ -92,13 +89,106 @@ public class GetActualProjectAVCompositionUseCase: NSObject {
         audioMix.inputParameters = audioMixParam
         playerComposition.audioMix = audioMix
         
-        if videoComposition != nil{
-            playerComposition.videoComposition = videoComposition
+        if mixComposition.duration.seconds > 0{
+            videoComposition = AVMutableVideoComposition(propertiesOfAsset: mixComposition)
+            
+            self.setInstructions(mixComposition,
+                                 videoComposition: videoComposition!)
         }
-        
+
+        playerComposition.videoComposition = videoComposition
         return playerComposition
     }
     
+    func setInstructions(mutableComposition:AVMutableComposition,
+                   videoComposition:AVMutableVideoComposition){
+        
+        let numberOfVideos = (mutableComposition.tracksWithMediaType(AVMediaTypeVideo).count)
+        let instruction = AVMutableVideoCompositionInstruction()
+        
+        let transitionTime = CMTimeMakeWithSeconds(1, 600)
+        var fadeInTime = kCMTimeZero
+        
+        for videoPos in 0...numberOfVideos{
+            if videoPos != numberOfVideos{
+                let video = mutableComposition.tracksWithMediaType(AVMediaTypeVideo)[videoPos]
+                
+                if (video.timeRange.end.seconds - fadeInTime.seconds) > 2 * transitionTime.seconds {
+                    setInstructionsToTrack(instruction,
+                                           videoTrack: video,
+                                           transitionTime: transitionTime,
+                                           atTime: fadeInTime,
+                                           videoComposition: videoComposition)
+                }
+                
+                print("video timeRange end")
+                print(video.timeRange.end.seconds)
+                
+                fadeInTime = video.timeRange.end
+            }
+        }
+        
+        instruction.timeRange = CMTimeRangeMake(kCMTimeZero, mutableComposition.duration)
+        
+        videoComposition.instructions = [instruction]
+    }
+    
+    func setInstructionsToTrack(instruction:AVMutableVideoCompositionInstruction,
+                         videoTrack:AVAssetTrack,
+                         transitionTime:CMTime,
+                         atTime:CMTime,
+                         videoComposition:AVMutableVideoComposition){
+        
+        let timeRangeFadeIn:CMTimeRange!
+        
+        if atTime.seconds != 0{
+            let time = CMTimeSubtract(atTime, transitionTime)
+            timeRangeFadeIn = CMTimeRangeMake(time, transitionTime)
+        }else{
+            timeRangeFadeIn = CMTimeRangeMake(atTime, transitionTime)
+        }
+        
+        print("timeRange fade in start seconds")
+        print(timeRangeFadeIn.start.seconds)
+        
+        print("timeRange fade in end seconds")
+        print(timeRangeFadeIn.end.seconds)
+        
+        let layerInstruction = AVMutableVideoCompositionLayerInstruction(assetTrack: videoTrack)
+        //Fade in
+        layerInstruction.setOpacityRampFromStartOpacity(0, toEndOpacity: 1, timeRange: timeRangeFadeIn)
+        
+        //Fade out
+        let newTransitionTime = CMTimeSubtract(videoTrack.timeRange.end, transitionTime)
+        let timeRangeFadeOut = CMTimeRangeMake(newTransitionTime, transitionTime)
+        
+        print("timeRange fade out start seconds")
+        print(timeRangeFadeOut.start.seconds)
+        
+        print("timeRange fade out end seconds")
+        print(timeRangeFadeOut.end.seconds)
+        
+        layerInstruction.setOpacityRampFromStartOpacity(1, toEndOpacity: 0, timeRange: timeRangeFadeOut)
+        
+        //Adjust size
+        setTransformToLayer(videoComposition.renderSize,
+                            actualSize: videoTrack.naturalSize,
+                            layer: layerInstruction)
+        
+        instruction.layerInstructions.append(layerInstruction)
+    }
+    
+    func setTransformToLayer(desireSize:CGSize,
+                             actualSize:CGSize,
+                             layer:AVMutableVideoCompositionLayerInstruction){
+        let scaleToTransformX = desireSize.width / actualSize.width
+        let scaleToTransformY = desireSize.height / actualSize.height
+        
+        if scaleToTransformX != 1 && scaleToTransformY != 1 {
+            let transform = CGAffineTransformMakeScale(scaleToTransformX, scaleToTransformY)
+            layer.setTransform(transform, atTime: kCMTimeZero)
+        }
+    }
     
     public func setMusicToProject(mixComposition:AVMutableComposition,
                            musicPath:String){
