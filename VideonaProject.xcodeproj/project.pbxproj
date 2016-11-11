@@ -23,6 +23,8 @@
 		A9BD5FD31D91210C0080CE97 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BD5FCC1D91210C0080CE97 /* Project.swift */; };
 		A9BD5FD41D91210C0080CE97 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BD5FCD1D91210C0080CE97 /* Utils.swift */; };
 		A9BD5FD51D91210C0080CE97 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BD5FCE1D91210C0080CE97 /* Video.swift */; };
+		A9C5FB6D1DD5E7AE00057A1B /* VideoTransitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C5FB6C1DD5E7AE00057A1B /* VideoTransitions.swift */; };
+		A9C5FB6F1DD5E7B500057A1B /* AudioTransitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C5FB6E1DD5E7B500057A1B /* AudioTransitions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		A9BD5FCC1D91210C0080CE97 /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		A9BD5FCD1D91210C0080CE97 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		A9BD5FCE1D91210C0080CE97 /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		A9C5FB6C1DD5E7AE00057A1B /* VideoTransitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoTransitions.swift; sourceTree = "<group>"; };
+		A9C5FB6E1DD5E7B500057A1B /* AudioTransitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioTransitions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,25 +80,51 @@
 		A9BD5FBF1D9120F40080CE97 /* VideonaProject */ = {
 			isa = PBXGroup;
 			children = (
+				A9C5FB721DD5E8C100057A1B /* Use case */,
+				A9C5FB711DD5E89A00057A1B /* Identities */,
+				A9C5FB701DD5E88A00057A1B /* Transitions */,
 				A9BD5FC01D9120F40080CE97 /* VideonaProject.h */,
-				A956A1061DBDED22002BDB26 /* AddVideoToProjectUseCase.swift */,
+				A9BD5FC21D9120F40080CE97 /* Info.plist */,
+			);
+			path = VideonaProject;
+			sourceTree = "<group>";
+		};
+		A9C5FB701DD5E88A00057A1B /* Transitions */ = {
+			isa = PBXGroup;
+			children = (
+				A9C5FB6C1DD5E7AE00057A1B /* VideoTransitions.swift */,
+				A9C5FB6E1DD5E7B500057A1B /* AudioTransitions.swift */,
+			);
+			name = Transitions;
+			sourceTree = "<group>";
+		};
+		A9C5FB711DD5E89A00057A1B /* Identities */ = {
+			isa = PBXGroup;
+			children = (
 				A956A1071DBDED22002BDB26 /* AVQualityParse.swift */,
-				A956A1081DBDED22002BDB26 /* CATextLayerAttributes.swift */,
-				A956A1091DBDED22002BDB26 /* CompatibleQualityInteractor.swift */,
-				A956A10A1DBDED22002BDB26 /* GetActualProjectAVCompositionUseCase.swift */,
-				A956A10B1DBDED22002BDB26 /* GetActualProjectTextCALayerAnimationUseCase.swift */,
-				A956A10C1DBDED22002BDB26 /* GetImageByTextUseCase.swift */,
+				A9B0073D1DAFC9F100BFAD68 /* VideonaComposition.swift */,
 				A9BD5FC81D91210C0080CE97 /* Audio.swift */,
 				A9BD5FC91D91210C0080CE97 /* Media.swift */,
 				A9BD5FCA1D91210C0080CE97 /* Music.swift */,
 				A9BD5FCB1D91210C0080CE97 /* Profile.swift */,
 				A9BD5FCC1D91210C0080CE97 /* Project.swift */,
-				A9BD5FCD1D91210C0080CE97 /* Utils.swift */,
 				A9BD5FCE1D91210C0080CE97 /* Video.swift */,
-				A9B0073D1DAFC9F100BFAD68 /* VideonaComposition.swift */,
-				A9BD5FC21D9120F40080CE97 /* Info.plist */,
 			);
-			path = VideonaProject;
+			name = Identities;
+			sourceTree = "<group>";
+		};
+		A9C5FB721DD5E8C100057A1B /* Use case */ = {
+			isa = PBXGroup;
+			children = (
+				A956A1061DBDED22002BDB26 /* AddVideoToProjectUseCase.swift */,
+				A956A1081DBDED22002BDB26 /* CATextLayerAttributes.swift */,
+				A956A1091DBDED22002BDB26 /* CompatibleQualityInteractor.swift */,
+				A956A10A1DBDED22002BDB26 /* GetActualProjectAVCompositionUseCase.swift */,
+				A956A10B1DBDED22002BDB26 /* GetActualProjectTextCALayerAnimationUseCase.swift */,
+				A956A10C1DBDED22002BDB26 /* GetImageByTextUseCase.swift */,
+				A9BD5FCD1D91210C0080CE97 /* Utils.swift */,
+			);
+			name = "Use case";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,6 +211,8 @@
 				A956A1111DBDED22002BDB26 /* GetActualProjectAVCompositionUseCase.swift in Sources */,
 				A956A1121DBDED22002BDB26 /* GetActualProjectTextCALayerAnimationUseCase.swift in Sources */,
 				A9BD5FD31D91210C0080CE97 /* Project.swift in Sources */,
+				A9C5FB6D1DD5E7AE00057A1B /* VideoTransitions.swift in Sources */,
+				A9C5FB6F1DD5E7B500057A1B /* AudioTransitions.swift in Sources */,
 				A956A1101DBDED22002BDB26 /* CompatibleQualityInteractor.swift in Sources */,
 				A956A10E1DBDED22002BDB26 /* AVQualityParse.swift in Sources */,
 				A9BD5FD11D91210C0080CE97 /* Music.swift in Sources */,

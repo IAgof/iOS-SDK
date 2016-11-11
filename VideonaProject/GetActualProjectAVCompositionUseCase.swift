@@ -12,10 +12,12 @@ import VideonaProject
 
 public class GetActualProjectAVCompositionUseCase: NSObject {    
     public var compositionInSeconds:Double = 0.0
-    
+    let transitionSeconds:Double = 1
+
     public func getComposition(project:Project) -> VideoComposition{
         var videoTotalTime:CMTime = kCMTimeZero
-        
+        let transitionTime = CMTimeMakeWithSeconds(transitionSeconds, 600)
+
         let isMusicSet = project.isMusicSet
         let isVoiceOverSet = project.isVoiceOverSet
         
@@ -60,7 +62,7 @@ public class GetActualProjectAVCompositionUseCase: NSObject {
                         audioMixParam.append(videoParam)
                     }
                     videoTotalTime = CMTimeAdd(videoTotalTime, duration)
-                    videoTotalTime = CMTimeSubtract(videoTotalTime,  CMTimeMakeWithSeconds(1, 600))
+                    videoTotalTime = CMTimeSubtract(videoTotalTime, transitionTime)
                     
                     Utils().debugLog("el tiempo total del video es: \(videoTotalTime.seconds)")
                 } catch _ {
@@ -93,102 +95,12 @@ public class GetActualProjectAVCompositionUseCase: NSObject {
         if mixComposition.duration.seconds > 0{
             videoComposition = AVMutableVideoComposition(propertiesOfAsset: mixComposition)
             
-            self.setInstructions(mixComposition,
+            VideoTransitions(transitionTime: transitionTime).setInstructions(mixComposition,
                                  videoComposition: videoComposition!)
         }
 
         playerComposition.videoComposition = videoComposition
         return playerComposition
-    }
-    
-    func setInstructions(mutableComposition:AVMutableComposition,
-                   videoComposition:AVMutableVideoComposition){
-        
-        let numberOfVideos = (mutableComposition.tracksWithMediaType(AVMediaTypeVideo).count)
-        let instruction = AVMutableVideoCompositionInstruction()
-        
-        let transitionTime = CMTimeMakeWithSeconds(1, 600)
-        var fadeInTime = kCMTimeZero
-        
-        for videoPos in 0...numberOfVideos{
-            if videoPos != numberOfVideos{
-                let video = mutableComposition.tracksWithMediaType(AVMediaTypeVideo)[videoPos]
-                
-                if (video.timeRange.end.seconds - fadeInTime.seconds) > 2 * transitionTime.seconds {
-                    setInstructionsToTrack(instruction,
-                                           videoTrack: video,
-                                           transitionTime: transitionTime,
-                                           atTime: fadeInTime,
-                                           videoComposition: videoComposition)
-                }
-                
-                print("video timeRange end")
-                print(video.timeRange.end.seconds)
-                
-                fadeInTime = video.timeRange.end
-            }
-        }
-        
-        instruction.timeRange = CMTimeRangeMake(kCMTimeZero, mutableComposition.duration)
-        
-        videoComposition.instructions = [instruction]
-    }
-    
-    func setInstructionsToTrack(instruction:AVMutableVideoCompositionInstruction,
-                         videoTrack:AVAssetTrack,
-                         transitionTime:CMTime,
-                         atTime:CMTime,
-                         videoComposition:AVMutableVideoComposition){
-        
-        let timeRangeFadeIn:CMTimeRange!
-        
-        if atTime.seconds != 0{
-            let time = CMTimeSubtract(atTime, transitionTime)
-            timeRangeFadeIn = CMTimeRangeMake(time, transitionTime)
-        }else{
-            timeRangeFadeIn = CMTimeRangeMake(atTime, transitionTime)
-        }
-        
-        print("timeRange fade in start seconds")
-        print(timeRangeFadeIn.start.seconds)
-        
-        print("timeRange fade in end seconds")
-        print(timeRangeFadeIn.end.seconds)
-        
-        let layerInstruction = AVMutableVideoCompositionLayerInstruction(assetTrack: videoTrack)
-        //Fade in
-        layerInstruction.setOpacityRampFromStartOpacity(0, toEndOpacity: 1, timeRange: timeRangeFadeIn)
-        
-        //Fade out
-        let newTransitionTime = CMTimeSubtract(videoTrack.timeRange.end, transitionTime)
-        let timeRangeFadeOut = CMTimeRangeMake(newTransitionTime, transitionTime)
-        
-        print("timeRange fade out start seconds")
-        print(timeRangeFadeOut.start.seconds)
-        
-        print("timeRange fade out end seconds")
-        print(timeRangeFadeOut.end.seconds)
-        
-        layerInstruction.setOpacityRampFromStartOpacity(1, toEndOpacity: 0, timeRange: timeRangeFadeOut)
-        
-        //Adjust size
-        setTransformToLayer(videoComposition.renderSize,
-                            actualSize: videoTrack.naturalSize,
-                            layer: layerInstruction)
-        
-        instruction.layerInstructions.append(layerInstruction)
-    }
-    
-    func setTransformToLayer(desireSize:CGSize,
-                             actualSize:CGSize,
-                             layer:AVMutableVideoCompositionLayerInstruction){
-        let scaleToTransformX = desireSize.width / actualSize.width
-        let scaleToTransformY = desireSize.height / actualSize.height
-        
-        if scaleToTransformX != 1 && scaleToTransformY != 1 {
-            let transform = CGAffineTransformMakeScale(scaleToTransformX, scaleToTransformY)
-            layer.setTransform(transform, atTime: kCMTimeZero)
-        }
     }
     
     public func setMusicToProject(mixAudioParams:[AVMutableAudioMixInputParameters],
