@@ -56,10 +56,6 @@ public class GetActualProjectAVCompositionUseCase: NSObject {
                         try audioTrack.insertTimeRange(range,
                                                        ofTrack: videoAsset.tracksWithMediaType(AVMediaTypeAudio)[0] ,
                                                        atTime: videoTotalTime)
-                        let videoParam: AVMutableAudioMixInputParameters = AVMutableAudioMixInputParameters(track: audioTrack)
-                        videoParam.trackID = audioTrack.trackID
-                        videoParam.setVolume(project.projectOutputAudioLevel, atTime: kCMTimeZero)
-                        audioMixParam.append(videoParam)
                     }
                     videoTotalTime = CMTimeAdd(videoTotalTime, duration)
                     videoTotalTime = CMTimeSubtract(videoTotalTime, transitionTime)
@@ -76,6 +72,8 @@ public class GetActualProjectAVCompositionUseCase: NSObject {
                 setMusicToProject(audioMixParam,
                                   mixComposition: mixComposition,
                                   musicPath: project.getMusic().getMusicResourceId())
+            }else{
+                 AudioTransitions(transitionTime: transitionTime).setAudioTransition(mixComposition, audioMix: audioMix)
             }
             
             if isVoiceOverSet {
@@ -85,7 +83,6 @@ public class GetActualProjectAVCompositionUseCase: NSObject {
                                       audioLevel: project.voiceOver.audioLevel)
             }
         }
-        
         
         var playerComposition = VideoComposition(mutableComposition: mixComposition)
         
