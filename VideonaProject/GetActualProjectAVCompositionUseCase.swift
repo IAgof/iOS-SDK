@@ -12,10 +12,10 @@ import VideonaProject
 
 public class GetActualProjectAVCompositionUseCase: NSObject {    
     public var compositionInSeconds:Double = 0.0
-    let transitionSeconds:Double = 1
 
     public func getComposition(project:Project) -> VideoComposition{
         var videoTotalTime:CMTime = kCMTimeZero
+        let transitionSeconds = project.transitionTime
         let transitionTime = CMTimeMakeWithSeconds(transitionSeconds, 600)
 
         let isMusicSet = project.isMusicSet
@@ -58,7 +58,7 @@ public class GetActualProjectAVCompositionUseCase: NSObject {
                                                        atTime: videoTotalTime)
                     }
                     videoTotalTime = CMTimeAdd(videoTotalTime, duration)
-                    videoTotalTime = CMTimeSubtract(videoTotalTime, transitionTime)
+//                    videoTotalTime = CMTimeSubtract(videoTotalTime, transitionTime)
                     
                     Utils().debugLog("el tiempo total del video es: \(videoTotalTime.seconds)")
                 } catch _ {

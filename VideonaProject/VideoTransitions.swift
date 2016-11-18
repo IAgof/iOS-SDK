@@ -35,10 +35,6 @@ class VideoTransitions {
                                            atTime: fadeInTime,
                                            videoComposition: videoComposition)
                 }
-                
-                print("video timeRange end")
-                print(video.timeRange.end.seconds)
-                
                 fadeInTime = video.timeRange.end
             }
         }
@@ -57,17 +53,11 @@ class VideoTransitions {
         let timeRangeFadeIn:CMTimeRange!
         
         if atTime.seconds != 0{
-            let time = CMTimeSubtract(atTime, transitionTime)
-            timeRangeFadeIn = CMTimeRangeMake(time, transitionTime)
+//            let time = CMTimeSubtract(atTime, transitionTime)
+            timeRangeFadeIn = CMTimeRangeMake(atTime, transitionTime)
         }else{
             timeRangeFadeIn = CMTimeRangeMake(atTime, transitionTime)
         }
-        
-        print("timeRange fade in start seconds")
-        print(timeRangeFadeIn.start.seconds)
-        
-        print("timeRange fade in end seconds")
-        print(timeRangeFadeIn.end.seconds)
         
         let layerInstruction = AVMutableVideoCompositionLayerInstruction(assetTrack: videoTrack)
         //Fade in
@@ -76,12 +66,6 @@ class VideoTransitions {
         //Fade out
         let newTransitionTime = CMTimeSubtract(videoTrack.timeRange.end, transitionTime)
         let timeRangeFadeOut = CMTimeRangeMake(newTransitionTime, transitionTime)
-        
-        print("timeRange fade out start seconds")
-        print(timeRangeFadeOut.start.seconds)
-        
-        print("timeRange fade out end seconds")
-        print(timeRangeFadeOut.end.seconds)
         
         layerInstruction.setOpacityRampFromStartOpacity(1, toEndOpacity: 0, timeRange: timeRangeFadeOut)
         

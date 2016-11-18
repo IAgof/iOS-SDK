@@ -65,6 +65,8 @@ public class Project: NSObject {
     
     public var projectOutputAudioLevel:Float = 1.0
     
+    public var transitionTime:Double = 1
+    
     override public init() {
         self.title = "testTitle\(Utils().giveMeTimeNow())"
         self.projectPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
