@@ -8,15 +8,18 @@
 
 import Foundation
 
-public class Music: Audio {
+open class Music: Audio {
     
-    private var musicTitle:String!
-    private var author:String!
-    private var iconResourceId:String!
-    private var musicResourceId:String!
-    public var musicSelectedResourceId:String!
-    private var musicSet:Bool! = false
-    
+    fileprivate var musicTitle:String!
+    fileprivate var author:String!
+    fileprivate var iconResourceId:String!
+    fileprivate var musicResourceId:String!
+    open var musicSelectedResourceId:String!
+    fileprivate var musicSet:Bool! = false
+    public static let DEFAULT_MUSIC_VOLUME = 0.5
+
+    public var  volume = DEFAULT_MUSIC_VOLUME
+
     public init(title:String,
                   author:String,
                   iconResourceId:String,
@@ -32,43 +35,43 @@ public class Music: Audio {
         self.musicSelectedResourceId = musicSelectedResourceId
     }
     
-    public func getMusicTitle()->String{
+    open func getMusicTitle()->String{
         return self.musicTitle
     }
     
-    public func setMusicTitle(title:String){
+    open func setMusicTitle(_ title:String){
         self.musicTitle = title
     }
     
-    public func getAuthor()->String{
+    open func getAuthor()->String{
         return self.author
     }
     
-    public func setAuthor(author:String){
+    open func setAuthor(_ author:String){
         self.author = author
     }
     
-    public func getIconResourceId()->String{
+    open func getIconResourceId()->String{
         return self.iconResourceId
     }
     
-    public func setIconResourceId(icon:String){
+    open func setIconResourceId(_ icon:String){
         self.iconResourceId = icon
     }
     
-    public func getMusicResourceId()->String{
+    open func getMusicResourceId()->String{
         return self.musicResourceId
     }
     
-    public func setMusicResourceId(musicResource:String){
+    open func setMusicResourceId(_ musicResource:String){
         self.musicResourceId = musicResource
     }
     
-    public func getMusicStateSetOrNot()->Bool{
+    open func getMusicStateSetOrNot()->Bool{
         return self.musicSet
     }
     
-    public func setMusicStateSetOrNot(state:Bool){
+    open func setMusicStateSetOrNot(_ state:Bool){
         self.musicSet = state
     }
 }

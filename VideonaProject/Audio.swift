@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class Audio: Media {
+open class Audio: Media {
     
     override public init(title: String, mediaPath: String) {
         super.init(title: title, mediaPath: mediaPath)

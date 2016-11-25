@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		372169BAD55AE0D6E058D7C0 /* Pods_VideonaProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C833A5003C6FCD472D2E8E0 /* Pods_VideonaProject.framework */; };
 		A956A10D1DBDED22002BDB26 /* AddVideoToProjectUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A956A1061DBDED22002BDB26 /* AddVideoToProjectUseCase.swift */; };
 		A956A10E1DBDED22002BDB26 /* AVQualityParse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A956A1071DBDED22002BDB26 /* AVQualityParse.swift */; };
 		A956A10F1DBDED22002BDB26 /* CATextLayerAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A956A1081DBDED22002BDB26 /* CATextLayerAttributes.swift */; };
@@ -28,6 +29,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		53816917F743EE2503F7FD87 /* Pods-VideonaProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideonaProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-VideonaProject/Pods-VideonaProject.release.xcconfig"; sourceTree = "<group>"; };
+		9C833A5003C6FCD472D2E8E0 /* Pods_VideonaProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VideonaProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A956A1061DBDED22002BDB26 /* AddVideoToProjectUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddVideoToProjectUseCase.swift; sourceTree = "<group>"; };
 		A956A1071DBDED22002BDB26 /* AVQualityParse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVQualityParse.swift; sourceTree = "<group>"; };
 		A956A1081DBDED22002BDB26 /* CATextLayerAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CATextLayerAttributes.swift; sourceTree = "<group>"; };
@@ -48,6 +51,7 @@
 		A9BD5FCE1D91210C0080CE97 /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		A9C5FB6C1DD5E7AE00057A1B /* VideoTransitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoTransitions.swift; sourceTree = "<group>"; };
 		A9C5FB6E1DD5E7B500057A1B /* AudioTransitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioTransitions.swift; sourceTree = "<group>"; };
+		B2F4A0D364C97E57476CD3C1 /* Pods-VideonaProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideonaProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VideonaProject/Pods-VideonaProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,17 +59,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				372169BAD55AE0D6E058D7C0 /* Pods_VideonaProject.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F29BEDA4F8AF27571BA07E9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9C833A5003C6FCD472D2E8E0 /* Pods_VideonaProject.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A9BD5FB31D9120F40080CE97 = {
 			isa = PBXGroup;
 			children = (
 				A9BD5FBF1D9120F40080CE97 /* VideonaProject */,
 				A9BD5FBE1D9120F40080CE97 /* Products */,
+				BE86A4B8FC6F069D31EAD2F7 /* Pods */,
+				3F29BEDA4F8AF27571BA07E9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -127,6 +142,15 @@
 			name = "Use case";
 			sourceTree = "<group>";
 		};
+		BE86A4B8FC6F069D31EAD2F7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B2F4A0D364C97E57476CD3C1 /* Pods-VideonaProject.debug.xcconfig */,
+				53816917F743EE2503F7FD87 /* Pods-VideonaProject.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -145,10 +169,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A9BD5FC51D9120F40080CE97 /* Build configuration list for PBXNativeTarget "VideonaProject" */;
 			buildPhases = (
+				17903DD943E083F718978E4C /* [CP] Check Pods Manifest.lock */,
 				A9BD5FB81D9120F40080CE97 /* Sources */,
 				A9BD5FB91D9120F40080CE97 /* Frameworks */,
 				A9BD5FBA1D9120F40080CE97 /* Headers */,
 				A9BD5FBB1D9120F40080CE97 /* Resources */,
+				E1C8B5B1901107CFBD3AAA3D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -170,6 +196,7 @@
 				TargetAttributes = {
 					A9BD5FBC1D9120F40080CE97 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0810;
 					};
 				};
 			};
@@ -199,6 +226,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		17903DD943E083F718978E4C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E1C8B5B1901107CFBD3AAA3D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VideonaProject/Pods-VideonaProject-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A9BD5FB81D9120F40080CE97 /* Sources */ = {
@@ -321,6 +381,7 @@
 		};
 		A9BD5FC61D9120F40080CE97 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B2F4A0D364C97E57476CD3C1 /* Pods-VideonaProject.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
@@ -334,11 +395,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		A9BD5FC71D9120F40080CE97 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 53816917F743EE2503F7FD87 /* Pods-VideonaProject.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
@@ -351,6 +414,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.videona.VideonaProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

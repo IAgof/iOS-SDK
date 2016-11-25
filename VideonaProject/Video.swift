@@ -9,23 +9,24 @@
 import Foundation
 import AVFoundation
 
-public class Video: Media {
+open class Video: Media {
     
-    public var videoURL:NSURL = NSURL()
-    private var isSplit:Bool!
-    private var position:Int!
-    public var textToVideo:String = ""
-    public var textPositionToVideo:Int = 0
-    public var originAudioLevel:Float = 1
-    public var secondAudioLevel:Float = 0
-    
+    open var videoURL:URL = URL(fileURLWithPath: "")
+    fileprivate var isSplit:Bool!
+    fileprivate var position:Int!
+    open var textToVideo:String = ""
+    open var textPositionToVideo:Int = 0
+    open var originAudioLevel:Float = 1
+    open var secondAudioLevel:Float = 0
+    public let  uuid = UUID().uuidString
+
     override public init(title: String, mediaPath: String) {
         super.init(title: title, mediaPath: mediaPath)
         
         isSplit = false
     }
     
-    public func copyWithZone(zone: NSZone) -> AnyObject {
+    open func copyWithZone(_ zone: NSZone?) -> AnyObject {
         let copy = Video(title: title,
                          mediaPath: mediaPath)
         copy.setIsSplit(isSplit)
@@ -43,8 +44,8 @@ public class Video: Media {
         return copy
     }
     
-    public func mediaRecordedFinished(){
-        let asset = AVAsset(URL: videoURL)
+    open func mediaRecordedFinished(){
+        let asset = AVAsset(url: videoURL)
         
         fileStartTime = 0.0
         fileStopTime = asset.duration.seconds
@@ -53,19 +54,19 @@ public class Video: Media {
         duration = asset.duration.seconds
     }
     
-    public func getIsSplit() -> Bool {
+    open func getIsSplit() -> Bool {
         return isSplit
     }
     
-    public func setIsSplit(state:Bool){
+    open func setIsSplit(_ state:Bool){
         self.isSplit = state
     }
     
-    public func getPosition()->Int{
+    open func getPosition()->Int{
         return self.position
     }
     
-    public func setPosition(position:Int){
+    open func setPosition(_ position:Int){
         self.position = position
     }
 }

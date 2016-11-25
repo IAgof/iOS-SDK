@@ -34,7 +34,7 @@ public struct CATextLayerAttributes {
     }
     
     var font:UIFont = UIFont(name: HelveticaFont.normal.rawValue, size: FontSize.medium.rawValue)!
-    var textColor:UIColor = UIColor.whiteColor()
+    var textColor:UIColor = UIColor.white
     var horizontalAlignment:HorizontalAlignment = .left
     var verticalAlignment:VerticalAlignment = .top
     var fontSize:CGFloat = FontSize.medium.rawValue
@@ -64,16 +64,15 @@ public struct CATextLayerAttributes {
         
         switch verticalAlignment {
         case .top:
-            return CGRectMake(xPositionOffset, 10, frame.width, height)
+            return CGRect(x: xPositionOffset, y: CGFloat(10), width: frame.width, height: height)
         case .mid:
-            let yPosition = max(0, ((frame.height/2*vertical) - yPositionOffset))
+            let yPosition = max(0.0, ((frame.height/2*vertical) - yPositionOffset))
 
-            return CGRectMake(xPositionOffset, yPosition, frame.width, height)
+            return CGRect(x: xPositionOffset, y: yPosition, width: frame.width, height: height)
         case .bottom:
             let yPosition = max(0, ((frame.height/2*vertical) - yPositionOffset*2))
 
-            return  CGRectMake(xPositionOffset, yPosition, frame.width, height)
-
+            return CGRect(x: xPositionOffset, y: yPosition, width: frame.width, height: height)
         }
     }
     

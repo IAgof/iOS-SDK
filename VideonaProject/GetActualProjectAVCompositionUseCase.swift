@@ -8,7 +8,6 @@
 
 import Foundation
 import AVFoundation
-import VideonaProject
 
 public class GetActualProjectAVCompositionUseCase: NSObject {    
     public var compositionInSeconds:Double = 0.0
@@ -26,21 +25,21 @@ public class GetActualProjectAVCompositionUseCase: NSObject {
         var videoComposition:AVMutableVideoComposition?
 
         let audioMix: AVMutableAudioMix = AVMutableAudioMix()
-        var audioMixParam: [AVMutableAudioMixInputParameters] = []
+        let audioMixParam: [AVMutableAudioMixInputParameters] = []
         
         let videosArray = project.getVideoList()
         // - Add assets to the composition
         if videosArray.count>0 {
             for count in 0...(videosArray.count - 1){
-                let videoTrack = mixComposition.addMutableTrackWithMediaType(AVMediaTypeVideo,
+                let videoTrack = mixComposition.addMutableTrack(withMediaType: AVMediaTypeVideo,
                                                                              preferredTrackID: Int32(kCMPersistentTrackID_Invalid))
-                let audioTrack = mixComposition.addMutableTrackWithMediaType(AVMediaTypeAudio,
+                let audioTrack = mixComposition.addMutableTrack(withMediaType: AVMediaTypeAudio,
                                                                              preferredTrackID: Int32(kCMPersistentTrackID_Invalid))
                 let video = videosArray[count]
                 // 2 - Get Video asset
                 //                let videoURL: NSURL = NSURL.init(fileURLWithPath: video.getMediaPath())
-                let videoURL: NSURL = video.videoURL
-                let videoAsset = AVAsset.init(URL: videoURL)
+                let videoURL: NSURL = video.videoURL as NSURL
+                let videoAsset = AVAsset.init(url: videoURL as URL)
                 
                 do {
                     let startTime = CMTimeMake(Int64(video.getStartTime() * 1000), 1000)
@@ -49,13 +48,13 @@ public class GetActualProjectAVCompositionUseCase: NSObject {
                     let range = CMTimeRangeMake(startTime, duration)
                     
                     try videoTrack.insertTimeRange(range,
-                                                   ofTrack: videoAsset.tracksWithMediaType(AVMediaTypeVideo)[0] ,
-                                                   atTime: videoTotalTime)
+                                                   of: videoAsset.tracks(withMediaType: AVMediaTypeVideo)[0] ,
+                                                   at: videoTotalTime)
                     
                     if isMusicSet == false {
                         try audioTrack.insertTimeRange(range,
-                                                       ofTrack: videoAsset.tracksWithMediaType(AVMediaTypeAudio)[0] ,
-                                                       atTime: videoTotalTime)
+                                                       of: videoAsset.tracks(withMediaType: AVMediaTypeAudio)[0] ,
+                                                       at: videoTotalTime)
                     }
                     videoTotalTime = CMTimeAdd(videoTotalTime, duration)
 //                    videoTotalTime = CMTimeSubtract(videoTotalTime, transitionTime)
@@ -69,15 +68,15 @@ public class GetActualProjectAVCompositionUseCase: NSObject {
             }
             
             if isMusicSet{
-                setMusicToProject(audioMixParam,
+                setMusicToProject(mixAudioParams: audioMixParam,
                                   mixComposition: mixComposition,
                                   musicPath: project.getMusic().getMusicResourceId())
             }else{
-                 AudioTransitions(transitionTime: transitionTime).setAudioTransition(mixComposition, audioMix: audioMix)
+                 AudioTransitions(transitionTime: transitionTime).setAudioTransition(mutableComposition: mixComposition, audioMix: audioMix)
             }
             
             if isVoiceOverSet {
-                setVoiceOverToProject(audioMixParam,
+                setVoiceOverToProject(mixAudioParams: audioMixParam,
                                       mixComposition: mixComposition,
                                       audioPath: project.voiceOver.getMediaPath(),
                                       audioLevel: project.voiceOver.audioLevel)
@@ -90,9 +89,9 @@ public class GetActualProjectAVCompositionUseCase: NSObject {
         playerComposition.audioMix = audioMix
         
         if mixComposition.duration.seconds > 0{
-            videoComposition = AVMutableVideoComposition(propertiesOfAsset: mixComposition)
+            videoComposition = AVMutableVideoComposition(propertiesOf: mixComposition)
             
-            VideoTransitions(transitionTime: transitionTime).setInstructions(mixComposition,
+            VideoTransitions(transitionTime: transitionTime).setInstructions(mutableComposition: mixComposition,
                                  videoComposition: videoComposition!)
         }
 
@@ -105,18 +104,18 @@ public class GetActualProjectAVCompositionUseCase: NSObject {
                                   musicPath:String){
         var audioParams = mixAudioParams
         
-        let audioURL = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource(musicPath, ofType: "mp3")!)
-        let audioAsset = AVAsset.init(URL: audioURL)
+        let audioURL = NSURL(fileURLWithPath: Bundle.main.path(forResource: musicPath, ofType: "mp3")!)
+        let audioAsset = AVAsset.init(url: audioURL as URL)
         
-        let audioTrack = mixComposition.addMutableTrackWithMediaType(AVMediaTypeAudio,
+        let audioTrack = mixComposition.addMutableTrack(withMediaType: AVMediaTypeAudio,
                                                                  preferredTrackID: Int32(kCMPersistentTrackID_Invalid))
         do {
             try audioTrack.insertTimeRange(CMTimeRangeMake(kCMTimeZero, mixComposition.duration),
-                                           ofTrack: audioAsset.tracksWithMediaType(AVMediaTypeAudio)[0] ,
-                                           atTime: kCMTimeZero)
+                                           of: audioAsset.tracks(withMediaType: AVMediaTypeAudio)[0] ,
+                                           at: kCMTimeZero)
             let musicParam: AVMutableAudioMixInputParameters = AVMutableAudioMixInputParameters(track: audioTrack)
             musicParam.trackID = audioTrack.trackID
-            musicParam.setVolume(1, atTime: kCMTimeZero)
+            musicParam.setVolume(1, at: kCMTimeZero)
             audioParams.append(musicParam)
         } catch _ {
             Utils().debugLog("Error trying to create audioTrack")
@@ -130,17 +129,17 @@ public class GetActualProjectAVCompositionUseCase: NSObject {
         var audioParams = mixAudioParams
 
         let audioURL = NSURL.init(fileURLWithPath: audioPath)
-        let audioAsset = AVAsset.init(URL: audioURL)
+        let audioAsset = AVAsset.init(url: audioURL as URL)
         
-        let audioTrack = mixComposition.addMutableTrackWithMediaType(AVMediaTypeAudio,
+        let audioTrack = mixComposition.addMutableTrack(withMediaType: AVMediaTypeAudio,
                                                                  preferredTrackID: Int32(kCMPersistentTrackID_Invalid))
         do {
             try audioTrack.insertTimeRange(CMTimeRangeMake(kCMTimeZero, audioAsset.duration),
-                                           ofTrack: audioAsset.tracksWithMediaType(AVMediaTypeAudio)[0] ,
-                                           atTime: kCMTimeZero)
+                                           of: audioAsset.tracks(withMediaType: AVMediaTypeAudio)[0] ,
+                                           at: kCMTimeZero)
             let voiceOverParam: AVMutableAudioMixInputParameters = AVMutableAudioMixInputParameters(track: audioTrack)
             voiceOverParam.trackID = audioTrack.trackID
-            voiceOverParam.setVolume(audioLevel, atTime: kCMTimeZero)
+            voiceOverParam.setVolume(audioLevel, at: kCMTimeZero)
             audioParams.append(voiceOverParam)
         } catch _ {
             Utils().debugLog("Error trying to create audioTrack")

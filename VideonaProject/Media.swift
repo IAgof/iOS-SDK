@@ -9,7 +9,7 @@
 import Foundation
 import AVFoundation
 
-public class Media: NSObject {
+open class Media: NSObject {
     /**
      * Title of the media. Should be the video name in the social network
      */
@@ -39,7 +39,7 @@ public class Media: NSObject {
     
     var duration:Double = 0.0
     
-    public var audioLevel:Float = 1.0
+    open var audioLevel:Float = 1.0
     
     public init(title:String,
                   mediaPath:String) {
@@ -47,51 +47,51 @@ public class Media: NSObject {
         self.mediaPath = mediaPath
     }
         
-    public func getTitle() -> String {
+    open func getTitle() -> String {
         return title!
     }
     
-    public func setMediaTitle(title:String)  {
+    open func setMediaTitle(_ title:String)  {
         self.title = title
     }
     
-    public func getMediaPath() -> String {
+    open func getMediaPath() -> String {
         return mediaPath!
     }
     
-    public func setVideonaMediaPath(path:String) {
+    open func setVideonaMediaPath(_ path:String) {
         self.mediaPath = path
     }
     
-    public func getStartTime() -> Double {
+    open func getStartTime() -> Double {
         return trimStartTime
     }
     
-    public func setStartTime(time:Double) {
+    open func setStartTime(_ time:Double) {
         self.trimStartTime = time
         
         self.duration = trimStopTime - trimStartTime
     }
     
-    public func getStopTime() -> Double {
+    open func getStopTime() -> Double {
         return trimStopTime
     }
     
-    public func setStopTime(time:Double) {
+    open func setStopTime(_ time:Double) {
         self.trimStopTime = time
         
         self.duration = trimStopTime - trimStartTime
     }
     
-    public func getDuration() -> Double {
+    open func getDuration() -> Double {
         return self.duration
     }
     
-    public func getFileStopTime() -> Double {
+    open func getFileStopTime() -> Double {
         return fileStopTime
     }
     
-    public func getFileStartTime() -> Double {
+    open func getFileStartTime() -> Double {
         return fileStartTime
     }
     

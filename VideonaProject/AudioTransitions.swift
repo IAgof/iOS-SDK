@@ -20,7 +20,7 @@ class AudioTransitions {
     
     func setAudioTransition(mutableComposition:AVMutableComposition,
                             audioMix:AVMutableAudioMix){
-        let audioTracks = mutableComposition.tracksWithMediaType(AVMediaTypeAudio)
+        let audioTracks = mutableComposition.tracks(withMediaType: AVMediaTypeAudio)
         
         var inputParameters:[AVAudioMixInputParameters] = []
         var fadeInTime = kCMTimeZero
@@ -35,10 +35,10 @@ class AudioTransitions {
                 let fadeOutRange = CMTimeRangeMake(startFadeOut, transitionTime)
                 
                 let fadeInParameter = AVMutableAudioMixInputParameters(track: audioTrack)
-                fadeInParameter.setVolumeRampFromStartVolume(minVolume, toEndVolume: maxVolume , timeRange: fadeInRange)
+                fadeInParameter.setVolumeRamp(fromStartVolume: minVolume, toEndVolume: maxVolume , timeRange: fadeInRange)
                 
                 let fadeOutParameter = AVMutableAudioMixInputParameters(track: audioTrack)
-                fadeOutParameter.setVolumeRampFromStartVolume(maxVolume, toEndVolume: minVolume , timeRange: fadeOutRange)
+                fadeOutParameter.setVolumeRamp(fromStartVolume: maxVolume, toEndVolume: minVolume , timeRange: fadeOutRange)
                 
                 inputParameters.append(fadeInParameter)
                 inputParameters.append(fadeOutParameter)

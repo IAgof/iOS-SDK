@@ -22,7 +22,7 @@ public class AVQualityParse: NSObject {
         let qualityCompatibles = CompatibleQualityInteractor().getCompatibleQuality()
 
         for quality in qualityCompatibles {
-            qualityToTheTableView.append(self.parseQualityToView(quality))
+            qualityToTheTableView.append(self.parseQualityToView(resolution: quality))
         }
 
         return qualityToTheTableView

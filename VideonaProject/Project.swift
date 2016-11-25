@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-public class Project: NSObject {
+open class Project: NSObject {
     
     /**
      * There could be just one project open at a time. So this converts Project in a Singleton.
@@ -22,86 +22,94 @@ public class Project: NSObject {
     /**
      * Project name. Also it will be the name of the exported video
      */
-    private var title:String = ""
+    fileprivate var title:String = ""
     /**
      * The folder where de temp files of the project are stored
      */
-    private var projectPath:String = ""
+    fileprivate var projectPath:String = ""
 
     /**
      * Path where exported videos are
      */
-    private var exportedPath:String = ""
+    fileprivate var exportedPath:String = ""
     
     /**
      * List of Videos Recorded
      */
-    private var videoList = Array<Video>()
+    fileprivate var videoList = Array<Video>()
     
     /**
      * Project profile. Defines some limitations and characteristic of the project based on user
      * subscription.
      */
-    private  var profile = Profile()
+    fileprivate  var profile = Profile()
     
     /**
      * Project duration. The duration of the project in milliseconds.
      */
-    private var duration:Double = 0.0
+    fileprivate var duration:Double = 0.0
     
     /**
      * Music to add to export video ( may be nil)
      */
-    private var music = Music(title: "",
+    fileprivate var music = Music(title: "",
                               author: "",
                               iconResourceId: "",
                               musicResourceId: "",
                               musicSelectedResourceId: "")
-    public var isMusicSet:Bool = false
+    open var isMusicSet:Bool = false
     
-    public var voiceOver = Audio(title: "", mediaPath: "")
+    open var voiceOver = Audio(title: "", mediaPath: "")
     
-    public var isVoiceOverSet = false
+    open var isVoiceOverSet = false
     
-    public var projectOutputAudioLevel:Float = 1.0
+    open var projectOutputAudioLevel:Float = 1.0
     
-    public var transitionTime:Double = 1
+    open var transitionTime:Double = 1
     
     override public init() {
         self.title = "testTitle\(Utils().giveMeTimeNow())"
-        self.projectPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
+        self.projectPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
         self.profile = Profile(resolution: "", videoQuality: "", maxDuration: 0, type: Profile.ProfileType.free)
         self.duration = 0
         
         videoList = Array<Video>()
     }
     
+    public init(title:String, rootPath:String, profile:Profile) {
+        self.title = title
+        self.projectPath = rootPath
+        self.profile = profile
+        videoList = Array<Video>()
+        
+    }
+
     // getters & setters
-    public func getTitle() ->String{
+    open func getTitle() ->String{
         return self.title
     }
     
-    public func setTitle(title:String) {
+    open func setTitle(_ title:String) {
         self.title = title
     }
     
-    public func getProjectPath() -> String{
+    open func getProjectPath() -> String{
         return projectPath
     }
     
-    public func setProjectPath(projectPath:String) {
+    open func setProjectPath(_ projectPath:String) {
         self.projectPath = projectPath
     }
     
-    public func getProfile() -> Profile{
+    open func getProfile() -> Profile{
         return self.profile
     }
     
-    public func setProfile(profile:Profile) {
+    open func setProfile(_ profile:Profile) {
         self.profile = profile
     }
     
-    public func getDuration()->Double {
+    open func getDuration()->Double {
         duration = 0
         for video in videoList{
             duration += video.getDuration()
@@ -109,49 +117,49 @@ public class Project: NSObject {
         return duration
     }
     
-    public func setDuration(duration:Double) {
+    open func setDuration(_ duration:Double) {
         self.duration = duration
     }
     
-    public func clear() {
+    open func clear() {
         self.title = "testTitle\(Utils().giveMeTimeNow())"
-        self.projectPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
+        self.projectPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
         self.profile = Profile(resolution: "", videoQuality: "", maxDuration: 0, type: Profile.ProfileType.free)
         self.duration = 0
         
         videoList = Array<Video>()
     }
     
-    public func numberOfClips() -> Int{
+    open func numberOfClips() -> Int{
 
         return videoList.count
     }
     
-    public func setVideoList(list:Array<Video>){
+    open func setVideoList(_ list:Array<Video>){
         self.videoList = list
     }
     
-    public func getVideoList() -> Array<Video> {
+    open func getVideoList() -> Array<Video> {
         return videoList
     }
     
-    private func getNewProjectExportPath() -> String {
-        return "\(projectPath)/videoExported\(Utils.sharedInstance.giveMeTimeNow()).m4v"
+    fileprivate func getNewProjectExportPath() -> String {
+        return "\(projectPath)/videoExported\(Utils().giveMeTimeNow()).m4v"
     }
     
-    public func setExportedPath() {
+    open func setExportedPath() {
         self.exportedPath = self.getNewProjectExportPath()
     }
     
-    public func getExportedPath() -> String {
+    open func getExportedPath() -> String {
         return self.exportedPath
     }
     
-    public func setMusic(music:Music){
+    open func setMusic(_ music:Music){
         self.music = music
     }
     
-    public func getMusic() ->Music{
+    open func getMusic() ->Music{
         return music
     }
 }

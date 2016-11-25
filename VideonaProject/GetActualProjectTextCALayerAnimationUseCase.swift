@@ -7,14 +7,13 @@
 //
 
 import Foundation
-import VideonaProject
 import AVFoundation
 
 public class GetActualProjectTextCALayerAnimationUseCase:NSObject {
     public func getCALayerAnimation(project:Project)-> CALayer {
         let videos = project.getVideoList()
         
-        let layers :[CALayer] = getTextLayersAnimated(videos)
+        let layers :[CALayer] = getTextLayersAnimated(videoList: videos)
         
         let parentLayer = CALayer()
         
@@ -35,16 +34,17 @@ public class GetActualProjectTextCALayerAnimationUseCase:NSObject {
                 print("Not valid position")
                 return []}
             
-            let image = GetImageByTextUseCase().getTextImage(video.textToVideo,
-                                                             attributes:CATextLayerAttributes().getAlignmentAttributesByType(textPosition))
+            let image = GetImageByTextUseCase().getTextImage(text: video.textToVideo,
+                                                             attributes:CATextLayerAttributes().getAlignmentAttributesByType(type: textPosition))
             
             let textImageLayer = CALayer()
-            textImageLayer.contents = image.CGImage
-            textImageLayer.frame = CGRectMake(0, 0, image.size.width, image.size.height)
-            textImageLayer.contentsScale = UIScreen.mainScreen().scale
+            textImageLayer.contents = image.cgImage
+            textImageLayer.frame = CGRect(x: 0.0, y: 0.0,
+                                          width: image.size.width,height: image.size.height)
+            textImageLayer.contentsScale = UIScreen.main.scale
             textImageLayer.opacity = 0.0
             
-            addAnimationToLayer(textImageLayer,
+            addAnimationToLayer(overlay: textImageLayer,
                                 timeAt: timeToInsertAnimate,
                                 duration: video.getDuration())
             
@@ -62,10 +62,10 @@ public class GetActualProjectTextCALayerAnimationUseCase:NSObject {
         let animationEntrada = CAKeyframeAnimation(keyPath:"opacity")
         animationEntrada.beginTime = AVCoreAnimationBeginTimeAtZero + timeAt
         animationEntrada.duration = duration
-        animationEntrada.keyTimes = [0, 1/100.0, 99/100.0, 1]
+        animationEntrada.keyTimes = [0.0, 0.01, 0.99, 1.0]
         animationEntrada.values = [0.0, 1.0, 1.0, 0.0]
-        animationEntrada.removedOnCompletion = false
+        animationEntrada.isRemovedOnCompletion = false
         animationEntrada.fillMode = kCAFillModeForwards
-        overlay.addAnimation(animationEntrada, forKey:"animateOpacity")
+        overlay.add(animationEntrada, forKey:"animateOpacity")
     }
 }

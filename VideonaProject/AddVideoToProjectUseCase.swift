@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import VideonaProject
 
 public class AddVideoToProjectUseCase: NSObject {
     
@@ -31,7 +30,7 @@ public class AddVideoToProjectUseCase: NSObject {
         
         var videoList = project.getVideoList()
         
-        videoList.insert(video, atIndex: position)
+        videoList.insert(video, at: position)
         
         project.setVideoList(videoList)
     }

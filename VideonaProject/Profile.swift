@@ -9,7 +9,7 @@
 import Foundation
 import AVFoundation
 
-public class Profile: NSObject {
+open class Profile: NSObject {
     
     static let sharedInstance = Profile()
     /**
@@ -23,23 +23,25 @@ public class Profile: NSObject {
     /**
      * Resolution of the Video objects in a project
      */
-    private var resolution:String?
+    fileprivate var resolution:String?
     
     /**
      * Video bit rate
      */
-    private var videoQuality:String?
+    fileprivate var videoQuality:String?
     
     /**
      * Maximum length of the project in millseconds
      * if the value is negative the project duration has no limitation
      */
-    private var maxDuration:Double?
+    fileprivate var maxDuration:Double?
     
     /**
      * type of profile
      */
-    private var profileType:ProfileType?
+    fileprivate var profileType:ProfileType?
+    
+    public var frameRate:Int = 30
     
     /**
      * Constructor of minimum number of parameters. In this case coincides with parametrized
@@ -63,6 +65,14 @@ public class Profile: NSObject {
         self.videoQuality = videoQuality
     }
     
+    public init(resolution:String,
+         videoQuality:String,
+         frameRate:Int){
+        self.resolution = resolution
+        self.videoQuality = videoQuality
+        self.frameRate = frameRate
+    }
+    
     override init(){
         if (profileType == ProfileType.free) {
             self.resolution = AVCaptureSessionPreset1280x720
@@ -84,41 +94,41 @@ public class Profile: NSObject {
      * @param profileType
      * @return - profile instance.
      */
-    static public func getInstance(profileType:ProfileType) ->Profile {
+    static open func getInstance(_ profileType:ProfileType) ->Profile {
         return sharedInstance
     }
     
     //getter and setter.
-    public func getResolution() -> String {
+    open func getResolution() -> String {
         return self.resolution!
     }
     
-    public func setResolution(resolution:String) {
+    open func setResolution(_ resolution:String) {
         if profileType == ProfileType.pro {
             self.resolution = resolution
         }
     }
     
     //getter and setter video quality
-    public func getQuality() -> String {
+    open func getQuality() -> String {
         return self.videoQuality!
     }
     
-    public func setQuality(quality:String) {
+    open func setQuality(_ quality:String) {
         self.videoQuality = quality
     }
     
-    public func getMaxDuration() ->Double{
+    open func getMaxDuration() ->Double{
         return maxDuration!
     }
     
-    public func setMaxDuration(maxDuration:Double) {
+    open func setMaxDuration(_ maxDuration:Double) {
         if profileType == ProfileType.pro {
             self.maxDuration = maxDuration
         }
     }
     
-    public func getProfileType() -> ProfileType{
+    open func getProfileType() -> ProfileType{
         return self.profileType!
     }
 }
