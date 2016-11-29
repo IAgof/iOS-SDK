@@ -90,7 +90,7 @@ open class Media: NSObject {
     open func getFileStopTime() -> Double {
         return fileStopTime
     }
-    
+
     open func getFileStartTime() -> Double {
         return fileStartTime
     }

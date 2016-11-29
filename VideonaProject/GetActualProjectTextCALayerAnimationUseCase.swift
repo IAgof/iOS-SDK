@@ -34,23 +34,25 @@ public class GetActualProjectTextCALayerAnimationUseCase:NSObject {
                 print("Not valid position")
                 return []}
             
-            let image = GetImageByTextUseCase().getTextImage(text: video.textToVideo,
-                                                             attributes:CATextLayerAttributes().getAlignmentAttributesByType(type: textPosition))
-            
-            let textImageLayer = CALayer()
-            textImageLayer.contents = image.cgImage
-            textImageLayer.frame = CGRect(x: 0.0, y: 0.0,
-                                          width: image.size.width,height: image.size.height)
-            textImageLayer.contentsScale = UIScreen.main.scale
-            textImageLayer.opacity = 0.0
-            
-            addAnimationToLayer(overlay: textImageLayer,
-                                timeAt: timeToInsertAnimate,
-                                duration: video.getDuration())
-            
-            layers.append(textImageLayer)
-            
-            timeToInsertAnimate += video.getDuration()
+            if video.textToVideo != "" {
+                let image = GetImageByTextUseCase().getTextImage(text: video.textToVideo,
+                                                                 attributes:CATextLayerAttributes().getAlignmentAttributesByType(type: textPosition))
+                
+                let textImageLayer = CALayer()
+                textImageLayer.contents = image.cgImage
+                textImageLayer.frame = CGRect(x: 0.0, y: 0.0,
+                                              width: image.size.width,height: image.size.height)
+                textImageLayer.contentsScale = UIScreen.main.scale
+                textImageLayer.opacity = 0.0
+                
+                addAnimationToLayer(overlay: textImageLayer,
+                                    timeAt: timeToInsertAnimate,
+                                    duration: video.getDuration())
+                
+                layers.append(textImageLayer)
+                
+                timeToInsertAnimate += video.getDuration()
+            }
         }
         return layers
     }

@@ -54,6 +54,14 @@ open class Video: Media {
         duration = asset.duration.seconds
     }
     
+    open func setDefaultVideoParameters(){
+        let asset = AVAsset(url: videoURL)
+        
+        fileStartTime = 0.0
+        fileStopTime = asset.duration.seconds
+        duration = asset.duration.seconds
+   }
+    
     open func getIsSplit() -> Bool {
         return isSplit
     }

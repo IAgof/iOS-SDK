@@ -156,6 +156,8 @@ open class Project: NSObject {
     }
     
     open func setMusic(_ music:Music){
+        isMusicSet = (music.getTitle() != "")
+        
         self.music = music
     }
     
