@@ -67,8 +67,10 @@ open class Project: NSObject {
     
     open var transitionTime:Double = 1
     
+    public var  uuid = UUID().uuidString
+
     override public init() {
-        self.title = "testTitle\(Utils().giveMeTimeNow())"
+        self.title = "\(Utils().giveMeTimeNow())"
         self.projectPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
         self.profile = Profile(resolution: "", videoQuality: "", maxDuration: 0, type: Profile.ProfileType.free)
         self.duration = 0
@@ -83,7 +85,21 @@ open class Project: NSObject {
         videoList = Array<Video>()
         
     }
-
+    
+    public func reloadProjectWith(project:Project){
+        self.title = project.title
+        self.projectPath = project.projectPath
+        self.profile = project.profile
+        self.duration = project.duration
+        isVoiceOverSet = project.isVoiceOverSet
+        voiceOver = project.voiceOver
+        projectOutputAudioLevel = project.projectOutputAudioLevel
+        music = project.music
+        videoList = project.videoList
+        exportedPath = project.exportedPath
+        self.uuid = project.uuid
+    }
+    
     // getters & setters
     open func getTitle() ->String{
         return self.title
@@ -126,6 +142,7 @@ open class Project: NSObject {
         self.projectPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
         self.profile = Profile(resolution: "", videoQuality: "", maxDuration: 0, type: Profile.ProfileType.free)
         self.duration = 0
+        self.uuid = UUID().uuidString
         
         videoList = Array<Video>()
     }
