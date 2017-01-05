@@ -72,8 +72,12 @@ open class Utils:NSObject{
         return Bundle.main.localizedString(forKey: key,value: "",table: "Intro")
     }
     open func getStringByKeyFromEditor(_ key:String) -> String {
-        return Bundle.main.localizedString(forKey: key,value: "",table: "Editor")
+        return Bundle.main.localizedString(forKey: key,value: "",table: "EditorStrings")
     }
+    open func getStringByKeyFromProjectList(_ key:String) -> String {
+        return Bundle.main.localizedString(forKey: key,value: "",table: "ProjectList")
+    }
+    
     open func hourToString(_ time:Double) -> String {
 //        let hours = Int(floor(time/3600))
         let mins = Int(floor(time.truncatingRemainder(dividingBy: 3600)) / 60)

@@ -12,14 +12,6 @@ import UIKit
 open class Project: NSObject {
     
     /**
-     * There could be just one project open at a time. So this converts Project in a Singleton.
-     */
-    //    static let sharedInstance = Project()
-
-    //    private final String TAG = getClass().getCanonicalName()
-    static var VIDEONA_PATH = ""
-    
-    /**
      * Project name. Also it will be the name of the exported video
      */
     fileprivate var title:String = ""
@@ -31,7 +23,11 @@ open class Project: NSObject {
     /**
      * Path where exported videos are
      */
-    fileprivate var exportedPath:String = ""
+    fileprivate var exportedPath:String?{
+        didSet{
+            exportDate = NSDate()
+        }
+    }
     
     /**
      * List of Videos Recorded
@@ -52,6 +48,7 @@ open class Project: NSObject {
     /**
      * Music to add to export video ( may be nil)
      */
+    
     fileprivate var music = Music(title: "",
                               author: "",
                               iconResourceId: "",
@@ -69,10 +66,15 @@ open class Project: NSObject {
     
     public var  uuid = UUID().uuidString
 
+    public var modificationDate:NSDate?
+    
+    public var exportDate:NSDate?
+    
+    
     override public init() {
         self.title = "\(Utils().giveMeTimeNow())"
         self.projectPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
-        self.profile = Profile(resolution: "", videoQuality: "", maxDuration: 0, type: Profile.ProfileType.free)
+        self.profile = Profile()
         self.duration = 0
         
         videoList = Array<Video>()
@@ -83,7 +85,6 @@ open class Project: NSObject {
         self.projectPath = rootPath
         self.profile = profile
         videoList = Array<Video>()
-        
     }
     
     public func reloadProjectWith(project:Project){
@@ -91,10 +92,13 @@ open class Project: NSObject {
         self.projectPath = project.projectPath
         self.profile = project.profile
         self.duration = project.duration
-        isVoiceOverSet = project.isVoiceOverSet
         voiceOver = project.voiceOver
         projectOutputAudioLevel = project.projectOutputAudioLevel
         music = project.music
+        isMusicSet = project.isMusicSet
+        isVoiceOverSet = project.isVoiceOverSet
+        transitionTime = project.transitionTime
+        
         videoList = project.videoList
         exportedPath = project.exportedPath
         self.uuid = project.uuid
@@ -140,11 +144,20 @@ open class Project: NSObject {
     open func clear() {
         self.title = "testTitle\(Utils().giveMeTimeNow())"
         self.projectPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
-        self.profile = Profile(resolution: "", videoQuality: "", maxDuration: 0, type: Profile.ProfileType.free)
+        self.profile = Profile()
         self.duration = 0
         self.uuid = UUID().uuidString
         
         videoList = Array<Video>()
+        isVoiceOverSet = false
+        isMusicSet = false
+        projectOutputAudioLevel = 1
+        music = Music(title: "",
+                      author: "",
+                      iconResourceId: "",
+                      musicResourceId: "",
+                      musicSelectedResourceId: "")
+        exportedPath = nil
     }
     
     open func numberOfClips() -> Int{
@@ -164,11 +177,11 @@ open class Project: NSObject {
         return "\(projectPath)/videoExported\(Utils().giveMeTimeNow()).m4v"
     }
     
-    open func setExportedPath() {
-        self.exportedPath = self.getNewProjectExportPath()
+    open func setExportedPath(path:String?) {
+        self.exportedPath = path
     }
     
-    open func getExportedPath() -> String {
+    open func getExportedPath() -> String? {
         return self.exportedPath
     }
     
@@ -180,5 +193,9 @@ open class Project: NSObject {
     
     open func getMusic() ->Music{
         return music
+    }
+    
+    public func updateModificationDate(){
+        modificationDate = NSDate()
     }
 }
