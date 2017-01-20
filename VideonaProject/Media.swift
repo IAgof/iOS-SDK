@@ -36,11 +36,10 @@ open class Media: NSObject {
     var trimStartTime:Double = 0.0
     
     var trimStopTime:Double = 0.0
-    
-    var duration:Double = 0.0
-    
+        
     open var audioLevel:Float = 1.0
-    
+    public var  uuid = UUID().uuidString
+
     public init(title:String,
                   mediaPath:String) {
         self.title = title
@@ -69,8 +68,6 @@ open class Media: NSObject {
     
     open func setStartTime(_ time:Double) {
         self.trimStartTime = time
-        
-        self.duration = trimStopTime - trimStartTime
     }
     
     open func getStopTime() -> Double {
@@ -79,12 +76,10 @@ open class Media: NSObject {
     
     open func setStopTime(_ time:Double) {
         self.trimStopTime = time
-        
-        self.duration = trimStopTime - trimStartTime
     }
     
     open func getDuration() -> Double {
-        return self.duration
+        return  trimStopTime - trimStartTime
     }
     
     open func getFileStopTime() -> Double {

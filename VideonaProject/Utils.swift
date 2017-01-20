@@ -79,7 +79,6 @@ open class Utils:NSObject{
     }
     
     open func hourToString(_ time:Double) -> String {
-//        let hours = Int(floor(time/3600))
         let mins = Int(floor(time.truncatingRemainder(dividingBy: 3600)) / 60)
         let secs = Int(floor(time.truncatingRemainder(dividingBy: 3600)).truncatingRemainder(dividingBy: 60))
         
@@ -89,10 +88,8 @@ open class Utils:NSObject{
         let targetedDecimalPlaces:Double = round((x.truncatingRemainder(dividingBy: 1.0)) * powerOfTen) / powerOfTen
         
         let decimals = Int(targetedDecimalPlaces * 1000)
-        
-//        return String(format:"%d:%02d:%02d,%02d", hours, mins, secs,decimals)
+
         return String(format:"%02d:%02d:%02d", mins, secs,decimals)
-//        return String(format:"%02d:%02d", mins, secs)
     }
     
     open func delay(_ delay: Double, closure: @escaping ()->()) {

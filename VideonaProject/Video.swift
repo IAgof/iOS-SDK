@@ -18,7 +18,6 @@ open class Video: Media {
     open var textPositionToVideo:Int = 0
     open var originAudioLevel:Float = 1
     open var secondAudioLevel:Float = 0
-    public var  uuid = UUID().uuidString
 
     override public init(title: String, mediaPath: String) {
         super.init(title: title, mediaPath: mediaPath)

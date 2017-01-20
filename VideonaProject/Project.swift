@@ -56,9 +56,15 @@ open class Project: NSObject {
                               musicSelectedResourceId: "")
     open var isMusicSet:Bool = false
     
-    open var voiceOver = Audio(title: "", mediaPath: "")
+    open var voiceOver:[Audio] = []
     
-    open var isVoiceOverSet = false
+    open var isVoiceOverSet :Bool{
+        if voiceOver.count != 0{
+            return true
+        }else{
+            return false
+        }
+    }
     
     open var projectOutputAudioLevel:Float = 1.0
     
@@ -87,6 +93,25 @@ open class Project: NSObject {
         videoList = Array<Video>()
     }
     
+    open func copyWithZone(_ zone: NSZone?) -> AnyObject {
+        let copy = Project(title: title,
+                           rootPath: projectPath,
+                           profile: profile)
+        
+        copy.uuid = UUID().uuidString
+        copy.videoList = videoList
+        copy.duration = duration
+        copy.music = music
+        copy.isMusicSet = isMusicSet
+        copy.voiceOver = voiceOver
+        copy.projectOutputAudioLevel = projectOutputAudioLevel
+        copy.transitionTime = transitionTime
+        copy.modificationDate = modificationDate
+        copy.exportDate = exportDate
+        
+        return copy
+    }
+    
     public func reloadProjectWith(project:Project){
         self.title = project.title
         self.projectPath = project.projectPath
@@ -96,7 +121,7 @@ open class Project: NSObject {
         projectOutputAudioLevel = project.projectOutputAudioLevel
         music = project.music
         isMusicSet = project.isMusicSet
-        isVoiceOverSet = project.isVoiceOverSet
+//        isVoiceOverSet = project.isVoiceOverSet
         transitionTime = project.transitionTime
         
         videoList = project.videoList
@@ -149,9 +174,10 @@ open class Project: NSObject {
         self.uuid = UUID().uuidString
         
         videoList = Array<Video>()
-        isVoiceOverSet = false
         isMusicSet = false
         projectOutputAudioLevel = 1
+        voiceOver = Array<Audio>()
+        
         music = Music(title: "",
                       author: "",
                       iconResourceId: "",
@@ -197,5 +223,16 @@ open class Project: NSObject {
     
     public func updateModificationDate(){
         modificationDate = NSDate()
+    }
+    
+    public func reorderVideoList(){
+        if !videoList.isEmpty {
+            for videoPosition in 1...(videoList.count) {
+                videoList[videoPosition - 1].setPosition(videoPosition)
+            }
+            
+            self.setVideoList(videoList)
+            updateModificationDate()
+        }
     }
 }
