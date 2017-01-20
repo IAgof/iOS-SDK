@@ -33,7 +33,6 @@ open class Video: Media {
         copy.fileStopTime = fileStopTime
         copy.setStopTime(trimStopTime)
         copy.setStartTime(trimStartTime)
-        copy.duration = duration
         copy.textToVideo = textToVideo
         copy.textPositionToVideo = textPositionToVideo
         copy.originAudioLevel = originAudioLevel
@@ -51,7 +50,6 @@ open class Video: Media {
         fileStopTime = asset.duration.seconds
         trimStartTime = fileStartTime
         trimStopTime = fileStopTime
-        duration = asset.duration.seconds
     }
     
     open func setDefaultVideoParameters(){
@@ -59,7 +57,8 @@ open class Video: Media {
         
         fileStartTime = 0.0
         fileStopTime = asset.duration.seconds
-        duration = asset.duration.seconds
+        trimStartTime = fileStartTime
+        trimStopTime = fileStopTime
    }
     
     open func getIsSplit() -> Bool {
