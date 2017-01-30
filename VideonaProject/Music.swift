@@ -16,9 +16,6 @@ open class Music: Audio {
     fileprivate var musicResourceId:String!
     open var musicSelectedResourceId:String!
     fileprivate var musicSet:Bool! = false
-    public static let DEFAULT_MUSIC_VOLUME = 0.5
-
-    public var  volume = DEFAULT_MUSIC_VOLUME
 
     public init(title:String,
                   author:String,

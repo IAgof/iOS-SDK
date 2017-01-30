@@ -167,7 +167,7 @@ open class Project: NSObject {
     }
     
     open func clear() {
-        self.title = "testTitle\(Utils().giveMeTimeNow())"
+        self.title = "\(Utils().giveMeTimeNow())"
         self.projectPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
         self.profile = Profile()
         self.duration = 0

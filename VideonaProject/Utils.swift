@@ -41,7 +41,7 @@ open class Utils:NSObject{
         let date = Date()
         
         dateFormatter.locale = Locale(identifier: "es_ES")
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        dateFormatter.dateFormat = "yyyy-MM-dd_HH:mm:ss"
         dateFormatter.timeZone = TimeZone(secondsFromGMT: 3600) //GMT +1
         dateString = dateFormatter.string(from: date)
         
@@ -49,7 +49,7 @@ open class Utils:NSObject{
         
         return dateString
     }
-    
+
     open func debugLog(_ logMessage:String){
         #if DEBUG
             print("\n \(logMessage)")

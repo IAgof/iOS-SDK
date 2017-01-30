@@ -51,11 +51,15 @@ public class GetActualProjectAVCompositionUseCase: NSObject {
                                                    of: videoAsset.tracks(withMediaType: AVMediaTypeVideo)[0] ,
                                                    at: videoTotalTime)
                     
-                    if isMusicSet == false {
-                        try audioTrack.insertTimeRange(range,
-                                                       of: videoAsset.tracks(withMediaType: AVMediaTypeAudio)[0] ,
-                                                       at: videoTotalTime)
-                    }
+                    try audioTrack.insertTimeRange(range,
+                                                   of: videoAsset.tracks(withMediaType: AVMediaTypeAudio)[0] ,
+                                                   at: videoTotalTime)
+                    
+                    let audiocParam: AVMutableAudioMixInputParameters = AVMutableAudioMixInputParameters(track: audioTrack)
+                    audiocParam.trackID = audioTrack.trackID
+                    audiocParam.setVolume(project.projectOutputAudioLevel, at: kCMTimeZero)
+                    audioMixParam.append(audiocParam)
+                    
                     videoTotalTime = CMTimeAdd(videoTotalTime, duration)
                     
                     Utils().debugLog("el tiempo total del video es: \(videoTotalTime.seconds)")
@@ -70,7 +74,7 @@ public class GetActualProjectAVCompositionUseCase: NSObject {
                 setMusicToProject(audioMixParams: &audioMixParam,
                                   mixComposition: mixComposition,
                                   musicPath: project.getMusic().getMusicResourceId(),
-                                  volume: project.projectOutputAudioLevel)
+                                  volume: Float(project.getMusic().audioLevel))
             }else{
                  AudioTransitions(transitionTime: transitionTime).setAudioTransition(mutableComposition: mixComposition,
                                                                                      audioMixParams: &audioMixParam,

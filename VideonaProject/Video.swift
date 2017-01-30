@@ -57,8 +57,6 @@ open class Video: Media {
         
         fileStartTime = 0.0
         fileStopTime = asset.duration.seconds
-        trimStartTime = fileStartTime
-        trimStopTime = fileStopTime
    }
     
     open func getIsSplit() -> Bool {
