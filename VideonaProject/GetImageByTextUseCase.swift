@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 public class GetImageByTextUseCase:NSObject{
     public func getTextImage(text:String,

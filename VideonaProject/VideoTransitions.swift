@@ -53,7 +53,6 @@ class VideoTransitions {
         let timeRangeFadeIn:CMTimeRange!
         
         if atTime.seconds != 0{
-//            let time = CMTimeSubtract(atTime, transitionTime)
             timeRangeFadeIn = CMTimeRangeMake(atTime, transitionTime)
         }else{
             timeRangeFadeIn = CMTimeRangeMake(atTime, transitionTime)

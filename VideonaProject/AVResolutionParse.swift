@@ -8,7 +8,6 @@
 
 import Foundation
 import AVFoundation
-import VideonaProject
 
 public struct Resolution {
     public var width:CGFloat

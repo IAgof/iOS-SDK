@@ -8,6 +8,7 @@
 
 import Foundation
 import AVFoundation
+import UIKit
 
 public class GetActualProjectTextCALayerAnimationUseCase:NSObject {
     public func getCALayerAnimation(project:Project)-> CALayer {

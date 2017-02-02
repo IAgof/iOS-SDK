@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 open class Utils:NSObject{
     open var thumbnailEditorListDiameter:Int {
@@ -45,7 +46,7 @@ open class Utils:NSObject{
         dateFormatter.timeZone = TimeZone(secondsFromGMT: 3600) //GMT +1
         dateString = dateFormatter.string(from: date)
         
-        Utils().debugLog("La hora es : \(dateString)")
+        debugPrint("La hora es : \(dateString)")
         
         return dateString
     }
