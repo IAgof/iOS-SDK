@@ -8,10 +8,22 @@
 
 import Foundation
 import AVFoundation
+import Photos
 
 open class Video: Media {
     
-    open var videoURL:URL = URL(fileURLWithPath: "")
+    open var videoURL:URL = URL(fileURLWithPath: ""){
+        didSet{
+            self.PHAssetForFileURL(url: videoURL as NSURL, completion: {
+                phAsset,hasAsset in
+                if hasAsset{
+                    self.videoPHAsset = phAsset!
+                }
+            })
+        }
+    }
+    
+    open var videoPHAsset:PHAsset = PHAsset()
     fileprivate var isSplit:Bool!
     fileprivate var position:Int!
     open var textToVideo:String = ""
@@ -73,5 +85,34 @@ open class Video: Media {
     
     open func setPosition(_ position:Int){
         self.position = position
+    }
+    
+    private func PHAssetForFileURL(url: NSURL,completion:@escaping (_ asset:PHAsset?,_ isHaveFound:Bool)->Void){
+        let imageRequestOptions = PHImageRequestOptions()
+        imageRequestOptions.version = .current
+        imageRequestOptions.deliveryMode = .fastFormat
+        imageRequestOptions.resizeMode = .fast
+        imageRequestOptions.isSynchronous = true
+        
+        let fetchResult = PHAsset.fetchAssets(with: .video, options: nil)
+        for  i in  0...(fetchResult.count - 1) {
+            let asset = fetchResult[i]
+            PHImageManager.default().requestAVAsset(forVideo: asset, options: nil, resultHandler: {
+                avAsset,audioMix, info in
+                
+                if let urlAsset = avAsset as? AVURLAsset{
+                    let urlAssetAbsString = (urlAsset.url.absoluteString as NSString).lastPathComponent
+                    let urlAbsString = (url.absoluteString! as NSString).lastPathComponent
+                    
+                    if urlAssetAbsString == urlAbsString{
+                        completion(asset,true)
+                    }else{
+                        if i == (fetchResult.count - 1){
+                            completion(nil,false)
+                        }
+                    }
+                }
+            })
+        }
     }
 }
