@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import AVFoundation
 
 open class Music: Audio {
     
@@ -30,6 +31,8 @@ open class Music: Audio {
         self.iconResourceId = iconResourceId
         self.musicResourceId = musicResourceId
         self.musicSelectedResourceId = musicSelectedResourceId
+        
+        self.setDefaultParameters()
     }
     
     open func getMusicTitle()->String{
@@ -70,5 +73,15 @@ open class Music: Audio {
     
     open func setMusicStateSetOrNot(_ state:Bool){
         self.musicSet = state
+    }
+    
+    open func setDefaultParameters(){
+        let audioURL = URL(fileURLWithPath: Bundle.main.path(forResource: self.mediaPath, ofType: "mp3")!)
+        let audioAsset = AVAsset(url: audioURL)
+        
+        fileStartTime = 0.0
+        fileStopTime = audioAsset.duration.seconds
+        trimStartTime = fileStartTime
+        trimStopTime = fileStopTime
     }
 }

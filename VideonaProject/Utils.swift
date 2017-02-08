@@ -93,6 +93,13 @@ open class Utils:NSObject{
         return String(format:"%02d:%02d:%02d", mins, secs,decimals)
     }
     
+    open func formatTimeToMinutesAndSeconds(_ time:Double) -> String {
+        let mins = Int(floor(time.truncatingRemainder(dividingBy: 3600)) / 60)
+        let secs = Int(floor(time.truncatingRemainder(dividingBy: 3600)).truncatingRemainder(dividingBy: 60))
+        
+        return String(format:"%02d:%02d", mins, secs)
+    }
+    
     open func delay(_ delay: Double, closure: @escaping ()->()) {
         DispatchQueue.main.asyncAfter(
             deadline: DispatchTime.now() + Double(Int64(delay * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC),

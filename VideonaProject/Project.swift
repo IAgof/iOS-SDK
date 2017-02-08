@@ -78,19 +78,25 @@ open class Project: NSObject {
     
     
     override public init() {
-        self.title = "\(Utils().giveMeTimeNow())"
+        super.init()
+        self.title = ""
         self.projectPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
         self.profile = Profile()
         self.duration = 0
-        
+
         videoList = Array<Video>()
+        modificationDate = NSDate()
+        
+        self.title = setUpTitle()
     }
     
     public init(title:String, rootPath:String, profile:Profile) {
         self.title = title
         self.projectPath = rootPath
         self.profile = profile
+      
         videoList = Array<Video>()
+        modificationDate = NSDate()
     }
     
     open func copyWithZone(_ zone: NSZone?) -> AnyObject {
@@ -167,11 +173,12 @@ open class Project: NSObject {
     }
     
     open func clear() {
-        self.title = "\(Utils().giveMeTimeNow())"
+        self.title = setUpTitle()
         self.projectPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
         self.profile = Profile()
         self.duration = 0
         self.uuid = UUID().uuidString
+        updateModificationDate()
         
         videoList = Array<Video>()
         isMusicSet = false
@@ -234,5 +241,15 @@ open class Project: NSObject {
             self.setVideoList(videoList)
             updateModificationDate()
         }
+    }
+    
+    private func setUpTitle() -> String {
+        var title = "\(Utils().giveMeTimeNow())"
+        
+        if let appName = Bundle.main.infoDictionary?[kCFBundleNameKey as String] as? String{
+            title = appName.appending(title)
+        }
+        
+        return title
     }
 }
