@@ -15,6 +15,12 @@
 		A92060AF1E4DEF6A00656558 /* BatteryRemainingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92060A91E4DEF6A00656558 /* BatteryRemainingView.swift */; };
 		A92060B01E4DEF6A00656558 /* BatteryRemainingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A92060AA1E4DEF6A00656558 /* BatteryRemainingView.xib */; };
 		A92060B21E4DEF8600656558 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A92060B11E4DEF8600656558 /* Media.xcassets */; };
+		A92060BC1E4DF26300656558 /* SpaceOnDiskInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92060B61E4DF26300656558 /* SpaceOnDiskInteractor.swift */; };
+		A92060BD1E4DF26300656558 /* SpaceOnDiskInteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92060B71E4DF26300656558 /* SpaceOnDiskInteractorInterface.swift */; };
+		A92060BE1E4DF26300656558 /* SpaceOnDiskPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92060B81E4DF26300656558 /* SpaceOnDiskPresenter.swift */; };
+		A92060BF1E4DF26300656558 /* SpaceOnDiskPresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92060B91E4DF26300656558 /* SpaceOnDiskPresenterInterface.swift */; };
+		A92060C01E4DF26300656558 /* SpaceOnDiskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92060BA1E4DF26300656558 /* SpaceOnDiskView.swift */; };
+		A92060C11E4DF26300656558 /* SpaceOnDiskView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A92060BB1E4DF26300656558 /* SpaceOnDiskView.xib */; };
 		A956A10D1DBDED22002BDB26 /* AddVideoToProjectUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A956A1061DBDED22002BDB26 /* AddVideoToProjectUseCase.swift */; };
 		A956A10E1DBDED22002BDB26 /* AVQualityParse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A956A1071DBDED22002BDB26 /* AVQualityParse.swift */; };
 		A956A10F1DBDED22002BDB26 /* CATextLayerAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A956A1081DBDED22002BDB26 /* CATextLayerAttributes.swift */; };
@@ -54,6 +60,12 @@
 		A92060A91E4DEF6A00656558 /* BatteryRemainingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatteryRemainingView.swift; sourceTree = "<group>"; };
 		A92060AA1E4DEF6A00656558 /* BatteryRemainingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BatteryRemainingView.xib; sourceTree = "<group>"; };
 		A92060B11E4DEF8600656558 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		A92060B61E4DF26300656558 /* SpaceOnDiskInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpaceOnDiskInteractor.swift; sourceTree = "<group>"; };
+		A92060B71E4DF26300656558 /* SpaceOnDiskInteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpaceOnDiskInteractorInterface.swift; sourceTree = "<group>"; };
+		A92060B81E4DF26300656558 /* SpaceOnDiskPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpaceOnDiskPresenter.swift; sourceTree = "<group>"; };
+		A92060B91E4DF26300656558 /* SpaceOnDiskPresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpaceOnDiskPresenterInterface.swift; sourceTree = "<group>"; };
+		A92060BA1E4DF26300656558 /* SpaceOnDiskView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpaceOnDiskView.swift; sourceTree = "<group>"; };
+		A92060BB1E4DF26300656558 /* SpaceOnDiskView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpaceOnDiskView.xib; sourceTree = "<group>"; };
 		A956A1061DBDED22002BDB26 /* AddVideoToProjectUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddVideoToProjectUseCase.swift; sourceTree = "<group>"; };
 		A956A1071DBDED22002BDB26 /* AVQualityParse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVQualityParse.swift; sourceTree = "<group>"; };
 		A956A1081DBDED22002BDB26 /* CATextLayerAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CATextLayerAttributes.swift; sourceTree = "<group>"; };
@@ -106,10 +118,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A92060B51E4DF25A00656558 /* SpaceOnDisk */ = {
+			isa = PBXGroup;
+			children = (
+				A92060B61E4DF26300656558 /* SpaceOnDiskInteractor.swift */,
+				A92060B71E4DF26300656558 /* SpaceOnDiskInteractorInterface.swift */,
+				A92060B81E4DF26300656558 /* SpaceOnDiskPresenter.swift */,
+				A92060B91E4DF26300656558 /* SpaceOnDiskPresenterInterface.swift */,
+				A92060BA1E4DF26300656558 /* SpaceOnDiskView.swift */,
+				A92060BB1E4DF26300656558 /* SpaceOnDiskView.xib */,
+			);
+			name = SpaceOnDisk;
+			sourceTree = "<group>";
+		};
 		A960A85E1E4DD6B00069F487 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				A92060B11E4DEF8600656558 /* Media.xcassets */,
+				A92060B51E4DF25A00656558 /* SpaceOnDisk */,
 				A960A8711E4DDCB80069F487 /* BatteryRemaining */,
 				A960A8601E4DD6C60069F487 /* AudioLevelBar */,
 				A960A85F1E4DD6BC0069F487 /* Project */,
@@ -174,6 +199,7 @@
 		A9BD5FBF1D9120F40080CE97 /* VideonaProject */ = {
 			isa = PBXGroup;
 			children = (
+				A92060B11E4DEF8600656558 /* Media.xcassets */,
 				A960A85E1E4DD6B00069F487 /* Modules */,
 				A9BD5FC01D9120F40080CE97 /* VideonaProject.h */,
 				A9BD5FC21D9120F40080CE97 /* Info.plist */,
@@ -305,6 +331,7 @@
 				A960A86C1E4DD6D20069F487 /* AudioLevelBarView.xib in Resources */,
 				A92060B21E4DEF8600656558 /* Media.xcassets in Resources */,
 				A92060B01E4DEF6A00656558 /* BatteryRemainingView.xib in Resources */,
+				A92060C11E4DF26300656558 /* SpaceOnDiskView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,11 +385,16 @@
 				A956A1121DBDED22002BDB26 /* GetActualProjectTextCALayerAnimationUseCase.swift in Sources */,
 				A9BD5FD31D91210C0080CE97 /* Project.swift in Sources */,
 				A92060AF1E4DEF6A00656558 /* BatteryRemainingView.swift in Sources */,
+				A92060C01E4DF26300656558 /* SpaceOnDiskView.swift in Sources */,
 				A9C5FB6D1DD5E7AE00057A1B /* VideoTransitions.swift in Sources */,
+				A92060BE1E4DF26300656558 /* SpaceOnDiskPresenter.swift in Sources */,
 				A9C5FB6F1DD5E7B500057A1B /* AudioTransitions.swift in Sources */,
 				A92060AD1E4DEF6A00656558 /* BatteryRemainingPresenter.swift in Sources */,
 				A956A1101DBDED22002BDB26 /* CompatibleQualityInteractor.swift in Sources */,
+				A92060BF1E4DF26300656558 /* SpaceOnDiskPresenterInterface.swift in Sources */,
 				A956A10E1DBDED22002BDB26 /* AVQualityParse.swift in Sources */,
+				A92060BD1E4DF26300656558 /* SpaceOnDiskInteractorInterface.swift in Sources */,
+				A92060BC1E4DF26300656558 /* SpaceOnDiskInteractor.swift in Sources */,
 				A92060AE1E4DEF6A00656558 /* BatteryRemainingPresenterInterface.swift in Sources */,
 				A9BD5FD11D91210C0080CE97 /* Music.swift in Sources */,
 				A9B0073E1DAFC9F100BFAD68 /* VideonaComposition.swift in Sources */,
