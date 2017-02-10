@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ResolutionsSelectorView" customModule="ResolutionsSelector" customModuleProvider="target">
+            <connections>
+                <outlet property="cancelButton" destination="uwW-Lh-6y9" id="uce-MS-AZk"/>
+                <outlet property="resolutionsLabel" destination="p57-VE-Cey" id="qd8-qk-DAl"/>
+                <outlet property="resolutionsTableView" destination="YRr-38-QyU" id="Wmp-wq-GeJ"/>
+                <outlet property="validateButton" destination="bJE-yb-3Bw" id="FfS-hU-SiC"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" restorationIdentifier="BatteryRemainingView" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="307" height="387"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bJE-yb-3Bw">
+                    <rect key="frame" x="250" y="349" width="49" height="30"/>
+                    <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="acceptButtonPushed:" destination="-1" eventType="touchUpInside" id="dhA-WM-x6S"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uwW-Lh-6y9">
+                    <rect key="frame" x="8" y="349" width="48" height="30"/>
+                    <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="cancelButtonPushed:" destination="-1" eventType="touchUpInside" id="wNH-F6-Hrc"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Camera resolutions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p57-VE-Cey">
+                    <rect key="frame" x="8" y="8" width="291" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YRr-38-QyU">
+                    <rect key="frame" x="8" y="37" width="291" height="304"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="sectionIndexBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="p57-VE-Cey" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Iol-Yq-4If"/>
+                <constraint firstAttribute="trailing" secondItem="p57-VE-Cey" secondAttribute="trailing" constant="8" id="KCb-Vo-lYc"/>
+                <constraint firstAttribute="bottom" secondItem="bJE-yb-3Bw" secondAttribute="bottom" constant="8" id="Kaf-yn-5ig"/>
+                <constraint firstItem="YRr-38-QyU" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="MmN-wP-agI"/>
+                <constraint firstItem="YRr-38-QyU" firstAttribute="top" secondItem="p57-VE-Cey" secondAttribute="bottom" constant="8" id="Nxp-Sc-j8Q"/>
+                <constraint firstAttribute="bottom" secondItem="uwW-Lh-6y9" secondAttribute="bottom" constant="8" id="TC4-ah-du2"/>
+                <constraint firstItem="uwW-Lh-6y9" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="dEP-JA-elq"/>
+                <constraint firstItem="uwW-Lh-6y9" firstAttribute="top" secondItem="YRr-38-QyU" secondAttribute="bottom" constant="8" id="eqy-Bo-gYa"/>
+                <constraint firstItem="p57-VE-Cey" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="hpq-Ny-s5S"/>
+                <constraint firstItem="p57-VE-Cey" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="ntK-Gl-ff1"/>
+                <constraint firstAttribute="trailing" secondItem="YRr-38-QyU" secondAttribute="trailing" constant="8" id="okH-A5-BJT"/>
+                <constraint firstAttribute="trailing" secondItem="bJE-yb-3Bw" secondAttribute="trailing" constant="8" id="t77-6T-u2Q"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="378.5" y="273.5"/>
+        </view>
+    </objects>
+</document>
