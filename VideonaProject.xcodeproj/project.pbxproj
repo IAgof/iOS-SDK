@@ -15,6 +15,12 @@
 		A956A1111DBDED22002BDB26 /* GetActualProjectAVCompositionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A956A10A1DBDED22002BDB26 /* GetActualProjectAVCompositionUseCase.swift */; };
 		A956A1121DBDED22002BDB26 /* GetActualProjectTextCALayerAnimationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A956A10B1DBDED22002BDB26 /* GetActualProjectTextCALayerAnimationUseCase.swift */; };
 		A956A1131DBDED22002BDB26 /* GetImageByTextUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A956A10C1DBDED22002BDB26 /* GetImageByTextUseCase.swift */; };
+		A960A8671E4DD6D20069F487 /* AudioLevelBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A960A8611E4DD6D20069F487 /* AudioLevelBarView.swift */; };
+		A960A8681E4DD6D20069F487 /* AudioLevelBarInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A960A8621E4DD6D20069F487 /* AudioLevelBarInteractor.swift */; };
+		A960A8691E4DD6D20069F487 /* AudioLevelBarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A960A8631E4DD6D20069F487 /* AudioLevelBarPresenter.swift */; };
+		A960A86A1E4DD6D20069F487 /* AudioLevelBarPresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A960A8641E4DD6D20069F487 /* AudioLevelBarPresenterInterface.swift */; };
+		A960A86B1E4DD6D20069F487 /* AudioLevelBarInteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A960A8651E4DD6D20069F487 /* AudioLevelBarInteractorInterface.swift */; };
+		A960A86C1E4DD6D20069F487 /* AudioLevelBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A960A8661E4DD6D20069F487 /* AudioLevelBarView.xib */; };
 		A9950CC61E1ABBF9009367E7 /* AVResolutionParse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9950CC51E1ABBF9009367E7 /* AVResolutionParse.swift */; };
 		A9950CCA1E1ABD61009367E7 /* CompatibleResolutionsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9950CC91E1ABD61009367E7 /* CompatibleResolutionsInteractor.swift */; };
 		A99CE6C71E279467000BDFC5 /* TimeNumberFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99CE6C61E279467000BDFC5 /* TimeNumberFormatter.swift */; };
@@ -41,6 +47,12 @@
 		A956A10A1DBDED22002BDB26 /* GetActualProjectAVCompositionUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetActualProjectAVCompositionUseCase.swift; sourceTree = "<group>"; };
 		A956A10B1DBDED22002BDB26 /* GetActualProjectTextCALayerAnimationUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetActualProjectTextCALayerAnimationUseCase.swift; sourceTree = "<group>"; };
 		A956A10C1DBDED22002BDB26 /* GetImageByTextUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetImageByTextUseCase.swift; sourceTree = "<group>"; };
+		A960A8611E4DD6D20069F487 /* AudioLevelBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioLevelBarView.swift; sourceTree = "<group>"; };
+		A960A8621E4DD6D20069F487 /* AudioLevelBarInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioLevelBarInteractor.swift; sourceTree = "<group>"; };
+		A960A8631E4DD6D20069F487 /* AudioLevelBarPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioLevelBarPresenter.swift; sourceTree = "<group>"; };
+		A960A8641E4DD6D20069F487 /* AudioLevelBarPresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioLevelBarPresenterInterface.swift; sourceTree = "<group>"; };
+		A960A8651E4DD6D20069F487 /* AudioLevelBarInteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioLevelBarInteractorInterface.swift; sourceTree = "<group>"; };
+		A960A8661E4DD6D20069F487 /* AudioLevelBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AudioLevelBarView.xib; sourceTree = "<group>"; };
 		A9950CC51E1ABBF9009367E7 /* AVResolutionParse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVResolutionParse.swift; sourceTree = "<group>"; };
 		A9950CC91E1ABD61009367E7 /* CompatibleResolutionsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompatibleResolutionsInteractor.swift; sourceTree = "<group>"; };
 		A99CE6C61E279467000BDFC5 /* TimeNumberFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeNumberFormatter.swift; sourceTree = "<group>"; };
@@ -80,6 +92,46 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A960A85E1E4DD6B00069F487 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				A960A8711E4DDCB80069F487 /* New Group */,
+				A960A8601E4DD6C60069F487 /* AudioLevelBar */,
+				A960A85F1E4DD6BC0069F487 /* Project */,
+			);
+			name = Modules;
+			sourceTree = "<group>";
+		};
+		A960A85F1E4DD6BC0069F487 /* Project */ = {
+			isa = PBXGroup;
+			children = (
+				A9C5FB721DD5E8C100057A1B /* Use case */,
+				A9C5FB711DD5E89A00057A1B /* Identities */,
+				A9C5FB701DD5E88A00057A1B /* Transitions */,
+			);
+			name = Project;
+			sourceTree = "<group>";
+		};
+		A960A8601E4DD6C60069F487 /* AudioLevelBar */ = {
+			isa = PBXGroup;
+			children = (
+				A960A8611E4DD6D20069F487 /* AudioLevelBarView.swift */,
+				A960A8621E4DD6D20069F487 /* AudioLevelBarInteractor.swift */,
+				A960A8631E4DD6D20069F487 /* AudioLevelBarPresenter.swift */,
+				A960A8641E4DD6D20069F487 /* AudioLevelBarPresenterInterface.swift */,
+				A960A8651E4DD6D20069F487 /* AudioLevelBarInteractorInterface.swift */,
+				A960A8661E4DD6D20069F487 /* AudioLevelBarView.xib */,
+			);
+			name = AudioLevelBar;
+			sourceTree = "<group>";
+		};
+		A960A8711E4DDCB80069F487 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "New Group";
+			sourceTree = "<group>";
+		};
 		A9BD5FB31D9120F40080CE97 = {
 			isa = PBXGroup;
 			children = (
@@ -101,9 +153,7 @@
 		A9BD5FBF1D9120F40080CE97 /* VideonaProject */ = {
 			isa = PBXGroup;
 			children = (
-				A9C5FB721DD5E8C100057A1B /* Use case */,
-				A9C5FB711DD5E89A00057A1B /* Identities */,
-				A9C5FB701DD5E88A00057A1B /* Transitions */,
+				A960A85E1E4DD6B00069F487 /* Modules */,
 				A9BD5FC01D9120F40080CE97 /* VideonaProject.h */,
 				A9BD5FC21D9120F40080CE97 /* Info.plist */,
 			);
@@ -231,6 +281,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A960A86C1E4DD6D20069F487 /* AudioLevelBarView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +327,7 @@
 			files = (
 				A99CE6C71E279467000BDFC5 /* TimeNumberFormatter.swift in Sources */,
 				A9BD5FD01D91210C0080CE97 /* Media.swift in Sources */,
+				A960A8681E4DD6D20069F487 /* AudioLevelBarInteractor.swift in Sources */,
 				A9BD5FD21D91210C0080CE97 /* Profile.swift in Sources */,
 				A9BD5FCF1D91210C0080CE97 /* Audio.swift in Sources */,
 				A956A1111DBDED22002BDB26 /* GetActualProjectAVCompositionUseCase.swift in Sources */,
@@ -289,11 +341,15 @@
 				A9BD5FD11D91210C0080CE97 /* Music.swift in Sources */,
 				A9B0073E1DAFC9F100BFAD68 /* VideonaComposition.swift in Sources */,
 				A9950CCA1E1ABD61009367E7 /* CompatibleResolutionsInteractor.swift in Sources */,
+				A960A86A1E4DD6D20069F487 /* AudioLevelBarPresenterInterface.swift in Sources */,
+				A960A8671E4DD6D20069F487 /* AudioLevelBarView.swift in Sources */,
 				A9BD5FD51D91210C0080CE97 /* Video.swift in Sources */,
 				A956A1131DBDED22002BDB26 /* GetImageByTextUseCase.swift in Sources */,
 				A956A10F1DBDED22002BDB26 /* CATextLayerAttributes.swift in Sources */,
 				A9BD5FD41D91210C0080CE97 /* Utils.swift in Sources */,
+				A960A86B1E4DD6D20069F487 /* AudioLevelBarInteractorInterface.swift in Sources */,
 				A956A10D1DBDED22002BDB26 /* AddVideoToProjectUseCase.swift in Sources */,
+				A960A8691E4DD6D20069F487 /* AudioLevelBarPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

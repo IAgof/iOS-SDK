@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AudioLevelBarView" customModule="AudioLevelBar" customModuleProvider="target">
+            <connections>
+                <outlet property="audioLevelBar" destination="CTo-8q-lLA" id="gEm-PT-Hm4"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" restorationIdentifier="BatteryRemainingView" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="243" height="28"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="1" translatesAutoresizingMaskIntoConstraints="NO" id="CTo-8q-lLA">
+                    <rect key="frame" x="16" y="6" width="211" height="17"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="16" id="NVI-gI-n6e"/>
+                    </constraints>
+                    <color key="progressTintColor" red="0.47214466027412666" green="0.84625400640000004" blue="0.20494145567237845" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="trackTintColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                </progressView>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="CTo-8q-lLA" secondAttribute="trailing" constant="16" id="9qh-fF-HoG"/>
+                <constraint firstItem="CTo-8q-lLA" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="IaH-1t-F6K"/>
+                <constraint firstItem="CTo-8q-lLA" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="aNf-kw-qGt"/>
+                <constraint firstItem="CTo-8q-lLA" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="bOk-xz-02N"/>
+                <constraint firstItem="CTo-8q-lLA" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="ibV-3a-GNb"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="ibV-3a-GNb"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="-29" y="-129"/>
+        </view>
+    </objects>
+</document>
