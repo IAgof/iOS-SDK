@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		372169BAD55AE0D6E058D7C0 /* Pods_VideonaProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C833A5003C6FCD472D2E8E0 /* Pods_VideonaProject.framework */; };
+		A92060AB1E4DEF6A00656558 /* BatteryRemainingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92060A51E4DEF6A00656558 /* BatteryRemainingInteractor.swift */; };
+		A92060AC1E4DEF6A00656558 /* BatteryRemainingInteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92060A61E4DEF6A00656558 /* BatteryRemainingInteractorInterface.swift */; };
+		A92060AD1E4DEF6A00656558 /* BatteryRemainingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92060A71E4DEF6A00656558 /* BatteryRemainingPresenter.swift */; };
+		A92060AE1E4DEF6A00656558 /* BatteryRemainingPresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92060A81E4DEF6A00656558 /* BatteryRemainingPresenterInterface.swift */; };
+		A92060AF1E4DEF6A00656558 /* BatteryRemainingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92060A91E4DEF6A00656558 /* BatteryRemainingView.swift */; };
+		A92060B01E4DEF6A00656558 /* BatteryRemainingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A92060AA1E4DEF6A00656558 /* BatteryRemainingView.xib */; };
+		A92060B21E4DEF8600656558 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A92060B11E4DEF8600656558 /* Media.xcassets */; };
 		A956A10D1DBDED22002BDB26 /* AddVideoToProjectUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A956A1061DBDED22002BDB26 /* AddVideoToProjectUseCase.swift */; };
 		A956A10E1DBDED22002BDB26 /* AVQualityParse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A956A1071DBDED22002BDB26 /* AVQualityParse.swift */; };
 		A956A10F1DBDED22002BDB26 /* CATextLayerAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A956A1081DBDED22002BDB26 /* CATextLayerAttributes.swift */; };
@@ -40,6 +47,13 @@
 /* Begin PBXFileReference section */
 		53816917F743EE2503F7FD87 /* Pods-VideonaProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideonaProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-VideonaProject/Pods-VideonaProject.release.xcconfig"; sourceTree = "<group>"; };
 		9C833A5003C6FCD472D2E8E0 /* Pods_VideonaProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VideonaProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A92060A51E4DEF6A00656558 /* BatteryRemainingInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatteryRemainingInteractor.swift; sourceTree = "<group>"; };
+		A92060A61E4DEF6A00656558 /* BatteryRemainingInteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatteryRemainingInteractorInterface.swift; sourceTree = "<group>"; };
+		A92060A71E4DEF6A00656558 /* BatteryRemainingPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatteryRemainingPresenter.swift; sourceTree = "<group>"; };
+		A92060A81E4DEF6A00656558 /* BatteryRemainingPresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatteryRemainingPresenterInterface.swift; sourceTree = "<group>"; };
+		A92060A91E4DEF6A00656558 /* BatteryRemainingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatteryRemainingView.swift; sourceTree = "<group>"; };
+		A92060AA1E4DEF6A00656558 /* BatteryRemainingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BatteryRemainingView.xib; sourceTree = "<group>"; };
+		A92060B11E4DEF8600656558 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		A956A1061DBDED22002BDB26 /* AddVideoToProjectUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddVideoToProjectUseCase.swift; sourceTree = "<group>"; };
 		A956A1071DBDED22002BDB26 /* AVQualityParse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVQualityParse.swift; sourceTree = "<group>"; };
 		A956A1081DBDED22002BDB26 /* CATextLayerAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CATextLayerAttributes.swift; sourceTree = "<group>"; };
@@ -95,7 +109,8 @@
 		A960A85E1E4DD6B00069F487 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				A960A8711E4DDCB80069F487 /* New Group */,
+				A92060B11E4DEF8600656558 /* Media.xcassets */,
+				A960A8711E4DDCB80069F487 /* BatteryRemaining */,
 				A960A8601E4DD6C60069F487 /* AudioLevelBar */,
 				A960A85F1E4DD6BC0069F487 /* Project */,
 			);
@@ -125,11 +140,17 @@
 			name = AudioLevelBar;
 			sourceTree = "<group>";
 		};
-		A960A8711E4DDCB80069F487 /* New Group */ = {
+		A960A8711E4DDCB80069F487 /* BatteryRemaining */ = {
 			isa = PBXGroup;
 			children = (
+				A92060A51E4DEF6A00656558 /* BatteryRemainingInteractor.swift */,
+				A92060A61E4DEF6A00656558 /* BatteryRemainingInteractorInterface.swift */,
+				A92060A71E4DEF6A00656558 /* BatteryRemainingPresenter.swift */,
+				A92060A81E4DEF6A00656558 /* BatteryRemainingPresenterInterface.swift */,
+				A92060A91E4DEF6A00656558 /* BatteryRemainingView.swift */,
+				A92060AA1E4DEF6A00656558 /* BatteryRemainingView.xib */,
 			);
-			name = "New Group";
+			name = BatteryRemaining;
 			sourceTree = "<group>";
 		};
 		A9BD5FB31D9120F40080CE97 = {
@@ -282,6 +303,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A960A86C1E4DD6D20069F487 /* AudioLevelBarView.xib in Resources */,
+				A92060B21E4DEF8600656558 /* Media.xcassets in Resources */,
+				A92060B01E4DEF6A00656558 /* BatteryRemainingView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,13 +357,17 @@
 				A9950CC61E1ABBF9009367E7 /* AVResolutionParse.swift in Sources */,
 				A956A1121DBDED22002BDB26 /* GetActualProjectTextCALayerAnimationUseCase.swift in Sources */,
 				A9BD5FD31D91210C0080CE97 /* Project.swift in Sources */,
+				A92060AF1E4DEF6A00656558 /* BatteryRemainingView.swift in Sources */,
 				A9C5FB6D1DD5E7AE00057A1B /* VideoTransitions.swift in Sources */,
 				A9C5FB6F1DD5E7B500057A1B /* AudioTransitions.swift in Sources */,
+				A92060AD1E4DEF6A00656558 /* BatteryRemainingPresenter.swift in Sources */,
 				A956A1101DBDED22002BDB26 /* CompatibleQualityInteractor.swift in Sources */,
 				A956A10E1DBDED22002BDB26 /* AVQualityParse.swift in Sources */,
+				A92060AE1E4DEF6A00656558 /* BatteryRemainingPresenterInterface.swift in Sources */,
 				A9BD5FD11D91210C0080CE97 /* Music.swift in Sources */,
 				A9B0073E1DAFC9F100BFAD68 /* VideonaComposition.swift in Sources */,
 				A9950CCA1E1ABD61009367E7 /* CompatibleResolutionsInteractor.swift in Sources */,
+				A92060AC1E4DEF6A00656558 /* BatteryRemainingInteractorInterface.swift in Sources */,
 				A960A86A1E4DD6D20069F487 /* AudioLevelBarPresenterInterface.swift in Sources */,
 				A960A8671E4DD6D20069F487 /* AudioLevelBarView.swift in Sources */,
 				A9BD5FD51D91210C0080CE97 /* Video.swift in Sources */,
@@ -349,6 +376,7 @@
 				A9BD5FD41D91210C0080CE97 /* Utils.swift in Sources */,
 				A960A86B1E4DD6D20069F487 /* AudioLevelBarInteractorInterface.swift in Sources */,
 				A956A10D1DBDED22002BDB26 /* AddVideoToProjectUseCase.swift in Sources */,
+				A92060AB1E4DEF6A00656558 /* BatteryRemainingInteractor.swift in Sources */,
 				A960A8691E4DD6D20069F487 /* AudioLevelBarPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

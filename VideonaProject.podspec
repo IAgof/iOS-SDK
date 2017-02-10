@@ -107,7 +107,7 @@ Pod::Spec.new do |s|
   # s.resources = "Resources/*.png"
 
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
-  s.resources = "VideonaProject/**/*.{png,jpeg,jpg,storyboard,xib}"
+  s.resources = ['VideonaProject/Media.xcassets', "VideonaProject/**/*.{png,jpeg,jpg,storyboard,xib,*.xcassets}"]
 
 
   # ――― Project Linking ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
