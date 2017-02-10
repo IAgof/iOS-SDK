@@ -30,6 +30,18 @@
 		A92060D61E4DF59D00656558 /* ResolutionsSelectorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92060CD1E4DF59D00656558 /* ResolutionsSelectorCell.swift */; };
 		A92060D71E4DF59D00656558 /* ResolutionsSelectorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A92060CE1E4DF59D00656558 /* ResolutionsSelectorView.xib */; };
 		A92060D81E4DF59D00656558 /* ResolutionsSelectorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A92060CF1E4DF59D00656558 /* ResolutionsSelectorCell.xib */; };
+		A92060E01E4DF95F00656558 /* DuplicateInteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92060DC1E4DF95F00656558 /* DuplicateInteractorInterface.swift */; };
+		A92060E11E4DF95F00656558 /* DuplicateInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92060DD1E4DF95F00656558 /* DuplicateInteractor.swift */; };
+		A92060E21E4DF95F00656558 /* DuplicatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92060DE1E4DF95F00656558 /* DuplicatePresenter.swift */; };
+		A92060E31E4DF95F00656558 /* DuplicatePresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92060DF1E4DF95F00656558 /* DuplicatePresenterInterface.swift */; };
+		A92060E91E4DF97F00656558 /* TrimInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92060E51E4DF97F00656558 /* TrimInteractor.swift */; };
+		A92060EA1E4DF97F00656558 /* TrimInteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92060E61E4DF97F00656558 /* TrimInteractorInterface.swift */; };
+		A92060EB1E4DF97F00656558 /* TrimPresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92060E71E4DF97F00656558 /* TrimPresenterInterface.swift */; };
+		A92060EC1E4DF97F00656558 /* TrimPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92060E81E4DF97F00656558 /* TrimPresenter.swift */; };
+		A92060F21E4DF9A200656558 /* SplitInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92060EE1E4DF9A200656558 /* SplitInteractor.swift */; };
+		A92060F31E4DF9A200656558 /* SplitInteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92060EF1E4DF9A200656558 /* SplitInteractorInterface.swift */; };
+		A92060F41E4DF9A200656558 /* SplitPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92060F01E4DF9A200656558 /* SplitPresenter.swift */; };
+		A92060F51E4DF9A200656558 /* SplitPresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92060F11E4DF9A200656558 /* SplitPresenterInterface.swift */; };
 		A956A10D1DBDED22002BDB26 /* AddVideoToProjectUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A956A1061DBDED22002BDB26 /* AddVideoToProjectUseCase.swift */; };
 		A956A10E1DBDED22002BDB26 /* AVQualityParse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A956A1071DBDED22002BDB26 /* AVQualityParse.swift */; };
 		A956A10F1DBDED22002BDB26 /* CATextLayerAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A956A1081DBDED22002BDB26 /* CATextLayerAttributes.swift */; };
@@ -84,6 +96,18 @@
 		A92060CD1E4DF59D00656558 /* ResolutionsSelectorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResolutionsSelectorCell.swift; sourceTree = "<group>"; };
 		A92060CE1E4DF59D00656558 /* ResolutionsSelectorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResolutionsSelectorView.xib; sourceTree = "<group>"; };
 		A92060CF1E4DF59D00656558 /* ResolutionsSelectorCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResolutionsSelectorCell.xib; sourceTree = "<group>"; };
+		A92060DC1E4DF95F00656558 /* DuplicateInteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DuplicateInteractorInterface.swift; sourceTree = "<group>"; };
+		A92060DD1E4DF95F00656558 /* DuplicateInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DuplicateInteractor.swift; sourceTree = "<group>"; };
+		A92060DE1E4DF95F00656558 /* DuplicatePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DuplicatePresenter.swift; sourceTree = "<group>"; };
+		A92060DF1E4DF95F00656558 /* DuplicatePresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DuplicatePresenterInterface.swift; sourceTree = "<group>"; };
+		A92060E51E4DF97F00656558 /* TrimInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrimInteractor.swift; sourceTree = "<group>"; };
+		A92060E61E4DF97F00656558 /* TrimInteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrimInteractorInterface.swift; sourceTree = "<group>"; };
+		A92060E71E4DF97F00656558 /* TrimPresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrimPresenterInterface.swift; sourceTree = "<group>"; };
+		A92060E81E4DF97F00656558 /* TrimPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrimPresenter.swift; sourceTree = "<group>"; };
+		A92060EE1E4DF9A200656558 /* SplitInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitInteractor.swift; sourceTree = "<group>"; };
+		A92060EF1E4DF9A200656558 /* SplitInteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitInteractorInterface.swift; sourceTree = "<group>"; };
+		A92060F01E4DF9A200656558 /* SplitPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitPresenter.swift; sourceTree = "<group>"; };
+		A92060F11E4DF9A200656558 /* SplitPresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitPresenterInterface.swift; sourceTree = "<group>"; };
 		A956A1061DBDED22002BDB26 /* AddVideoToProjectUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddVideoToProjectUseCase.swift; sourceTree = "<group>"; };
 		A956A1071DBDED22002BDB26 /* AVQualityParse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVQualityParse.swift; sourceTree = "<group>"; };
 		A956A1081DBDED22002BDB26 /* CATextLayerAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CATextLayerAttributes.swift; sourceTree = "<group>"; };
@@ -165,9 +189,45 @@
 			name = ResolutionsSelector;
 			sourceTree = "<group>";
 		};
+		A92060DB1E4DF93A00656558 /* Duplicate */ = {
+			isa = PBXGroup;
+			children = (
+				A92060DC1E4DF95F00656558 /* DuplicateInteractorInterface.swift */,
+				A92060DD1E4DF95F00656558 /* DuplicateInteractor.swift */,
+				A92060DE1E4DF95F00656558 /* DuplicatePresenter.swift */,
+				A92060DF1E4DF95F00656558 /* DuplicatePresenterInterface.swift */,
+			);
+			name = Duplicate;
+			sourceTree = "<group>";
+		};
+		A92060E41E4DF97500656558 /* Trim */ = {
+			isa = PBXGroup;
+			children = (
+				A92060E51E4DF97F00656558 /* TrimInteractor.swift */,
+				A92060E61E4DF97F00656558 /* TrimInteractorInterface.swift */,
+				A92060E71E4DF97F00656558 /* TrimPresenterInterface.swift */,
+				A92060E81E4DF97F00656558 /* TrimPresenter.swift */,
+			);
+			name = Trim;
+			sourceTree = "<group>";
+		};
+		A92060ED1E4DF99200656558 /* Split */ = {
+			isa = PBXGroup;
+			children = (
+				A92060EE1E4DF9A200656558 /* SplitInteractor.swift */,
+				A92060EF1E4DF9A200656558 /* SplitInteractorInterface.swift */,
+				A92060F01E4DF9A200656558 /* SplitPresenter.swift */,
+				A92060F11E4DF9A200656558 /* SplitPresenterInterface.swift */,
+			);
+			name = Split;
+			sourceTree = "<group>";
+		};
 		A960A85E1E4DD6B00069F487 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				A92060ED1E4DF99200656558 /* Split */,
+				A92060E41E4DF97500656558 /* Trim */,
+				A92060DB1E4DF93A00656558 /* Duplicate */,
 				A92060C61E4DF57D00656558 /* ResolutionsSelector */,
 				A92060B51E4DF25A00656558 /* SpaceOnDisk */,
 				A960A8711E4DDCB80069F487 /* BatteryRemaining */,
@@ -413,12 +473,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				A99CE6C71E279467000BDFC5 /* TimeNumberFormatter.swift in Sources */,
+				A92060EB1E4DF97F00656558 /* TrimPresenterInterface.swift in Sources */,
 				A9BD5FD01D91210C0080CE97 /* Media.swift in Sources */,
 				A960A8681E4DD6D20069F487 /* AudioLevelBarInteractor.swift in Sources */,
 				A9BD5FD21D91210C0080CE97 /* Profile.swift in Sources */,
 				A92060D31E4DF59D00656558 /* ResolutionsSelectorInteractorInterface.swift in Sources */,
 				A9BD5FCF1D91210C0080CE97 /* Audio.swift in Sources */,
 				A956A1111DBDED22002BDB26 /* GetActualProjectAVCompositionUseCase.swift in Sources */,
+				A92060EC1E4DF97F00656558 /* TrimPresenter.swift in Sources */,
 				A9950CC61E1ABBF9009367E7 /* AVResolutionParse.swift in Sources */,
 				A956A1121DBDED22002BDB26 /* GetActualProjectTextCALayerAnimationUseCase.swift in Sources */,
 				A9BD5FD31D91210C0080CE97 /* Project.swift in Sources */,
@@ -429,22 +491,31 @@
 				A92060D01E4DF59D00656558 /* ResolutionsSelectorPresenter.swift in Sources */,
 				A9C5FB6F1DD5E7B500057A1B /* AudioTransitions.swift in Sources */,
 				A92060D21E4DF59D00656558 /* ResolutionsSelectorInteractor.swift in Sources */,
+				A92060F41E4DF9A200656558 /* SplitPresenter.swift in Sources */,
+				A92060F21E4DF9A200656558 /* SplitInteractor.swift in Sources */,
 				A92060AD1E4DEF6A00656558 /* BatteryRemainingPresenter.swift in Sources */,
 				A956A1101DBDED22002BDB26 /* CompatibleQualityInteractor.swift in Sources */,
 				A92060BF1E4DF26300656558 /* SpaceOnDiskPresenterInterface.swift in Sources */,
 				A956A10E1DBDED22002BDB26 /* AVQualityParse.swift in Sources */,
 				A92060BD1E4DF26300656558 /* SpaceOnDiskInteractorInterface.swift in Sources */,
 				A92060BC1E4DF26300656558 /* SpaceOnDiskInteractor.swift in Sources */,
+				A92060E01E4DF95F00656558 /* DuplicateInteractorInterface.swift in Sources */,
 				A92060D41E4DF59D00656558 /* Resolution.swift in Sources */,
+				A92060F51E4DF9A200656558 /* SplitPresenterInterface.swift in Sources */,
 				A92060D61E4DF59D00656558 /* ResolutionsSelectorCell.swift in Sources */,
+				A92060E31E4DF95F00656558 /* DuplicatePresenterInterface.swift in Sources */,
+				A92060E21E4DF95F00656558 /* DuplicatePresenter.swift in Sources */,
 				A92060AE1E4DEF6A00656558 /* BatteryRemainingPresenterInterface.swift in Sources */,
 				A92060D51E4DF59D00656558 /* ResolutionsSelectorView.swift in Sources */,
 				A9BD5FD11D91210C0080CE97 /* Music.swift in Sources */,
 				A9B0073E1DAFC9F100BFAD68 /* VideonaComposition.swift in Sources */,
+				A92060EA1E4DF97F00656558 /* TrimInteractorInterface.swift in Sources */,
 				A9950CCA1E1ABD61009367E7 /* CompatibleResolutionsInteractor.swift in Sources */,
 				A92060AC1E4DEF6A00656558 /* BatteryRemainingInteractorInterface.swift in Sources */,
 				A92060D11E4DF59D00656558 /* ResolutionsSelectorPresenterInterface.swift in Sources */,
+				A92060E91E4DF97F00656558 /* TrimInteractor.swift in Sources */,
 				A960A86A1E4DD6D20069F487 /* AudioLevelBarPresenterInterface.swift in Sources */,
+				A92060F31E4DF9A200656558 /* SplitInteractorInterface.swift in Sources */,
 				A960A8671E4DD6D20069F487 /* AudioLevelBarView.swift in Sources */,
 				A9BD5FD51D91210C0080CE97 /* Video.swift in Sources */,
 				A956A1131DBDED22002BDB26 /* GetImageByTextUseCase.swift in Sources */,
@@ -453,6 +524,7 @@
 				A960A86B1E4DD6D20069F487 /* AudioLevelBarInteractorInterface.swift in Sources */,
 				A956A10D1DBDED22002BDB26 /* AddVideoToProjectUseCase.swift in Sources */,
 				A92060AB1E4DEF6A00656558 /* BatteryRemainingInteractor.swift in Sources */,
+				A92060E11E4DF95F00656558 /* DuplicateInteractor.swift in Sources */,
 				A960A8691E4DD6D20069F487 /* AudioLevelBarPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
