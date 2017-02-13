@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import VideonaProject
 
 open class TrimPresenter: NSObject,
     TrimPresenterInterface,

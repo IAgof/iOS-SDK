@@ -9,7 +9,6 @@
 import Foundation
 import AVFoundation
 import AVKit
-import VideonaProject
 
 open class TrimInteractor: NSObject,TrimInteractorInterface {
     open var delegate:TrimInteractorDelegate?

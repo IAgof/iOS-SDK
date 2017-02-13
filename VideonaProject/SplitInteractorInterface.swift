@@ -8,7 +8,6 @@
 
 import Foundation
 import AVFoundation
-import VideonaProject
 
 public protocol SplitInteractorInterface {
     func setVideoPosition(_ position:Int)

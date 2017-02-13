@@ -8,7 +8,6 @@
 
 import Foundation
 import AVFoundation
-import VideonaProject
 
 open class SplitInteractor: NSObject,SplitInteractorInterface {
     open var delegate:SplitInteractorDelegate?

@@ -8,7 +8,6 @@
 
 import Foundation
 import AVFoundation
-import VideonaProject
 
 public protocol DuplicateInteractorInterface {
     func setUpComposition(_ videoSelectedIndex: Int,completion:(VideoComposition)->Void)

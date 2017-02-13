@@ -8,7 +8,6 @@
 
 import Foundation
 import AVFoundation
-import VideonaProject
 
 public protocol TrimInteractorInterface {    
     func setParametersOnVideoSelectedOnProjectList(_ startTime:Float,

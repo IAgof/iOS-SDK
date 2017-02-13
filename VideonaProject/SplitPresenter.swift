@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import VideonaProject
 
 open class SplitPresenter: NSObject,SplitPresenterInterface,SplitInteractorDelegate {
     //MARK: - Variables VIPER

@@ -8,7 +8,6 @@
 
 import Foundation
 import AVFoundation
-import VideonaProject
 
 open class DuplicateInteractor: NSObject,DuplicateInteractorInterface {
     open var delegate:DuplicateInteractorDelegate?
