@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ExposureView" customModule="Exposure" customModuleProvider="target">
+            <connections>
+                <outlet property="exposureSlider" destination="Eo8-Ud-ydW" id="Bhw-ht-G9a"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" restorationIdentifier="BatteryRemainingView" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="490" height="50"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-2" maxValue="2" minimumValueImage="activity_record_icon_zoom_minus" maximumValueImage="activity_record_icon_zoom_plus" translatesAutoresizingMaskIntoConstraints="NO" id="Eo8-Ud-ydW">
+                    <rect key="frame" x="14" y="10" width="462" height="31"/>
+                    <color key="minimumTrackTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="maximumTrackTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <action selector="exposureSliderValueChanged:" destination="-1" eventType="valueChanged" id="INh-IS-c87"/>
+                    </connections>
+                </slider>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Eo8-Ud-ydW" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="1dH-Jc-3zT"/>
+                <constraint firstAttribute="trailing" secondItem="Eo8-Ud-ydW" secondAttribute="trailing" constant="16" id="1kg-wu-LTa"/>
+                <constraint firstItem="Eo8-Ud-ydW" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="XAc-f1-PhV"/>
+                <constraint firstItem="Eo8-Ud-ydW" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="gAc-HN-mmw"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="470.5" y="105.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="activity_record_icon_zoom_minus" width="10" height="1"/>
+        <image name="activity_record_icon_zoom_plus" width="10" height="10"/>
+    </resources>
+</document>
