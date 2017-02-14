@@ -113,6 +113,7 @@
 		A92061BE1E4E0CD700656558 /* PlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A92061B31E4E0CD700656558 /* PlayerView.xib */; };
 		A92061BF1E4E0CD700656558 /* PlayerWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92061B41E4E0CD700656558 /* PlayerWireframe.swift */; };
 		A92061C01E4E0CD700656558 /* UIVerticalAlignLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92061B51E4E0CD700656558 /* UIVerticalAlignLabel.swift */; };
+		A953AD6E1E536A1A00DC0D84 /* VideoOutputParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = A953AD6D1E536A1A00DC0D84 /* VideoOutputParameters.swift */; };
 		A956A10D1DBDED22002BDB26 /* AddVideoToProjectUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A956A1061DBDED22002BDB26 /* AddVideoToProjectUseCase.swift */; };
 		A956A10E1DBDED22002BDB26 /* AVQualityParse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A956A1071DBDED22002BDB26 /* AVQualityParse.swift */; };
 		A956A10F1DBDED22002BDB26 /* CATextLayerAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A956A1081DBDED22002BDB26 /* CATextLayerAttributes.swift */; };
@@ -126,6 +127,7 @@
 		A960A86A1E4DD6D20069F487 /* AudioLevelBarPresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A960A8641E4DD6D20069F487 /* AudioLevelBarPresenterInterface.swift */; };
 		A960A86B1E4DD6D20069F487 /* AudioLevelBarInteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A960A8651E4DD6D20069F487 /* AudioLevelBarInteractorInterface.swift */; };
 		A960A86C1E4DD6D20069F487 /* AudioLevelBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A960A8661E4DD6D20069F487 /* AudioLevelBarView.xib */; };
+		A9928A101E5370CE002A4E60 /* VideonaProjectTarget.h in Headers */ = {isa = PBXBuildFile; fileRef = A9928A0E1E5370CE002A4E60 /* VideonaProjectTarget.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A9950CC61E1ABBF9009367E7 /* AVResolutionParse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9950CC51E1ABBF9009367E7 /* AVResolutionParse.swift */; };
 		A9950CCA1E1ABD61009367E7 /* CompatibleResolutionsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9950CC91E1ABD61009367E7 /* CompatibleResolutionsInteractor.swift */; };
 		A99CE6C71E279467000BDFC5 /* TimeNumberFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99CE6C61E279467000BDFC5 /* TimeNumberFormatter.swift */; };
@@ -250,6 +252,7 @@
 		A92061B31E4E0CD700656558 /* PlayerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerView.xib; sourceTree = "<group>"; };
 		A92061B41E4E0CD700656558 /* PlayerWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerWireframe.swift; sourceTree = "<group>"; };
 		A92061B51E4E0CD700656558 /* UIVerticalAlignLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIVerticalAlignLabel.swift; sourceTree = "<group>"; };
+		A953AD6D1E536A1A00DC0D84 /* VideoOutputParameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoOutputParameters.swift; sourceTree = "<group>"; };
 		A956A1061DBDED22002BDB26 /* AddVideoToProjectUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddVideoToProjectUseCase.swift; sourceTree = "<group>"; };
 		A956A1071DBDED22002BDB26 /* AVQualityParse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVQualityParse.swift; sourceTree = "<group>"; };
 		A956A1081DBDED22002BDB26 /* CATextLayerAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CATextLayerAttributes.swift; sourceTree = "<group>"; };
@@ -263,6 +266,9 @@
 		A960A8641E4DD6D20069F487 /* AudioLevelBarPresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioLevelBarPresenterInterface.swift; sourceTree = "<group>"; };
 		A960A8651E4DD6D20069F487 /* AudioLevelBarInteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioLevelBarInteractorInterface.swift; sourceTree = "<group>"; };
 		A960A8661E4DD6D20069F487 /* AudioLevelBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AudioLevelBarView.xib; sourceTree = "<group>"; };
+		A9928A0C1E5370CE002A4E60 /* VideonaProjectTarget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VideonaProjectTarget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9928A0E1E5370CE002A4E60 /* VideonaProjectTarget.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideonaProjectTarget.h; sourceTree = "<group>"; };
+		A9928A0F1E5370CE002A4E60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A9950CC51E1ABBF9009367E7 /* AVResolutionParse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVResolutionParse.swift; sourceTree = "<group>"; };
 		A9950CC91E1ABD61009367E7 /* CompatibleResolutionsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompatibleResolutionsInteractor.swift; sourceTree = "<group>"; };
 		A99CE6C61E279467000BDFC5 /* TimeNumberFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeNumberFormatter.swift; sourceTree = "<group>"; };
@@ -283,6 +289,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		A9928A081E5370CE002A4E60 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A9BD5FB91D9120F40080CE97 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -582,10 +595,20 @@
 			name = BatteryRemaining;
 			sourceTree = "<group>";
 		};
+		A9928A0D1E5370CE002A4E60 /* VideonaProjectTarget */ = {
+			isa = PBXGroup;
+			children = (
+				A9928A0E1E5370CE002A4E60 /* VideonaProjectTarget.h */,
+				A9928A0F1E5370CE002A4E60 /* Info.plist */,
+			);
+			path = VideonaProjectTarget;
+			sourceTree = "<group>";
+		};
 		A9BD5FB31D9120F40080CE97 = {
 			isa = PBXGroup;
 			children = (
 				A9BD5FBF1D9120F40080CE97 /* VideonaProject */,
+				A9928A0D1E5370CE002A4E60 /* VideonaProjectTarget */,
 				A9BD5FBE1D9120F40080CE97 /* Products */,
 				BE86A4B8FC6F069D31EAD2F7 /* Pods */,
 				3F29BEDA4F8AF27571BA07E9 /* Frameworks */,
@@ -596,6 +619,7 @@
 			isa = PBXGroup;
 			children = (
 				A9BD5FBD1D9120F40080CE97 /* VideonaProject.framework */,
+				A9928A0C1E5370CE002A4E60 /* VideonaProjectTarget.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -633,6 +657,7 @@
 				A9BD5FCB1D91210C0080CE97 /* Profile.swift */,
 				A9BD5FCC1D91210C0080CE97 /* Project.swift */,
 				A9BD5FCE1D91210C0080CE97 /* Video.swift */,
+				A953AD6D1E536A1A00DC0D84 /* VideoOutputParameters.swift */,
 			);
 			name = Identities;
 			sourceTree = "<group>";
@@ -664,6 +689,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		A9928A091E5370CE002A4E60 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9928A101E5370CE002A4E60 /* VideonaProjectTarget.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A9BD5FBA1D9120F40080CE97 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -675,6 +708,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		A9928A0B1E5370CE002A4E60 /* VideonaProjectTarget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A9928A131E5370CE002A4E60 /* Build configuration list for PBXNativeTarget "VideonaProjectTarget" */;
+			buildPhases = (
+				A9928A071E5370CE002A4E60 /* Sources */,
+				A9928A081E5370CE002A4E60 /* Frameworks */,
+				A9928A091E5370CE002A4E60 /* Headers */,
+				A9928A0A1E5370CE002A4E60 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VideonaProjectTarget;
+			productName = VideonaProjectTarget;
+			productReference = A9928A0C1E5370CE002A4E60 /* VideonaProjectTarget.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		A9BD5FBC1D9120F40080CE97 /* VideonaProject */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A9BD5FC51D9120F40080CE97 /* Build configuration list for PBXNativeTarget "VideonaProject" */;
@@ -704,6 +755,10 @@
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = videona;
 				TargetAttributes = {
+					A9928A0B1E5370CE002A4E60 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
 					A9BD5FBC1D9120F40080CE97 = {
 						CreatedOnToolsVersion = 7.3.1;
 						LastSwiftMigration = 0810;
@@ -723,11 +778,19 @@
 			projectRoot = "";
 			targets = (
 				A9BD5FBC1D9120F40080CE97 /* VideonaProject */,
+				A9928A0B1E5370CE002A4E60 /* VideonaProjectTarget */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		A9928A0A1E5370CE002A4E60 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A9BD5FBB1D9120F40080CE97 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -786,6 +849,13 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		A9928A071E5370CE002A4E60 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A9BD5FB81D9120F40080CE97 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -877,6 +947,7 @@
 				A920616E1E4E08B100656558 /* FocusInteractorInterface.swift in Sources */,
 				A92061351E4DFE9C00656558 /* VideosGalleryViewController.swift in Sources */,
 				A920616F1E4E08B100656558 /* FocusPresenter.swift in Sources */,
+				A953AD6E1E536A1A00DC0D84 /* VideoOutputParameters.swift in Sources */,
 				A920613E1E4DFF0100656558 /* VideonaRangeSliderThumbLayer.swift in Sources */,
 				A920617D1E4E08C800656558 /* ExpositionModesPresenterInterface.swift in Sources */,
 				A92061041E4DFC9500656558 /* ExposurePresenterInterface.swift in Sources */,
@@ -912,6 +983,52 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		A9928A111E5370CE002A4E60 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = VideonaProjectTarget/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.vimojo.VideonaProjectTarget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		A9928A121E5370CE002A4E60 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = VideonaProjectTarget/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.vimojo.VideonaProjectTarget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 		A9BD5FC31D9120F40080CE97 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1045,6 +1162,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		A9928A131E5370CE002A4E60 /* Build configuration list for PBXNativeTarget "VideonaProjectTarget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A9928A111E5370CE002A4E60 /* Debug */,
+				A9928A121E5370CE002A4E60 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		A9BD5FB71D9120F40080CE97 /* Build configuration list for PBXProject "VideonaProject" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

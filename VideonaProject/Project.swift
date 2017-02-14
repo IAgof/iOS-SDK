@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import CoreImage
 
 open class Project: NSObject {
     
@@ -76,6 +77,10 @@ open class Project: NSObject {
     
     public var exportDate:NSDate?
     
+    public var videoOutputParameters:VideoOutputParameters = VideoOutputParameters()
+
+    public var videoFilter:CIFilter?
+    
     
     override public init() {
         super.init()
@@ -132,6 +137,10 @@ open class Project: NSObject {
         
         videoList = project.videoList
         exportedPath = project.exportedPath
+        
+        videoOutputParameters = project.videoOutputParameters
+        videoFilter = project.videoFilter
+        
         self.uuid = project.uuid
     }
     
@@ -190,6 +199,9 @@ open class Project: NSObject {
                       iconResourceId: "",
                       musicResourceId: "",
                       musicSelectedResourceId: "")
+        
+        videoOutputParameters = VideoOutputParameters()
+        videoFilter = nil
         exportedPath = nil
     }
     
