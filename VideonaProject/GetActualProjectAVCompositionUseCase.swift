@@ -99,12 +99,38 @@ public class GetActualProjectAVCompositionUseCase: NSObject {
             videoComposition = AVMutableVideoComposition(propertiesOf: mixComposition)
             let resolutionSize = Resolution.init(AVResolution: project.getProfile().getResolution())
             videoComposition?.renderSize = CGSize(width: resolutionSize.width, height: resolutionSize.height)
+            videoComposition?.customVideoCompositorClass = VideoFilterCompositor.self
+            
             VideoTransitions(transitionTime: transitionTime).setInstructions(mutableComposition: mixComposition,
-                                 videoComposition: videoComposition!)
+                                 videoComposition: videoComposition!,
+                                 transitionColor:project.transitionColor,
+                                 filters:getFilters(fromProject: project))
         }
 
         playerComposition.videoComposition = videoComposition
         return playerComposition
+    }
+    
+    public func getFilters(fromProject project:Project)->[CIFilter]{
+        var filters:[CIFilter] = []
+        
+        let params = project.videoOutputParameters
+        
+        let colorControlFilter = CIFilter(name: "CIColorControls")!
+        colorControlFilter.setValue(params.brightness, forKey: kCIInputBrightnessKey)
+        colorControlFilter.setValue(params.saturation, forKey: kCIInputSaturationKey)
+        colorControlFilter.setValue(params.contrast, forKey: kCIInputContrastKey)
+        
+        let exposureFilter = CIFilter(name: "CIExposureAdjust")!
+        exposureFilter.setValue(params.exposure, forKey: kCIInputEVKey)
+        
+        filters.append(colorControlFilter)
+        filters.append(exposureFilter)
+        if let filter = project.videoFilter{
+            filters.append(filter)
+        }
+        
+        return filters
     }
     
     public func setMusicToProject(audioMixParams:inout [AVMutableAudioMixInputParameters],

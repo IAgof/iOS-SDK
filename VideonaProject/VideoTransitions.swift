@@ -8,6 +8,7 @@
 
 import Foundation
 import AVFoundation
+import CoreImage
 
 class VideoTransitions {
     let transitionTime:CMTime
@@ -17,10 +18,15 @@ class VideoTransitions {
     }
     
     func setInstructions(mutableComposition:AVMutableComposition,
-                         videoComposition:AVMutableVideoComposition){
+                         videoComposition:AVMutableVideoComposition,
+                         transitionColor:CIColor,
+                         filters:[CIFilter]){
 
         let numberOfVideos = (mutableComposition.tracks(withMediaType: AVMediaTypeVideo).count)
-        let instruction = AVMutableVideoCompositionInstruction()
+        let eagl = EAGLContext(api: EAGLRenderingAPI.openGLES2)
+        let context = CIContext(eaglContext: eagl!, options: [kCIContextWorkingColorSpace : NSNull()])
+        
+        let instruction = VideoFilterCompositionInstruction(tracks: mutableComposition.tracks(withMediaType: AVMediaTypeVideo), filters: filters, context: context,transitionColor:transitionColor)
         
         var fadeInTime = kCMTimeZero
         

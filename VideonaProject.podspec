@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   #  summary should be tweet-length, and the description more in depth.
   #
 
-  s.name         = "Videona_iOS–SDK"
+  s.name         = "VideonaProject"
   s.version      = "0.0.1"
   s.summary      = "Videona_iOS–SDK is a block of libraries used on Videona appplications"
 
@@ -78,7 +78,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source = { git: "https://github.com/IAgof/iOS-SDK.git", tag: "0.0.1" }
+  s.source       = { :git => "/Users/Alejandro/Desktop/Repos/Videona_Pods/VideonaProject", :tag => "0.0.1" }
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #

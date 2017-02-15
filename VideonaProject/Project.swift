@@ -81,6 +81,8 @@ open class Project: NSObject {
 
     public var videoFilter:CIFilter?
     
+//    public var transitionColor = CIColor(red: 255, green: 255, blue: 255)
+    public var transitionColor = CIColor(red: 0, green: 0, blue: 0)
     
     override public init() {
         super.init()

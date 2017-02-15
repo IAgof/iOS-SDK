@@ -82,26 +82,22 @@
 		A92061521E4E04D900656558 /* ISOConfigurationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A920614C1E4E04D900656558 /* ISOConfigurationPresenter.swift */; };
 		A92061531E4E04D900656558 /* ISOConfigurationPresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A920614D1E4E04D900656558 /* ISOConfigurationPresenterInterface.swift */; };
 		A92061541E4E04D900656558 /* ISOConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A920614E1E4E04D900656558 /* ISOConfigurationView.swift */; };
-		A92061551E4E04D900656558 /* ISOConfigurationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A920614F1E4E04D900656558 /* ISOConfigurationView.xib */; };
 		A920615F1E4E089600656558 /* WhiteBalanceConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92061581E4E089600656558 /* WhiteBalanceConstants.swift */; };
 		A92061601E4E089600656558 /* WhiteBalanceInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92061591E4E089600656558 /* WhiteBalanceInteractor.swift */; };
 		A92061611E4E089600656558 /* WhiteBalancePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A920615A1E4E089600656558 /* WhiteBalancePresenter.swift */; };
 		A92061621E4E089600656558 /* WhiteBalancePresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A920615B1E4E089600656558 /* WhiteBalancePresenterInterface.swift */; };
 		A92061631E4E089600656558 /* WhiteBalanceteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A920615C1E4E089600656558 /* WhiteBalanceteractorInterface.swift */; };
 		A92061641E4E089600656558 /* WhiteBalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A920615D1E4E089600656558 /* WhiteBalanceView.swift */; };
-		A92061651E4E089600656558 /* WhiteBalanceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A920615E1E4E089600656558 /* WhiteBalanceView.xib */; };
 		A920616D1E4E08B100656558 /* FocusInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92061671E4E08B100656558 /* FocusInteractor.swift */; };
 		A920616E1E4E08B100656558 /* FocusInteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92061681E4E08B100656558 /* FocusInteractorInterface.swift */; };
 		A920616F1E4E08B100656558 /* FocusPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92061691E4E08B100656558 /* FocusPresenter.swift */; };
 		A92061701E4E08B100656558 /* FocusPresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A920616A1E4E08B100656558 /* FocusPresenterInterface.swift */; };
 		A92061711E4E08B100656558 /* FocusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A920616B1E4E08B100656558 /* FocusView.swift */; };
-		A92061721E4E08B100656558 /* FocusView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A920616C1E4E08B100656558 /* FocusView.xib */; };
 		A920617A1E4E08C800656558 /* ExpositionModesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92061741E4E08C800656558 /* ExpositionModesInteractor.swift */; };
 		A920617B1E4E08C800656558 /* ExpositionModesInteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92061751E4E08C800656558 /* ExpositionModesInteractorInterface.swift */; };
 		A920617C1E4E08C800656558 /* ExpositionModesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92061761E4E08C800656558 /* ExpositionModesPresenter.swift */; };
 		A920617D1E4E08C800656558 /* ExpositionModesPresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92061771E4E08C800656558 /* ExpositionModesPresenterInterface.swift */; };
 		A920617E1E4E08C800656558 /* ExpositionModesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92061781E4E08C800656558 /* ExpositionModesView.swift */; };
-		A920617F1E4E08C800656558 /* ExpositionModesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A92061791E4E08C800656558 /* ExpositionModesView.xib */; };
 		A92061B61E4E0CD700656558 /* PlayerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92061AB1E4E0CD700656558 /* PlayerInteractor.swift */; };
 		A92061B71E4E0CD700656558 /* PlayerInteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92061AC1E4E0CD700656558 /* PlayerInteractorInterface.swift */; };
 		A92061B81E4E0CD700656558 /* PlayerInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92061AD1E4E0CD700656558 /* PlayerInterface.swift */; };
@@ -142,6 +138,8 @@
 		A9BD5FD51D91210C0080CE97 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BD5FCE1D91210C0080CE97 /* Video.swift */; };
 		A9C5FB6D1DD5E7AE00057A1B /* VideoTransitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C5FB6C1DD5E7AE00057A1B /* VideoTransitions.swift */; };
 		A9C5FB6F1DD5E7B500057A1B /* AudioTransitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C5FB6E1DD5E7B500057A1B /* AudioTransitions.swift */; };
+		A9FB3A2F1E53BCE400C21918 /* VideoFilterCompositor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FB3A2D1E53BCE400C21918 /* VideoFilterCompositor.swift */; };
+		A9FB3A301E53BCE400C21918 /* VideoFilterCompositionInstruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FB3A2E1E53BCE400C21918 /* VideoFilterCompositionInstruction.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -221,26 +219,22 @@
 		A920614C1E4E04D900656558 /* ISOConfigurationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISOConfigurationPresenter.swift; sourceTree = "<group>"; };
 		A920614D1E4E04D900656558 /* ISOConfigurationPresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISOConfigurationPresenterInterface.swift; sourceTree = "<group>"; };
 		A920614E1E4E04D900656558 /* ISOConfigurationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISOConfigurationView.swift; sourceTree = "<group>"; };
-		A920614F1E4E04D900656558 /* ISOConfigurationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ISOConfigurationView.xib; sourceTree = "<group>"; };
 		A92061581E4E089600656558 /* WhiteBalanceConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhiteBalanceConstants.swift; sourceTree = "<group>"; };
 		A92061591E4E089600656558 /* WhiteBalanceInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhiteBalanceInteractor.swift; sourceTree = "<group>"; };
 		A920615A1E4E089600656558 /* WhiteBalancePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhiteBalancePresenter.swift; sourceTree = "<group>"; };
 		A920615B1E4E089600656558 /* WhiteBalancePresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhiteBalancePresenterInterface.swift; sourceTree = "<group>"; };
 		A920615C1E4E089600656558 /* WhiteBalanceteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhiteBalanceteractorInterface.swift; sourceTree = "<group>"; };
 		A920615D1E4E089600656558 /* WhiteBalanceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhiteBalanceView.swift; sourceTree = "<group>"; };
-		A920615E1E4E089600656558 /* WhiteBalanceView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WhiteBalanceView.xib; sourceTree = "<group>"; };
 		A92061671E4E08B100656558 /* FocusInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusInteractor.swift; sourceTree = "<group>"; };
 		A92061681E4E08B100656558 /* FocusInteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusInteractorInterface.swift; sourceTree = "<group>"; };
 		A92061691E4E08B100656558 /* FocusPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusPresenter.swift; sourceTree = "<group>"; };
 		A920616A1E4E08B100656558 /* FocusPresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusPresenterInterface.swift; sourceTree = "<group>"; };
 		A920616B1E4E08B100656558 /* FocusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusView.swift; sourceTree = "<group>"; };
-		A920616C1E4E08B100656558 /* FocusView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FocusView.xib; sourceTree = "<group>"; };
 		A92061741E4E08C800656558 /* ExpositionModesInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpositionModesInteractor.swift; sourceTree = "<group>"; };
 		A92061751E4E08C800656558 /* ExpositionModesInteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpositionModesInteractorInterface.swift; sourceTree = "<group>"; };
 		A92061761E4E08C800656558 /* ExpositionModesPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpositionModesPresenter.swift; sourceTree = "<group>"; };
 		A92061771E4E08C800656558 /* ExpositionModesPresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpositionModesPresenterInterface.swift; sourceTree = "<group>"; };
 		A92061781E4E08C800656558 /* ExpositionModesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpositionModesView.swift; sourceTree = "<group>"; };
-		A92061791E4E08C800656558 /* ExpositionModesView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpositionModesView.xib; sourceTree = "<group>"; };
 		A92061AB1E4E0CD700656558 /* PlayerInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerInteractor.swift; sourceTree = "<group>"; };
 		A92061AC1E4E0CD700656558 /* PlayerInteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerInteractorInterface.swift; sourceTree = "<group>"; };
 		A92061AD1E4E0CD700656558 /* PlayerInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerInterface.swift; sourceTree = "<group>"; };
@@ -285,6 +279,8 @@
 		A9BD5FCE1D91210C0080CE97 /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		A9C5FB6C1DD5E7AE00057A1B /* VideoTransitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoTransitions.swift; sourceTree = "<group>"; };
 		A9C5FB6E1DD5E7B500057A1B /* AudioTransitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioTransitions.swift; sourceTree = "<group>"; };
+		A9FB3A2D1E53BCE400C21918 /* VideoFilterCompositor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoFilterCompositor.swift; sourceTree = "<group>"; };
+		A9FB3A2E1E53BCE400C21918 /* VideoFilterCompositionInstruction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoFilterCompositionInstruction.swift; sourceTree = "<group>"; };
 		B2F4A0D364C97E57476CD3C1 /* Pods-VideonaProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideonaProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VideonaProject/Pods-VideonaProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -469,7 +465,6 @@
 				A920614C1E4E04D900656558 /* ISOConfigurationPresenter.swift */,
 				A920614D1E4E04D900656558 /* ISOConfigurationPresenterInterface.swift */,
 				A920614E1E4E04D900656558 /* ISOConfigurationView.swift */,
-				A920614F1E4E04D900656558 /* ISOConfigurationView.xib */,
 			);
 			name = ISOConfiguration;
 			sourceTree = "<group>";
@@ -483,7 +478,6 @@
 				A920615B1E4E089600656558 /* WhiteBalancePresenterInterface.swift */,
 				A920615C1E4E089600656558 /* WhiteBalanceteractorInterface.swift */,
 				A920615D1E4E089600656558 /* WhiteBalanceView.swift */,
-				A920615E1E4E089600656558 /* WhiteBalanceView.xib */,
 			);
 			name = "White balance";
 			sourceTree = "<group>";
@@ -496,7 +490,6 @@
 				A92061691E4E08B100656558 /* FocusPresenter.swift */,
 				A920616A1E4E08B100656558 /* FocusPresenterInterface.swift */,
 				A920616B1E4E08B100656558 /* FocusView.swift */,
-				A920616C1E4E08B100656558 /* FocusView.xib */,
 			);
 			name = Focus;
 			sourceTree = "<group>";
@@ -509,7 +502,6 @@
 				A92061761E4E08C800656558 /* ExpositionModesPresenter.swift */,
 				A92061771E4E08C800656558 /* ExpositionModesPresenterInterface.swift */,
 				A92061781E4E08C800656558 /* ExpositionModesView.swift */,
-				A92061791E4E08C800656558 /* ExpositionModesView.xib */,
 			);
 			name = "Exposition modes";
 			sourceTree = "<group>";
@@ -638,6 +630,8 @@
 		A9C5FB701DD5E88A00057A1B /* Transitions */ = {
 			isa = PBXGroup;
 			children = (
+				A9FB3A2D1E53BCE400C21918 /* VideoFilterCompositor.swift */,
+				A9FB3A2E1E53BCE400C21918 /* VideoFilterCompositionInstruction.swift */,
 				A9C5FB6C1DD5E7AE00057A1B /* VideoTransitions.swift */,
 				A9C5FB6E1DD5E7B500057A1B /* AudioTransitions.swift */,
 			);
@@ -795,18 +789,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A92061721E4E08B100656558 /* FocusView.xib in Resources */,
 				A920611F1E4DFCCE00656558 /* ZoomSliderView.xib in Resources */,
 				A960A86C1E4DD6D20069F487 /* AudioLevelBarView.xib in Resources */,
 				A92060B21E4DEF8600656558 /* Media.xcassets in Resources */,
-				A92061651E4E089600656558 /* WhiteBalanceView.xib in Resources */,
-				A92061551E4E04D900656558 /* ISOConfigurationView.xib in Resources */,
 				A92061131E4DFCBB00656558 /* InputSoundGainControlView.xib in Resources */,
 				A92060D81E4DF59D00656558 /* ResolutionsSelectorCell.xib in Resources */,
 				A920612B1E4DFCDC00656558 /* FocalLensSliderView.xib in Resources */,
 				A92060B01E4DEF6A00656558 /* BatteryRemainingView.xib in Resources */,
 				A92060D71E4DF59D00656558 /* ResolutionsSelectorView.xib in Resources */,
-				A920617F1E4E08C800656558 /* ExpositionModesView.xib in Resources */,
 				A92060C11E4DF26300656558 /* SpaceOnDiskView.xib in Resources */,
 				A92061071E4DFC9500656558 /* ExposureView.xib in Resources */,
 				A92061BE1E4E0CD700656558 /* PlayerView.xib in Resources */,
@@ -902,6 +892,7 @@
 				A9C5FB6F1DD5E7B500057A1B /* AudioTransitions.swift in Sources */,
 				A92061531E4E04D900656558 /* ISOConfigurationPresenterInterface.swift in Sources */,
 				A92061331E4DFE9C00656558 /* VideoGalleryDelegateInterface.swift in Sources */,
+				A9FB3A2F1E53BCE400C21918 /* VideoFilterCompositor.swift in Sources */,
 				A92060D21E4DF59D00656558 /* ResolutionsSelectorInteractor.swift in Sources */,
 				A92061701E4E08B100656558 /* FocusPresenterInterface.swift in Sources */,
 				A92060F41E4DF9A200656558 /* SplitPresenter.swift in Sources */,
@@ -949,6 +940,7 @@
 				A920616F1E4E08B100656558 /* FocusPresenter.swift in Sources */,
 				A953AD6E1E536A1A00DC0D84 /* VideoOutputParameters.swift in Sources */,
 				A920613E1E4DFF0100656558 /* VideonaRangeSliderThumbLayer.swift in Sources */,
+				A9FB3A301E53BCE400C21918 /* VideoFilterCompositionInstruction.swift in Sources */,
 				A920617D1E4E08C800656558 /* ExpositionModesPresenterInterface.swift in Sources */,
 				A92061041E4DFC9500656558 /* ExposurePresenterInterface.swift in Sources */,
 				A9950CCA1E1ABD61009367E7 /* CompatibleResolutionsInteractor.swift in Sources */,
@@ -1169,6 +1161,7 @@
 				A9928A121E5370CE002A4E60 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A9BD5FB71D9120F40080CE97 /* Build configuration list for PBXProject "VideonaProject" */ = {
 			isa = XCConfigurationList;
