@@ -67,7 +67,8 @@ class VideoFilterCompositor : NSObject, AVVideoCompositing{
                 image = addTransitionIfIsInTime(image: image,
                                              tracks: instruction.tracks,
                                              actualTime:request.compositionTime,
-                                             transitionColor:instruction.transitionColor)
+                                             transitionColor:instruction.transitionColor,
+                                             transitionTime: instruction.transitionTime)
                 
                 let newBuffer: CVPixelBuffer? = self.renderContext.newPixelBuffer()
 
@@ -81,12 +82,12 @@ class VideoFilterCompositor : NSObject, AVVideoCompositing{
             }
         }
     }
-    let transitionTime = CMTimeMakeWithSeconds(0.5, 600)
     
     func addTransitionIfIsInTime(image:CIImage,
                               tracks:[AVAssetTrack],
                               actualTime:CMTime,
-                              transitionColor:CIColor)->CIImage{
+                              transitionColor:CIColor,
+                              transitionTime:CMTime)->CIImage{
         guard let track = getTrack(time: actualTime, tracks: tracks) else{return CIImage()}
         let fadeInTimeRange = CMTimeRangeMake(getTrackStartTime(startTime: actualTime, tracks: tracks), transitionTime)
         let startFadeOutTime = CMTimeSubtract(track.timeRange.end, transitionTime)
@@ -110,7 +111,11 @@ class VideoFilterCompositor : NSObject, AVVideoCompositing{
         if fadeOutTimeRange.containsTime(actualTime){
             let alpha = (actualTime.seconds - fadeOutTimeRange.start.seconds)
 
-            let color = CIColor(red: 255, green: 255, blue: 255, alpha: CGFloat(alpha))
+            let color = CIColor(red: transitionColor.red,
+                                green: transitionColor.green,
+                                blue: transitionColor.blue,
+                                alpha:CGFloat(alpha))
+            
             let blendColorImage = CIImage(color: color)
             let transitionFilter = CIFilter(name: "CISourceAtopCompositing")!
             transitionFilter.setValue(blendColorImage, forKey: "inputImage")

@@ -154,8 +154,8 @@ import AVFoundation
     }
     
     func addSwipeGesture(){
-        let swipeRight = UIPanGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture))
-        self.playerContainer.addGestureRecognizer(swipeRight)
+        let swipe = UIPanGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture))
+        self.playerContainer.addGestureRecognizer(swipe)
     }
     
     func respondToSwipeGesture(gesture: UIGestureRecognizer) {
@@ -163,7 +163,16 @@ import AVFoundation
             let velocity = swipeGesture.velocity(in: playerContainer)
             debugPrint(velocity)
             if let actualTime = player?.currentTime(){
-                let timeSeekTo = Float(actualTime.seconds) + Float(velocity.x/100)
+                guard let maxTime = player?.currentItem?.duration.seconds else{return}
+                
+                var timeSeekTo = Float(actualTime.seconds) + Float(velocity.x/100)
+                
+                if timeSeekTo > Float(maxTime){
+                    timeSeekTo = timeSeekTo - Float(maxTime)
+                }else if timeSeekTo < 0{
+                    timeSeekTo = Float(maxTime) - timeSeekTo
+                }
+                
                 self.seekToTime(timeSeekTo)
                 self.state?.playerSeeksTo(timeSeekTo)
             }

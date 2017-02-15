@@ -27,14 +27,16 @@ class VideoFilterCompositionInstruction : AVMutableVideoCompositionInstruction{
     let context: CIContext
     let tracks:[AVAssetTrack]
     let transitionColor:CIColor
+    let transitionTime:CMTime
     
     override var containsTweening: Bool{get{return false}}
     
-    init(tracks:[AVAssetTrack] , filters: [CIFilter], context: CIContext,transitionColor color:CIColor){
+    init(tracks:[AVAssetTrack] , filters: [CIFilter], context: CIContext,transitionColor color:CIColor,transitionTime:CMTime){
         self.tracks = tracks
         self.filters = filters
         self.context = context
         self.transitionColor = color
+        self.transitionTime = transitionTime
         
         super.init()
         
