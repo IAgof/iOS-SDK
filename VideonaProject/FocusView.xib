@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FocusView" customModule="Focus" customModuleProvider="target">
+            <connections>
+                <outlet property="autoButton" destination="ZCm-lM-fUO" id="1x0-cQ-ai6"/>
+                <outlet property="focalLensManualButton" destination="cxS-dN-afU" id="8qE-Vc-7zb"/>
+                <outlet property="manualTapButton" destination="oAv-mF-y38" id="uic-Op-KEV"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" restorationIdentifier="BatteryRemainingView" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="307" height="50"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="s3A-gU-Y1e">
+                    <rect key="frame" x="0.0" y="0.0" width="307" height="50"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZCm-lM-fUO">
+                            <rect key="frame" x="0.0" y="0.0" width="99.5" height="50"/>
+                            <state key="highlighted" image="activity_record_icon_mode_automatic_pressed"/>
+                            <connections>
+                                <action selector="pushAutoFocus:" destination="-1" eventType="touchUpInside" id="FRp-dg-Lpd"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cxS-dN-afU">
+                            <rect key="frame" x="103.5" y="0.0" width="100" height="50"/>
+                            <connections>
+                                <action selector="pushFocalLensManual:" destination="-1" eventType="touchUpInside" id="txV-13-T4M"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oAv-mF-y38">
+                            <rect key="frame" x="207.5" y="0.0" width="99.5" height="50"/>
+                            <connections>
+                                <action selector="pushManualFocus:" destination="-1" eventType="touchUpInside" id="PDG-6x-Pqd"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="s3A-gU-Y1e" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="0G1-tM-D46"/>
+                <constraint firstItem="s3A-gU-Y1e" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="U4V-a0-de5"/>
+                <constraint firstAttribute="trailing" secondItem="s3A-gU-Y1e" secondAttribute="trailing" id="eFJ-hF-hwz"/>
+                <constraint firstAttribute="bottom" secondItem="s3A-gU-Y1e" secondAttribute="bottom" id="lPJ-MB-Awo"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="378.5" y="105"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="activity_record_icon_mode_automatic_pressed" width="30" height="30"/>
+    </resources>
+</document>

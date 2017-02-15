@@ -167,7 +167,7 @@ public protocol WhiteBalanceDelegate {
     }
     
     func xibSetup() {
-//        view = loadViewFromNib()
+        view = loadViewFromNib()
         
         // use bounds not frame or it'll be offset
         view.frame = bounds

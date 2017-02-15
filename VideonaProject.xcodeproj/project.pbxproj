@@ -110,6 +110,10 @@
 		A92061BF1E4E0CD700656558 /* PlayerWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92061B41E4E0CD700656558 /* PlayerWireframe.swift */; };
 		A92061C01E4E0CD700656558 /* UIVerticalAlignLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92061B51E4E0CD700656558 /* UIVerticalAlignLabel.swift */; };
 		A953AD6E1E536A1A00DC0D84 /* VideoOutputParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = A953AD6D1E536A1A00DC0D84 /* VideoOutputParameters.swift */; };
+		A955701A1E54027F00DF56FA /* ExpositionModesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A95570191E54027F00DF56FA /* ExpositionModesView.xib */; };
+		A955701C1E54028700DF56FA /* FocusView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A955701B1E54028700DF56FA /* FocusView.xib */; };
+		A955701E1E54029000DF56FA /* WhiteBalanceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A955701D1E54029000DF56FA /* WhiteBalanceView.xib */; };
+		A95570201E54029600DF56FA /* ISOConfigurationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A955701F1E54029600DF56FA /* ISOConfigurationView.xib */; };
 		A956A10D1DBDED22002BDB26 /* AddVideoToProjectUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A956A1061DBDED22002BDB26 /* AddVideoToProjectUseCase.swift */; };
 		A956A10E1DBDED22002BDB26 /* AVQualityParse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A956A1071DBDED22002BDB26 /* AVQualityParse.swift */; };
 		A956A10F1DBDED22002BDB26 /* CATextLayerAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A956A1081DBDED22002BDB26 /* CATextLayerAttributes.swift */; };
@@ -247,6 +251,10 @@
 		A92061B41E4E0CD700656558 /* PlayerWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerWireframe.swift; sourceTree = "<group>"; };
 		A92061B51E4E0CD700656558 /* UIVerticalAlignLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIVerticalAlignLabel.swift; sourceTree = "<group>"; };
 		A953AD6D1E536A1A00DC0D84 /* VideoOutputParameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoOutputParameters.swift; sourceTree = "<group>"; };
+		A95570191E54027F00DF56FA /* ExpositionModesView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpositionModesView.xib; sourceTree = "<group>"; };
+		A955701B1E54028700DF56FA /* FocusView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FocusView.xib; sourceTree = "<group>"; };
+		A955701D1E54029000DF56FA /* WhiteBalanceView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WhiteBalanceView.xib; sourceTree = "<group>"; };
+		A955701F1E54029600DF56FA /* ISOConfigurationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ISOConfigurationView.xib; sourceTree = "<group>"; };
 		A956A1061DBDED22002BDB26 /* AddVideoToProjectUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddVideoToProjectUseCase.swift; sourceTree = "<group>"; };
 		A956A1071DBDED22002BDB26 /* AVQualityParse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVQualityParse.swift; sourceTree = "<group>"; };
 		A956A1081DBDED22002BDB26 /* CATextLayerAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CATextLayerAttributes.swift; sourceTree = "<group>"; };
@@ -460,6 +468,7 @@
 		A92061491E4E04C500656558 /* ISOConfiguration */ = {
 			isa = PBXGroup;
 			children = (
+				A955701F1E54029600DF56FA /* ISOConfigurationView.xib */,
 				A920614A1E4E04D900656558 /* ISOConfigurationInteractor.swift */,
 				A920614B1E4E04D900656558 /* ISOConfigurationInteractorInterface.swift */,
 				A920614C1E4E04D900656558 /* ISOConfigurationPresenter.swift */,
@@ -472,6 +481,7 @@
 		A92061661E4E089A00656558 /* White balance */ = {
 			isa = PBXGroup;
 			children = (
+				A955701D1E54029000DF56FA /* WhiteBalanceView.xib */,
 				A92061581E4E089600656558 /* WhiteBalanceConstants.swift */,
 				A92061591E4E089600656558 /* WhiteBalanceInteractor.swift */,
 				A920615A1E4E089600656558 /* WhiteBalancePresenter.swift */,
@@ -485,6 +495,7 @@
 		A92061731E4E08B500656558 /* Focus */ = {
 			isa = PBXGroup;
 			children = (
+				A955701B1E54028700DF56FA /* FocusView.xib */,
 				A92061671E4E08B100656558 /* FocusInteractor.swift */,
 				A92061681E4E08B100656558 /* FocusInteractorInterface.swift */,
 				A92061691E4E08B100656558 /* FocusPresenter.swift */,
@@ -501,6 +512,7 @@
 				A92061751E4E08C800656558 /* ExpositionModesInteractorInterface.swift */,
 				A92061761E4E08C800656558 /* ExpositionModesPresenter.swift */,
 				A92061771E4E08C800656558 /* ExpositionModesPresenterInterface.swift */,
+				A95570191E54027F00DF56FA /* ExpositionModesView.xib */,
 				A92061781E4E08C800656558 /* ExpositionModesView.swift */,
 			);
 			name = "Exposition modes";
@@ -789,15 +801,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A955701C1E54028700DF56FA /* FocusView.xib in Resources */,
 				A920611F1E4DFCCE00656558 /* ZoomSliderView.xib in Resources */,
 				A960A86C1E4DD6D20069F487 /* AudioLevelBarView.xib in Resources */,
 				A92060B21E4DEF8600656558 /* Media.xcassets in Resources */,
 				A92061131E4DFCBB00656558 /* InputSoundGainControlView.xib in Resources */,
+				A955701E1E54029000DF56FA /* WhiteBalanceView.xib in Resources */,
+				A95570201E54029600DF56FA /* ISOConfigurationView.xib in Resources */,
 				A92060D81E4DF59D00656558 /* ResolutionsSelectorCell.xib in Resources */,
 				A920612B1E4DFCDC00656558 /* FocalLensSliderView.xib in Resources */,
 				A92060B01E4DEF6A00656558 /* BatteryRemainingView.xib in Resources */,
 				A92060D71E4DF59D00656558 /* ResolutionsSelectorView.xib in Resources */,
 				A92060C11E4DF26300656558 /* SpaceOnDiskView.xib in Resources */,
+				A955701A1E54027F00DF56FA /* ExpositionModesView.xib in Resources */,
 				A92061071E4DFC9500656558 /* ExposureView.xib in Resources */,
 				A92061BE1E4E0CD700656558 /* PlayerView.xib in Resources */,
 			);
