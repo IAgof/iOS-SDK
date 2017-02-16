@@ -51,10 +51,14 @@ class VideoFilterCompositor : NSObject, AVVideoCompositing{
                     request.finish(with: NSError(domain: "jojodmo.com", code: 760, userInfo: nil))
                     return
                 }
-                guard let track = getTrack(time: request.compositionTime, tracks: instruction.tracks) else{return}
+                guard let track = getTrack(time: request.compositionTime, tracks: instruction.tracks) else{
+                    request.finish(with: NSError(domain: "jojodmo.com", code: 761, userInfo: nil))
+                    return
+                }
                 let trackID = track.trackID
                 guard let pixels = request.sourceFrame(byTrackID: trackID) else{
-                    request.finish(with: NSError(domain: "jojodmo.com", code: 761, userInfo: nil))
+//                    request.finish(with: NSError(domain: "jojodmo.com", code: 761, userInfo: nil))
+                    request.finish(withComposedVideoFrame: self.renderContext.newPixelBuffer()!)
                     return
                 }
                 

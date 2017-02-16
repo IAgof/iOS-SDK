@@ -148,7 +148,7 @@ import AVFoundation
         if !playerItem.duration.seconds.isNaN{
             self.seekSlider.maximumValue = Float(playerItem.duration.seconds)
         }
-        self.seekToTime(0)
+        self.seekToTime(0.05)
         
         state?.playerHasLoaded()
     }
@@ -175,6 +175,7 @@ import AVFoundation
                 
                 self.seekToTime(timeSeekTo)
                 self.state?.playerSeeksTo(timeSeekTo)
+                self.delegate?.seekBarUpdate(timeSeekTo)
             }
         }
     }

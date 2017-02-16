@@ -9,8 +9,15 @@
 import Foundation
 
 public struct VideoOutputParameters {
-    public var brightness:NSNumber = 0
-    public var contrast:NSNumber = 1
-    public var saturation:NSNumber = 1
-    public var exposure:NSNumber = 0.5
+    public var brightness:NSNumber
+    public var contrast:NSNumber
+    public var saturation:NSNumber
+    public var exposure:NSNumber
+    
+    public init(){
+        brightness = 0
+        contrast = 1
+        saturation = 1
+        exposure = 0
+    }
 }

@@ -33,7 +33,7 @@ open class Profile: NSObject {
     }
     
     override init(){
-        self.resolution = AVCaptureSessionPreset1920x1080
+        self.resolution = AVCaptureSessionPreset1280x720
         self.videoQuality = AVQualityParse().parseQualityToView(resolution: AVAssetExportPresetHighestQuality)
     }
     
