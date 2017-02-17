@@ -367,7 +367,8 @@ import AVFoundation
         } else if self.upperThumbLayer.frame.contains(self.previousLocation) {
             self.upperThumbLayer.highlighted = true
             delegate?.rangeSliderUpperValueStartToChange()
-        } else {
+//        } else {// if you want to select mid thumb on any touch on screen switch elses
+        } else if self.middleThumbLayer.frame.contains(self.previousLocation) {
             self.middleThumbLayer.highlighted = true
         }
         

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		372169BAD55AE0D6E058D7C0 /* Pods_VideonaProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C833A5003C6FCD472D2E8E0 /* Pods_VideonaProject.framework */; };
 		A92060AB1E4DEF6A00656558 /* BatteryRemainingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92060A51E4DEF6A00656558 /* BatteryRemainingInteractor.swift */; };
 		A92060AC1E4DEF6A00656558 /* BatteryRemainingInteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92060A61E4DEF6A00656558 /* BatteryRemainingInteractorInterface.swift */; };
 		A92060AD1E4DEF6A00656558 /* BatteryRemainingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92060A71E4DEF6A00656558 /* BatteryRemainingPresenter.swift */; };
@@ -142,6 +141,7 @@
 		A9BD5FD51D91210C0080CE97 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BD5FCE1D91210C0080CE97 /* Video.swift */; };
 		A9C5FB6D1DD5E7AE00057A1B /* VideoTransitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C5FB6C1DD5E7AE00057A1B /* VideoTransitions.swift */; };
 		A9C5FB6F1DD5E7B500057A1B /* AudioTransitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C5FB6E1DD5E7B500057A1B /* AudioTransitions.swift */; };
+		A9CA73E91E567860009C4E88 /* MBCircularProgressBar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9CA73E81E567860009C4E88 /* MBCircularProgressBar.framework */; };
 		A9FB3A2F1E53BCE400C21918 /* VideoFilterCompositor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FB3A2D1E53BCE400C21918 /* VideoFilterCompositor.swift */; };
 		A9FB3A301E53BCE400C21918 /* VideoFilterCompositionInstruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FB3A2E1E53BCE400C21918 /* VideoFilterCompositionInstruction.swift */; };
 /* End PBXBuildFile section */
@@ -287,6 +287,7 @@
 		A9BD5FCE1D91210C0080CE97 /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		A9C5FB6C1DD5E7AE00057A1B /* VideoTransitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoTransitions.swift; sourceTree = "<group>"; };
 		A9C5FB6E1DD5E7B500057A1B /* AudioTransitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioTransitions.swift; sourceTree = "<group>"; };
+		A9CA73E81E567860009C4E88 /* MBCircularProgressBar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MBCircularProgressBar.framework; sourceTree = "<group>"; };
 		A9FB3A2D1E53BCE400C21918 /* VideoFilterCompositor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoFilterCompositor.swift; sourceTree = "<group>"; };
 		A9FB3A2E1E53BCE400C21918 /* VideoFilterCompositionInstruction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoFilterCompositionInstruction.swift; sourceTree = "<group>"; };
 		B2F4A0D364C97E57476CD3C1 /* Pods-VideonaProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideonaProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VideonaProject/Pods-VideonaProject.debug.xcconfig"; sourceTree = "<group>"; };
@@ -304,7 +305,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				372169BAD55AE0D6E058D7C0 /* Pods_VideonaProject.framework in Frameworks */,
+				A9CA73E91E567860009C4E88 /* MBCircularProgressBar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -539,26 +540,26 @@
 		A960A85E1E4DD6B00069F487 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				A92061951E4E09B500656558 /* Player */,
-				A92061801E4E08CD00656558 /* Exposition modes */,
-				A92061731E4E08B500656558 /* Focus */,
-				A92061661E4E089A00656558 /* White balance */,
-				A92061491E4E04C500656558 /* ISOConfiguration */,
-				A92061401E4DFF1500656558 /* VideonaTrackOverView */,
-				A92061371E4DFEF000656558 /* VideonaRangeSlider */,
-				A920612E1E4DFE8700656558 /* Gallery */,
-				A92060FB1E4DFC7D00656558 /* Exposure Slider */,
-				A92060FA1E4DFC7000656558 /* InputSoundGainControl */,
-				A92060F91E4DFC6700656558 /* ZoomCameraSlider */,
-				A92060F81E4DFC5D00656558 /* Focal Lens Slider */,
-				A92060ED1E4DF99200656558 /* Split */,
-				A92060E41E4DF97500656558 /* Trim */,
+				A960A8601E4DD6C60069F487 /* AudioLevelBar */,
+				A960A8711E4DDCB80069F487 /* BatteryRemaining */,
 				A92060DB1E4DF93A00656558 /* Duplicate */,
+				A92061801E4E08CD00656558 /* Exposition modes */,
+				A92060FB1E4DFC7D00656558 /* Exposure Slider */,
+				A92060F81E4DFC5D00656558 /* Focal Lens Slider */,
+				A92061731E4E08B500656558 /* Focus */,
+				A920612E1E4DFE8700656558 /* Gallery */,
+				A92060FA1E4DFC7000656558 /* InputSoundGainControl */,
+				A92061491E4E04C500656558 /* ISOConfiguration */,
+				A92061951E4E09B500656558 /* Player */,
+				A960A85F1E4DD6BC0069F487 /* Project */,
 				A92060C61E4DF57D00656558 /* ResolutionsSelector */,
 				A92060B51E4DF25A00656558 /* SpaceOnDisk */,
-				A960A8711E4DDCB80069F487 /* BatteryRemaining */,
-				A960A8601E4DD6C60069F487 /* AudioLevelBar */,
-				A960A85F1E4DD6BC0069F487 /* Project */,
+				A92060ED1E4DF99200656558 /* Split */,
+				A92060E41E4DF97500656558 /* Trim */,
+				A92061371E4DFEF000656558 /* VideonaRangeSlider */,
+				A92061401E4DFF1500656558 /* VideonaTrackOverView */,
+				A92061661E4E089A00656558 /* White balance */,
+				A92060F91E4DFC6700656558 /* ZoomCameraSlider */,
 			);
 			name = Modules;
 			sourceTree = "<group>";
@@ -611,6 +612,7 @@
 		A9BD5FB31D9120F40080CE97 = {
 			isa = PBXGroup;
 			children = (
+				A9CA73E81E567860009C4E88 /* MBCircularProgressBar.framework */,
 				A9BD5FBF1D9120F40080CE97 /* VideonaProject */,
 				A9928A0D1E5370CE002A4E60 /* VideonaProjectTarget */,
 				A9BD5FBE1D9120F40080CE97 /* Products */,
@@ -1137,6 +1139,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = VideonaProject/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1157,6 +1163,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = VideonaProject/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

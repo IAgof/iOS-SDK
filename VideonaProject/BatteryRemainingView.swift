@@ -11,7 +11,7 @@ import MBCircularProgressBar
 
 public protocol BatteryRemainingDelegate {
     func closeBatteryRemainingPushed()
-    func valuesUpdated(_ value:Float)
+    func batteryValuesUpdated(_ value:Float)
 }
 
 open class BatteryRemainingView: UIView,BatteryRemainingPresenterDelegate {
@@ -84,7 +84,7 @@ open class BatteryRemainingView: UIView,BatteryRemainingPresenterDelegate {
     //MARK: presenter delegate
     func updateBarValue(_ value: CGFloat) {
         batteryProgressBar.value = value
-        delegate?.valuesUpdated(Float(value))
+        delegate?.batteryValuesUpdated(Float(value))
     }
     func updateBarColor(_ color: UIColor) {
         batteryProgressBar.progressColor = color

@@ -59,7 +59,6 @@ open class DuplicatePresenter: NSObject,DuplicatePresenterInterface,DuplicateInt
     open func pushAcceptHandler() {
         interactor?.setDuplicateVideoToProject(numberOfDuplicates)
         
-        delegate?.acceptFinished()
         delegate?.trackNumberOfDuplicates(numberOfDuplicates: numberOfDuplicates)
     }
     
@@ -89,5 +88,9 @@ open class DuplicatePresenter: NSObject,DuplicatePresenterInterface,DuplicateInt
         DispatchQueue.main.async(execute: { () -> Void in
             self.delegate?.setThumbnails(image)
         })
+    }
+    
+    public func duplicateActionFinished() {
+        delegate?.acceptFinished()
     }
 }

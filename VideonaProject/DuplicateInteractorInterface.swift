@@ -18,4 +18,5 @@ public protocol DuplicateInteractorInterface {
 
 public protocol DuplicateInteractorDelegate {
     func setThumbnail(_ image:UIImage)
+    func duplicateActionFinished()
 }

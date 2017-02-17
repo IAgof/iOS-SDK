@@ -117,6 +117,7 @@ open class DuplicateInteractor: NSObject,DuplicateInteractorInterface {
                      position: videoPosition!)
                 project?.reorderVideoList()
         }
+        delegate?.duplicateActionFinished()
     }
     
     open func add(_ video:Video,

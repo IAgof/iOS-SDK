@@ -4,6 +4,6 @@
 target 'VideonaProject' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
-  pod 'MBCircularProgressBar', '0.3.4'
+#  pod 'MBCircularProgressBar', '0.3.4'
 
 end

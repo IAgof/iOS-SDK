@@ -134,7 +134,6 @@ open class Project: NSObject {
         projectOutputAudioLevel = project.projectOutputAudioLevel
         music = project.music
         isMusicSet = project.isMusicSet
-//        isVoiceOverSet = project.isVoiceOverSet
         transitionTime = project.transitionTime
         
         videoList = project.videoList
