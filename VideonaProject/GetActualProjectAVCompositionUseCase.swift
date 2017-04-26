@@ -91,13 +91,14 @@ public class GetActualProjectAVCompositionUseCase: NSObject {
             videoComposition = AVMutableVideoComposition(propertiesOf: mixComposition)
             let resolutionSize = Resolution.init(AVResolution: project.getProfile().getResolution())
             videoComposition?.renderSize = CGSize(width: resolutionSize.width, height: resolutionSize.height)
+            //TODO: Change when VideoFilterCompositor has done better
 //            videoComposition?.customVideoCompositorClass = VideoFilterCompositor.self
             
-//            VideoTransitions(transitionTime: transitionTime)
-//                .setInstructions(mutableComposition: mixComposition,
-//                                 videoComposition: videoComposition!,
-//                                 transitionColor:project.transitionColor,
-//                                 filters:getFilters(fromProject: project))
+            VideoTransitions(transitionTime: transitionTime)
+                .setInstructions(mutableComposition: mixComposition,
+                                 videoComposition: videoComposition!,
+                                 transitionColor:project.transitionColor,
+                                 filters:getFilters(fromProject: project))
         }
 
         playerComposition.videoComposition = videoComposition

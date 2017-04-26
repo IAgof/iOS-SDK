@@ -22,15 +22,17 @@ class VideoTransitions {
                          transitionColor:CIColor,
                          filters:[CIFilter]){
 
-        let eagl = EAGLContext(api: EAGLRenderingAPI.openGLES2)
-        let context = CIContext(eaglContext: eagl!, options: [kCIContextWorkingColorSpace : NSNull()])
-        
-        let instruction = VideoFilterCompositionInstruction(tracks: mutableComposition.tracks(withMediaType: AVMediaTypeVideo),
-                                                            filters: filters,
-                                                            context: context,
-                                                            transitionColor:transitionColor,
-                                                            transitionTime:transitionTime)
-        
+        //TODO: Change when compositor works
+//        let eagl = EAGLContext(api: EAGLRenderingAPI.openGLES2)
+//        let context = CIContext(eaglContext: eagl!, options: [kCIContextWorkingColorSpace : NSNull()])
+//        
+//        let instruction = VideoFilterCompositionInstruction(tracks: mutableComposition.tracks(withMediaType: AVMediaTypeVideo),
+//                                                            filters: filters,
+//                                                            context: context,
+//                                                            transitionColor:transitionColor,
+//                                                            transitionTime:transitionTime)
+        let instruction = AVMutableVideoCompositionInstruction()
+
         var fadeInTime = kCMTimeZero
         
         mutableComposition.tracks(withMediaType: AVMediaTypeVideo).forEach { (video) in
