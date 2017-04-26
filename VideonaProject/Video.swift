@@ -14,22 +14,28 @@ open class Video: Media {
     
     open var videoURL:URL = URL(fileURLWithPath: ""){
         didSet{
-            self.PHAssetForFileURL(url: videoURL as NSURL, completion: {
-                phAsset,hasAsset in
-                if hasAsset{
-                    self.videoPHAsset = phAsset!
-                }
-            })
+            DispatchQueue.main.async {
+                self.videoAsset = AVAsset(url: self.videoURL)
+                self.PHAssetForFileURL(url: self.videoURL as NSURL, completion: {
+                    phAsset,hasAsset in
+                    if hasAsset{
+                        self.videoPHAsset = phAsset!
+                    }
+                })
+            }
         }
     }
     
     open var videoPHAsset:PHAsset = PHAsset()
+    public var videoAsset: AVAsset?
+    
     fileprivate var isSplit:Bool!
     fileprivate var position:Int!
     open var textToVideo:String = ""
     open var textPositionToVideo:Int = 0
     open var originAudioLevel:Float = 1
     open var secondAudioLevel:Float = 0
+    let durationKey = "duration"
 
     override public init(title: String, mediaPath: String) {
         super.init(title: title, mediaPath: mediaPath)
@@ -51,6 +57,7 @@ open class Video: Media {
         copy.secondAudioLevel = secondAudioLevel
         copy.videoURL = videoURL
         copy.uuid = UUID().uuidString
+        copy.videoAsset = self.videoAsset
         
         return copy
     }
@@ -58,17 +65,31 @@ open class Video: Media {
     open func mediaRecordedFinished(){
         let asset = AVAsset(url: videoURL)
         
-        fileStartTime = 0.0
-        fileStopTime = asset.duration.seconds
-        trimStartTime = fileStartTime
-        trimStopTime = fileStopTime
+        asset.loadValuesAsynchronously(forKeys: [durationKey]) {
+            let status = asset.statusOfValue(forKey: self.durationKey, error: nil)
+            
+            if status == .loaded {
+                self.fileStartTime = 0.0
+                self.fileStopTime = asset.duration.seconds
+                self.trimStartTime = self.fileStartTime
+                self.trimStopTime = self.fileStopTime
+                self.videoAsset = asset
+            }
+        }
     }
     
     open func setDefaultVideoParameters(){
         let asset = AVAsset(url: videoURL)
         
-        fileStartTime = 0.0
-        fileStopTime = asset.duration.seconds
+        asset.loadValuesAsynchronously(forKeys: [durationKey]) {
+            let status = asset.statusOfValue(forKey: self.durationKey, error: nil)
+            
+            if status == .loaded {
+                self.fileStartTime = 0.0
+                self.fileStopTime = asset.duration.seconds
+                self.videoAsset = asset
+            }
+        }
    }
     
     open func getIsSplit() -> Bool {

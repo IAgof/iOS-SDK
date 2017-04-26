@@ -29,18 +29,12 @@ public class GetActualProjectAVCompositionUseCase: NSObject {
         
         let videosArray = project.getVideoList()
         // - Add assets to the composition
-        if videosArray.count>0 {
-            for count in 0...(videosArray.count - 1){
+            videosArray.forEach { (video) in
+                
                 let videoTrack = mixComposition.addMutableTrack(withMediaType: AVMediaTypeVideo,
                                                                              preferredTrackID: Int32(kCMPersistentTrackID_Invalid))
                 let audioTrack = mixComposition.addMutableTrack(withMediaType: AVMediaTypeAudio,
                                                                              preferredTrackID: Int32(kCMPersistentTrackID_Invalid))
-                let video = videosArray[count]
-                // 2 - Get Video asset
-                //                let videoURL: NSURL = NSURL.init(fileURLWithPath: video.getMediaPath())
-                let videoURL: NSURL = video.videoURL as NSURL
-                let videoAsset = AVAsset.init(url: videoURL as URL)
-                
                 do {
                     let startTime = CMTimeMake(Int64(video.getStartTime() * 1000), 1000)
                     let stopTime = CMTimeMake(Int64(video.getStopTime() * 1000), 1000)
@@ -48,11 +42,11 @@ public class GetActualProjectAVCompositionUseCase: NSObject {
                     let range = CMTimeRangeMake(startTime, duration)
                     
                     try videoTrack.insertTimeRange(range,
-                                                   of: videoAsset.tracks(withMediaType: AVMediaTypeVideo)[0] ,
+                                                   of: video.videoAsset!.tracks(withMediaType: AVMediaTypeVideo)[0] ,
                                                    at: videoTotalTime)
                     
                     try audioTrack.insertTimeRange(range,
-                                                   of: videoAsset.tracks(withMediaType: AVMediaTypeAudio)[0] ,
+                                                   of: video.videoAsset!.tracks(withMediaType: AVMediaTypeAudio)[0] ,
                                                    at: videoTotalTime)
                     
                     let audiocParam: AVMutableAudioMixInputParameters = AVMutableAudioMixInputParameters(track: audioTrack)
@@ -82,13 +76,11 @@ public class GetActualProjectAVCompositionUseCase: NSObject {
             }
             
             if isVoiceOverSet {
-                //TODO: change to new voice over params
-
                 setVoiceOverToProject(audioMixParams: &audioMixParam,
                                       mixComposition: mixComposition,
                                       audios: project.voiceOver)
             }
-        }
+
         
         var playerComposition = VideoComposition(mutableComposition: mixComposition)
         
@@ -99,12 +91,13 @@ public class GetActualProjectAVCompositionUseCase: NSObject {
             videoComposition = AVMutableVideoComposition(propertiesOf: mixComposition)
             let resolutionSize = Resolution.init(AVResolution: project.getProfile().getResolution())
             videoComposition?.renderSize = CGSize(width: resolutionSize.width, height: resolutionSize.height)
-            videoComposition?.customVideoCompositorClass = VideoFilterCompositor.self
+//            videoComposition?.customVideoCompositorClass = VideoFilterCompositor.self
             
-            VideoTransitions(transitionTime: transitionTime).setInstructions(mutableComposition: mixComposition,
-                                 videoComposition: videoComposition!,
-                                 transitionColor:project.transitionColor,
-                                 filters:getFilters(fromProject: project))
+//            VideoTransitions(transitionTime: transitionTime)
+//                .setInstructions(mutableComposition: mixComposition,
+//                                 videoComposition: videoComposition!,
+//                                 transitionColor:project.transitionColor,
+//                                 filters:getFilters(fromProject: project))
         }
 
         playerComposition.videoComposition = videoComposition

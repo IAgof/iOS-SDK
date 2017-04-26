@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import CoreImage
+import AVFoundation
 
 open class Project: NSObject {
     
@@ -172,9 +173,8 @@ open class Project: NSObject {
     
     open func getDuration()->Double {
         duration = 0
-        for video in videoList{
-            duration += video.getDuration()
-        }
+        videoList.forEach({ duration += $0.getDuration() })
+        
         return duration
     }
     

@@ -22,27 +22,26 @@ class VideoTransitions {
                          transitionColor:CIColor,
                          filters:[CIFilter]){
 
-        let numberOfVideos = (mutableComposition.tracks(withMediaType: AVMediaTypeVideo).count)
         let eagl = EAGLContext(api: EAGLRenderingAPI.openGLES2)
         let context = CIContext(eaglContext: eagl!, options: [kCIContextWorkingColorSpace : NSNull()])
         
-        let instruction = VideoFilterCompositionInstruction(tracks: mutableComposition.tracks(withMediaType: AVMediaTypeVideo), filters: filters, context: context,transitionColor:transitionColor, transitionTime:transitionTime)
+        let instruction = VideoFilterCompositionInstruction(tracks: mutableComposition.tracks(withMediaType: AVMediaTypeVideo),
+                                                            filters: filters,
+                                                            context: context,
+                                                            transitionColor:transitionColor,
+                                                            transitionTime:transitionTime)
         
         var fadeInTime = kCMTimeZero
         
-        for videoPos in 0...numberOfVideos{
-            if videoPos != numberOfVideos{
-                let video = mutableComposition.tracks(withMediaType: AVMediaTypeVideo)[videoPos]
-                
-                if (video.timeRange.end.seconds - fadeInTime.seconds) > 2 * transitionTime.seconds {
-                    setInstructionsToTrack(instruction: instruction,
-                                           videoTrack: video,
-                                           transitionTime: transitionTime,
-                                           atTime: fadeInTime,
-                                           videoComposition: videoComposition)
-                }
-                fadeInTime = video.timeRange.end
+        mutableComposition.tracks(withMediaType: AVMediaTypeVideo).forEach { (video) in
+            if (video.timeRange.end.seconds - fadeInTime.seconds) > 2 * transitionTime.seconds {
+                setInstructionsToTrack(instruction: instruction,
+                                       videoTrack: video,
+                                       transitionTime: transitionTime,
+                                       atTime: fadeInTime,
+                                       videoComposition: videoComposition)
             }
+            fadeInTime = video.timeRange.end
         }
         
         instruction.timeRange = CMTimeRangeMake(kCMTimeZero, mutableComposition.duration)
