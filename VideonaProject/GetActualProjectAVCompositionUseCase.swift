@@ -55,6 +55,7 @@ public class GetActualProjectAVCompositionUseCase: NSObject {
                     audioMixParam.append(audiocParam)
                     
                     videoTotalTime = CMTimeAdd(videoTotalTime, duration)
+                    videoTotalTime = CMTimeSubtract(videoTotalTime, CMTimeMakeWithSeconds(0.5, 1000))
                     
                     Utils().debugLog("el tiempo total del video es: \(videoTotalTime.seconds)")
                 } catch _ {
@@ -96,9 +97,11 @@ public class GetActualProjectAVCompositionUseCase: NSObject {
             
             VideoTransitions(transitionTime: transitionTime)
                 .setInstructions(mutableComposition: mixComposition,
-                                 videoComposition: videoComposition!,
-                                 transitionColor:project.transitionColor,
-                                 filters:getFilters(fromProject: project))
+                                 videoComposition: videoComposition!
+//                    ,
+//                                 transitionColor:project.transitionColor,
+//                                 filters:getFilters(fromProject: project))
+            )
         }
 
         playerComposition.videoComposition = videoComposition

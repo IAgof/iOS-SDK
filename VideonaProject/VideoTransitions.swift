@@ -8,7 +8,6 @@
 
 import Foundation
 import AVFoundation
-import CoreImage
 
 class VideoTransitions {
     let transitionTime:CMTime
@@ -18,32 +17,26 @@ class VideoTransitions {
     }
     
     func setInstructions(mutableComposition:AVMutableComposition,
-                         videoComposition:AVMutableVideoComposition,
-                         transitionColor:CIColor,
-                         filters:[CIFilter]){
-
-        //TODO: Change when compositor works
-//        let eagl = EAGLContext(api: EAGLRenderingAPI.openGLES2)
-//        let context = CIContext(eaglContext: eagl!, options: [kCIContextWorkingColorSpace : NSNull()])
-//        
-//        let instruction = VideoFilterCompositionInstruction(tracks: mutableComposition.tracks(withMediaType: AVMediaTypeVideo),
-//                                                            filters: filters,
-//                                                            context: context,
-//                                                            transitionColor:transitionColor,
-//                                                            transitionTime:transitionTime)
+                         videoComposition:AVMutableVideoComposition){
+        
+        let numberOfVideos = (mutableComposition.tracks(withMediaType: AVMediaTypeVideo).count)
         let instruction = AVMutableVideoCompositionInstruction()
-
+        
         var fadeInTime = kCMTimeZero
         
-        mutableComposition.tracks(withMediaType: AVMediaTypeVideo).forEach { (video) in
-            if (video.timeRange.end.seconds - fadeInTime.seconds) > 2 * transitionTime.seconds {
-                setInstructionsToTrack(instruction: instruction,
-                                       videoTrack: video,
-                                       transitionTime: transitionTime,
-                                       atTime: fadeInTime,
-                                       videoComposition: videoComposition)
+        for videoPos in 0...numberOfVideos{
+            if videoPos != numberOfVideos{
+                let video = mutableComposition.tracks(withMediaType: AVMediaTypeVideo)[videoPos]
+                
+                if (video.timeRange.end.seconds - fadeInTime.seconds) > 2 * transitionTime.seconds {
+                    setInstructionsToTrack(instruction: instruction,
+                                           videoTrack: video,
+                                           transitionTime: transitionTime,
+                                           atTime: fadeInTime,
+                                           videoComposition: videoComposition)
+                }
+                fadeInTime = video.timeRange.end
             }
-            fadeInTime = video.timeRange.end
         }
         
         instruction.timeRange = CMTimeRangeMake(kCMTimeZero, mutableComposition.duration)
