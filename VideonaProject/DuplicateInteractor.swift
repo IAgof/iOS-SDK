@@ -65,8 +65,8 @@ open class DuplicateInteractor: NSObject,DuplicateInteractorInterface {
         let videoAsset = AVAsset.init(url: videoURL)
         
         do {
-            let stopTime = CMTimeMake(Int64(self.stopTime * 1000), 1000)
-            let startTime = CMTimeMake(Int64(self.startTime * 1000), 1000)
+            let stopTime = CMTimeMake(Int64(self.stopTime * 600), 600)
+            let startTime = CMTimeMake(Int64(self.startTime * 600), 600)
             
             try videoTrack.insertTimeRange(CMTimeRangeMake(kCMTimeZero, videoAsset.duration),
                                            of: videoAsset.tracks(withMediaType: AVMediaTypeVideo)[0] ,

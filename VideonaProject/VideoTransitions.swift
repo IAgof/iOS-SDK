@@ -17,16 +17,24 @@ class VideoTransitions {
         self.transitionTime = transitionTime
     }
     
-    func setInstructions(mutableComposition:AVMutableComposition,
-                         videoComposition:AVMutableVideoComposition,
+    func setInstructions(videonaComposition: VideoComposition,
                          transitionColor:CIColor,
                          filters:[CIFilter]){
-
+        
+        guard let mutableComposition = videonaComposition.mutableComposition else {return}
+        guard let videoComposition = videonaComposition.videoComposition else {return}
+        
         let numberOfVideos = (mutableComposition.tracks(withMediaType: AVMediaTypeVideo).count)
         let eagl = EAGLContext(api: EAGLRenderingAPI.openGLES2)
         let context = CIContext(eaglContext: eagl!, options: [kCIContextWorkingColorSpace : NSNull()])
         
-        let instruction = VideoFilterCompositionInstruction(tracks: mutableComposition.tracks(withMediaType: AVMediaTypeVideo), filters: filters, context: context,transitionColor:transitionColor, transitionTime:transitionTime)
+        guard let videoTrack = mutableComposition.tracks(withMediaType: AVMediaTypeVideo).first else{return}
+        
+        let instruction = VideoFilterCompositionInstruction(track: videoTrack,
+                                                            filters: filters, context: context,transitionColor:transitionColor,
+                                                            transitionTime:transitionTime,
+                                                            fadeInTransitionTimeRanges: videonaComposition.fadeInTransitionTimeRanges,
+                                                            fadeOutTransitionTimeRanges: videonaComposition.fadeOutTransitionTimeRanges)
         
         var fadeInTime = kCMTimeZero
         
