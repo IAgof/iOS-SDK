@@ -59,6 +59,10 @@ open class PlayerPresenter:NSObject,PlayerPresenterInterface{
         }
     }
     
+    public func setVideoComposition(videoComposition: AVMutableVideoComposition){
+        self.playerDelegate?.setPlayerVideoComposition(videoComposition)
+    }
+    
     open func layoutSubViews(){
         if let view = self.playerDelegate?.getView(){
             self.playerDelegate?.updateLayers()

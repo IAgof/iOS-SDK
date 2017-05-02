@@ -54,6 +54,8 @@ import AVFoundation
     
     open func setPlayerVideoComposition(_ videoComposition: AVMutableVideoComposition) {
         self.videoComposition = videoComposition
+        
+        if let playerItem = self.player?.currentItem{ playerItem.videoComposition = videoComposition }
     }
     
     override open func layoutSubviews() {
