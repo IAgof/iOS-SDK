@@ -54,6 +54,8 @@ import AVFoundation
     
     open func setPlayerVideoComposition(_ videoComposition: AVMutableVideoComposition) {
         self.videoComposition = videoComposition
+        
+        if let playerItem = self.player?.currentItem{ playerItem.videoComposition = videoComposition }
     }
     
     override open func layoutSubviews() {
@@ -181,15 +183,15 @@ import AVFoundation
     }
     
     open func createVideoPlayerByPath(_ videoURL: URL) {
-        if player != nil{
             let asset = AVAsset(url: videoURL)
+            let isplayable = asset.isPlayable
+            
             let playerItem: AVPlayerItem = AVPlayerItem(asset: asset)
             setUpVideoPlayer(withPlayerItem: playerItem)
             
             self.seekToTime(0)
             
             state?.playerHasLoaded()
-        }
     }
     
     open func updateSeekBarOnUI(){
@@ -318,7 +320,7 @@ import AVFoundation
     }
     
     open func seekToTime(_ time: Float) {
-        print("Seek to time manually to --\(time)")
+//        print("Seek to time manually to --\(time)")
         
         guard let player = self.player else{
             return

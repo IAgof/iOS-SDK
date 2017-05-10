@@ -12,6 +12,7 @@ import AVFoundation
 public protocol PlayerPresenterInterface {
     func createVideoPlayer(_ composition:VideoComposition)
     func createVideoPlayer(_ videoURL:URL)
+    func setVideoComposition(videoComposition: AVMutableVideoComposition)
     func layoutSubViews()
     func onVideoStops()
     func pauseVideo()

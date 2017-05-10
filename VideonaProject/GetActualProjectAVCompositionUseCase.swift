@@ -23,91 +23,92 @@ public class GetActualProjectAVCompositionUseCase: NSObject {
         // - Create AVMutableComposition object. This object will hold your AVMutableCompositionTrack instances.
         let mixComposition = AVMutableComposition()
         var videoComposition:AVMutableVideoComposition?
+        var playerComposition = VideoComposition(mutableComposition: mixComposition)
 
         let audioMix: AVMutableAudioMix = AVMutableAudioMix()
         var audioMixParam: [AVMutableAudioMixInputParameters] = []
         
         let videosArray = project.getVideoList()
         // - Add assets to the composition
-        if videosArray.count>0 {
-            for count in 0...(videosArray.count - 1){
-                let videoTrack = mixComposition.addMutableTrack(withMediaType: AVMediaTypeVideo,
-                                                                             preferredTrackID: Int32(kCMPersistentTrackID_Invalid))
-                let audioTrack = mixComposition.addMutableTrack(withMediaType: AVMediaTypeAudio,
-                                                                             preferredTrackID: Int32(kCMPersistentTrackID_Invalid))
-                let video = videosArray[count]
-                // 2 - Get Video asset
-                //                let videoURL: NSURL = NSURL.init(fileURLWithPath: video.getMediaPath())
-                let videoURL: NSURL = video.videoURL as NSURL
-                let videoAsset = AVAsset.init(url: videoURL as URL)
-                
-                do {
-                    let startTime = CMTimeMake(Int64(video.getStartTime() * 1000), 1000)
-                    let stopTime = CMTimeMake(Int64(video.getStopTime() * 1000), 1000)
-                    let duration = stopTime - startTime
-                    let range = CMTimeRangeMake(startTime, duration)
-                    
-                    try videoTrack.insertTimeRange(range,
-                                                   of: videoAsset.tracks(withMediaType: AVMediaTypeVideo)[0] ,
-                                                   at: videoTotalTime)
-                    
-                    try audioTrack.insertTimeRange(range,
-                                                   of: videoAsset.tracks(withMediaType: AVMediaTypeAudio)[0] ,
-                                                   at: videoTotalTime)
-                    
-                    let audiocParam: AVMutableAudioMixInputParameters = AVMutableAudioMixInputParameters(track: audioTrack)
-                    audiocParam.trackID = audioTrack.trackID
-                    audiocParam.setVolume(project.projectOutputAudioLevel, at: kCMTimeZero)
-                    audioMixParam.append(audiocParam)
-                    
-                    videoTotalTime = CMTimeAdd(videoTotalTime, duration)
-                    
-                    Utils().debugLog("el tiempo total del video es: \(videoTotalTime.seconds)")
-                } catch _ {
-                    Utils().debugLog("Error trying to create videoTrack")
-                }
-                
-                compositionInSeconds = videoTotalTime.seconds
-            }
-            
-            if isMusicSet{
-                setMusicToProject(audioMixParams: &audioMixParam,
-                                  mixComposition: mixComposition,
-                                  musicPath: project.getMusic().getMusicResourceId(),
-                                  volume: Float(project.getMusic().audioLevel))
-            }else{
-                 AudioTransitions(transitionTime: transitionTime).setAudioTransition(mutableComposition: mixComposition,
-                                                                                     audioMixParams: &audioMixParam,
-                                                                                     maxVolume: project.projectOutputAudioLevel)
-            }
-            
-            if isVoiceOverSet {
-                //TODO: change to new voice over params
+        let videoTrack = mixComposition.addMutableTrack(withMediaType: AVMediaTypeVideo,
+                                                        preferredTrackID: Int32(kCMPersistentTrackID_Invalid))
+        let audioTrack = mixComposition.addMutableTrack(withMediaType: AVMediaTypeAudio,
+                                                        preferredTrackID: Int32(kCMPersistentTrackID_Invalid))
 
-                setVoiceOverToProject(audioMixParams: &audioMixParam,
-                                      mixComposition: mixComposition,
-                                      audios: project.voiceOver)
+        videosArray.forEach { (video) in
+            //                let videoURL: NSURL = NSURL.init(fileURLWithPath: video.getMediaPath())
+            let videoURL: NSURL = video.videoURL as NSURL
+            let videoAsset = AVAsset.init(url: videoURL as URL)
+            
+            do {
+                
+                let startTime = CMTimeMake(Int64(video.getStartTime() * 600), 600)
+                let stopTime = CMTimeMake(Int64(video.getStopTime() * 600), 600)
+                let duration = stopTime - startTime
+                let range = CMTimeRangeMake(startTime, duration)
+                
+                try videoTrack.insertTimeRange(range,
+                                               of: videoAsset.tracks(withMediaType: AVMediaTypeVideo)[0] ,
+                                               at: videoTotalTime)
+                
+                try audioTrack.insertTimeRange(range,
+                                               of: videoAsset.tracks(withMediaType: AVMediaTypeAudio)[0] ,
+                                               at: videoTotalTime)
+                
+                let audiocParam: AVMutableAudioMixInputParameters = AVMutableAudioMixInputParameters(track: audioTrack)
+                audiocParam.trackID = audioTrack.trackID
+                audiocParam.setVolume(project.projectOutputAudioLevel, at: kCMTimeZero)
+                audioMixParam.append(audiocParam)
+                
+                playerComposition.addTransition(trackTimeRange: CMTimeRangeMake(videoTotalTime, duration),
+                                                transitionTime: CMTimeMakeWithSeconds(project.transitionTime, 600))
+                
+                videoTotalTime = CMTimeAdd(videoTotalTime, duration)
+                
+                               Utils().debugLog("el tiempo total del video es: \(videoTotalTime.seconds)")
+            } catch _ {
+                Utils().debugLog("Error trying to create videoTrack")
             }
+            
+            compositionInSeconds = videoTotalTime.seconds
         }
         
-        var playerComposition = VideoComposition(mutableComposition: mixComposition)
+        if isMusicSet{
+            setMusicToProject(audioMixParams: &audioMixParam,
+                              mixComposition: mixComposition,
+                              musicPath: project.getMusic().getMusicResourceId(),
+                              volume: Float(project.getMusic().audioLevel))
+        }else{
+            AudioTransitions(transitionTime: transitionTime).setAudioTransition(mutableComposition: mixComposition,
+                                                                                audioMixParams: &audioMixParam,
+                                                                                maxVolume: project.projectOutputAudioLevel)
+        }
         
+        if isVoiceOverSet {
+            //TODO: change to new voice over params
+            
+            setVoiceOverToProject(audioMixParams: &audioMixParam,
+                                  mixComposition: mixComposition,
+                                  audios: project.voiceOver)
+        }
+
         audioMix.inputParameters = audioMixParam
         playerComposition.audioMix = audioMix
-        
+
         if mixComposition.duration.seconds > 0{
+            
             videoComposition = AVMutableVideoComposition(propertiesOf: mixComposition)
             let resolutionSize = Resolution.init(AVResolution: project.getProfile().getResolution())
             videoComposition?.renderSize = CGSize(width: resolutionSize.width, height: resolutionSize.height)
             videoComposition?.customVideoCompositorClass = VideoFilterCompositor.self
+            playerComposition.videoComposition = videoComposition
             
-            VideoTransitions(transitionTime: transitionTime).setInstructions(mutableComposition: mixComposition,
-                                 videoComposition: videoComposition!,
-                                 transitionColor:project.transitionColor,
-                                 filters:getFilters(fromProject: project))
+            VideoTransitions(transitionTime: transitionTime)
+            .setInstructions(videonaComposition: playerComposition,
+                             transitionColor: project.transitionColor,
+                             filters: getFilters(fromProject: project))
         }
 
-        playerComposition.videoComposition = videoComposition
         return playerComposition
     }
     

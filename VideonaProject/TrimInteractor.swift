@@ -86,8 +86,8 @@ open class TrimInteractor: NSObject,TrimInteractorInterface {
         let videoAsset = AVAsset.init(url: video.videoURL)
         
         do {
-            let startTime = CMTimeMake(Int64(self.startTime * 1000), 1000)
-            let stopTime = CMTimeMake(Int64(self.stopTime * 1000), 1000)
+            let startTime = CMTimeMake(Int64(self.startTime * 600), 600)
+            let stopTime = CMTimeMake(Int64(self.stopTime * 600), 600)
             
             let timeRangeInsert = CMTimeRangeMake(startTime, stopTime)
             

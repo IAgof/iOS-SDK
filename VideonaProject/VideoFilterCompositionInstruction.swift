@@ -25,18 +25,20 @@ class VideoFilterCompositionInstruction : AVMutableVideoCompositionInstruction{
    
     let filters: [CIFilter]
     let context: CIContext
-    let tracks:[AVAssetTrack]
+    let track: AVAssetTrack
     let transitionColor:CIColor
-    let transitionTime:CMTime
+    public var fadeInTransitionTimeRanges: [CMTimeRange] = []
+    public var fadeOutTransitionTimeRanges: [CMTimeRange] = []
     
     override var containsTweening: Bool{get{return false}}
     
-    init(tracks:[AVAssetTrack] , filters: [CIFilter], context: CIContext,transitionColor color:CIColor,transitionTime:CMTime){
-        self.tracks = tracks
+    init(track: AVAssetTrack , filters: [CIFilter], context: CIContext,transitionColor color: CIColor,transitionTime: CMTime, fadeInTransitionTimeRanges: [CMTimeRange], fadeOutTransitionTimeRanges: [CMTimeRange]){
+        self.track = track
         self.filters = filters
         self.context = context
         self.transitionColor = color
-        self.transitionTime = transitionTime
+        self.fadeInTransitionTimeRanges = fadeInTransitionTimeRanges
+        self.fadeOutTransitionTimeRanges = fadeOutTransitionTimeRanges
         
         super.init()
         

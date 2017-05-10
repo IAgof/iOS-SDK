@@ -51,11 +51,7 @@ class VideoFilterCompositor : NSObject, AVVideoCompositing{
                     request.finish(with: NSError(domain: "jojodmo.com", code: 760, userInfo: nil))
                     return
                 }
-                guard let track = getTrack(time: request.compositionTime, tracks: instruction.tracks) else{
-                    request.finish(with: NSError(domain: "jojodmo.com", code: 761, userInfo: nil))
-                    return
-                }
-                let trackID = track.trackID
+                let trackID = instruction.track.trackID
                 guard let pixels = request.sourceFrame(byTrackID: trackID) else{
 //                    request.finish(with: NSError(domain: "jojodmo.com", code: 761, userInfo: nil))
                     request.finish(withComposedVideoFrame: self.renderContext.newPixelBuffer()!)
@@ -69,10 +65,14 @@ class VideoFilterCompositor : NSObject, AVVideoCompositing{
                 }
                 
                 image = addTransitionIfIsInTime(image: image,
-                                             tracks: instruction.tracks,
                                              actualTime:request.compositionTime,
                                              transitionColor:instruction.transitionColor,
-                                             transitionTime: instruction.transitionTime)
+                                             fadeInTimeRange: instruction.fadeInTransitionTimeRanges.first(where: { (timeRange) -> Bool in
+                                                timeRange.containsTime(request.compositionTime)
+                                             }),
+                                             fadeOutTimeRange: instruction.fadeOutTransitionTimeRanges.first(where: { (timeRange) -> Bool in
+                                                timeRange.containsTime(request.compositionTime)
+                                             }))
                 
                 let newBuffer: CVPixelBuffer? = self.renderContext.newPixelBuffer()
 
@@ -86,20 +86,19 @@ class VideoFilterCompositor : NSObject, AVVideoCompositing{
             }
         }
     }
+    var fadeInStartTime: CMTime? = nil
+    var fadeOutStartTime: CMTime? = nil
     
     func addTransitionIfIsInTime(image:CIImage,
-                              tracks:[AVAssetTrack],
                               actualTime:CMTime,
                               transitionColor:CIColor,
-                              transitionTime:CMTime)->CIImage{
-        guard let track = getTrack(time: actualTime, tracks: tracks) else{return CIImage()}
-        let fadeInTimeRange = CMTimeRangeMake(getTrackStartTime(startTime: actualTime, tracks: tracks), transitionTime)
-        let startFadeOutTime = CMTimeSubtract(track.timeRange.end, transitionTime)
-        let fadeOutTimeRange = CMTimeRangeMake(startFadeOutTime, transitionTime)
-        
-        if fadeInTimeRange.containsTime(actualTime){
-            let alpha = 1 - (actualTime.seconds - fadeInTimeRange.start.seconds)
-            
+                              fadeInTimeRange:CMTimeRange?,
+                              fadeOutTimeRange:CMTimeRange?)->CIImage{
+     
+        if let fadeInTimeRange = fadeInTimeRange, fadeInTimeRange.containsTime(actualTime){
+            if fadeInStartTime == nil { fadeInStartTime = actualTime }
+            let alpha = 1 - CMTimeSubtract(actualTime, fadeInStartTime!).seconds / fadeInTimeRange.duration.seconds
+            print("Alpha fade in \(alpha)")
             let color = CIColor(red: transitionColor.red,
                                 green: transitionColor.green,
                                 blue: transitionColor.blue,
@@ -110,10 +109,13 @@ class VideoFilterCompositor : NSObject, AVVideoCompositing{
             transitionFilter.setValue(blendColorImage, forKey: "inputImage")
             transitionFilter.setValue(image, forKey: "inputBackgroundImage")
             return transitionFilter.outputImage!
-        }
+        }else{ fadeInStartTime = nil}
         
-        if fadeOutTimeRange.containsTime(actualTime){
-            let alpha = (actualTime.seconds - fadeOutTimeRange.start.seconds)
+        if let fadeOutTimeRange = fadeOutTimeRange, fadeOutTimeRange.containsTime(actualTime){
+            if fadeOutStartTime == nil { fadeOutStartTime = actualTime }
+            
+            let alpha = CMTimeSubtract(actualTime, fadeOutStartTime!).seconds / fadeOutTimeRange.duration.seconds
+            print("Alpha fade out \(alpha)")
 
             let color = CIColor(red: transitionColor.red,
                                 green: transitionColor.green,
@@ -125,30 +127,11 @@ class VideoFilterCompositor : NSObject, AVVideoCompositing{
             transitionFilter.setValue(blendColorImage, forKey: "inputImage")
             transitionFilter.setValue(image, forKey: "inputBackgroundImage")
             return transitionFilter.outputImage!
-        }
+        }else{ fadeOutStartTime = nil}
         
         return image
     }
     
-    func getTrack(time:CMTime,tracks:[AVAssetTrack]) -> AVAssetTrack? {
-        for track in tracks {
-            if track.timeRange.containsTime(time){
-                return track
-            }
-        }
-        return nil
-    }
-    
-    func getTrackStartTime(startTime:CMTime,tracks:[AVAssetTrack]) -> CMTime{
-        var endTime = kCMTimeZero
-        for track in tracks {
-            if track.timeRange.containsTime(startTime){
-                return endTime
-            }
-            endTime = track.timeRange.end
-        }
-        return endTime
-    }
     func renderContextChanged(_ newRenderContext: AVVideoCompositionRenderContext){
         self.renderContextQueue.sync{
             self.renderContext = newRenderContext
