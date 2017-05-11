@@ -7,289 +7,289 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A92060AB1E4DEF6A00656558 /* BatteryRemainingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92060A51E4DEF6A00656558 /* BatteryRemainingInteractor.swift */; };
-		A92060AC1E4DEF6A00656558 /* BatteryRemainingInteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92060A61E4DEF6A00656558 /* BatteryRemainingInteractorInterface.swift */; };
-		A92060AD1E4DEF6A00656558 /* BatteryRemainingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92060A71E4DEF6A00656558 /* BatteryRemainingPresenter.swift */; };
-		A92060AE1E4DEF6A00656558 /* BatteryRemainingPresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92060A81E4DEF6A00656558 /* BatteryRemainingPresenterInterface.swift */; };
-		A92060AF1E4DEF6A00656558 /* BatteryRemainingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92060A91E4DEF6A00656558 /* BatteryRemainingView.swift */; };
-		A92060B01E4DEF6A00656558 /* BatteryRemainingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A92060AA1E4DEF6A00656558 /* BatteryRemainingView.xib */; };
 		A92060B21E4DEF8600656558 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A92060B11E4DEF8600656558 /* Media.xcassets */; };
-		A92060BC1E4DF26300656558 /* SpaceOnDiskInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92060B61E4DF26300656558 /* SpaceOnDiskInteractor.swift */; };
-		A92060BD1E4DF26300656558 /* SpaceOnDiskInteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92060B71E4DF26300656558 /* SpaceOnDiskInteractorInterface.swift */; };
-		A92060BE1E4DF26300656558 /* SpaceOnDiskPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92060B81E4DF26300656558 /* SpaceOnDiskPresenter.swift */; };
-		A92060BF1E4DF26300656558 /* SpaceOnDiskPresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92060B91E4DF26300656558 /* SpaceOnDiskPresenterInterface.swift */; };
-		A92060C01E4DF26300656558 /* SpaceOnDiskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92060BA1E4DF26300656558 /* SpaceOnDiskView.swift */; };
-		A92060C11E4DF26300656558 /* SpaceOnDiskView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A92060BB1E4DF26300656558 /* SpaceOnDiskView.xib */; };
-		A92060D01E4DF59D00656558 /* ResolutionsSelectorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92060C71E4DF59D00656558 /* ResolutionsSelectorPresenter.swift */; };
-		A92060D11E4DF59D00656558 /* ResolutionsSelectorPresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92060C81E4DF59D00656558 /* ResolutionsSelectorPresenterInterface.swift */; };
-		A92060D21E4DF59D00656558 /* ResolutionsSelectorInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92060C91E4DF59D00656558 /* ResolutionsSelectorInteractor.swift */; };
-		A92060D31E4DF59D00656558 /* ResolutionsSelectorInteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92060CA1E4DF59D00656558 /* ResolutionsSelectorInteractorInterface.swift */; };
-		A92060D41E4DF59D00656558 /* Resolution.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92060CB1E4DF59D00656558 /* Resolution.swift */; };
-		A92060D51E4DF59D00656558 /* ResolutionsSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92060CC1E4DF59D00656558 /* ResolutionsSelectorView.swift */; };
-		A92060D61E4DF59D00656558 /* ResolutionsSelectorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92060CD1E4DF59D00656558 /* ResolutionsSelectorCell.swift */; };
-		A92060D71E4DF59D00656558 /* ResolutionsSelectorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A92060CE1E4DF59D00656558 /* ResolutionsSelectorView.xib */; };
-		A92060D81E4DF59D00656558 /* ResolutionsSelectorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A92060CF1E4DF59D00656558 /* ResolutionsSelectorCell.xib */; };
-		A92060E01E4DF95F00656558 /* DuplicateInteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92060DC1E4DF95F00656558 /* DuplicateInteractorInterface.swift */; };
-		A92060E11E4DF95F00656558 /* DuplicateInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92060DD1E4DF95F00656558 /* DuplicateInteractor.swift */; };
-		A92060E21E4DF95F00656558 /* DuplicatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92060DE1E4DF95F00656558 /* DuplicatePresenter.swift */; };
-		A92060E31E4DF95F00656558 /* DuplicatePresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92060DF1E4DF95F00656558 /* DuplicatePresenterInterface.swift */; };
-		A92060E91E4DF97F00656558 /* TrimInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92060E51E4DF97F00656558 /* TrimInteractor.swift */; };
-		A92060EA1E4DF97F00656558 /* TrimInteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92060E61E4DF97F00656558 /* TrimInteractorInterface.swift */; };
-		A92060EB1E4DF97F00656558 /* TrimPresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92060E71E4DF97F00656558 /* TrimPresenterInterface.swift */; };
-		A92060EC1E4DF97F00656558 /* TrimPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92060E81E4DF97F00656558 /* TrimPresenter.swift */; };
-		A92060F21E4DF9A200656558 /* SplitInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92060EE1E4DF9A200656558 /* SplitInteractor.swift */; };
-		A92060F31E4DF9A200656558 /* SplitInteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92060EF1E4DF9A200656558 /* SplitInteractorInterface.swift */; };
-		A92060F41E4DF9A200656558 /* SplitPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92060F01E4DF9A200656558 /* SplitPresenter.swift */; };
-		A92060F51E4DF9A200656558 /* SplitPresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92060F11E4DF9A200656558 /* SplitPresenterInterface.swift */; };
-		A92061021E4DFC9500656558 /* ExposureInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92060FC1E4DFC9500656558 /* ExposureInteractor.swift */; };
-		A92061031E4DFC9500656558 /* ExposurePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92060FD1E4DFC9500656558 /* ExposurePresenter.swift */; };
-		A92061041E4DFC9500656558 /* ExposurePresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92060FE1E4DFC9500656558 /* ExposurePresenterInterface.swift */; };
-		A92061051E4DFC9500656558 /* ExposureteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92060FF1E4DFC9500656558 /* ExposureteractorInterface.swift */; };
-		A92061061E4DFC9500656558 /* ExposureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92061001E4DFC9500656558 /* ExposureView.swift */; };
-		A92061071E4DFC9500656558 /* ExposureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A92061011E4DFC9500656558 /* ExposureView.xib */; };
-		A920610E1E4DFCBB00656558 /* InputSoundGainControlInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92061081E4DFCBB00656558 /* InputSoundGainControlInteractor.swift */; };
-		A920610F1E4DFCBB00656558 /* InputSoundGainControlInteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92061091E4DFCBB00656558 /* InputSoundGainControlInteractorInterface.swift */; };
-		A92061101E4DFCBB00656558 /* InputSoundGainControlPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A920610A1E4DFCBB00656558 /* InputSoundGainControlPresenter.swift */; };
-		A92061111E4DFCBB00656558 /* InputSoundGainControlPresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A920610B1E4DFCBB00656558 /* InputSoundGainControlPresenterInterface.swift */; };
-		A92061121E4DFCBB00656558 /* InputSoundGainControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A920610C1E4DFCBB00656558 /* InputSoundGainControlView.swift */; };
-		A92061131E4DFCBB00656558 /* InputSoundGainControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A920610D1E4DFCBB00656558 /* InputSoundGainControlView.xib */; };
-		A920611A1E4DFCCE00656558 /* ZoomSliderInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92061141E4DFCCE00656558 /* ZoomSliderInteractor.swift */; };
-		A920611B1E4DFCCE00656558 /* ZoomSliderInteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92061151E4DFCCE00656558 /* ZoomSliderInteractorInterface.swift */; };
-		A920611C1E4DFCCE00656558 /* ZoomSliderPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92061161E4DFCCE00656558 /* ZoomSliderPresenter.swift */; };
-		A920611D1E4DFCCE00656558 /* ZoomSliderPresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92061171E4DFCCE00656558 /* ZoomSliderPresenterInterface.swift */; };
-		A920611E1E4DFCCE00656558 /* ZoomSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92061181E4DFCCE00656558 /* ZoomSliderView.swift */; };
-		A920611F1E4DFCCE00656558 /* ZoomSliderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A92061191E4DFCCE00656558 /* ZoomSliderView.xib */; };
-		A92061261E4DFCDC00656558 /* FocalLensSliderInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92061201E4DFCDC00656558 /* FocalLensSliderInteractor.swift */; };
-		A92061271E4DFCDC00656558 /* FocalLensSliderInteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92061211E4DFCDC00656558 /* FocalLensSliderInteractorInterface.swift */; };
-		A92061281E4DFCDC00656558 /* FocalLensSliderPresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92061221E4DFCDC00656558 /* FocalLensSliderPresenterInterface.swift */; };
-		A92061291E4DFCDC00656558 /* FocalLensSliderresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92061231E4DFCDC00656558 /* FocalLensSliderresenter.swift */; };
-		A920612A1E4DFCDC00656558 /* FocalLensSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92061241E4DFCDC00656558 /* FocalLensSliderView.swift */; };
-		A920612B1E4DFCDC00656558 /* FocalLensSliderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A92061251E4DFCDC00656558 /* FocalLensSliderView.xib */; };
-		A92061331E4DFE9C00656558 /* VideoGalleryDelegateInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A920612F1E4DFE9C00656558 /* VideoGalleryDelegateInterface.swift */; };
-		A92061341E4DFE9C00656558 /* VideoGalleryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92061301E4DFE9C00656558 /* VideoGalleryInterface.swift */; };
-		A92061351E4DFE9C00656558 /* VideosGalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92061311E4DFE9C00656558 /* VideosGalleryViewController.swift */; };
-		A92061361E4DFE9C00656558 /* VideoThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92061321E4DFE9C00656558 /* VideoThumbnail.swift */; };
-		A920613C1E4DFF0100656558 /* VideonaRangeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92061381E4DFF0100656558 /* VideonaRangeSlider.swift */; };
-		A920613D1E4DFF0100656558 /* VideonaRangeSliderDelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92061391E4DFF0100656558 /* VideonaRangeSliderDelegateProtocol.swift */; };
-		A920613E1E4DFF0100656558 /* VideonaRangeSliderThumbLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A920613A1E4DFF0100656558 /* VideonaRangeSliderThumbLayer.swift */; };
-		A920613F1E4DFF0100656558 /* VideonaRangeSliderTrackLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A920613B1E4DFF0100656558 /* VideonaRangeSliderTrackLayer.swift */; };
-		A92061441E4DFF2200656558 /* TrackLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92061411E4DFF2200656558 /* TrackLayer.swift */; };
-		A92061451E4DFF2200656558 /* TrackModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92061421E4DFF2200656558 /* TrackModel.swift */; };
-		A92061461E4DFF2200656558 /* VideonaTrackOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92061431E4DFF2200656558 /* VideonaTrackOverView.swift */; };
-		A92061501E4E04D900656558 /* ISOConfigurationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A920614A1E4E04D900656558 /* ISOConfigurationInteractor.swift */; };
-		A92061511E4E04D900656558 /* ISOConfigurationInteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A920614B1E4E04D900656558 /* ISOConfigurationInteractorInterface.swift */; };
-		A92061521E4E04D900656558 /* ISOConfigurationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A920614C1E4E04D900656558 /* ISOConfigurationPresenter.swift */; };
-		A92061531E4E04D900656558 /* ISOConfigurationPresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A920614D1E4E04D900656558 /* ISOConfigurationPresenterInterface.swift */; };
-		A92061541E4E04D900656558 /* ISOConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A920614E1E4E04D900656558 /* ISOConfigurationView.swift */; };
-		A920615F1E4E089600656558 /* WhiteBalanceConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92061581E4E089600656558 /* WhiteBalanceConstants.swift */; };
-		A92061601E4E089600656558 /* WhiteBalanceInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92061591E4E089600656558 /* WhiteBalanceInteractor.swift */; };
-		A92061611E4E089600656558 /* WhiteBalancePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A920615A1E4E089600656558 /* WhiteBalancePresenter.swift */; };
-		A92061621E4E089600656558 /* WhiteBalancePresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A920615B1E4E089600656558 /* WhiteBalancePresenterInterface.swift */; };
-		A92061631E4E089600656558 /* WhiteBalanceteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A920615C1E4E089600656558 /* WhiteBalanceteractorInterface.swift */; };
-		A92061641E4E089600656558 /* WhiteBalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A920615D1E4E089600656558 /* WhiteBalanceView.swift */; };
-		A920616D1E4E08B100656558 /* FocusInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92061671E4E08B100656558 /* FocusInteractor.swift */; };
-		A920616E1E4E08B100656558 /* FocusInteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92061681E4E08B100656558 /* FocusInteractorInterface.swift */; };
-		A920616F1E4E08B100656558 /* FocusPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92061691E4E08B100656558 /* FocusPresenter.swift */; };
-		A92061701E4E08B100656558 /* FocusPresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A920616A1E4E08B100656558 /* FocusPresenterInterface.swift */; };
-		A92061711E4E08B100656558 /* FocusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A920616B1E4E08B100656558 /* FocusView.swift */; };
-		A920617A1E4E08C800656558 /* ExpositionModesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92061741E4E08C800656558 /* ExpositionModesInteractor.swift */; };
-		A920617B1E4E08C800656558 /* ExpositionModesInteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92061751E4E08C800656558 /* ExpositionModesInteractorInterface.swift */; };
-		A920617C1E4E08C800656558 /* ExpositionModesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92061761E4E08C800656558 /* ExpositionModesPresenter.swift */; };
-		A920617D1E4E08C800656558 /* ExpositionModesPresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92061771E4E08C800656558 /* ExpositionModesPresenterInterface.swift */; };
-		A920617E1E4E08C800656558 /* ExpositionModesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92061781E4E08C800656558 /* ExpositionModesView.swift */; };
-		A92061B61E4E0CD700656558 /* PlayerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92061AB1E4E0CD700656558 /* PlayerInteractor.swift */; };
-		A92061B71E4E0CD700656558 /* PlayerInteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92061AC1E4E0CD700656558 /* PlayerInteractorInterface.swift */; };
-		A92061B81E4E0CD700656558 /* PlayerInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92061AD1E4E0CD700656558 /* PlayerInterface.swift */; };
-		A92061B91E4E0CD700656558 /* PlayerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92061AE1E4E0CD700656558 /* PlayerItem.swift */; };
-		A92061BA1E4E0CD700656558 /* PlayerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92061AF1E4E0CD700656558 /* PlayerPresenter.swift */; };
-		A92061BB1E4E0CD700656558 /* PlayerPresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92061B01E4E0CD700656558 /* PlayerPresenterInterface.swift */; };
-		A92061BC1E4E0CD700656558 /* PlayerProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92061B11E4E0CD700656558 /* PlayerProvider.swift */; };
-		A92061BD1E4E0CD700656558 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92061B21E4E0CD700656558 /* PlayerView.swift */; };
-		A92061BE1E4E0CD700656558 /* PlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A92061B31E4E0CD700656558 /* PlayerView.xib */; };
-		A92061BF1E4E0CD700656558 /* PlayerWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92061B41E4E0CD700656558 /* PlayerWireframe.swift */; };
-		A92061C01E4E0CD700656558 /* UIVerticalAlignLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92061B51E4E0CD700656558 /* UIVerticalAlignLabel.swift */; };
-		A953AD6E1E536A1A00DC0D84 /* VideoOutputParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = A953AD6D1E536A1A00DC0D84 /* VideoOutputParameters.swift */; };
-		A955701A1E54027F00DF56FA /* ExpositionModesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A95570191E54027F00DF56FA /* ExpositionModesView.xib */; };
-		A955701C1E54028700DF56FA /* FocusView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A955701B1E54028700DF56FA /* FocusView.xib */; };
-		A955701E1E54029000DF56FA /* WhiteBalanceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A955701D1E54029000DF56FA /* WhiteBalanceView.xib */; };
-		A95570201E54029600DF56FA /* ISOConfigurationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A955701F1E54029600DF56FA /* ISOConfigurationView.xib */; };
-		A956A10D1DBDED22002BDB26 /* AddVideoToProjectUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A956A1061DBDED22002BDB26 /* AddVideoToProjectUseCase.swift */; };
-		A956A10E1DBDED22002BDB26 /* AVQualityParse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A956A1071DBDED22002BDB26 /* AVQualityParse.swift */; };
-		A956A10F1DBDED22002BDB26 /* CATextLayerAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A956A1081DBDED22002BDB26 /* CATextLayerAttributes.swift */; };
-		A956A1101DBDED22002BDB26 /* CompatibleQualityInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A956A1091DBDED22002BDB26 /* CompatibleQualityInteractor.swift */; };
-		A956A1111DBDED22002BDB26 /* GetActualProjectAVCompositionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A956A10A1DBDED22002BDB26 /* GetActualProjectAVCompositionUseCase.swift */; };
-		A956A1121DBDED22002BDB26 /* GetActualProjectTextCALayerAnimationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A956A10B1DBDED22002BDB26 /* GetActualProjectTextCALayerAnimationUseCase.swift */; };
-		A956A1131DBDED22002BDB26 /* GetImageByTextUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A956A10C1DBDED22002BDB26 /* GetImageByTextUseCase.swift */; };
-		A960A8671E4DD6D20069F487 /* AudioLevelBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A960A8611E4DD6D20069F487 /* AudioLevelBarView.swift */; };
-		A960A8681E4DD6D20069F487 /* AudioLevelBarInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A960A8621E4DD6D20069F487 /* AudioLevelBarInteractor.swift */; };
-		A960A8691E4DD6D20069F487 /* AudioLevelBarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A960A8631E4DD6D20069F487 /* AudioLevelBarPresenter.swift */; };
-		A960A86A1E4DD6D20069F487 /* AudioLevelBarPresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A960A8641E4DD6D20069F487 /* AudioLevelBarPresenterInterface.swift */; };
-		A960A86B1E4DD6D20069F487 /* AudioLevelBarInteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A960A8651E4DD6D20069F487 /* AudioLevelBarInteractorInterface.swift */; };
-		A960A86C1E4DD6D20069F487 /* AudioLevelBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A960A8661E4DD6D20069F487 /* AudioLevelBarView.xib */; };
 		A9928A101E5370CE002A4E60 /* VideonaProjectTarget.h in Headers */ = {isa = PBXBuildFile; fileRef = A9928A0E1E5370CE002A4E60 /* VideonaProjectTarget.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A9950CC61E1ABBF9009367E7 /* AVResolutionParse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9950CC51E1ABBF9009367E7 /* AVResolutionParse.swift */; };
-		A9950CCA1E1ABD61009367E7 /* CompatibleResolutionsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9950CC91E1ABD61009367E7 /* CompatibleResolutionsInteractor.swift */; };
-		A99CE6C71E279467000BDFC5 /* TimeNumberFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99CE6C61E279467000BDFC5 /* TimeNumberFormatter.swift */; };
-		A9B0073E1DAFC9F100BFAD68 /* VideonaComposition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B0073D1DAFC9F100BFAD68 /* VideonaComposition.swift */; };
 		A9BD5FC11D9120F40080CE97 /* VideonaProject.h in Headers */ = {isa = PBXBuildFile; fileRef = A9BD5FC01D9120F40080CE97 /* VideonaProject.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A9BD5FCF1D91210C0080CE97 /* Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BD5FC81D91210C0080CE97 /* Audio.swift */; };
-		A9BD5FD01D91210C0080CE97 /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BD5FC91D91210C0080CE97 /* Media.swift */; };
-		A9BD5FD11D91210C0080CE97 /* Music.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BD5FCA1D91210C0080CE97 /* Music.swift */; };
-		A9BD5FD21D91210C0080CE97 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BD5FCB1D91210C0080CE97 /* Profile.swift */; };
-		A9BD5FD31D91210C0080CE97 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BD5FCC1D91210C0080CE97 /* Project.swift */; };
-		A9BD5FD41D91210C0080CE97 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BD5FCD1D91210C0080CE97 /* Utils.swift */; };
-		A9BD5FD51D91210C0080CE97 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BD5FCE1D91210C0080CE97 /* Video.swift */; };
-		A9C5FB6D1DD5E7AE00057A1B /* VideoTransitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C5FB6C1DD5E7AE00057A1B /* VideoTransitions.swift */; };
-		A9C5FB6F1DD5E7B500057A1B /* AudioTransitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C5FB6E1DD5E7B500057A1B /* AudioTransitions.swift */; };
 		A9CA73E91E567860009C4E88 /* MBCircularProgressBar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9CA73E81E567860009C4E88 /* MBCircularProgressBar.framework */; };
-		A9FB3A2F1E53BCE400C21918 /* VideoFilterCompositor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FB3A2D1E53BCE400C21918 /* VideoFilterCompositor.swift */; };
-		A9FB3A301E53BCE400C21918 /* VideoFilterCompositionInstruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FB3A2E1E53BCE400C21918 /* VideoFilterCompositionInstruction.swift */; };
+		A9CABBCB1EC37B9500AB6CE8 /* AudioLevelBarInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABBC51EC37B9500AB6CE8 /* AudioLevelBarInteractor.swift */; };
+		A9CABBCC1EC37B9500AB6CE8 /* AudioLevelBarInteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABBC61EC37B9500AB6CE8 /* AudioLevelBarInteractorInterface.swift */; };
+		A9CABBCD1EC37B9500AB6CE8 /* AudioLevelBarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABBC71EC37B9500AB6CE8 /* AudioLevelBarPresenter.swift */; };
+		A9CABBCE1EC37B9500AB6CE8 /* AudioLevelBarPresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABBC81EC37B9500AB6CE8 /* AudioLevelBarPresenterInterface.swift */; };
+		A9CABBCF1EC37B9500AB6CE8 /* AudioLevelBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABBC91EC37B9500AB6CE8 /* AudioLevelBarView.swift */; };
+		A9CABBD01EC37B9500AB6CE8 /* AudioLevelBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9CABBCA1EC37B9500AB6CE8 /* AudioLevelBarView.xib */; };
+		A9CABBD71EC37BDA00AB6CE8 /* BatteryRemainingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABBD11EC37BDA00AB6CE8 /* BatteryRemainingInteractor.swift */; };
+		A9CABBD81EC37BDA00AB6CE8 /* BatteryRemainingInteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABBD21EC37BDA00AB6CE8 /* BatteryRemainingInteractorInterface.swift */; };
+		A9CABBD91EC37BDA00AB6CE8 /* BatteryRemainingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABBD31EC37BDA00AB6CE8 /* BatteryRemainingPresenter.swift */; };
+		A9CABBDA1EC37BDA00AB6CE8 /* BatteryRemainingPresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABBD41EC37BDA00AB6CE8 /* BatteryRemainingPresenterInterface.swift */; };
+		A9CABBDB1EC37BDA00AB6CE8 /* BatteryRemainingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABBD51EC37BDA00AB6CE8 /* BatteryRemainingView.swift */; };
+		A9CABBDC1EC37BDA00AB6CE8 /* BatteryRemainingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9CABBD61EC37BDA00AB6CE8 /* BatteryRemainingView.xib */; };
+		A9CABBE11EC37C0500AB6CE8 /* DuplicateInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABBDD1EC37C0500AB6CE8 /* DuplicateInteractor.swift */; };
+		A9CABBE21EC37C0500AB6CE8 /* DuplicateInteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABBDE1EC37C0500AB6CE8 /* DuplicateInteractorInterface.swift */; };
+		A9CABBE31EC37C0500AB6CE8 /* DuplicatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABBDF1EC37C0500AB6CE8 /* DuplicatePresenter.swift */; };
+		A9CABBE41EC37C0500AB6CE8 /* DuplicatePresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABBE01EC37C0500AB6CE8 /* DuplicatePresenterInterface.swift */; };
+		A9CABBEB1EC37C3300AB6CE8 /* ExpositionModesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABBE51EC37C3300AB6CE8 /* ExpositionModesInteractor.swift */; };
+		A9CABBEC1EC37C3300AB6CE8 /* ExpositionModesInteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABBE61EC37C3300AB6CE8 /* ExpositionModesInteractorInterface.swift */; };
+		A9CABBED1EC37C3300AB6CE8 /* ExpositionModesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABBE71EC37C3300AB6CE8 /* ExpositionModesPresenter.swift */; };
+		A9CABBEE1EC37C3300AB6CE8 /* ExpositionModesPresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABBE81EC37C3300AB6CE8 /* ExpositionModesPresenterInterface.swift */; };
+		A9CABBEF1EC37C3300AB6CE8 /* ExpositionModesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABBE91EC37C3300AB6CE8 /* ExpositionModesView.swift */; };
+		A9CABBF01EC37C3300AB6CE8 /* ExpositionModesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9CABBEA1EC37C3300AB6CE8 /* ExpositionModesView.xib */; };
+		A9CABBF71EC37CA200AB6CE8 /* ExposureInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABBF11EC37CA200AB6CE8 /* ExposureInteractor.swift */; };
+		A9CABBF81EC37CA200AB6CE8 /* ExposurePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABBF21EC37CA200AB6CE8 /* ExposurePresenter.swift */; };
+		A9CABBF91EC37CA200AB6CE8 /* ExposurePresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABBF31EC37CA200AB6CE8 /* ExposurePresenterInterface.swift */; };
+		A9CABBFA1EC37CA200AB6CE8 /* ExposureteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABBF41EC37CA200AB6CE8 /* ExposureteractorInterface.swift */; };
+		A9CABBFB1EC37CA200AB6CE8 /* ExposureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABBF51EC37CA200AB6CE8 /* ExposureView.swift */; };
+		A9CABBFC1EC37CA200AB6CE8 /* ExposureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9CABBF61EC37CA200AB6CE8 /* ExposureView.xib */; };
+		A9CABC031EC37CF800AB6CE8 /* FocalLensSliderInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABBFD1EC37CF800AB6CE8 /* FocalLensSliderInteractor.swift */; };
+		A9CABC041EC37CF800AB6CE8 /* FocalLensSliderInteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABBFE1EC37CF800AB6CE8 /* FocalLensSliderInteractorInterface.swift */; };
+		A9CABC051EC37CF800AB6CE8 /* FocalLensSliderPresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABBFF1EC37CF800AB6CE8 /* FocalLensSliderPresenterInterface.swift */; };
+		A9CABC061EC37CF800AB6CE8 /* FocalLensSliderresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABC001EC37CF800AB6CE8 /* FocalLensSliderresenter.swift */; };
+		A9CABC071EC37CF800AB6CE8 /* FocalLensSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABC011EC37CF800AB6CE8 /* FocalLensSliderView.swift */; };
+		A9CABC081EC37CF800AB6CE8 /* FocalLensSliderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9CABC021EC37CF800AB6CE8 /* FocalLensSliderView.xib */; };
+		A9CABC0F1EC37D1900AB6CE8 /* FocusInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABC091EC37D1900AB6CE8 /* FocusInteractor.swift */; };
+		A9CABC101EC37D1900AB6CE8 /* FocusInteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABC0A1EC37D1900AB6CE8 /* FocusInteractorInterface.swift */; };
+		A9CABC111EC37D1900AB6CE8 /* FocusPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABC0B1EC37D1900AB6CE8 /* FocusPresenter.swift */; };
+		A9CABC121EC37D1900AB6CE8 /* FocusPresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABC0C1EC37D1900AB6CE8 /* FocusPresenterInterface.swift */; };
+		A9CABC131EC37D1900AB6CE8 /* FocusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABC0D1EC37D1900AB6CE8 /* FocusView.swift */; };
+		A9CABC141EC37D1900AB6CE8 /* FocusView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9CABC0E1EC37D1900AB6CE8 /* FocusView.xib */; };
+		A9CABC191EC37D3C00AB6CE8 /* VideoGalleryDelegateInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABC151EC37D3C00AB6CE8 /* VideoGalleryDelegateInterface.swift */; };
+		A9CABC1A1EC37D3C00AB6CE8 /* VideoGalleryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABC161EC37D3C00AB6CE8 /* VideoGalleryInterface.swift */; };
+		A9CABC1B1EC37D3C00AB6CE8 /* VideosGalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABC171EC37D3C00AB6CE8 /* VideosGalleryViewController.swift */; };
+		A9CABC1C1EC37D3C00AB6CE8 /* VideoThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABC181EC37D3C00AB6CE8 /* VideoThumbnail.swift */; };
+		A9CABC231EC37D6900AB6CE8 /* InputSoundGainControlInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABC1D1EC37D6900AB6CE8 /* InputSoundGainControlInteractor.swift */; };
+		A9CABC241EC37D6900AB6CE8 /* InputSoundGainControlInteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABC1E1EC37D6900AB6CE8 /* InputSoundGainControlInteractorInterface.swift */; };
+		A9CABC251EC37D6900AB6CE8 /* InputSoundGainControlPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABC1F1EC37D6900AB6CE8 /* InputSoundGainControlPresenter.swift */; };
+		A9CABC261EC37D6900AB6CE8 /* InputSoundGainControlPresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABC201EC37D6900AB6CE8 /* InputSoundGainControlPresenterInterface.swift */; };
+		A9CABC271EC37D6900AB6CE8 /* InputSoundGainControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABC211EC37D6900AB6CE8 /* InputSoundGainControlView.swift */; };
+		A9CABC281EC37D6900AB6CE8 /* InputSoundGainControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9CABC221EC37D6900AB6CE8 /* InputSoundGainControlView.xib */; };
+		A9CABC2F1EC37D8A00AB6CE8 /* ISOConfigurationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABC291EC37D8A00AB6CE8 /* ISOConfigurationInteractor.swift */; };
+		A9CABC301EC37D8A00AB6CE8 /* ISOConfigurationInteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABC2A1EC37D8A00AB6CE8 /* ISOConfigurationInteractorInterface.swift */; };
+		A9CABC311EC37D8A00AB6CE8 /* ISOConfigurationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABC2B1EC37D8A00AB6CE8 /* ISOConfigurationPresenter.swift */; };
+		A9CABC321EC37D8A00AB6CE8 /* ISOConfigurationPresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABC2C1EC37D8A00AB6CE8 /* ISOConfigurationPresenterInterface.swift */; };
+		A9CABC331EC37D8A00AB6CE8 /* ISOConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABC2D1EC37D8A00AB6CE8 /* ISOConfigurationView.swift */; };
+		A9CABC341EC37D8A00AB6CE8 /* ISOConfigurationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9CABC2E1EC37D8A00AB6CE8 /* ISOConfigurationView.xib */; };
+		A9CABC401EC37DC700AB6CE8 /* PlayerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABC351EC37DC700AB6CE8 /* PlayerInteractor.swift */; };
+		A9CABC411EC37DC700AB6CE8 /* PlayerInteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABC361EC37DC700AB6CE8 /* PlayerInteractorInterface.swift */; };
+		A9CABC421EC37DC700AB6CE8 /* PlayerInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABC371EC37DC700AB6CE8 /* PlayerInterface.swift */; };
+		A9CABC431EC37DC700AB6CE8 /* PlayerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABC381EC37DC700AB6CE8 /* PlayerItem.swift */; };
+		A9CABC441EC37DC700AB6CE8 /* PlayerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABC391EC37DC700AB6CE8 /* PlayerPresenter.swift */; };
+		A9CABC451EC37DC700AB6CE8 /* PlayerPresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABC3A1EC37DC700AB6CE8 /* PlayerPresenterInterface.swift */; };
+		A9CABC461EC37DC700AB6CE8 /* PlayerProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABC3B1EC37DC700AB6CE8 /* PlayerProvider.swift */; };
+		A9CABC471EC37DC700AB6CE8 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABC3C1EC37DC700AB6CE8 /* PlayerView.swift */; };
+		A9CABC481EC37DC700AB6CE8 /* PlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9CABC3D1EC37DC700AB6CE8 /* PlayerView.xib */; };
+		A9CABC491EC37DC700AB6CE8 /* PlayerWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABC3E1EC37DC700AB6CE8 /* PlayerWireframe.swift */; };
+		A9CABC4A1EC37DC700AB6CE8 /* UIVerticalAlignLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABC3F1EC37DC700AB6CE8 /* UIVerticalAlignLabel.swift */; };
+		A9CABC631EC37E8300AB6CE8 /* AddVideoToProjectUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABC5B1EC37E8300AB6CE8 /* AddVideoToProjectUseCase.swift */; };
+		A9CABC641EC37E8300AB6CE8 /* CATextLayerAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABC5C1EC37E8300AB6CE8 /* CATextLayerAttributes.swift */; };
+		A9CABC651EC37E8300AB6CE8 /* CompatibleQualityInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABC5D1EC37E8300AB6CE8 /* CompatibleQualityInteractor.swift */; };
+		A9CABC661EC37E8300AB6CE8 /* GetActualProjectAVCompositionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABC5E1EC37E8300AB6CE8 /* GetActualProjectAVCompositionUseCase.swift */; };
+		A9CABC671EC37E8300AB6CE8 /* GetActualProjectTextCALayerAnimationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABC5F1EC37E8300AB6CE8 /* GetActualProjectTextCALayerAnimationUseCase.swift */; };
+		A9CABC681EC37E8300AB6CE8 /* GetImageByTextUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABC601EC37E8300AB6CE8 /* GetImageByTextUseCase.swift */; };
+		A9CABC691EC37E8300AB6CE8 /* TimeNumberFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABC611EC37E8300AB6CE8 /* TimeNumberFormatter.swift */; };
+		A9CABC6A1EC37E8300AB6CE8 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABC621EC37E8300AB6CE8 /* Utils.swift */; };
+		A9CABC761EC37E9700AB6CE8 /* Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABC6B1EC37E9700AB6CE8 /* Audio.swift */; };
+		A9CABC771EC37E9700AB6CE8 /* AVQualityParse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABC6C1EC37E9700AB6CE8 /* AVQualityParse.swift */; };
+		A9CABC781EC37E9700AB6CE8 /* AVResolutionParse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABC6D1EC37E9700AB6CE8 /* AVResolutionParse.swift */; };
+		A9CABC791EC37E9700AB6CE8 /* CompatibleResolutionsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABC6E1EC37E9700AB6CE8 /* CompatibleResolutionsInteractor.swift */; };
+		A9CABC7A1EC37E9700AB6CE8 /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABC6F1EC37E9700AB6CE8 /* Media.swift */; };
+		A9CABC7B1EC37E9700AB6CE8 /* Music.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABC701EC37E9700AB6CE8 /* Music.swift */; };
+		A9CABC7C1EC37E9700AB6CE8 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABC711EC37E9700AB6CE8 /* Profile.swift */; };
+		A9CABC7D1EC37E9700AB6CE8 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABC721EC37E9700AB6CE8 /* Project.swift */; };
+		A9CABC7E1EC37E9700AB6CE8 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABC731EC37E9700AB6CE8 /* Video.swift */; };
+		A9CABC7F1EC37E9700AB6CE8 /* VideonaComposition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABC741EC37E9700AB6CE8 /* VideonaComposition.swift */; };
+		A9CABC801EC37E9700AB6CE8 /* VideoOutputParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABC751EC37E9700AB6CE8 /* VideoOutputParameters.swift */; };
+		A9CABC851EC37F0300AB6CE8 /* AudioTransitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABC811EC37F0300AB6CE8 /* AudioTransitions.swift */; };
+		A9CABC861EC37F0300AB6CE8 /* VideoFilterCompositionInstruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABC821EC37F0300AB6CE8 /* VideoFilterCompositionInstruction.swift */; };
+		A9CABC871EC37F0300AB6CE8 /* VideoFilterCompositor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABC831EC37F0300AB6CE8 /* VideoFilterCompositor.swift */; };
+		A9CABC881EC37F0300AB6CE8 /* VideoTransitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABC841EC37F0300AB6CE8 /* VideoTransitions.swift */; };
+		A9CABC921EC37F2900AB6CE8 /* Resolution.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABC891EC37F2900AB6CE8 /* Resolution.swift */; };
+		A9CABC931EC37F2900AB6CE8 /* ResolutionsSelectorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABC8A1EC37F2900AB6CE8 /* ResolutionsSelectorCell.swift */; };
+		A9CABC941EC37F2900AB6CE8 /* ResolutionsSelectorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9CABC8B1EC37F2900AB6CE8 /* ResolutionsSelectorCell.xib */; };
+		A9CABC951EC37F2900AB6CE8 /* ResolutionsSelectorInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABC8C1EC37F2900AB6CE8 /* ResolutionsSelectorInteractor.swift */; };
+		A9CABC961EC37F2900AB6CE8 /* ResolutionsSelectorInteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABC8D1EC37F2900AB6CE8 /* ResolutionsSelectorInteractorInterface.swift */; };
+		A9CABC971EC37F2900AB6CE8 /* ResolutionsSelectorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABC8E1EC37F2900AB6CE8 /* ResolutionsSelectorPresenter.swift */; };
+		A9CABC981EC37F2900AB6CE8 /* ResolutionsSelectorPresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABC8F1EC37F2900AB6CE8 /* ResolutionsSelectorPresenterInterface.swift */; };
+		A9CABC991EC37F2900AB6CE8 /* ResolutionsSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABC901EC37F2900AB6CE8 /* ResolutionsSelectorView.swift */; };
+		A9CABC9A1EC37F2900AB6CE8 /* ResolutionsSelectorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9CABC911EC37F2900AB6CE8 /* ResolutionsSelectorView.xib */; };
+		A9CABCA11EC37F5600AB6CE8 /* SpaceOnDiskInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABC9B1EC37F5600AB6CE8 /* SpaceOnDiskInteractor.swift */; };
+		A9CABCA21EC37F5600AB6CE8 /* SpaceOnDiskInteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABC9C1EC37F5600AB6CE8 /* SpaceOnDiskInteractorInterface.swift */; };
+		A9CABCA31EC37F5600AB6CE8 /* SpaceOnDiskPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABC9D1EC37F5600AB6CE8 /* SpaceOnDiskPresenter.swift */; };
+		A9CABCA41EC37F5600AB6CE8 /* SpaceOnDiskPresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABC9E1EC37F5600AB6CE8 /* SpaceOnDiskPresenterInterface.swift */; };
+		A9CABCA51EC37F5600AB6CE8 /* SpaceOnDiskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABC9F1EC37F5600AB6CE8 /* SpaceOnDiskView.swift */; };
+		A9CABCA61EC37F5600AB6CE8 /* SpaceOnDiskView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9CABCA01EC37F5600AB6CE8 /* SpaceOnDiskView.xib */; };
+		A9CABCAB1EC37F7900AB6CE8 /* SplitInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABCA71EC37F7900AB6CE8 /* SplitInteractor.swift */; };
+		A9CABCAC1EC37F7900AB6CE8 /* SplitInteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABCA81EC37F7900AB6CE8 /* SplitInteractorInterface.swift */; };
+		A9CABCAD1EC37F7900AB6CE8 /* SplitPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABCA91EC37F7900AB6CE8 /* SplitPresenter.swift */; };
+		A9CABCAE1EC37F7900AB6CE8 /* SplitPresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABCAA1EC37F7900AB6CE8 /* SplitPresenterInterface.swift */; };
+		A9CABCB31EC37F9B00AB6CE8 /* TrimInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABCAF1EC37F9B00AB6CE8 /* TrimInteractor.swift */; };
+		A9CABCB41EC37F9B00AB6CE8 /* TrimInteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABCB01EC37F9B00AB6CE8 /* TrimInteractorInterface.swift */; };
+		A9CABCB51EC37F9B00AB6CE8 /* TrimPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABCB11EC37F9B00AB6CE8 /* TrimPresenter.swift */; };
+		A9CABCB61EC37F9B00AB6CE8 /* TrimPresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABCB21EC37F9B00AB6CE8 /* TrimPresenterInterface.swift */; };
+		A9CABCBB1EC37FC900AB6CE8 /* VideonaRangeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABCB71EC37FC900AB6CE8 /* VideonaRangeSlider.swift */; };
+		A9CABCBC1EC37FC900AB6CE8 /* VideonaRangeSliderDelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABCB81EC37FC900AB6CE8 /* VideonaRangeSliderDelegateProtocol.swift */; };
+		A9CABCBD1EC37FC900AB6CE8 /* VideonaRangeSliderThumbLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABCB91EC37FC900AB6CE8 /* VideonaRangeSliderThumbLayer.swift */; };
+		A9CABCBE1EC37FC900AB6CE8 /* VideonaRangeSliderTrackLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABCBA1EC37FC900AB6CE8 /* VideonaRangeSliderTrackLayer.swift */; };
+		A9CABCC21EC37FF200AB6CE8 /* TrackLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABCBF1EC37FF200AB6CE8 /* TrackLayer.swift */; };
+		A9CABCC31EC37FF200AB6CE8 /* TrackModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABCC01EC37FF200AB6CE8 /* TrackModel.swift */; };
+		A9CABCC41EC37FF200AB6CE8 /* VideonaTrackOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABCC11EC37FF200AB6CE8 /* VideonaTrackOverView.swift */; };
+		A9CABCCC1EC3802200AB6CE8 /* WhiteBalanceConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABCC51EC3802200AB6CE8 /* WhiteBalanceConstants.swift */; };
+		A9CABCCD1EC3802200AB6CE8 /* WhiteBalanceInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABCC61EC3802200AB6CE8 /* WhiteBalanceInteractor.swift */; };
+		A9CABCCE1EC3802200AB6CE8 /* WhiteBalancePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABCC71EC3802200AB6CE8 /* WhiteBalancePresenter.swift */; };
+		A9CABCCF1EC3802200AB6CE8 /* WhiteBalancePresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABCC81EC3802200AB6CE8 /* WhiteBalancePresenterInterface.swift */; };
+		A9CABCD01EC3802200AB6CE8 /* WhiteBalanceteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABCC91EC3802200AB6CE8 /* WhiteBalanceteractorInterface.swift */; };
+		A9CABCD11EC3802200AB6CE8 /* WhiteBalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABCCA1EC3802200AB6CE8 /* WhiteBalanceView.swift */; };
+		A9CABCD21EC3802200AB6CE8 /* WhiteBalanceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9CABCCB1EC3802200AB6CE8 /* WhiteBalanceView.xib */; };
+		A9CABCD91EC3804600AB6CE8 /* ZoomSliderInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABCD31EC3804600AB6CE8 /* ZoomSliderInteractor.swift */; };
+		A9CABCDA1EC3804600AB6CE8 /* ZoomSliderInteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABCD41EC3804600AB6CE8 /* ZoomSliderInteractorInterface.swift */; };
+		A9CABCDB1EC3804600AB6CE8 /* ZoomSliderPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABCD51EC3804600AB6CE8 /* ZoomSliderPresenter.swift */; };
+		A9CABCDC1EC3804600AB6CE8 /* ZoomSliderPresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABCD61EC3804600AB6CE8 /* ZoomSliderPresenterInterface.swift */; };
+		A9CABCDD1EC3804600AB6CE8 /* ZoomSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABCD71EC3804600AB6CE8 /* ZoomSliderView.swift */; };
+		A9CABCDE1EC3804600AB6CE8 /* ZoomSliderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9CABCD81EC3804600AB6CE8 /* ZoomSliderView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		53816917F743EE2503F7FD87 /* Pods-VideonaProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideonaProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-VideonaProject/Pods-VideonaProject.release.xcconfig"; sourceTree = "<group>"; };
 		9C833A5003C6FCD472D2E8E0 /* Pods_VideonaProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VideonaProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A92060A51E4DEF6A00656558 /* BatteryRemainingInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatteryRemainingInteractor.swift; sourceTree = "<group>"; };
-		A92060A61E4DEF6A00656558 /* BatteryRemainingInteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatteryRemainingInteractorInterface.swift; sourceTree = "<group>"; };
-		A92060A71E4DEF6A00656558 /* BatteryRemainingPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatteryRemainingPresenter.swift; sourceTree = "<group>"; };
-		A92060A81E4DEF6A00656558 /* BatteryRemainingPresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatteryRemainingPresenterInterface.swift; sourceTree = "<group>"; };
-		A92060A91E4DEF6A00656558 /* BatteryRemainingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatteryRemainingView.swift; sourceTree = "<group>"; };
-		A92060AA1E4DEF6A00656558 /* BatteryRemainingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BatteryRemainingView.xib; sourceTree = "<group>"; };
 		A92060B11E4DEF8600656558 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
-		A92060B61E4DF26300656558 /* SpaceOnDiskInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpaceOnDiskInteractor.swift; sourceTree = "<group>"; };
-		A92060B71E4DF26300656558 /* SpaceOnDiskInteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpaceOnDiskInteractorInterface.swift; sourceTree = "<group>"; };
-		A92060B81E4DF26300656558 /* SpaceOnDiskPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpaceOnDiskPresenter.swift; sourceTree = "<group>"; };
-		A92060B91E4DF26300656558 /* SpaceOnDiskPresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpaceOnDiskPresenterInterface.swift; sourceTree = "<group>"; };
-		A92060BA1E4DF26300656558 /* SpaceOnDiskView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpaceOnDiskView.swift; sourceTree = "<group>"; };
-		A92060BB1E4DF26300656558 /* SpaceOnDiskView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpaceOnDiskView.xib; sourceTree = "<group>"; };
-		A92060C71E4DF59D00656558 /* ResolutionsSelectorPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResolutionsSelectorPresenter.swift; sourceTree = "<group>"; };
-		A92060C81E4DF59D00656558 /* ResolutionsSelectorPresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResolutionsSelectorPresenterInterface.swift; sourceTree = "<group>"; };
-		A92060C91E4DF59D00656558 /* ResolutionsSelectorInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResolutionsSelectorInteractor.swift; sourceTree = "<group>"; };
-		A92060CA1E4DF59D00656558 /* ResolutionsSelectorInteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResolutionsSelectorInteractorInterface.swift; sourceTree = "<group>"; };
-		A92060CB1E4DF59D00656558 /* Resolution.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resolution.swift; sourceTree = "<group>"; };
-		A92060CC1E4DF59D00656558 /* ResolutionsSelectorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResolutionsSelectorView.swift; sourceTree = "<group>"; };
-		A92060CD1E4DF59D00656558 /* ResolutionsSelectorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResolutionsSelectorCell.swift; sourceTree = "<group>"; };
-		A92060CE1E4DF59D00656558 /* ResolutionsSelectorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResolutionsSelectorView.xib; sourceTree = "<group>"; };
-		A92060CF1E4DF59D00656558 /* ResolutionsSelectorCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResolutionsSelectorCell.xib; sourceTree = "<group>"; };
-		A92060DC1E4DF95F00656558 /* DuplicateInteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DuplicateInteractorInterface.swift; sourceTree = "<group>"; };
-		A92060DD1E4DF95F00656558 /* DuplicateInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DuplicateInteractor.swift; sourceTree = "<group>"; };
-		A92060DE1E4DF95F00656558 /* DuplicatePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DuplicatePresenter.swift; sourceTree = "<group>"; };
-		A92060DF1E4DF95F00656558 /* DuplicatePresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DuplicatePresenterInterface.swift; sourceTree = "<group>"; };
-		A92060E51E4DF97F00656558 /* TrimInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrimInteractor.swift; sourceTree = "<group>"; };
-		A92060E61E4DF97F00656558 /* TrimInteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrimInteractorInterface.swift; sourceTree = "<group>"; };
-		A92060E71E4DF97F00656558 /* TrimPresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrimPresenterInterface.swift; sourceTree = "<group>"; };
-		A92060E81E4DF97F00656558 /* TrimPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrimPresenter.swift; sourceTree = "<group>"; };
-		A92060EE1E4DF9A200656558 /* SplitInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitInteractor.swift; sourceTree = "<group>"; };
-		A92060EF1E4DF9A200656558 /* SplitInteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitInteractorInterface.swift; sourceTree = "<group>"; };
-		A92060F01E4DF9A200656558 /* SplitPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitPresenter.swift; sourceTree = "<group>"; };
-		A92060F11E4DF9A200656558 /* SplitPresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitPresenterInterface.swift; sourceTree = "<group>"; };
-		A92060FC1E4DFC9500656558 /* ExposureInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExposureInteractor.swift; sourceTree = "<group>"; };
-		A92060FD1E4DFC9500656558 /* ExposurePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExposurePresenter.swift; sourceTree = "<group>"; };
-		A92060FE1E4DFC9500656558 /* ExposurePresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExposurePresenterInterface.swift; sourceTree = "<group>"; };
-		A92060FF1E4DFC9500656558 /* ExposureteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExposureteractorInterface.swift; sourceTree = "<group>"; };
-		A92061001E4DFC9500656558 /* ExposureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExposureView.swift; sourceTree = "<group>"; };
-		A92061011E4DFC9500656558 /* ExposureView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExposureView.xib; sourceTree = "<group>"; };
-		A92061081E4DFCBB00656558 /* InputSoundGainControlInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputSoundGainControlInteractor.swift; sourceTree = "<group>"; };
-		A92061091E4DFCBB00656558 /* InputSoundGainControlInteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputSoundGainControlInteractorInterface.swift; sourceTree = "<group>"; };
-		A920610A1E4DFCBB00656558 /* InputSoundGainControlPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputSoundGainControlPresenter.swift; sourceTree = "<group>"; };
-		A920610B1E4DFCBB00656558 /* InputSoundGainControlPresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputSoundGainControlPresenterInterface.swift; sourceTree = "<group>"; };
-		A920610C1E4DFCBB00656558 /* InputSoundGainControlView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputSoundGainControlView.swift; sourceTree = "<group>"; };
-		A920610D1E4DFCBB00656558 /* InputSoundGainControlView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InputSoundGainControlView.xib; sourceTree = "<group>"; };
-		A92061141E4DFCCE00656558 /* ZoomSliderInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomSliderInteractor.swift; sourceTree = "<group>"; };
-		A92061151E4DFCCE00656558 /* ZoomSliderInteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomSliderInteractorInterface.swift; sourceTree = "<group>"; };
-		A92061161E4DFCCE00656558 /* ZoomSliderPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomSliderPresenter.swift; sourceTree = "<group>"; };
-		A92061171E4DFCCE00656558 /* ZoomSliderPresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomSliderPresenterInterface.swift; sourceTree = "<group>"; };
-		A92061181E4DFCCE00656558 /* ZoomSliderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomSliderView.swift; sourceTree = "<group>"; };
-		A92061191E4DFCCE00656558 /* ZoomSliderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZoomSliderView.xib; sourceTree = "<group>"; };
-		A92061201E4DFCDC00656558 /* FocalLensSliderInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocalLensSliderInteractor.swift; sourceTree = "<group>"; };
-		A92061211E4DFCDC00656558 /* FocalLensSliderInteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocalLensSliderInteractorInterface.swift; sourceTree = "<group>"; };
-		A92061221E4DFCDC00656558 /* FocalLensSliderPresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocalLensSliderPresenterInterface.swift; sourceTree = "<group>"; };
-		A92061231E4DFCDC00656558 /* FocalLensSliderresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocalLensSliderresenter.swift; sourceTree = "<group>"; };
-		A92061241E4DFCDC00656558 /* FocalLensSliderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocalLensSliderView.swift; sourceTree = "<group>"; };
-		A92061251E4DFCDC00656558 /* FocalLensSliderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FocalLensSliderView.xib; sourceTree = "<group>"; };
-		A920612F1E4DFE9C00656558 /* VideoGalleryDelegateInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoGalleryDelegateInterface.swift; sourceTree = "<group>"; };
-		A92061301E4DFE9C00656558 /* VideoGalleryInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoGalleryInterface.swift; sourceTree = "<group>"; };
-		A92061311E4DFE9C00656558 /* VideosGalleryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideosGalleryViewController.swift; sourceTree = "<group>"; };
-		A92061321E4DFE9C00656558 /* VideoThumbnail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoThumbnail.swift; sourceTree = "<group>"; };
-		A92061381E4DFF0100656558 /* VideonaRangeSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideonaRangeSlider.swift; sourceTree = "<group>"; };
-		A92061391E4DFF0100656558 /* VideonaRangeSliderDelegateProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideonaRangeSliderDelegateProtocol.swift; sourceTree = "<group>"; };
-		A920613A1E4DFF0100656558 /* VideonaRangeSliderThumbLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideonaRangeSliderThumbLayer.swift; sourceTree = "<group>"; };
-		A920613B1E4DFF0100656558 /* VideonaRangeSliderTrackLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideonaRangeSliderTrackLayer.swift; sourceTree = "<group>"; };
-		A92061411E4DFF2200656558 /* TrackLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackLayer.swift; sourceTree = "<group>"; };
-		A92061421E4DFF2200656558 /* TrackModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackModel.swift; sourceTree = "<group>"; };
-		A92061431E4DFF2200656558 /* VideonaTrackOverView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideonaTrackOverView.swift; sourceTree = "<group>"; };
-		A920614A1E4E04D900656558 /* ISOConfigurationInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISOConfigurationInteractor.swift; sourceTree = "<group>"; };
-		A920614B1E4E04D900656558 /* ISOConfigurationInteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISOConfigurationInteractorInterface.swift; sourceTree = "<group>"; };
-		A920614C1E4E04D900656558 /* ISOConfigurationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISOConfigurationPresenter.swift; sourceTree = "<group>"; };
-		A920614D1E4E04D900656558 /* ISOConfigurationPresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISOConfigurationPresenterInterface.swift; sourceTree = "<group>"; };
-		A920614E1E4E04D900656558 /* ISOConfigurationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISOConfigurationView.swift; sourceTree = "<group>"; };
-		A92061581E4E089600656558 /* WhiteBalanceConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhiteBalanceConstants.swift; sourceTree = "<group>"; };
-		A92061591E4E089600656558 /* WhiteBalanceInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhiteBalanceInteractor.swift; sourceTree = "<group>"; };
-		A920615A1E4E089600656558 /* WhiteBalancePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhiteBalancePresenter.swift; sourceTree = "<group>"; };
-		A920615B1E4E089600656558 /* WhiteBalancePresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhiteBalancePresenterInterface.swift; sourceTree = "<group>"; };
-		A920615C1E4E089600656558 /* WhiteBalanceteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhiteBalanceteractorInterface.swift; sourceTree = "<group>"; };
-		A920615D1E4E089600656558 /* WhiteBalanceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhiteBalanceView.swift; sourceTree = "<group>"; };
-		A92061671E4E08B100656558 /* FocusInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusInteractor.swift; sourceTree = "<group>"; };
-		A92061681E4E08B100656558 /* FocusInteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusInteractorInterface.swift; sourceTree = "<group>"; };
-		A92061691E4E08B100656558 /* FocusPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusPresenter.swift; sourceTree = "<group>"; };
-		A920616A1E4E08B100656558 /* FocusPresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusPresenterInterface.swift; sourceTree = "<group>"; };
-		A920616B1E4E08B100656558 /* FocusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusView.swift; sourceTree = "<group>"; };
-		A92061741E4E08C800656558 /* ExpositionModesInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpositionModesInteractor.swift; sourceTree = "<group>"; };
-		A92061751E4E08C800656558 /* ExpositionModesInteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpositionModesInteractorInterface.swift; sourceTree = "<group>"; };
-		A92061761E4E08C800656558 /* ExpositionModesPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpositionModesPresenter.swift; sourceTree = "<group>"; };
-		A92061771E4E08C800656558 /* ExpositionModesPresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpositionModesPresenterInterface.swift; sourceTree = "<group>"; };
-		A92061781E4E08C800656558 /* ExpositionModesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpositionModesView.swift; sourceTree = "<group>"; };
-		A92061AB1E4E0CD700656558 /* PlayerInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerInteractor.swift; sourceTree = "<group>"; };
-		A92061AC1E4E0CD700656558 /* PlayerInteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerInteractorInterface.swift; sourceTree = "<group>"; };
-		A92061AD1E4E0CD700656558 /* PlayerInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerInterface.swift; sourceTree = "<group>"; };
-		A92061AE1E4E0CD700656558 /* PlayerItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerItem.swift; sourceTree = "<group>"; };
-		A92061AF1E4E0CD700656558 /* PlayerPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerPresenter.swift; sourceTree = "<group>"; };
-		A92061B01E4E0CD700656558 /* PlayerPresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerPresenterInterface.swift; sourceTree = "<group>"; };
-		A92061B11E4E0CD700656558 /* PlayerProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerProvider.swift; sourceTree = "<group>"; };
-		A92061B21E4E0CD700656558 /* PlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
-		A92061B31E4E0CD700656558 /* PlayerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerView.xib; sourceTree = "<group>"; };
-		A92061B41E4E0CD700656558 /* PlayerWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerWireframe.swift; sourceTree = "<group>"; };
-		A92061B51E4E0CD700656558 /* UIVerticalAlignLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIVerticalAlignLabel.swift; sourceTree = "<group>"; };
-		A953AD6D1E536A1A00DC0D84 /* VideoOutputParameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoOutputParameters.swift; sourceTree = "<group>"; };
-		A95570191E54027F00DF56FA /* ExpositionModesView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpositionModesView.xib; sourceTree = "<group>"; };
-		A955701B1E54028700DF56FA /* FocusView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FocusView.xib; sourceTree = "<group>"; };
-		A955701D1E54029000DF56FA /* WhiteBalanceView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WhiteBalanceView.xib; sourceTree = "<group>"; };
-		A955701F1E54029600DF56FA /* ISOConfigurationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ISOConfigurationView.xib; sourceTree = "<group>"; };
-		A956A1061DBDED22002BDB26 /* AddVideoToProjectUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddVideoToProjectUseCase.swift; sourceTree = "<group>"; };
-		A956A1071DBDED22002BDB26 /* AVQualityParse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVQualityParse.swift; sourceTree = "<group>"; };
-		A956A1081DBDED22002BDB26 /* CATextLayerAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CATextLayerAttributes.swift; sourceTree = "<group>"; };
-		A956A1091DBDED22002BDB26 /* CompatibleQualityInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompatibleQualityInteractor.swift; sourceTree = "<group>"; };
-		A956A10A1DBDED22002BDB26 /* GetActualProjectAVCompositionUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetActualProjectAVCompositionUseCase.swift; sourceTree = "<group>"; };
-		A956A10B1DBDED22002BDB26 /* GetActualProjectTextCALayerAnimationUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetActualProjectTextCALayerAnimationUseCase.swift; sourceTree = "<group>"; };
-		A956A10C1DBDED22002BDB26 /* GetImageByTextUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetImageByTextUseCase.swift; sourceTree = "<group>"; };
-		A960A8611E4DD6D20069F487 /* AudioLevelBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioLevelBarView.swift; sourceTree = "<group>"; };
-		A960A8621E4DD6D20069F487 /* AudioLevelBarInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioLevelBarInteractor.swift; sourceTree = "<group>"; };
-		A960A8631E4DD6D20069F487 /* AudioLevelBarPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioLevelBarPresenter.swift; sourceTree = "<group>"; };
-		A960A8641E4DD6D20069F487 /* AudioLevelBarPresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioLevelBarPresenterInterface.swift; sourceTree = "<group>"; };
-		A960A8651E4DD6D20069F487 /* AudioLevelBarInteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioLevelBarInteractorInterface.swift; sourceTree = "<group>"; };
-		A960A8661E4DD6D20069F487 /* AudioLevelBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AudioLevelBarView.xib; sourceTree = "<group>"; };
 		A9928A0C1E5370CE002A4E60 /* VideonaProjectTarget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VideonaProjectTarget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9928A0E1E5370CE002A4E60 /* VideonaProjectTarget.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideonaProjectTarget.h; sourceTree = "<group>"; };
 		A9928A0F1E5370CE002A4E60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A9950CC51E1ABBF9009367E7 /* AVResolutionParse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVResolutionParse.swift; sourceTree = "<group>"; };
-		A9950CC91E1ABD61009367E7 /* CompatibleResolutionsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompatibleResolutionsInteractor.swift; sourceTree = "<group>"; };
-		A99CE6C61E279467000BDFC5 /* TimeNumberFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeNumberFormatter.swift; sourceTree = "<group>"; };
-		A9B0073D1DAFC9F100BFAD68 /* VideonaComposition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideonaComposition.swift; sourceTree = "<group>"; };
 		A9BD5FBD1D9120F40080CE97 /* VideonaProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VideonaProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9BD5FC01D9120F40080CE97 /* VideonaProject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideonaProject.h; sourceTree = "<group>"; };
 		A9BD5FC21D9120F40080CE97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A9BD5FC81D91210C0080CE97 /* Audio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Audio.swift; sourceTree = "<group>"; };
-		A9BD5FC91D91210C0080CE97 /* Media.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
-		A9BD5FCA1D91210C0080CE97 /* Music.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Music.swift; sourceTree = "<group>"; };
-		A9BD5FCB1D91210C0080CE97 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
-		A9BD5FCC1D91210C0080CE97 /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
-		A9BD5FCD1D91210C0080CE97 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		A9BD5FCE1D91210C0080CE97 /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
-		A9C5FB6C1DD5E7AE00057A1B /* VideoTransitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoTransitions.swift; sourceTree = "<group>"; };
-		A9C5FB6E1DD5E7B500057A1B /* AudioTransitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioTransitions.swift; sourceTree = "<group>"; };
 		A9CA73E81E567860009C4E88 /* MBCircularProgressBar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MBCircularProgressBar.framework; sourceTree = "<group>"; };
-		A9FB3A2D1E53BCE400C21918 /* VideoFilterCompositor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoFilterCompositor.swift; sourceTree = "<group>"; };
-		A9FB3A2E1E53BCE400C21918 /* VideoFilterCompositionInstruction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoFilterCompositionInstruction.swift; sourceTree = "<group>"; };
+		A9CABBC51EC37B9500AB6CE8 /* AudioLevelBarInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AudioLevelBarInteractor.swift; path = Modules/AudioLevelBar/AudioLevelBarInteractor.swift; sourceTree = "<group>"; };
+		A9CABBC61EC37B9500AB6CE8 /* AudioLevelBarInteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AudioLevelBarInteractorInterface.swift; path = Modules/AudioLevelBar/AudioLevelBarInteractorInterface.swift; sourceTree = "<group>"; };
+		A9CABBC71EC37B9500AB6CE8 /* AudioLevelBarPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AudioLevelBarPresenter.swift; path = Modules/AudioLevelBar/AudioLevelBarPresenter.swift; sourceTree = "<group>"; };
+		A9CABBC81EC37B9500AB6CE8 /* AudioLevelBarPresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AudioLevelBarPresenterInterface.swift; path = Modules/AudioLevelBar/AudioLevelBarPresenterInterface.swift; sourceTree = "<group>"; };
+		A9CABBC91EC37B9500AB6CE8 /* AudioLevelBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AudioLevelBarView.swift; path = Modules/AudioLevelBar/AudioLevelBarView.swift; sourceTree = "<group>"; };
+		A9CABBCA1EC37B9500AB6CE8 /* AudioLevelBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AudioLevelBarView.xib; path = Modules/AudioLevelBar/AudioLevelBarView.xib; sourceTree = "<group>"; };
+		A9CABBD11EC37BDA00AB6CE8 /* BatteryRemainingInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BatteryRemainingInteractor.swift; path = Modules/BatteryRemaining/BatteryRemainingInteractor.swift; sourceTree = "<group>"; };
+		A9CABBD21EC37BDA00AB6CE8 /* BatteryRemainingInteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BatteryRemainingInteractorInterface.swift; path = Modules/BatteryRemaining/BatteryRemainingInteractorInterface.swift; sourceTree = "<group>"; };
+		A9CABBD31EC37BDA00AB6CE8 /* BatteryRemainingPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BatteryRemainingPresenter.swift; path = Modules/BatteryRemaining/BatteryRemainingPresenter.swift; sourceTree = "<group>"; };
+		A9CABBD41EC37BDA00AB6CE8 /* BatteryRemainingPresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BatteryRemainingPresenterInterface.swift; path = Modules/BatteryRemaining/BatteryRemainingPresenterInterface.swift; sourceTree = "<group>"; };
+		A9CABBD51EC37BDA00AB6CE8 /* BatteryRemainingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BatteryRemainingView.swift; path = Modules/BatteryRemaining/BatteryRemainingView.swift; sourceTree = "<group>"; };
+		A9CABBD61EC37BDA00AB6CE8 /* BatteryRemainingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BatteryRemainingView.xib; path = Modules/BatteryRemaining/BatteryRemainingView.xib; sourceTree = "<group>"; };
+		A9CABBDD1EC37C0500AB6CE8 /* DuplicateInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DuplicateInteractor.swift; path = Modules/Duplicate/DuplicateInteractor.swift; sourceTree = "<group>"; };
+		A9CABBDE1EC37C0500AB6CE8 /* DuplicateInteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DuplicateInteractorInterface.swift; path = Modules/Duplicate/DuplicateInteractorInterface.swift; sourceTree = "<group>"; };
+		A9CABBDF1EC37C0500AB6CE8 /* DuplicatePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DuplicatePresenter.swift; path = Modules/Duplicate/DuplicatePresenter.swift; sourceTree = "<group>"; };
+		A9CABBE01EC37C0500AB6CE8 /* DuplicatePresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DuplicatePresenterInterface.swift; path = Modules/Duplicate/DuplicatePresenterInterface.swift; sourceTree = "<group>"; };
+		A9CABBE51EC37C3300AB6CE8 /* ExpositionModesInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExpositionModesInteractor.swift; path = "Modules/Exposition modes/ExpositionModesInteractor.swift"; sourceTree = "<group>"; };
+		A9CABBE61EC37C3300AB6CE8 /* ExpositionModesInteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExpositionModesInteractorInterface.swift; path = "Modules/Exposition modes/ExpositionModesInteractorInterface.swift"; sourceTree = "<group>"; };
+		A9CABBE71EC37C3300AB6CE8 /* ExpositionModesPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExpositionModesPresenter.swift; path = "Modules/Exposition modes/ExpositionModesPresenter.swift"; sourceTree = "<group>"; };
+		A9CABBE81EC37C3300AB6CE8 /* ExpositionModesPresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExpositionModesPresenterInterface.swift; path = "Modules/Exposition modes/ExpositionModesPresenterInterface.swift"; sourceTree = "<group>"; };
+		A9CABBE91EC37C3300AB6CE8 /* ExpositionModesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExpositionModesView.swift; path = "Modules/Exposition modes/ExpositionModesView.swift"; sourceTree = "<group>"; };
+		A9CABBEA1EC37C3300AB6CE8 /* ExpositionModesView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ExpositionModesView.xib; path = "Modules/Exposition modes/ExpositionModesView.xib"; sourceTree = "<group>"; };
+		A9CABBF11EC37CA200AB6CE8 /* ExposureInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExposureInteractor.swift; path = "Modules/Exposure Slider/ExposureInteractor.swift"; sourceTree = "<group>"; };
+		A9CABBF21EC37CA200AB6CE8 /* ExposurePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExposurePresenter.swift; path = "Modules/Exposure Slider/ExposurePresenter.swift"; sourceTree = "<group>"; };
+		A9CABBF31EC37CA200AB6CE8 /* ExposurePresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExposurePresenterInterface.swift; path = "Modules/Exposure Slider/ExposurePresenterInterface.swift"; sourceTree = "<group>"; };
+		A9CABBF41EC37CA200AB6CE8 /* ExposureteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExposureteractorInterface.swift; path = "Modules/Exposure Slider/ExposureteractorInterface.swift"; sourceTree = "<group>"; };
+		A9CABBF51EC37CA200AB6CE8 /* ExposureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExposureView.swift; path = "Modules/Exposure Slider/ExposureView.swift"; sourceTree = "<group>"; };
+		A9CABBF61EC37CA200AB6CE8 /* ExposureView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ExposureView.xib; path = "Modules/Exposure Slider/ExposureView.xib"; sourceTree = "<group>"; };
+		A9CABBFD1EC37CF800AB6CE8 /* FocalLensSliderInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FocalLensSliderInteractor.swift; path = "Modules/Focal Lens Slider/FocalLensSliderInteractor.swift"; sourceTree = "<group>"; };
+		A9CABBFE1EC37CF800AB6CE8 /* FocalLensSliderInteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FocalLensSliderInteractorInterface.swift; path = "Modules/Focal Lens Slider/FocalLensSliderInteractorInterface.swift"; sourceTree = "<group>"; };
+		A9CABBFF1EC37CF800AB6CE8 /* FocalLensSliderPresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FocalLensSliderPresenterInterface.swift; path = "Modules/Focal Lens Slider/FocalLensSliderPresenterInterface.swift"; sourceTree = "<group>"; };
+		A9CABC001EC37CF800AB6CE8 /* FocalLensSliderresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FocalLensSliderresenter.swift; path = "Modules/Focal Lens Slider/FocalLensSliderresenter.swift"; sourceTree = "<group>"; };
+		A9CABC011EC37CF800AB6CE8 /* FocalLensSliderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FocalLensSliderView.swift; path = "Modules/Focal Lens Slider/FocalLensSliderView.swift"; sourceTree = "<group>"; };
+		A9CABC021EC37CF800AB6CE8 /* FocalLensSliderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FocalLensSliderView.xib; path = "Modules/Focal Lens Slider/FocalLensSliderView.xib"; sourceTree = "<group>"; };
+		A9CABC091EC37D1900AB6CE8 /* FocusInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FocusInteractor.swift; path = Modules/Focus/FocusInteractor.swift; sourceTree = "<group>"; };
+		A9CABC0A1EC37D1900AB6CE8 /* FocusInteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FocusInteractorInterface.swift; path = Modules/Focus/FocusInteractorInterface.swift; sourceTree = "<group>"; };
+		A9CABC0B1EC37D1900AB6CE8 /* FocusPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FocusPresenter.swift; path = Modules/Focus/FocusPresenter.swift; sourceTree = "<group>"; };
+		A9CABC0C1EC37D1900AB6CE8 /* FocusPresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FocusPresenterInterface.swift; path = Modules/Focus/FocusPresenterInterface.swift; sourceTree = "<group>"; };
+		A9CABC0D1EC37D1900AB6CE8 /* FocusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FocusView.swift; path = Modules/Focus/FocusView.swift; sourceTree = "<group>"; };
+		A9CABC0E1EC37D1900AB6CE8 /* FocusView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FocusView.xib; path = Modules/Focus/FocusView.xib; sourceTree = "<group>"; };
+		A9CABC151EC37D3C00AB6CE8 /* VideoGalleryDelegateInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoGalleryDelegateInterface.swift; path = Modules/Gallery/VideoGalleryDelegateInterface.swift; sourceTree = "<group>"; };
+		A9CABC161EC37D3C00AB6CE8 /* VideoGalleryInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoGalleryInterface.swift; path = Modules/Gallery/VideoGalleryInterface.swift; sourceTree = "<group>"; };
+		A9CABC171EC37D3C00AB6CE8 /* VideosGalleryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideosGalleryViewController.swift; path = Modules/Gallery/VideosGalleryViewController.swift; sourceTree = "<group>"; };
+		A9CABC181EC37D3C00AB6CE8 /* VideoThumbnail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoThumbnail.swift; path = Modules/Gallery/VideoThumbnail.swift; sourceTree = "<group>"; };
+		A9CABC1D1EC37D6900AB6CE8 /* InputSoundGainControlInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InputSoundGainControlInteractor.swift; path = Modules/InputSoundGainControl/InputSoundGainControlInteractor.swift; sourceTree = "<group>"; };
+		A9CABC1E1EC37D6900AB6CE8 /* InputSoundGainControlInteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InputSoundGainControlInteractorInterface.swift; path = Modules/InputSoundGainControl/InputSoundGainControlInteractorInterface.swift; sourceTree = "<group>"; };
+		A9CABC1F1EC37D6900AB6CE8 /* InputSoundGainControlPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InputSoundGainControlPresenter.swift; path = Modules/InputSoundGainControl/InputSoundGainControlPresenter.swift; sourceTree = "<group>"; };
+		A9CABC201EC37D6900AB6CE8 /* InputSoundGainControlPresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InputSoundGainControlPresenterInterface.swift; path = Modules/InputSoundGainControl/InputSoundGainControlPresenterInterface.swift; sourceTree = "<group>"; };
+		A9CABC211EC37D6900AB6CE8 /* InputSoundGainControlView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InputSoundGainControlView.swift; path = Modules/InputSoundGainControl/InputSoundGainControlView.swift; sourceTree = "<group>"; };
+		A9CABC221EC37D6900AB6CE8 /* InputSoundGainControlView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = InputSoundGainControlView.xib; path = Modules/InputSoundGainControl/InputSoundGainControlView.xib; sourceTree = "<group>"; };
+		A9CABC291EC37D8A00AB6CE8 /* ISOConfigurationInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ISOConfigurationInteractor.swift; path = Modules/ISOConfiguration/ISOConfigurationInteractor.swift; sourceTree = "<group>"; };
+		A9CABC2A1EC37D8A00AB6CE8 /* ISOConfigurationInteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ISOConfigurationInteractorInterface.swift; path = Modules/ISOConfiguration/ISOConfigurationInteractorInterface.swift; sourceTree = "<group>"; };
+		A9CABC2B1EC37D8A00AB6CE8 /* ISOConfigurationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ISOConfigurationPresenter.swift; path = Modules/ISOConfiguration/ISOConfigurationPresenter.swift; sourceTree = "<group>"; };
+		A9CABC2C1EC37D8A00AB6CE8 /* ISOConfigurationPresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ISOConfigurationPresenterInterface.swift; path = Modules/ISOConfiguration/ISOConfigurationPresenterInterface.swift; sourceTree = "<group>"; };
+		A9CABC2D1EC37D8A00AB6CE8 /* ISOConfigurationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ISOConfigurationView.swift; path = Modules/ISOConfiguration/ISOConfigurationView.swift; sourceTree = "<group>"; };
+		A9CABC2E1EC37D8A00AB6CE8 /* ISOConfigurationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ISOConfigurationView.xib; path = Modules/ISOConfiguration/ISOConfigurationView.xib; sourceTree = "<group>"; };
+		A9CABC351EC37DC700AB6CE8 /* PlayerInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayerInteractor.swift; path = Modules/Player/PlayerInteractor.swift; sourceTree = "<group>"; };
+		A9CABC361EC37DC700AB6CE8 /* PlayerInteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayerInteractorInterface.swift; path = Modules/Player/PlayerInteractorInterface.swift; sourceTree = "<group>"; };
+		A9CABC371EC37DC700AB6CE8 /* PlayerInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayerInterface.swift; path = Modules/Player/PlayerInterface.swift; sourceTree = "<group>"; };
+		A9CABC381EC37DC700AB6CE8 /* PlayerItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayerItem.swift; path = Modules/Player/PlayerItem.swift; sourceTree = "<group>"; };
+		A9CABC391EC37DC700AB6CE8 /* PlayerPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayerPresenter.swift; path = Modules/Player/PlayerPresenter.swift; sourceTree = "<group>"; };
+		A9CABC3A1EC37DC700AB6CE8 /* PlayerPresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayerPresenterInterface.swift; path = Modules/Player/PlayerPresenterInterface.swift; sourceTree = "<group>"; };
+		A9CABC3B1EC37DC700AB6CE8 /* PlayerProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayerProvider.swift; path = Modules/Player/PlayerProvider.swift; sourceTree = "<group>"; };
+		A9CABC3C1EC37DC700AB6CE8 /* PlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayerView.swift; path = Modules/Player/PlayerView.swift; sourceTree = "<group>"; };
+		A9CABC3D1EC37DC700AB6CE8 /* PlayerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PlayerView.xib; path = Modules/Player/PlayerView.xib; sourceTree = "<group>"; };
+		A9CABC3E1EC37DC700AB6CE8 /* PlayerWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayerWireframe.swift; path = Modules/Player/PlayerWireframe.swift; sourceTree = "<group>"; };
+		A9CABC3F1EC37DC700AB6CE8 /* UIVerticalAlignLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIVerticalAlignLabel.swift; path = Modules/Player/UIVerticalAlignLabel.swift; sourceTree = "<group>"; };
+		A9CABC5B1EC37E8300AB6CE8 /* AddVideoToProjectUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddVideoToProjectUseCase.swift; path = "Modules/Project/Use case/AddVideoToProjectUseCase.swift"; sourceTree = "<group>"; };
+		A9CABC5C1EC37E8300AB6CE8 /* CATextLayerAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CATextLayerAttributes.swift; path = "Modules/Project/Use case/CATextLayerAttributes.swift"; sourceTree = "<group>"; };
+		A9CABC5D1EC37E8300AB6CE8 /* CompatibleQualityInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CompatibleQualityInteractor.swift; path = "Modules/Project/Use case/CompatibleQualityInteractor.swift"; sourceTree = "<group>"; };
+		A9CABC5E1EC37E8300AB6CE8 /* GetActualProjectAVCompositionUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetActualProjectAVCompositionUseCase.swift; path = "Modules/Project/Use case/GetActualProjectAVCompositionUseCase.swift"; sourceTree = "<group>"; };
+		A9CABC5F1EC37E8300AB6CE8 /* GetActualProjectTextCALayerAnimationUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetActualProjectTextCALayerAnimationUseCase.swift; path = "Modules/Project/Use case/GetActualProjectTextCALayerAnimationUseCase.swift"; sourceTree = "<group>"; };
+		A9CABC601EC37E8300AB6CE8 /* GetImageByTextUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetImageByTextUseCase.swift; path = "Modules/Project/Use case/GetImageByTextUseCase.swift"; sourceTree = "<group>"; };
+		A9CABC611EC37E8300AB6CE8 /* TimeNumberFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimeNumberFormatter.swift; path = "Modules/Project/Use case/TimeNumberFormatter.swift"; sourceTree = "<group>"; };
+		A9CABC621EC37E8300AB6CE8 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Utils.swift; path = "Modules/Project/Use case/Utils.swift"; sourceTree = "<group>"; };
+		A9CABC6B1EC37E9700AB6CE8 /* Audio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Audio.swift; path = Modules/Project/Identities/Audio.swift; sourceTree = "<group>"; };
+		A9CABC6C1EC37E9700AB6CE8 /* AVQualityParse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AVQualityParse.swift; path = Modules/Project/Identities/AVQualityParse.swift; sourceTree = "<group>"; };
+		A9CABC6D1EC37E9700AB6CE8 /* AVResolutionParse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AVResolutionParse.swift; path = Modules/Project/Identities/AVResolutionParse.swift; sourceTree = "<group>"; };
+		A9CABC6E1EC37E9700AB6CE8 /* CompatibleResolutionsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CompatibleResolutionsInteractor.swift; path = Modules/Project/Identities/CompatibleResolutionsInteractor.swift; sourceTree = "<group>"; };
+		A9CABC6F1EC37E9700AB6CE8 /* Media.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Media.swift; path = Modules/Project/Identities/Media.swift; sourceTree = "<group>"; };
+		A9CABC701EC37E9700AB6CE8 /* Music.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Music.swift; path = Modules/Project/Identities/Music.swift; sourceTree = "<group>"; };
+		A9CABC711EC37E9700AB6CE8 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Profile.swift; path = Modules/Project/Identities/Profile.swift; sourceTree = "<group>"; };
+		A9CABC721EC37E9700AB6CE8 /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Project.swift; path = Modules/Project/Identities/Project.swift; sourceTree = "<group>"; };
+		A9CABC731EC37E9700AB6CE8 /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Video.swift; path = Modules/Project/Identities/Video.swift; sourceTree = "<group>"; };
+		A9CABC741EC37E9700AB6CE8 /* VideonaComposition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideonaComposition.swift; path = Modules/Project/Identities/VideonaComposition.swift; sourceTree = "<group>"; };
+		A9CABC751EC37E9700AB6CE8 /* VideoOutputParameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoOutputParameters.swift; path = Modules/Project/Identities/VideoOutputParameters.swift; sourceTree = "<group>"; };
+		A9CABC811EC37F0300AB6CE8 /* AudioTransitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AudioTransitions.swift; path = Modules/Project/Transitions/AudioTransitions.swift; sourceTree = "<group>"; };
+		A9CABC821EC37F0300AB6CE8 /* VideoFilterCompositionInstruction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoFilterCompositionInstruction.swift; path = Modules/Project/Transitions/VideoFilterCompositionInstruction.swift; sourceTree = "<group>"; };
+		A9CABC831EC37F0300AB6CE8 /* VideoFilterCompositor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoFilterCompositor.swift; path = Modules/Project/Transitions/VideoFilterCompositor.swift; sourceTree = "<group>"; };
+		A9CABC841EC37F0300AB6CE8 /* VideoTransitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoTransitions.swift; path = Modules/Project/Transitions/VideoTransitions.swift; sourceTree = "<group>"; };
+		A9CABC891EC37F2900AB6CE8 /* Resolution.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Resolution.swift; path = Modules/ResolutionsSelector/Resolution.swift; sourceTree = "<group>"; };
+		A9CABC8A1EC37F2900AB6CE8 /* ResolutionsSelectorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResolutionsSelectorCell.swift; path = Modules/ResolutionsSelector/ResolutionsSelectorCell.swift; sourceTree = "<group>"; };
+		A9CABC8B1EC37F2900AB6CE8 /* ResolutionsSelectorCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ResolutionsSelectorCell.xib; path = Modules/ResolutionsSelector/ResolutionsSelectorCell.xib; sourceTree = "<group>"; };
+		A9CABC8C1EC37F2900AB6CE8 /* ResolutionsSelectorInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResolutionsSelectorInteractor.swift; path = Modules/ResolutionsSelector/ResolutionsSelectorInteractor.swift; sourceTree = "<group>"; };
+		A9CABC8D1EC37F2900AB6CE8 /* ResolutionsSelectorInteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResolutionsSelectorInteractorInterface.swift; path = Modules/ResolutionsSelector/ResolutionsSelectorInteractorInterface.swift; sourceTree = "<group>"; };
+		A9CABC8E1EC37F2900AB6CE8 /* ResolutionsSelectorPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResolutionsSelectorPresenter.swift; path = Modules/ResolutionsSelector/ResolutionsSelectorPresenter.swift; sourceTree = "<group>"; };
+		A9CABC8F1EC37F2900AB6CE8 /* ResolutionsSelectorPresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResolutionsSelectorPresenterInterface.swift; path = Modules/ResolutionsSelector/ResolutionsSelectorPresenterInterface.swift; sourceTree = "<group>"; };
+		A9CABC901EC37F2900AB6CE8 /* ResolutionsSelectorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResolutionsSelectorView.swift; path = Modules/ResolutionsSelector/ResolutionsSelectorView.swift; sourceTree = "<group>"; };
+		A9CABC911EC37F2900AB6CE8 /* ResolutionsSelectorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ResolutionsSelectorView.xib; path = Modules/ResolutionsSelector/ResolutionsSelectorView.xib; sourceTree = "<group>"; };
+		A9CABC9B1EC37F5600AB6CE8 /* SpaceOnDiskInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpaceOnDiskInteractor.swift; path = Modules/SpaceOnDisk/SpaceOnDiskInteractor.swift; sourceTree = "<group>"; };
+		A9CABC9C1EC37F5600AB6CE8 /* SpaceOnDiskInteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpaceOnDiskInteractorInterface.swift; path = Modules/SpaceOnDisk/SpaceOnDiskInteractorInterface.swift; sourceTree = "<group>"; };
+		A9CABC9D1EC37F5600AB6CE8 /* SpaceOnDiskPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpaceOnDiskPresenter.swift; path = Modules/SpaceOnDisk/SpaceOnDiskPresenter.swift; sourceTree = "<group>"; };
+		A9CABC9E1EC37F5600AB6CE8 /* SpaceOnDiskPresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpaceOnDiskPresenterInterface.swift; path = Modules/SpaceOnDisk/SpaceOnDiskPresenterInterface.swift; sourceTree = "<group>"; };
+		A9CABC9F1EC37F5600AB6CE8 /* SpaceOnDiskView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpaceOnDiskView.swift; path = Modules/SpaceOnDisk/SpaceOnDiskView.swift; sourceTree = "<group>"; };
+		A9CABCA01EC37F5600AB6CE8 /* SpaceOnDiskView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SpaceOnDiskView.xib; path = Modules/SpaceOnDisk/SpaceOnDiskView.xib; sourceTree = "<group>"; };
+		A9CABCA71EC37F7900AB6CE8 /* SplitInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SplitInteractor.swift; path = Modules/Split/SplitInteractor.swift; sourceTree = "<group>"; };
+		A9CABCA81EC37F7900AB6CE8 /* SplitInteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SplitInteractorInterface.swift; path = Modules/Split/SplitInteractorInterface.swift; sourceTree = "<group>"; };
+		A9CABCA91EC37F7900AB6CE8 /* SplitPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SplitPresenter.swift; path = Modules/Split/SplitPresenter.swift; sourceTree = "<group>"; };
+		A9CABCAA1EC37F7900AB6CE8 /* SplitPresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SplitPresenterInterface.swift; path = Modules/Split/SplitPresenterInterface.swift; sourceTree = "<group>"; };
+		A9CABCAF1EC37F9B00AB6CE8 /* TrimInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrimInteractor.swift; path = Modules/Trim/TrimInteractor.swift; sourceTree = "<group>"; };
+		A9CABCB01EC37F9B00AB6CE8 /* TrimInteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrimInteractorInterface.swift; path = Modules/Trim/TrimInteractorInterface.swift; sourceTree = "<group>"; };
+		A9CABCB11EC37F9B00AB6CE8 /* TrimPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrimPresenter.swift; path = Modules/Trim/TrimPresenter.swift; sourceTree = "<group>"; };
+		A9CABCB21EC37F9B00AB6CE8 /* TrimPresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrimPresenterInterface.swift; path = Modules/Trim/TrimPresenterInterface.swift; sourceTree = "<group>"; };
+		A9CABCB71EC37FC900AB6CE8 /* VideonaRangeSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideonaRangeSlider.swift; path = Modules/VideonaRangeSlider/VideonaRangeSlider.swift; sourceTree = "<group>"; };
+		A9CABCB81EC37FC900AB6CE8 /* VideonaRangeSliderDelegateProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideonaRangeSliderDelegateProtocol.swift; path = Modules/VideonaRangeSlider/VideonaRangeSliderDelegateProtocol.swift; sourceTree = "<group>"; };
+		A9CABCB91EC37FC900AB6CE8 /* VideonaRangeSliderThumbLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideonaRangeSliderThumbLayer.swift; path = Modules/VideonaRangeSlider/VideonaRangeSliderThumbLayer.swift; sourceTree = "<group>"; };
+		A9CABCBA1EC37FC900AB6CE8 /* VideonaRangeSliderTrackLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideonaRangeSliderTrackLayer.swift; path = Modules/VideonaRangeSlider/VideonaRangeSliderTrackLayer.swift; sourceTree = "<group>"; };
+		A9CABCBF1EC37FF200AB6CE8 /* TrackLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrackLayer.swift; path = Modules/VideonaTrackOverView/TrackLayer.swift; sourceTree = "<group>"; };
+		A9CABCC01EC37FF200AB6CE8 /* TrackModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrackModel.swift; path = Modules/VideonaTrackOverView/TrackModel.swift; sourceTree = "<group>"; };
+		A9CABCC11EC37FF200AB6CE8 /* VideonaTrackOverView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideonaTrackOverView.swift; path = Modules/VideonaTrackOverView/VideonaTrackOverView.swift; sourceTree = "<group>"; };
+		A9CABCC51EC3802200AB6CE8 /* WhiteBalanceConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WhiteBalanceConstants.swift; path = "Modules/White Balance/WhiteBalanceConstants.swift"; sourceTree = "<group>"; };
+		A9CABCC61EC3802200AB6CE8 /* WhiteBalanceInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WhiteBalanceInteractor.swift; path = "Modules/White Balance/WhiteBalanceInteractor.swift"; sourceTree = "<group>"; };
+		A9CABCC71EC3802200AB6CE8 /* WhiteBalancePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WhiteBalancePresenter.swift; path = "Modules/White Balance/WhiteBalancePresenter.swift"; sourceTree = "<group>"; };
+		A9CABCC81EC3802200AB6CE8 /* WhiteBalancePresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WhiteBalancePresenterInterface.swift; path = "Modules/White Balance/WhiteBalancePresenterInterface.swift"; sourceTree = "<group>"; };
+		A9CABCC91EC3802200AB6CE8 /* WhiteBalanceteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WhiteBalanceteractorInterface.swift; path = "Modules/White Balance/WhiteBalanceteractorInterface.swift"; sourceTree = "<group>"; };
+		A9CABCCA1EC3802200AB6CE8 /* WhiteBalanceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WhiteBalanceView.swift; path = "Modules/White Balance/WhiteBalanceView.swift"; sourceTree = "<group>"; };
+		A9CABCCB1EC3802200AB6CE8 /* WhiteBalanceView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WhiteBalanceView.xib; path = "Modules/White Balance/WhiteBalanceView.xib"; sourceTree = "<group>"; };
+		A9CABCD31EC3804600AB6CE8 /* ZoomSliderInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ZoomSliderInteractor.swift; path = Modules/ZoomCameraSlider/ZoomSliderInteractor.swift; sourceTree = "<group>"; };
+		A9CABCD41EC3804600AB6CE8 /* ZoomSliderInteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ZoomSliderInteractorInterface.swift; path = Modules/ZoomCameraSlider/ZoomSliderInteractorInterface.swift; sourceTree = "<group>"; };
+		A9CABCD51EC3804600AB6CE8 /* ZoomSliderPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ZoomSliderPresenter.swift; path = Modules/ZoomCameraSlider/ZoomSliderPresenter.swift; sourceTree = "<group>"; };
+		A9CABCD61EC3804600AB6CE8 /* ZoomSliderPresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ZoomSliderPresenterInterface.swift; path = Modules/ZoomCameraSlider/ZoomSliderPresenterInterface.swift; sourceTree = "<group>"; };
+		A9CABCD71EC3804600AB6CE8 /* ZoomSliderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ZoomSliderView.swift; path = Modules/ZoomCameraSlider/ZoomSliderView.swift; sourceTree = "<group>"; };
+		A9CABCD81EC3804600AB6CE8 /* ZoomSliderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ZoomSliderView.xib; path = Modules/ZoomCameraSlider/ZoomSliderView.xib; sourceTree = "<group>"; };
 		B2F4A0D364C97E57476CD3C1 /* Pods-VideonaProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideonaProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VideonaProject/Pods-VideonaProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -323,12 +323,12 @@
 		A92060B51E4DF25A00656558 /* SpaceOnDisk */ = {
 			isa = PBXGroup;
 			children = (
-				A92060B61E4DF26300656558 /* SpaceOnDiskInteractor.swift */,
-				A92060B71E4DF26300656558 /* SpaceOnDiskInteractorInterface.swift */,
-				A92060B81E4DF26300656558 /* SpaceOnDiskPresenter.swift */,
-				A92060B91E4DF26300656558 /* SpaceOnDiskPresenterInterface.swift */,
-				A92060BA1E4DF26300656558 /* SpaceOnDiskView.swift */,
-				A92060BB1E4DF26300656558 /* SpaceOnDiskView.xib */,
+				A9CABC9B1EC37F5600AB6CE8 /* SpaceOnDiskInteractor.swift */,
+				A9CABC9C1EC37F5600AB6CE8 /* SpaceOnDiskInteractorInterface.swift */,
+				A9CABC9D1EC37F5600AB6CE8 /* SpaceOnDiskPresenter.swift */,
+				A9CABC9E1EC37F5600AB6CE8 /* SpaceOnDiskPresenterInterface.swift */,
+				A9CABC9F1EC37F5600AB6CE8 /* SpaceOnDiskView.swift */,
+				A9CABCA01EC37F5600AB6CE8 /* SpaceOnDiskView.xib */,
 			);
 			name = SpaceOnDisk;
 			sourceTree = "<group>";
@@ -336,15 +336,15 @@
 		A92060C61E4DF57D00656558 /* ResolutionsSelector */ = {
 			isa = PBXGroup;
 			children = (
-				A92060C71E4DF59D00656558 /* ResolutionsSelectorPresenter.swift */,
-				A92060C81E4DF59D00656558 /* ResolutionsSelectorPresenterInterface.swift */,
-				A92060C91E4DF59D00656558 /* ResolutionsSelectorInteractor.swift */,
-				A92060CA1E4DF59D00656558 /* ResolutionsSelectorInteractorInterface.swift */,
-				A92060CB1E4DF59D00656558 /* Resolution.swift */,
-				A92060CC1E4DF59D00656558 /* ResolutionsSelectorView.swift */,
-				A92060CD1E4DF59D00656558 /* ResolutionsSelectorCell.swift */,
-				A92060CE1E4DF59D00656558 /* ResolutionsSelectorView.xib */,
-				A92060CF1E4DF59D00656558 /* ResolutionsSelectorCell.xib */,
+				A9CABC891EC37F2900AB6CE8 /* Resolution.swift */,
+				A9CABC8A1EC37F2900AB6CE8 /* ResolutionsSelectorCell.swift */,
+				A9CABC8B1EC37F2900AB6CE8 /* ResolutionsSelectorCell.xib */,
+				A9CABC8C1EC37F2900AB6CE8 /* ResolutionsSelectorInteractor.swift */,
+				A9CABC8D1EC37F2900AB6CE8 /* ResolutionsSelectorInteractorInterface.swift */,
+				A9CABC8E1EC37F2900AB6CE8 /* ResolutionsSelectorPresenter.swift */,
+				A9CABC8F1EC37F2900AB6CE8 /* ResolutionsSelectorPresenterInterface.swift */,
+				A9CABC901EC37F2900AB6CE8 /* ResolutionsSelectorView.swift */,
+				A9CABC911EC37F2900AB6CE8 /* ResolutionsSelectorView.xib */,
 			);
 			name = ResolutionsSelector;
 			sourceTree = "<group>";
@@ -352,10 +352,10 @@
 		A92060DB1E4DF93A00656558 /* Duplicate */ = {
 			isa = PBXGroup;
 			children = (
-				A92060DC1E4DF95F00656558 /* DuplicateInteractorInterface.swift */,
-				A92060DD1E4DF95F00656558 /* DuplicateInteractor.swift */,
-				A92060DE1E4DF95F00656558 /* DuplicatePresenter.swift */,
-				A92060DF1E4DF95F00656558 /* DuplicatePresenterInterface.swift */,
+				A9CABBDD1EC37C0500AB6CE8 /* DuplicateInteractor.swift */,
+				A9CABBDE1EC37C0500AB6CE8 /* DuplicateInteractorInterface.swift */,
+				A9CABBDF1EC37C0500AB6CE8 /* DuplicatePresenter.swift */,
+				A9CABBE01EC37C0500AB6CE8 /* DuplicatePresenterInterface.swift */,
 			);
 			name = Duplicate;
 			sourceTree = "<group>";
@@ -363,10 +363,10 @@
 		A92060E41E4DF97500656558 /* Trim */ = {
 			isa = PBXGroup;
 			children = (
-				A92060E51E4DF97F00656558 /* TrimInteractor.swift */,
-				A92060E61E4DF97F00656558 /* TrimInteractorInterface.swift */,
-				A92060E71E4DF97F00656558 /* TrimPresenterInterface.swift */,
-				A92060E81E4DF97F00656558 /* TrimPresenter.swift */,
+				A9CABCAF1EC37F9B00AB6CE8 /* TrimInteractor.swift */,
+				A9CABCB01EC37F9B00AB6CE8 /* TrimInteractorInterface.swift */,
+				A9CABCB11EC37F9B00AB6CE8 /* TrimPresenter.swift */,
+				A9CABCB21EC37F9B00AB6CE8 /* TrimPresenterInterface.swift */,
 			);
 			name = Trim;
 			sourceTree = "<group>";
@@ -374,10 +374,10 @@
 		A92060ED1E4DF99200656558 /* Split */ = {
 			isa = PBXGroup;
 			children = (
-				A92060EE1E4DF9A200656558 /* SplitInteractor.swift */,
-				A92060EF1E4DF9A200656558 /* SplitInteractorInterface.swift */,
-				A92060F01E4DF9A200656558 /* SplitPresenter.swift */,
-				A92060F11E4DF9A200656558 /* SplitPresenterInterface.swift */,
+				A9CABCA71EC37F7900AB6CE8 /* SplitInteractor.swift */,
+				A9CABCA81EC37F7900AB6CE8 /* SplitInteractorInterface.swift */,
+				A9CABCA91EC37F7900AB6CE8 /* SplitPresenter.swift */,
+				A9CABCAA1EC37F7900AB6CE8 /* SplitPresenterInterface.swift */,
 			);
 			name = Split;
 			sourceTree = "<group>";
@@ -385,12 +385,12 @@
 		A92060F81E4DFC5D00656558 /* Focal Lens Slider */ = {
 			isa = PBXGroup;
 			children = (
-				A92061201E4DFCDC00656558 /* FocalLensSliderInteractor.swift */,
-				A92061211E4DFCDC00656558 /* FocalLensSliderInteractorInterface.swift */,
-				A92061221E4DFCDC00656558 /* FocalLensSliderPresenterInterface.swift */,
-				A92061231E4DFCDC00656558 /* FocalLensSliderresenter.swift */,
-				A92061241E4DFCDC00656558 /* FocalLensSliderView.swift */,
-				A92061251E4DFCDC00656558 /* FocalLensSliderView.xib */,
+				A9CABBFD1EC37CF800AB6CE8 /* FocalLensSliderInteractor.swift */,
+				A9CABBFE1EC37CF800AB6CE8 /* FocalLensSliderInteractorInterface.swift */,
+				A9CABBFF1EC37CF800AB6CE8 /* FocalLensSliderPresenterInterface.swift */,
+				A9CABC001EC37CF800AB6CE8 /* FocalLensSliderresenter.swift */,
+				A9CABC011EC37CF800AB6CE8 /* FocalLensSliderView.swift */,
+				A9CABC021EC37CF800AB6CE8 /* FocalLensSliderView.xib */,
 			);
 			name = "Focal Lens Slider";
 			sourceTree = "<group>";
@@ -398,12 +398,12 @@
 		A92060F91E4DFC6700656558 /* ZoomCameraSlider */ = {
 			isa = PBXGroup;
 			children = (
-				A92061141E4DFCCE00656558 /* ZoomSliderInteractor.swift */,
-				A92061151E4DFCCE00656558 /* ZoomSliderInteractorInterface.swift */,
-				A92061161E4DFCCE00656558 /* ZoomSliderPresenter.swift */,
-				A92061171E4DFCCE00656558 /* ZoomSliderPresenterInterface.swift */,
-				A92061181E4DFCCE00656558 /* ZoomSliderView.swift */,
-				A92061191E4DFCCE00656558 /* ZoomSliderView.xib */,
+				A9CABCD31EC3804600AB6CE8 /* ZoomSliderInteractor.swift */,
+				A9CABCD41EC3804600AB6CE8 /* ZoomSliderInteractorInterface.swift */,
+				A9CABCD51EC3804600AB6CE8 /* ZoomSliderPresenter.swift */,
+				A9CABCD61EC3804600AB6CE8 /* ZoomSliderPresenterInterface.swift */,
+				A9CABCD71EC3804600AB6CE8 /* ZoomSliderView.swift */,
+				A9CABCD81EC3804600AB6CE8 /* ZoomSliderView.xib */,
 			);
 			name = ZoomCameraSlider;
 			sourceTree = "<group>";
@@ -411,12 +411,12 @@
 		A92060FA1E4DFC7000656558 /* InputSoundGainControl */ = {
 			isa = PBXGroup;
 			children = (
-				A92061081E4DFCBB00656558 /* InputSoundGainControlInteractor.swift */,
-				A92061091E4DFCBB00656558 /* InputSoundGainControlInteractorInterface.swift */,
-				A920610A1E4DFCBB00656558 /* InputSoundGainControlPresenter.swift */,
-				A920610B1E4DFCBB00656558 /* InputSoundGainControlPresenterInterface.swift */,
-				A920610C1E4DFCBB00656558 /* InputSoundGainControlView.swift */,
-				A920610D1E4DFCBB00656558 /* InputSoundGainControlView.xib */,
+				A9CABC1D1EC37D6900AB6CE8 /* InputSoundGainControlInteractor.swift */,
+				A9CABC1E1EC37D6900AB6CE8 /* InputSoundGainControlInteractorInterface.swift */,
+				A9CABC1F1EC37D6900AB6CE8 /* InputSoundGainControlPresenter.swift */,
+				A9CABC201EC37D6900AB6CE8 /* InputSoundGainControlPresenterInterface.swift */,
+				A9CABC211EC37D6900AB6CE8 /* InputSoundGainControlView.swift */,
+				A9CABC221EC37D6900AB6CE8 /* InputSoundGainControlView.xib */,
 			);
 			name = InputSoundGainControl;
 			sourceTree = "<group>";
@@ -424,12 +424,12 @@
 		A92060FB1E4DFC7D00656558 /* Exposure Slider */ = {
 			isa = PBXGroup;
 			children = (
-				A92060FC1E4DFC9500656558 /* ExposureInteractor.swift */,
-				A92060FD1E4DFC9500656558 /* ExposurePresenter.swift */,
-				A92060FE1E4DFC9500656558 /* ExposurePresenterInterface.swift */,
-				A92060FF1E4DFC9500656558 /* ExposureteractorInterface.swift */,
-				A92061001E4DFC9500656558 /* ExposureView.swift */,
-				A92061011E4DFC9500656558 /* ExposureView.xib */,
+				A9CABBF11EC37CA200AB6CE8 /* ExposureInteractor.swift */,
+				A9CABBF21EC37CA200AB6CE8 /* ExposurePresenter.swift */,
+				A9CABBF31EC37CA200AB6CE8 /* ExposurePresenterInterface.swift */,
+				A9CABBF41EC37CA200AB6CE8 /* ExposureteractorInterface.swift */,
+				A9CABBF51EC37CA200AB6CE8 /* ExposureView.swift */,
+				A9CABBF61EC37CA200AB6CE8 /* ExposureView.xib */,
 			);
 			name = "Exposure Slider";
 			sourceTree = "<group>";
@@ -437,10 +437,10 @@
 		A920612E1E4DFE8700656558 /* Gallery */ = {
 			isa = PBXGroup;
 			children = (
-				A920612F1E4DFE9C00656558 /* VideoGalleryDelegateInterface.swift */,
-				A92061301E4DFE9C00656558 /* VideoGalleryInterface.swift */,
-				A92061311E4DFE9C00656558 /* VideosGalleryViewController.swift */,
-				A92061321E4DFE9C00656558 /* VideoThumbnail.swift */,
+				A9CABC151EC37D3C00AB6CE8 /* VideoGalleryDelegateInterface.swift */,
+				A9CABC161EC37D3C00AB6CE8 /* VideoGalleryInterface.swift */,
+				A9CABC171EC37D3C00AB6CE8 /* VideosGalleryViewController.swift */,
+				A9CABC181EC37D3C00AB6CE8 /* VideoThumbnail.swift */,
 			);
 			name = Gallery;
 			sourceTree = "<group>";
@@ -448,10 +448,10 @@
 		A92061371E4DFEF000656558 /* VideonaRangeSlider */ = {
 			isa = PBXGroup;
 			children = (
-				A92061381E4DFF0100656558 /* VideonaRangeSlider.swift */,
-				A92061391E4DFF0100656558 /* VideonaRangeSliderDelegateProtocol.swift */,
-				A920613A1E4DFF0100656558 /* VideonaRangeSliderThumbLayer.swift */,
-				A920613B1E4DFF0100656558 /* VideonaRangeSliderTrackLayer.swift */,
+				A9CABCB71EC37FC900AB6CE8 /* VideonaRangeSlider.swift */,
+				A9CABCB81EC37FC900AB6CE8 /* VideonaRangeSliderDelegateProtocol.swift */,
+				A9CABCB91EC37FC900AB6CE8 /* VideonaRangeSliderThumbLayer.swift */,
+				A9CABCBA1EC37FC900AB6CE8 /* VideonaRangeSliderTrackLayer.swift */,
 			);
 			name = VideonaRangeSlider;
 			sourceTree = "<group>";
@@ -459,9 +459,9 @@
 		A92061401E4DFF1500656558 /* VideonaTrackOverView */ = {
 			isa = PBXGroup;
 			children = (
-				A92061411E4DFF2200656558 /* TrackLayer.swift */,
-				A92061421E4DFF2200656558 /* TrackModel.swift */,
-				A92061431E4DFF2200656558 /* VideonaTrackOverView.swift */,
+				A9CABCBF1EC37FF200AB6CE8 /* TrackLayer.swift */,
+				A9CABCC01EC37FF200AB6CE8 /* TrackModel.swift */,
+				A9CABCC11EC37FF200AB6CE8 /* VideonaTrackOverView.swift */,
 			);
 			name = VideonaTrackOverView;
 			sourceTree = "<group>";
@@ -469,12 +469,12 @@
 		A92061491E4E04C500656558 /* ISOConfiguration */ = {
 			isa = PBXGroup;
 			children = (
-				A955701F1E54029600DF56FA /* ISOConfigurationView.xib */,
-				A920614A1E4E04D900656558 /* ISOConfigurationInteractor.swift */,
-				A920614B1E4E04D900656558 /* ISOConfigurationInteractorInterface.swift */,
-				A920614C1E4E04D900656558 /* ISOConfigurationPresenter.swift */,
-				A920614D1E4E04D900656558 /* ISOConfigurationPresenterInterface.swift */,
-				A920614E1E4E04D900656558 /* ISOConfigurationView.swift */,
+				A9CABC291EC37D8A00AB6CE8 /* ISOConfigurationInteractor.swift */,
+				A9CABC2A1EC37D8A00AB6CE8 /* ISOConfigurationInteractorInterface.swift */,
+				A9CABC2B1EC37D8A00AB6CE8 /* ISOConfigurationPresenter.swift */,
+				A9CABC2C1EC37D8A00AB6CE8 /* ISOConfigurationPresenterInterface.swift */,
+				A9CABC2D1EC37D8A00AB6CE8 /* ISOConfigurationView.swift */,
+				A9CABC2E1EC37D8A00AB6CE8 /* ISOConfigurationView.xib */,
 			);
 			name = ISOConfiguration;
 			sourceTree = "<group>";
@@ -482,13 +482,13 @@
 		A92061661E4E089A00656558 /* White balance */ = {
 			isa = PBXGroup;
 			children = (
-				A955701D1E54029000DF56FA /* WhiteBalanceView.xib */,
-				A92061581E4E089600656558 /* WhiteBalanceConstants.swift */,
-				A92061591E4E089600656558 /* WhiteBalanceInteractor.swift */,
-				A920615A1E4E089600656558 /* WhiteBalancePresenter.swift */,
-				A920615B1E4E089600656558 /* WhiteBalancePresenterInterface.swift */,
-				A920615C1E4E089600656558 /* WhiteBalanceteractorInterface.swift */,
-				A920615D1E4E089600656558 /* WhiteBalanceView.swift */,
+				A9CABCC51EC3802200AB6CE8 /* WhiteBalanceConstants.swift */,
+				A9CABCC61EC3802200AB6CE8 /* WhiteBalanceInteractor.swift */,
+				A9CABCC71EC3802200AB6CE8 /* WhiteBalancePresenter.swift */,
+				A9CABCC81EC3802200AB6CE8 /* WhiteBalancePresenterInterface.swift */,
+				A9CABCC91EC3802200AB6CE8 /* WhiteBalanceteractorInterface.swift */,
+				A9CABCCA1EC3802200AB6CE8 /* WhiteBalanceView.swift */,
+				A9CABCCB1EC3802200AB6CE8 /* WhiteBalanceView.xib */,
 			);
 			name = "White balance";
 			sourceTree = "<group>";
@@ -496,12 +496,12 @@
 		A92061731E4E08B500656558 /* Focus */ = {
 			isa = PBXGroup;
 			children = (
-				A955701B1E54028700DF56FA /* FocusView.xib */,
-				A92061671E4E08B100656558 /* FocusInteractor.swift */,
-				A92061681E4E08B100656558 /* FocusInteractorInterface.swift */,
-				A92061691E4E08B100656558 /* FocusPresenter.swift */,
-				A920616A1E4E08B100656558 /* FocusPresenterInterface.swift */,
-				A920616B1E4E08B100656558 /* FocusView.swift */,
+				A9CABC091EC37D1900AB6CE8 /* FocusInteractor.swift */,
+				A9CABC0A1EC37D1900AB6CE8 /* FocusInteractorInterface.swift */,
+				A9CABC0B1EC37D1900AB6CE8 /* FocusPresenter.swift */,
+				A9CABC0C1EC37D1900AB6CE8 /* FocusPresenterInterface.swift */,
+				A9CABC0D1EC37D1900AB6CE8 /* FocusView.swift */,
+				A9CABC0E1EC37D1900AB6CE8 /* FocusView.xib */,
 			);
 			name = Focus;
 			sourceTree = "<group>";
@@ -509,12 +509,12 @@
 		A92061801E4E08CD00656558 /* Exposition modes */ = {
 			isa = PBXGroup;
 			children = (
-				A92061741E4E08C800656558 /* ExpositionModesInteractor.swift */,
-				A92061751E4E08C800656558 /* ExpositionModesInteractorInterface.swift */,
-				A92061761E4E08C800656558 /* ExpositionModesPresenter.swift */,
-				A92061771E4E08C800656558 /* ExpositionModesPresenterInterface.swift */,
-				A95570191E54027F00DF56FA /* ExpositionModesView.xib */,
-				A92061781E4E08C800656558 /* ExpositionModesView.swift */,
+				A9CABBE51EC37C3300AB6CE8 /* ExpositionModesInteractor.swift */,
+				A9CABBE61EC37C3300AB6CE8 /* ExpositionModesInteractorInterface.swift */,
+				A9CABBE71EC37C3300AB6CE8 /* ExpositionModesPresenter.swift */,
+				A9CABBE81EC37C3300AB6CE8 /* ExpositionModesPresenterInterface.swift */,
+				A9CABBE91EC37C3300AB6CE8 /* ExpositionModesView.swift */,
+				A9CABBEA1EC37C3300AB6CE8 /* ExpositionModesView.xib */,
 			);
 			name = "Exposition modes";
 			sourceTree = "<group>";
@@ -522,17 +522,17 @@
 		A92061951E4E09B500656558 /* Player */ = {
 			isa = PBXGroup;
 			children = (
-				A92061AB1E4E0CD700656558 /* PlayerInteractor.swift */,
-				A92061AC1E4E0CD700656558 /* PlayerInteractorInterface.swift */,
-				A92061AD1E4E0CD700656558 /* PlayerInterface.swift */,
-				A92061AE1E4E0CD700656558 /* PlayerItem.swift */,
-				A92061AF1E4E0CD700656558 /* PlayerPresenter.swift */,
-				A92061B01E4E0CD700656558 /* PlayerPresenterInterface.swift */,
-				A92061B11E4E0CD700656558 /* PlayerProvider.swift */,
-				A92061B21E4E0CD700656558 /* PlayerView.swift */,
-				A92061B31E4E0CD700656558 /* PlayerView.xib */,
-				A92061B41E4E0CD700656558 /* PlayerWireframe.swift */,
-				A92061B51E4E0CD700656558 /* UIVerticalAlignLabel.swift */,
+				A9CABC351EC37DC700AB6CE8 /* PlayerInteractor.swift */,
+				A9CABC361EC37DC700AB6CE8 /* PlayerInteractorInterface.swift */,
+				A9CABC371EC37DC700AB6CE8 /* PlayerInterface.swift */,
+				A9CABC381EC37DC700AB6CE8 /* PlayerItem.swift */,
+				A9CABC391EC37DC700AB6CE8 /* PlayerPresenter.swift */,
+				A9CABC3A1EC37DC700AB6CE8 /* PlayerPresenterInterface.swift */,
+				A9CABC3B1EC37DC700AB6CE8 /* PlayerProvider.swift */,
+				A9CABC3C1EC37DC700AB6CE8 /* PlayerView.swift */,
+				A9CABC3D1EC37DC700AB6CE8 /* PlayerView.xib */,
+				A9CABC3E1EC37DC700AB6CE8 /* PlayerWireframe.swift */,
+				A9CABC3F1EC37DC700AB6CE8 /* UIVerticalAlignLabel.swift */,
 			);
 			name = Player;
 			sourceTree = "<group>";
@@ -577,12 +577,12 @@
 		A960A8601E4DD6C60069F487 /* AudioLevelBar */ = {
 			isa = PBXGroup;
 			children = (
-				A960A8611E4DD6D20069F487 /* AudioLevelBarView.swift */,
-				A960A8621E4DD6D20069F487 /* AudioLevelBarInteractor.swift */,
-				A960A8631E4DD6D20069F487 /* AudioLevelBarPresenter.swift */,
-				A960A8641E4DD6D20069F487 /* AudioLevelBarPresenterInterface.swift */,
-				A960A8651E4DD6D20069F487 /* AudioLevelBarInteractorInterface.swift */,
-				A960A8661E4DD6D20069F487 /* AudioLevelBarView.xib */,
+				A9CABBC51EC37B9500AB6CE8 /* AudioLevelBarInteractor.swift */,
+				A9CABBC61EC37B9500AB6CE8 /* AudioLevelBarInteractorInterface.swift */,
+				A9CABBC71EC37B9500AB6CE8 /* AudioLevelBarPresenter.swift */,
+				A9CABBC81EC37B9500AB6CE8 /* AudioLevelBarPresenterInterface.swift */,
+				A9CABBC91EC37B9500AB6CE8 /* AudioLevelBarView.swift */,
+				A9CABBCA1EC37B9500AB6CE8 /* AudioLevelBarView.xib */,
 			);
 			name = AudioLevelBar;
 			sourceTree = "<group>";
@@ -590,12 +590,12 @@
 		A960A8711E4DDCB80069F487 /* BatteryRemaining */ = {
 			isa = PBXGroup;
 			children = (
-				A92060A51E4DEF6A00656558 /* BatteryRemainingInteractor.swift */,
-				A92060A61E4DEF6A00656558 /* BatteryRemainingInteractorInterface.swift */,
-				A92060A71E4DEF6A00656558 /* BatteryRemainingPresenter.swift */,
-				A92060A81E4DEF6A00656558 /* BatteryRemainingPresenterInterface.swift */,
-				A92060A91E4DEF6A00656558 /* BatteryRemainingView.swift */,
-				A92060AA1E4DEF6A00656558 /* BatteryRemainingView.xib */,
+				A9CABBD11EC37BDA00AB6CE8 /* BatteryRemainingInteractor.swift */,
+				A9CABBD21EC37BDA00AB6CE8 /* BatteryRemainingInteractorInterface.swift */,
+				A9CABBD31EC37BDA00AB6CE8 /* BatteryRemainingPresenter.swift */,
+				A9CABBD41EC37BDA00AB6CE8 /* BatteryRemainingPresenterInterface.swift */,
+				A9CABBD51EC37BDA00AB6CE8 /* BatteryRemainingView.swift */,
+				A9CABBD61EC37BDA00AB6CE8 /* BatteryRemainingView.xib */,
 			);
 			name = BatteryRemaining;
 			sourceTree = "<group>";
@@ -644,10 +644,10 @@
 		A9C5FB701DD5E88A00057A1B /* Transitions */ = {
 			isa = PBXGroup;
 			children = (
-				A9FB3A2D1E53BCE400C21918 /* VideoFilterCompositor.swift */,
-				A9FB3A2E1E53BCE400C21918 /* VideoFilterCompositionInstruction.swift */,
-				A9C5FB6C1DD5E7AE00057A1B /* VideoTransitions.swift */,
-				A9C5FB6E1DD5E7B500057A1B /* AudioTransitions.swift */,
+				A9CABC811EC37F0300AB6CE8 /* AudioTransitions.swift */,
+				A9CABC821EC37F0300AB6CE8 /* VideoFilterCompositionInstruction.swift */,
+				A9CABC831EC37F0300AB6CE8 /* VideoFilterCompositor.swift */,
+				A9CABC841EC37F0300AB6CE8 /* VideoTransitions.swift */,
 			);
 			name = Transitions;
 			sourceTree = "<group>";
@@ -655,17 +655,17 @@
 		A9C5FB711DD5E89A00057A1B /* Identities */ = {
 			isa = PBXGroup;
 			children = (
-				A9950CC91E1ABD61009367E7 /* CompatibleResolutionsInteractor.swift */,
-				A956A1071DBDED22002BDB26 /* AVQualityParse.swift */,
-				A9950CC51E1ABBF9009367E7 /* AVResolutionParse.swift */,
-				A9B0073D1DAFC9F100BFAD68 /* VideonaComposition.swift */,
-				A9BD5FC81D91210C0080CE97 /* Audio.swift */,
-				A9BD5FC91D91210C0080CE97 /* Media.swift */,
-				A9BD5FCA1D91210C0080CE97 /* Music.swift */,
-				A9BD5FCB1D91210C0080CE97 /* Profile.swift */,
-				A9BD5FCC1D91210C0080CE97 /* Project.swift */,
-				A9BD5FCE1D91210C0080CE97 /* Video.swift */,
-				A953AD6D1E536A1A00DC0D84 /* VideoOutputParameters.swift */,
+				A9CABC6B1EC37E9700AB6CE8 /* Audio.swift */,
+				A9CABC6C1EC37E9700AB6CE8 /* AVQualityParse.swift */,
+				A9CABC6D1EC37E9700AB6CE8 /* AVResolutionParse.swift */,
+				A9CABC6E1EC37E9700AB6CE8 /* CompatibleResolutionsInteractor.swift */,
+				A9CABC6F1EC37E9700AB6CE8 /* Media.swift */,
+				A9CABC701EC37E9700AB6CE8 /* Music.swift */,
+				A9CABC711EC37E9700AB6CE8 /* Profile.swift */,
+				A9CABC721EC37E9700AB6CE8 /* Project.swift */,
+				A9CABC731EC37E9700AB6CE8 /* Video.swift */,
+				A9CABC741EC37E9700AB6CE8 /* VideonaComposition.swift */,
+				A9CABC751EC37E9700AB6CE8 /* VideoOutputParameters.swift */,
 			);
 			name = Identities;
 			sourceTree = "<group>";
@@ -673,14 +673,14 @@
 		A9C5FB721DD5E8C100057A1B /* Use case */ = {
 			isa = PBXGroup;
 			children = (
-				A956A1061DBDED22002BDB26 /* AddVideoToProjectUseCase.swift */,
-				A956A1081DBDED22002BDB26 /* CATextLayerAttributes.swift */,
-				A956A1091DBDED22002BDB26 /* CompatibleQualityInteractor.swift */,
-				A956A10A1DBDED22002BDB26 /* GetActualProjectAVCompositionUseCase.swift */,
-				A956A10B1DBDED22002BDB26 /* GetActualProjectTextCALayerAnimationUseCase.swift */,
-				A956A10C1DBDED22002BDB26 /* GetImageByTextUseCase.swift */,
-				A99CE6C61E279467000BDFC5 /* TimeNumberFormatter.swift */,
-				A9BD5FCD1D91210C0080CE97 /* Utils.swift */,
+				A9CABC5B1EC37E8300AB6CE8 /* AddVideoToProjectUseCase.swift */,
+				A9CABC5C1EC37E8300AB6CE8 /* CATextLayerAttributes.swift */,
+				A9CABC5D1EC37E8300AB6CE8 /* CompatibleQualityInteractor.swift */,
+				A9CABC5E1EC37E8300AB6CE8 /* GetActualProjectAVCompositionUseCase.swift */,
+				A9CABC5F1EC37E8300AB6CE8 /* GetActualProjectTextCALayerAnimationUseCase.swift */,
+				A9CABC601EC37E8300AB6CE8 /* GetImageByTextUseCase.swift */,
+				A9CABC611EC37E8300AB6CE8 /* TimeNumberFormatter.swift */,
+				A9CABC621EC37E8300AB6CE8 /* Utils.swift */,
 			);
 			name = "Use case";
 			sourceTree = "<group>";
@@ -801,21 +801,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A955701C1E54028700DF56FA /* FocusView.xib in Resources */,
-				A920611F1E4DFCCE00656558 /* ZoomSliderView.xib in Resources */,
-				A960A86C1E4DD6D20069F487 /* AudioLevelBarView.xib in Resources */,
+				A9CABBD01EC37B9500AB6CE8 /* AudioLevelBarView.xib in Resources */,
+				A9CABC281EC37D6900AB6CE8 /* InputSoundGainControlView.xib in Resources */,
+				A9CABCA61EC37F5600AB6CE8 /* SpaceOnDiskView.xib in Resources */,
 				A92060B21E4DEF8600656558 /* Media.xcassets in Resources */,
-				A92061131E4DFCBB00656558 /* InputSoundGainControlView.xib in Resources */,
-				A955701E1E54029000DF56FA /* WhiteBalanceView.xib in Resources */,
-				A95570201E54029600DF56FA /* ISOConfigurationView.xib in Resources */,
-				A92060D81E4DF59D00656558 /* ResolutionsSelectorCell.xib in Resources */,
-				A920612B1E4DFCDC00656558 /* FocalLensSliderView.xib in Resources */,
-				A92060B01E4DEF6A00656558 /* BatteryRemainingView.xib in Resources */,
-				A92060D71E4DF59D00656558 /* ResolutionsSelectorView.xib in Resources */,
-				A92060C11E4DF26300656558 /* SpaceOnDiskView.xib in Resources */,
-				A955701A1E54027F00DF56FA /* ExpositionModesView.xib in Resources */,
-				A92061071E4DFC9500656558 /* ExposureView.xib in Resources */,
-				A92061BE1E4E0CD700656558 /* PlayerView.xib in Resources */,
+				A9CABC941EC37F2900AB6CE8 /* ResolutionsSelectorCell.xib in Resources */,
+				A9CABCDE1EC3804600AB6CE8 /* ZoomSliderView.xib in Resources */,
+				A9CABCD21EC3802200AB6CE8 /* WhiteBalanceView.xib in Resources */,
+				A9CABBFC1EC37CA200AB6CE8 /* ExposureView.xib in Resources */,
+				A9CABC341EC37D8A00AB6CE8 /* ISOConfigurationView.xib in Resources */,
+				A9CABC481EC37DC700AB6CE8 /* PlayerView.xib in Resources */,
+				A9CABC141EC37D1900AB6CE8 /* FocusView.xib in Resources */,
+				A9CABBDC1EC37BDA00AB6CE8 /* BatteryRemainingView.xib in Resources */,
+				A9CABC9A1EC37F2900AB6CE8 /* ResolutionsSelectorView.xib in Resources */,
+				A9CABC081EC37CF800AB6CE8 /* FocalLensSliderView.xib in Resources */,
+				A9CABBF01EC37C3300AB6CE8 /* ExpositionModesView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -833,125 +833,125 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A92061101E4DFCBB00656558 /* InputSoundGainControlPresenter.swift in Sources */,
-				A92061601E4E089600656558 /* WhiteBalanceInteractor.swift in Sources */,
-				A92061021E4DFC9500656558 /* ExposureInteractor.swift in Sources */,
-				A99CE6C71E279467000BDFC5 /* TimeNumberFormatter.swift in Sources */,
-				A92060EB1E4DF97F00656558 /* TrimPresenterInterface.swift in Sources */,
-				A9BD5FD01D91210C0080CE97 /* Media.swift in Sources */,
-				A92061261E4DFCDC00656558 /* FocalLensSliderInteractor.swift in Sources */,
-				A960A8681E4DD6D20069F487 /* AudioLevelBarInteractor.swift in Sources */,
-				A9BD5FD21D91210C0080CE97 /* Profile.swift in Sources */,
-				A920611C1E4DFCCE00656558 /* ZoomSliderPresenter.swift in Sources */,
-				A92061461E4DFF2200656558 /* VideonaTrackOverView.swift in Sources */,
-				A92060D31E4DF59D00656558 /* ResolutionsSelectorInteractorInterface.swift in Sources */,
-				A9BD5FCF1D91210C0080CE97 /* Audio.swift in Sources */,
-				A920612A1E4DFCDC00656558 /* FocalLensSliderView.swift in Sources */,
-				A92061521E4E04D900656558 /* ISOConfigurationPresenter.swift in Sources */,
-				A920613C1E4DFF0100656558 /* VideonaRangeSlider.swift in Sources */,
-				A956A1111DBDED22002BDB26 /* GetActualProjectAVCompositionUseCase.swift in Sources */,
-				A92061B91E4E0CD700656558 /* PlayerItem.swift in Sources */,
-				A92060EC1E4DF97F00656558 /* TrimPresenter.swift in Sources */,
-				A920615F1E4E089600656558 /* WhiteBalanceConstants.swift in Sources */,
-				A92061641E4E089600656558 /* WhiteBalanceView.swift in Sources */,
-				A92061291E4DFCDC00656558 /* FocalLensSliderresenter.swift in Sources */,
-				A92061051E4DFC9500656558 /* ExposureteractorInterface.swift in Sources */,
-				A92061631E4E089600656558 /* WhiteBalanceteractorInterface.swift in Sources */,
-				A92061361E4DFE9C00656558 /* VideoThumbnail.swift in Sources */,
-				A920611A1E4DFCCE00656558 /* ZoomSliderInteractor.swift in Sources */,
-				A92061511E4E04D900656558 /* ISOConfigurationInteractorInterface.swift in Sources */,
-				A9950CC61E1ABBF9009367E7 /* AVResolutionParse.swift in Sources */,
-				A956A1121DBDED22002BDB26 /* GetActualProjectTextCALayerAnimationUseCase.swift in Sources */,
-				A92061121E4DFCBB00656558 /* InputSoundGainControlView.swift in Sources */,
-				A920613D1E4DFF0100656558 /* VideonaRangeSliderDelegateProtocol.swift in Sources */,
-				A9BD5FD31D91210C0080CE97 /* Project.swift in Sources */,
-				A92060AF1E4DEF6A00656558 /* BatteryRemainingView.swift in Sources */,
-				A92060C01E4DF26300656558 /* SpaceOnDiskView.swift in Sources */,
-				A92061BA1E4E0CD700656558 /* PlayerPresenter.swift in Sources */,
-				A92061111E4DFCBB00656558 /* InputSoundGainControlPresenterInterface.swift in Sources */,
-				A9C5FB6D1DD5E7AE00057A1B /* VideoTransitions.swift in Sources */,
-				A92060BE1E4DF26300656558 /* SpaceOnDiskPresenter.swift in Sources */,
-				A92060D01E4DF59D00656558 /* ResolutionsSelectorPresenter.swift in Sources */,
-				A9C5FB6F1DD5E7B500057A1B /* AudioTransitions.swift in Sources */,
-				A92061531E4E04D900656558 /* ISOConfigurationPresenterInterface.swift in Sources */,
-				A92061331E4DFE9C00656558 /* VideoGalleryDelegateInterface.swift in Sources */,
-				A9FB3A2F1E53BCE400C21918 /* VideoFilterCompositor.swift in Sources */,
-				A92060D21E4DF59D00656558 /* ResolutionsSelectorInteractor.swift in Sources */,
-				A92061701E4E08B100656558 /* FocusPresenterInterface.swift in Sources */,
-				A92060F41E4DF9A200656558 /* SplitPresenter.swift in Sources */,
-				A92061B71E4E0CD700656558 /* PlayerInteractorInterface.swift in Sources */,
-				A92060F21E4DF9A200656558 /* SplitInteractor.swift in Sources */,
-				A92060AD1E4DEF6A00656558 /* BatteryRemainingPresenter.swift in Sources */,
-				A92061611E4E089600656558 /* WhiteBalancePresenter.swift in Sources */,
-				A956A1101DBDED22002BDB26 /* CompatibleQualityInteractor.swift in Sources */,
-				A92061451E4DFF2200656558 /* TrackModel.swift in Sources */,
-				A920611D1E4DFCCE00656558 /* ZoomSliderPresenterInterface.swift in Sources */,
-				A92061711E4E08B100656558 /* FocusView.swift in Sources */,
-				A920611E1E4DFCCE00656558 /* ZoomSliderView.swift in Sources */,
-				A92061BF1E4E0CD700656558 /* PlayerWireframe.swift in Sources */,
-				A92061B61E4E0CD700656558 /* PlayerInteractor.swift in Sources */,
-				A92061C01E4E0CD700656558 /* UIVerticalAlignLabel.swift in Sources */,
-				A92060BF1E4DF26300656558 /* SpaceOnDiskPresenterInterface.swift in Sources */,
-				A956A10E1DBDED22002BDB26 /* AVQualityParse.swift in Sources */,
-				A92060BD1E4DF26300656558 /* SpaceOnDiskInteractorInterface.swift in Sources */,
-				A92061061E4DFC9500656558 /* ExposureView.swift in Sources */,
-				A92060BC1E4DF26300656558 /* SpaceOnDiskInteractor.swift in Sources */,
-				A92060E01E4DF95F00656558 /* DuplicateInteractorInterface.swift in Sources */,
-				A92060D41E4DF59D00656558 /* Resolution.swift in Sources */,
-				A92061B81E4E0CD700656558 /* PlayerInterface.swift in Sources */,
-				A92060F51E4DF9A200656558 /* SplitPresenterInterface.swift in Sources */,
-				A920617B1E4E08C800656558 /* ExpositionModesInteractorInterface.swift in Sources */,
-				A920617A1E4E08C800656558 /* ExpositionModesInteractor.swift in Sources */,
-				A92060D61E4DF59D00656558 /* ResolutionsSelectorCell.swift in Sources */,
-				A920611B1E4DFCCE00656558 /* ZoomSliderInteractorInterface.swift in Sources */,
-				A92060E31E4DF95F00656558 /* DuplicatePresenterInterface.swift in Sources */,
-				A92060E21E4DF95F00656558 /* DuplicatePresenter.swift in Sources */,
-				A92060AE1E4DEF6A00656558 /* BatteryRemainingPresenterInterface.swift in Sources */,
-				A92060D51E4DF59D00656558 /* ResolutionsSelectorView.swift in Sources */,
-				A920617E1E4E08C800656558 /* ExpositionModesView.swift in Sources */,
-				A9BD5FD11D91210C0080CE97 /* Music.swift in Sources */,
-				A9B0073E1DAFC9F100BFAD68 /* VideonaComposition.swift in Sources */,
-				A92061621E4E089600656558 /* WhiteBalancePresenterInterface.swift in Sources */,
-				A920610E1E4DFCBB00656558 /* InputSoundGainControlInteractor.swift in Sources */,
-				A92061441E4DFF2200656558 /* TrackLayer.swift in Sources */,
-				A92060EA1E4DF97F00656558 /* TrimInteractorInterface.swift in Sources */,
-				A92061BB1E4E0CD700656558 /* PlayerPresenterInterface.swift in Sources */,
-				A92061501E4E04D900656558 /* ISOConfigurationInteractor.swift in Sources */,
-				A920613F1E4DFF0100656558 /* VideonaRangeSliderTrackLayer.swift in Sources */,
-				A920616E1E4E08B100656558 /* FocusInteractorInterface.swift in Sources */,
-				A92061351E4DFE9C00656558 /* VideosGalleryViewController.swift in Sources */,
-				A920616F1E4E08B100656558 /* FocusPresenter.swift in Sources */,
-				A953AD6E1E536A1A00DC0D84 /* VideoOutputParameters.swift in Sources */,
-				A920613E1E4DFF0100656558 /* VideonaRangeSliderThumbLayer.swift in Sources */,
-				A9FB3A301E53BCE400C21918 /* VideoFilterCompositionInstruction.swift in Sources */,
-				A920617D1E4E08C800656558 /* ExpositionModesPresenterInterface.swift in Sources */,
-				A92061041E4DFC9500656558 /* ExposurePresenterInterface.swift in Sources */,
-				A9950CCA1E1ABD61009367E7 /* CompatibleResolutionsInteractor.swift in Sources */,
-				A92061541E4E04D900656558 /* ISOConfigurationView.swift in Sources */,
-				A92060AC1E4DEF6A00656558 /* BatteryRemainingInteractorInterface.swift in Sources */,
-				A92060D11E4DF59D00656558 /* ResolutionsSelectorPresenterInterface.swift in Sources */,
-				A92060E91E4DF97F00656558 /* TrimInteractor.swift in Sources */,
-				A92061BD1E4E0CD700656558 /* PlayerView.swift in Sources */,
-				A960A86A1E4DD6D20069F487 /* AudioLevelBarPresenterInterface.swift in Sources */,
-				A920610F1E4DFCBB00656558 /* InputSoundGainControlInteractorInterface.swift in Sources */,
-				A92060F31E4DF9A200656558 /* SplitInteractorInterface.swift in Sources */,
-				A960A8671E4DD6D20069F487 /* AudioLevelBarView.swift in Sources */,
-				A9BD5FD51D91210C0080CE97 /* Video.swift in Sources */,
-				A92061281E4DFCDC00656558 /* FocalLensSliderPresenterInterface.swift in Sources */,
-				A956A1131DBDED22002BDB26 /* GetImageByTextUseCase.swift in Sources */,
-				A920616D1E4E08B100656558 /* FocusInteractor.swift in Sources */,
-				A92061341E4DFE9C00656558 /* VideoGalleryInterface.swift in Sources */,
-				A92061BC1E4E0CD700656558 /* PlayerProvider.swift in Sources */,
-				A92061271E4DFCDC00656558 /* FocalLensSliderInteractorInterface.swift in Sources */,
-				A956A10F1DBDED22002BDB26 /* CATextLayerAttributes.swift in Sources */,
-				A9BD5FD41D91210C0080CE97 /* Utils.swift in Sources */,
-				A960A86B1E4DD6D20069F487 /* AudioLevelBarInteractorInterface.swift in Sources */,
-				A956A10D1DBDED22002BDB26 /* AddVideoToProjectUseCase.swift in Sources */,
-				A920617C1E4E08C800656558 /* ExpositionModesPresenter.swift in Sources */,
-				A92060AB1E4DEF6A00656558 /* BatteryRemainingInteractor.swift in Sources */,
-				A92061031E4DFC9500656558 /* ExposurePresenter.swift in Sources */,
-				A92060E11E4DF95F00656558 /* DuplicateInteractor.swift in Sources */,
-				A960A8691E4DD6D20069F487 /* AudioLevelBarPresenter.swift in Sources */,
+				A9CABC971EC37F2900AB6CE8 /* ResolutionsSelectorPresenter.swift in Sources */,
+				A9CABC401EC37DC700AB6CE8 /* PlayerInteractor.swift in Sources */,
+				A9CABC0F1EC37D1900AB6CE8 /* FocusInteractor.swift in Sources */,
+				A9CABC471EC37DC700AB6CE8 /* PlayerView.swift in Sources */,
+				A9CABCA11EC37F5600AB6CE8 /* SpaceOnDiskInteractor.swift in Sources */,
+				A9CABC061EC37CF800AB6CE8 /* FocalLensSliderresenter.swift in Sources */,
+				A9CABC7D1EC37E9700AB6CE8 /* Project.swift in Sources */,
+				A9CABBF91EC37CA200AB6CE8 /* ExposurePresenterInterface.swift in Sources */,
+				A9CABCCC1EC3802200AB6CE8 /* WhiteBalanceConstants.swift in Sources */,
+				A9CABC651EC37E8300AB6CE8 /* CompatibleQualityInteractor.swift in Sources */,
+				A9CABC951EC37F2900AB6CE8 /* ResolutionsSelectorInteractor.swift in Sources */,
+				A9CABCC21EC37FF200AB6CE8 /* TrackLayer.swift in Sources */,
+				A9CABC461EC37DC700AB6CE8 /* PlayerProvider.swift in Sources */,
+				A9CABBD81EC37BDA00AB6CE8 /* BatteryRemainingInteractorInterface.swift in Sources */,
+				A9CABC271EC37D6900AB6CE8 /* InputSoundGainControlView.swift in Sources */,
+				A9CABCBE1EC37FC900AB6CE8 /* VideonaRangeSliderTrackLayer.swift in Sources */,
+				A9CABCA21EC37F5600AB6CE8 /* SpaceOnDiskInteractorInterface.swift in Sources */,
+				A9CABC051EC37CF800AB6CE8 /* FocalLensSliderPresenterInterface.swift in Sources */,
+				A9CABC641EC37E8300AB6CE8 /* CATextLayerAttributes.swift in Sources */,
+				A9CABC261EC37D6900AB6CE8 /* InputSoundGainControlPresenterInterface.swift in Sources */,
+				A9CABCD01EC3802200AB6CE8 /* WhiteBalanceteractorInterface.swift in Sources */,
+				A9CABBEE1EC37C3300AB6CE8 /* ExpositionModesPresenterInterface.swift in Sources */,
+				A9CABC981EC37F2900AB6CE8 /* ResolutionsSelectorPresenterInterface.swift in Sources */,
+				A9CABC761EC37E9700AB6CE8 /* Audio.swift in Sources */,
+				A9CABC121EC37D1900AB6CE8 /* FocusPresenterInterface.swift in Sources */,
+				A9CABCDD1EC3804600AB6CE8 /* ZoomSliderView.swift in Sources */,
+				A9CABCC41EC37FF200AB6CE8 /* VideonaTrackOverView.swift in Sources */,
+				A9CABC241EC37D6900AB6CE8 /* InputSoundGainControlInteractorInterface.swift in Sources */,
+				A9CABCAB1EC37F7900AB6CE8 /* SplitInteractor.swift in Sources */,
+				A9CABC301EC37D8A00AB6CE8 /* ISOConfigurationInteractorInterface.swift in Sources */,
+				A9CABBE11EC37C0500AB6CE8 /* DuplicateInteractor.swift in Sources */,
+				A9CABCD91EC3804600AB6CE8 /* ZoomSliderInteractor.swift in Sources */,
+				A9CABC071EC37CF800AB6CE8 /* FocalLensSliderView.swift in Sources */,
+				A9CABCCD1EC3802200AB6CE8 /* WhiteBalanceInteractor.swift in Sources */,
+				A9CABBF81EC37CA200AB6CE8 /* ExposurePresenter.swift in Sources */,
+				A9CABCC31EC37FF200AB6CE8 /* TrackModel.swift in Sources */,
+				A9CABCCF1EC3802200AB6CE8 /* WhiteBalancePresenterInterface.swift in Sources */,
+				A9CABCA51EC37F5600AB6CE8 /* SpaceOnDiskView.swift in Sources */,
+				A9CABBDA1EC37BDA00AB6CE8 /* BatteryRemainingPresenterInterface.swift in Sources */,
+				A9CABC631EC37E8300AB6CE8 /* AddVideoToProjectUseCase.swift in Sources */,
+				A9CABC851EC37F0300AB6CE8 /* AudioTransitions.swift in Sources */,
+				A9CABCCE1EC3802200AB6CE8 /* WhiteBalancePresenter.swift in Sources */,
+				A9CABBD91EC37BDA00AB6CE8 /* BatteryRemainingPresenter.swift in Sources */,
+				A9CABCBB1EC37FC900AB6CE8 /* VideonaRangeSlider.swift in Sources */,
+				A9CABBEB1EC37C3300AB6CE8 /* ExpositionModesInteractor.swift in Sources */,
+				A9CABC861EC37F0300AB6CE8 /* VideoFilterCompositionInstruction.swift in Sources */,
+				A9CABBFA1EC37CA200AB6CE8 /* ExposureteractorInterface.swift in Sources */,
+				A9CABBCC1EC37B9500AB6CE8 /* AudioLevelBarInteractorInterface.swift in Sources */,
+				A9CABC451EC37DC700AB6CE8 /* PlayerPresenterInterface.swift in Sources */,
+				A9CABC681EC37E8300AB6CE8 /* GetImageByTextUseCase.swift in Sources */,
+				A9CABCDC1EC3804600AB6CE8 /* ZoomSliderPresenterInterface.swift in Sources */,
+				A9CABC1C1EC37D3C00AB6CE8 /* VideoThumbnail.swift in Sources */,
+				A9CABCB51EC37F9B00AB6CE8 /* TrimPresenter.swift in Sources */,
+				A9CABC931EC37F2900AB6CE8 /* ResolutionsSelectorCell.swift in Sources */,
+				A9CABCDB1EC3804600AB6CE8 /* ZoomSliderPresenter.swift in Sources */,
+				A9CABC771EC37E9700AB6CE8 /* AVQualityParse.swift in Sources */,
+				A9CABC431EC37DC700AB6CE8 /* PlayerItem.swift in Sources */,
+				A9CABCAC1EC37F7900AB6CE8 /* SplitInteractorInterface.swift in Sources */,
+				A9CABBFB1EC37CA200AB6CE8 /* ExposureView.swift in Sources */,
+				A9CABBF71EC37CA200AB6CE8 /* ExposureInteractor.swift in Sources */,
+				A9CABC1A1EC37D3C00AB6CE8 /* VideoGalleryInterface.swift in Sources */,
+				A9CABC7F1EC37E9700AB6CE8 /* VideonaComposition.swift in Sources */,
+				A9CABBDB1EC37BDA00AB6CE8 /* BatteryRemainingView.swift in Sources */,
+				A9CABC921EC37F2900AB6CE8 /* Resolution.swift in Sources */,
+				A9CABBCE1EC37B9500AB6CE8 /* AudioLevelBarPresenterInterface.swift in Sources */,
+				A9CABC131EC37D1900AB6CE8 /* FocusView.swift in Sources */,
+				A9CABC191EC37D3C00AB6CE8 /* VideoGalleryDelegateInterface.swift in Sources */,
+				A9CABBCF1EC37B9500AB6CE8 /* AudioLevelBarView.swift in Sources */,
+				A9CABC871EC37F0300AB6CE8 /* VideoFilterCompositor.swift in Sources */,
+				A9CABC7A1EC37E9700AB6CE8 /* Media.swift in Sources */,
+				A9CABC881EC37F0300AB6CE8 /* VideoTransitions.swift in Sources */,
+				A9CABCA31EC37F5600AB6CE8 /* SpaceOnDiskPresenter.swift in Sources */,
+				A9CABCA41EC37F5600AB6CE8 /* SpaceOnDiskPresenterInterface.swift in Sources */,
+				A9CABBE41EC37C0500AB6CE8 /* DuplicatePresenterInterface.swift in Sources */,
+				A9CABC791EC37E9700AB6CE8 /* CompatibleResolutionsInteractor.swift in Sources */,
+				A9CABCB41EC37F9B00AB6CE8 /* TrimInteractorInterface.swift in Sources */,
+				A9CABBED1EC37C3300AB6CE8 /* ExpositionModesPresenter.swift in Sources */,
+				A9CABC671EC37E8300AB6CE8 /* GetActualProjectTextCALayerAnimationUseCase.swift in Sources */,
+				A9CABBCD1EC37B9500AB6CE8 /* AudioLevelBarPresenter.swift in Sources */,
+				A9CABC961EC37F2900AB6CE8 /* ResolutionsSelectorInteractorInterface.swift in Sources */,
+				A9CABC6A1EC37E8300AB6CE8 /* Utils.swift in Sources */,
+				A9CABCAD1EC37F7900AB6CE8 /* SplitPresenter.swift in Sources */,
+				A9CABC111EC37D1900AB6CE8 /* FocusPresenter.swift in Sources */,
+				A9CABC2F1EC37D8A00AB6CE8 /* ISOConfigurationInteractor.swift in Sources */,
+				A9CABC7E1EC37E9700AB6CE8 /* Video.swift in Sources */,
+				A9CABC661EC37E8300AB6CE8 /* GetActualProjectAVCompositionUseCase.swift in Sources */,
+				A9CABC411EC37DC700AB6CE8 /* PlayerInteractorInterface.swift in Sources */,
+				A9CABBEF1EC37C3300AB6CE8 /* ExpositionModesView.swift in Sources */,
+				A9CABCB61EC37F9B00AB6CE8 /* TrimPresenterInterface.swift in Sources */,
+				A9CABBE21EC37C0500AB6CE8 /* DuplicateInteractorInterface.swift in Sources */,
+				A9CABC031EC37CF800AB6CE8 /* FocalLensSliderInteractor.swift in Sources */,
+				A9CABC691EC37E8300AB6CE8 /* TimeNumberFormatter.swift in Sources */,
+				A9CABC991EC37F2900AB6CE8 /* ResolutionsSelectorView.swift in Sources */,
+				A9CABC781EC37E9700AB6CE8 /* AVResolutionParse.swift in Sources */,
+				A9CABC251EC37D6900AB6CE8 /* InputSoundGainControlPresenter.swift in Sources */,
+				A9CABC101EC37D1900AB6CE8 /* FocusInteractorInterface.swift in Sources */,
+				A9CABCD11EC3802200AB6CE8 /* WhiteBalanceView.swift in Sources */,
+				A9CABC321EC37D8A00AB6CE8 /* ISOConfigurationPresenterInterface.swift in Sources */,
+				A9CABC231EC37D6900AB6CE8 /* InputSoundGainControlInteractor.swift in Sources */,
+				A9CABBE31EC37C0500AB6CE8 /* DuplicatePresenter.swift in Sources */,
+				A9CABCBD1EC37FC900AB6CE8 /* VideonaRangeSliderThumbLayer.swift in Sources */,
+				A9CABC4A1EC37DC700AB6CE8 /* UIVerticalAlignLabel.swift in Sources */,
+				A9CABC311EC37D8A00AB6CE8 /* ISOConfigurationPresenter.swift in Sources */,
+				A9CABC441EC37DC700AB6CE8 /* PlayerPresenter.swift in Sources */,
+				A9CABC331EC37D8A00AB6CE8 /* ISOConfigurationView.swift in Sources */,
+				A9CABC7C1EC37E9700AB6CE8 /* Profile.swift in Sources */,
+				A9CABC1B1EC37D3C00AB6CE8 /* VideosGalleryViewController.swift in Sources */,
+				A9CABCAE1EC37F7900AB6CE8 /* SplitPresenterInterface.swift in Sources */,
+				A9CABC7B1EC37E9700AB6CE8 /* Music.swift in Sources */,
+				A9CABC421EC37DC700AB6CE8 /* PlayerInterface.swift in Sources */,
+				A9CABC041EC37CF800AB6CE8 /* FocalLensSliderInteractorInterface.swift in Sources */,
+				A9CABBCB1EC37B9500AB6CE8 /* AudioLevelBarInteractor.swift in Sources */,
+				A9CABC801EC37E9700AB6CE8 /* VideoOutputParameters.swift in Sources */,
+				A9CABCDA1EC3804600AB6CE8 /* ZoomSliderInteractorInterface.swift in Sources */,
+				A9CABCBC1EC37FC900AB6CE8 /* VideonaRangeSliderDelegateProtocol.swift in Sources */,
+				A9CABBD71EC37BDA00AB6CE8 /* BatteryRemainingInteractor.swift in Sources */,
+				A9CABBEC1EC37C3300AB6CE8 /* ExpositionModesInteractorInterface.swift in Sources */,
+				A9CABCB31EC37F9B00AB6CE8 /* TrimInteractor.swift in Sources */,
+				A9CABC491EC37DC700AB6CE8 /* PlayerWireframe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
