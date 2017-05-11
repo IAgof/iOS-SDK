@@ -52,9 +52,7 @@ class FocusInteractor: FocusInteractorInterface {
             delegate?.sendFocusPoint(location)
             let device = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
             do {
-                try device?.lockForConfiguration()
-                let captureDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
-                
+                try device?.lockForConfiguration()                
                 
                 var pointOfInterest = CGPoint(x: 0.5, y: 0.5)
                 

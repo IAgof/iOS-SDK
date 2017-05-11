@@ -107,7 +107,7 @@ open class TrimInteractor: NSObject,TrimInteractorInterface {
         }
         
         videoSelected = nil
-        var videonaComposition = VideoComposition(mutableComposition: mixComposition)
+        let videonaComposition = VideoComposition(mutableComposition: mixComposition)
         if let actualProject = project {
             let video = actualProject.getVideoList()[videoPosition!]
             

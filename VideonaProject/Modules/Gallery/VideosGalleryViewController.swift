@@ -160,7 +160,7 @@ extension VideosGalleryViewController:VideoGalleryInterface{
             PHImageManager.default().requestAVAsset(forVideo: asset, options: nil, resultHandler: {
                 avasset,audiomix,info in
                 
-                if let composition = avasset as? AVComposition{
+                if (avasset as? AVComposition) != nil{
                     let videoComposition:AVComposition = avasset as! AVComposition
                     let track = videoComposition.tracks(withMediaType: AVMediaTypeVideo).first
                     let segment = track?.segments.first

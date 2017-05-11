@@ -23,7 +23,7 @@ public class GetActualProjectAVCompositionUseCase: NSObject {
         // - Create AVMutableComposition object. This object will hold your AVMutableCompositionTrack instances.
         let mixComposition = AVMutableComposition()
         var videoComposition:AVMutableVideoComposition?
-        var playerComposition = VideoComposition(mutableComposition: mixComposition)
+        let playerComposition = VideoComposition(mutableComposition: mixComposition)
 
         let audioMix: AVMutableAudioMix = AVMutableAudioMix()
         var audioMixParam: [AVMutableAudioMixInputParameters] = []

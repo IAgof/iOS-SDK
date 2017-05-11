@@ -183,9 +183,7 @@ import AVFoundation
     }
     
     open func createVideoPlayerByPath(_ videoURL: URL) {
-            let asset = AVAsset(url: videoURL)
-            let isplayable = asset.isPlayable
-            
+            let asset = AVAsset(url: videoURL)            
             let playerItem: AVPlayerItem = AVPlayerItem(asset: asset)
             setUpVideoPlayer(withPlayerItem: playerItem)
             
@@ -195,7 +193,7 @@ import AVFoundation
     }
     
     open func updateSeekBarOnUI(){
-        guard let duration = player?.currentItem?.duration.seconds else{
+        guard (player?.currentItem?.duration.seconds) != nil else{
             return
         }
         guard let currentTime = player?.currentTime().seconds else{
@@ -245,9 +243,6 @@ import AVFoundation
     }
     
     open func sliderValueChanged(){
-        let videoDuration = CMTimeGetSeconds(player!.currentItem!.duration)
-        let elapsedTime: Int64 = Int64(videoDuration * 1000 * Float64(seekSlider.value))
-        
         let timeToGo = CMTimeMakeWithSeconds(Float64(seekSlider.value), 1000)
         let tolerance = CMTimeMake(1, 100)
         
@@ -263,7 +258,7 @@ import AVFoundation
                     self.actualSliderValueLabel.text = "\(self.timeToStringInMinutesAndseconds(time))"
                 }
 
-                if let duration = (self.player?.currentItem?.duration.seconds){
+                if (self.player?.currentItem?.duration.seconds) != nil{
                     self.state?.playerSeeksTo(self.seekSlider.value)
                 }
             }
@@ -383,11 +378,7 @@ import AVFoundation
         if secs < 0 {
             secs = 0
         }
-        
-        let x:Double = (time.truncatingRemainder(dividingBy: 3600)).truncatingRemainder(dividingBy: 60)
-        let numberOfPlaces:Double = 4.0
-        let powerOfTen:Double = pow(10.0, numberOfPlaces)
-        
+    
         return String(format:"%02d:%02d", mins, secs)
     }
     

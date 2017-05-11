@@ -22,8 +22,8 @@ class SpaceOnDiskInteractor: SpaceOnDiskInteractorInterface {
     }
     
     func deviceRemainingFreeSpaceInBytes(){
-        let usedDiskSpace = DiskStatus.usedDiskSpace
-        let storageSizeText = DiskStatus.totalDiskSpace
+//        let usedDiskSpace = DiskStatus.usedDiskSpace
+//        let storageSizeText = DiskStatus.totalDiskSpace
         
         delegate?.setFreeMemory(freeMemory: DiskStatus.freeDiskSpace)
         

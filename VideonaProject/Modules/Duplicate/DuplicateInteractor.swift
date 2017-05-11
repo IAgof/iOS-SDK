@@ -81,7 +81,7 @@ open class DuplicateInteractor: NSObject,DuplicateInteractorInterface {
             //                completionHandler("Error trying to create videoTrack",0.0)
         }
         
-        var videonaComposition = VideoComposition(mutableComposition: mixComposition)
+        let videonaComposition = VideoComposition(mutableComposition: mixComposition)
         
         if let actualProject = project {
             let video = actualProject.getVideoList()[videoPosition!]
@@ -110,7 +110,7 @@ open class DuplicateInteractor: NSObject,DuplicateInteractorInterface {
     
     open func setDuplicateVideoToProject(_ numberDuplicates: Int) {
         
-        for i in 1...(numberDuplicates - 1){
+        for _ in 1...(numberDuplicates - 1){
             guard let video = (project?.getVideoList()[videoPosition!].copy() as? Video) else {return}
 
             self.add(video,

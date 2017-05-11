@@ -64,7 +64,7 @@ open class PlayerPresenter:NSObject,PlayerPresenterInterface{
     }
     
     open func layoutSubViews(){
-        if let view = self.playerDelegate?.getView(){
+        if self.playerDelegate?.getView() != nil{
             self.playerDelegate?.updateLayers()
         }
     }

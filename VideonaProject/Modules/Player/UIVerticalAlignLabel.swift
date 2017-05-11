@@ -45,8 +45,6 @@ class UIVerticalAlignLabel: UILabel {
                           y: bounds.origin.y + (bounds.size.height - rect.size.height),
                           width: rect.size.width,
                           height: rect.size.height)
-        default:
-            return bounds
         }
     }
     

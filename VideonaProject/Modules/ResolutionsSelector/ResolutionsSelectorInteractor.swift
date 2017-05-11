@@ -56,7 +56,7 @@ class ResolutionsSelectorInteractor: ResolutionsSelectorInteractorInterface {
         let deviceModel = UIDevice.current.modelName
         var resolutionsList:[ResolutionViewModel] = []
         
-        deviceModel == ""
+//        deviceModel == ""
 
         // iPhone 4S
         if (deviceModel == "iPhone 4s") {
@@ -100,8 +100,8 @@ class ResolutionsSelectorInteractor: ResolutionsSelectorInteractorInterface {
             
 //            resolutionsList.append(ResolutionViewModel(title: "640x480", avFrameworkSet: AVCaptureSessionPreset640x480))
             
-            let lFrontCam = "1280x960,1280x720,640x480,480x360,192x144";
-            let lBackCam = "4032x3024,1920x1080,1280x720,640x480,480x360,192x144";
+//            let lFrontCam = "1280x960,1280x720,640x480,480x360,192x144";
+//            let lBackCam = "4032x3024,1920x1080,1280x720,640x480,480x360,192x144";
             
         }
             // iPad 2
@@ -123,8 +123,8 @@ class ResolutionsSelectorInteractor: ResolutionsSelectorInteractorInterface {
             
 //            resolutionsList.append(ResolutionViewModel(title: "640x480", avFrameworkSet: AVCaptureSessionPreset640x480))
             
-            let lFrontCam = "640x480,480x360,192x144";
-            let lBackCam = "2592x1936,1920x1080,1280x720,640x480,480x360,192x144";
+//            let lFrontCam = "640x480,480x360,192x144";
+//            let lBackCam = "2592x1936,1920x1080,1280x720,640x480,480x360,192x144";
             
         }
             
@@ -141,8 +141,8 @@ class ResolutionsSelectorInteractor: ResolutionsSelectorInteractorInterface {
             
 //            resolutionsList.append(ResolutionViewModel(title: "640x480", avFrameworkSet: AVCaptureSessionPreset640x480))
             
-            let lFrontCam = "1280x960,1280x720,640x480,480x360,192x144";
-            let lBackCam = "2592x1936,1920x1080,1280x720,640x480,480x360,192x144";
+//            let lFrontCam = "1280x960,1280x720,640x480,480x360,192x144";
+//            let lBackCam = "2592x1936,1920x1080,1280x720,640x480,480x360,192x144";
             
         }
             // iPad Air 2/Mini 4/Pro
@@ -154,8 +154,8 @@ class ResolutionsSelectorInteractor: ResolutionsSelectorInteractorInterface {
             
 //            resolutionsList.append(ResolutionViewModel(title: "640x480", avFrameworkSet: AVCaptureSessionPreset640x480))
             
-            let lFrontCam = "1280x960,1280x720,640x480,480x360,192x144";
-            let lBackCam = "3264x2448,1920x1080,1280x720,640x480,480x360,192x144";
+//            let lFrontCam = "1280x960,1280x720,640x480,480x360,192x144";
+//            let lBackCam = "3264x2448,1920x1080,1280x720,640x480,480x360,192x144";
             
         }
         

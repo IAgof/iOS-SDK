@@ -69,7 +69,7 @@ open class SplitInteractor: NSObject,SplitInteractorInterface {
             print("Error trying to create videoTrack")
         }
         
-        var videonaComposition = VideoComposition(mutableComposition: mixComposition)
+        let videonaComposition = VideoComposition(mutableComposition: mixComposition)
         
         if let actualProject = project {
             let video = actualProject.getVideoList()[videoPosition!]

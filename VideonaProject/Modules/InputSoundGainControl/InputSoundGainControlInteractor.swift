@@ -32,8 +32,8 @@ class InputSoundGainControlInteractor: InputSoundGainControlInteractorInterface 
             print("AVCaptureSession gain")
             print(session.inputGain)
             
-        }catch let e as NSError{
-            print(e.localizedDescription, e.localizedFailureReason, e.localizedRecoveryOptions, e.localizedRecoverySuggestion)
+        }catch _ as NSError{
+//            print(e.localizedDescription, e.localizedFailureReason, e.localizedRecoveryOptions, e.localizedRecoverySuggestion)
         }
     }
 }
