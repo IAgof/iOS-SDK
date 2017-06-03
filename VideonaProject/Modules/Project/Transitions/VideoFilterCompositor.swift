@@ -51,9 +51,9 @@ class VideoFilterCompositor : NSObject, AVVideoCompositing{
                     request.finish(with: NSError(domain: "jojodmo.com", code: 760, userInfo: nil))
                     return
                 }
+                
                 let trackID = instruction.track.trackID
                 guard let pixels = request.sourceFrame(byTrackID: trackID) else{
-//                    request.finish(with: NSError(domain: "jojodmo.com", code: 761, userInfo: nil))
                     request.finish(withComposedVideoFrame: self.renderContext.newPixelBuffer()!)
                     return
                 }
@@ -73,7 +73,6 @@ class VideoFilterCompositor : NSObject, AVVideoCompositing{
                                              fadeOutTimeRange: instruction.fadeOutTransitionTimeRanges.first(where: { (timeRange) -> Bool in
                                                 timeRange.containsTime(request.compositionTime)
                                              }))
-                
                 let newBuffer: CVPixelBuffer? = self.renderContext.newPixelBuffer()
 
                 if let buffer = newBuffer{

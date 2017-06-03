@@ -16,6 +16,10 @@ public struct Resolution {
     public var front:String = AVCaptureSessionPreset1280x720
     public var back:String
     
+    public var size: CGSize{
+        return CGSize(width: width, height: height)
+    }
+    
     public init(AVResolution:String){
         back = AVResolution
         

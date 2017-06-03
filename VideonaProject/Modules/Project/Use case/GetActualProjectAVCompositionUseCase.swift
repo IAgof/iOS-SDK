@@ -38,7 +38,7 @@ public class GetActualProjectAVCompositionUseCase: NSObject {
         videosArray.forEach { (video) in
             //                let videoURL: NSURL = NSURL.init(fileURLWithPath: video.getMediaPath())
             let videoURL: NSURL = video.videoURL as NSURL
-            let videoAsset = AVAsset.init(url: videoURL as URL)
+            let videoAsset = AVAsset(url: videoURL as URL)
             
             do {
                 
@@ -47,8 +47,9 @@ public class GetActualProjectAVCompositionUseCase: NSObject {
                 let duration = stopTime - startTime
                 let range = CMTimeRangeMake(startTime, duration)
                 
+                let videoAssetTrack = videoAsset.tracks(withMediaType: AVMediaTypeVideo)[0]
                 try videoTrack.insertTimeRange(range,
-                                               of: videoAsset.tracks(withMediaType: AVMediaTypeVideo)[0] ,
+                                               of: videoAssetTrack,
                                                at: videoTotalTime)
                 
                 try audioTrack.insertTimeRange(range,
@@ -62,6 +63,7 @@ public class GetActualProjectAVCompositionUseCase: NSObject {
                 
                 playerComposition.addTransition(trackTimeRange: CMTimeRangeMake(videoTotalTime, duration),
                                                 transitionTime: CMTimeMakeWithSeconds(project.transitionTime, 600))
+                playerComposition.resolutions.append(ResolutionTime(resolution: videoAssetTrack.naturalSize, time: videoTotalTime))
                 
                 videoTotalTime = CMTimeAdd(videoTotalTime, duration)
                 
@@ -84,9 +86,7 @@ public class GetActualProjectAVCompositionUseCase: NSObject {
                                                                                 maxVolume: project.projectOutputAudioLevel)
         }
         
-        if isVoiceOverSet {
-            //TODO: change to new voice over params
-            
+        if isVoiceOverSet {            
             setVoiceOverToProject(audioMixParams: &audioMixParam,
                                   mixComposition: mixComposition,
                                   audios: project.voiceOver)
@@ -98,9 +98,11 @@ public class GetActualProjectAVCompositionUseCase: NSObject {
         if mixComposition.duration.seconds > 0{
             
             videoComposition = AVMutableVideoComposition(propertiesOf: mixComposition)
-            let resolutionSize = Resolution.init(AVResolution: project.getProfile().getResolution())
+            let resolutionSize = Resolution(AVResolution: project.getProfile().getResolution())
+            playerComposition.resolution = resolutionSize
             videoComposition?.renderSize = CGSize(width: resolutionSize.width, height: resolutionSize.height)
-            videoComposition?.customVideoCompositorClass = VideoFilterCompositor.self
+            //TODO: SOLVE issue with custom compositor
+            //            videoComposition?.customVideoCompositorClass = VideoFilterCompositor.self
             playerComposition.videoComposition = videoComposition
             
             VideoTransitions(transitionTime: transitionTime)

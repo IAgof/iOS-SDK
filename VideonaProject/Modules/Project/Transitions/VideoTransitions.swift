@@ -23,37 +23,24 @@ class VideoTransitions {
         
         guard let mutableComposition = videonaComposition.mutableComposition else {return}
         guard let videoComposition = videonaComposition.videoComposition else {return}
-        
-        let numberOfVideos = (mutableComposition.tracks(withMediaType: AVMediaTypeVideo).count)
-        let eagl = EAGLContext(api: EAGLRenderingAPI.openGLES2)
-        let context = CIContext(eaglContext: eagl!, options: [kCIContextWorkingColorSpace : NSNull()])
-        
+        let instruction = AVMutableVideoCompositionInstruction()
         guard let videoTrack = mutableComposition.tracks(withMediaType: AVMediaTypeVideo).first else{return}
         
-        let instruction = VideoFilterCompositionInstruction(track: videoTrack,
-                                                            filters: filters, context: context,transitionColor:transitionColor,
-                                                            transitionTime:transitionTime,
-                                                            fadeInTransitionTimeRanges: videonaComposition.fadeInTransitionTimeRanges,
-                                                            fadeOutTransitionTimeRanges: videonaComposition.fadeOutTransitionTimeRanges)
-        
-        var fadeInTime = kCMTimeZero
-        
-        for videoPos in 0...numberOfVideos{
-            if videoPos != numberOfVideos{
-                let video = mutableComposition.tracks(withMediaType: AVMediaTypeVideo)[videoPos]
-                
-                if (video.timeRange.end.seconds - fadeInTime.seconds) > 2 * transitionTime.seconds {
-                    setInstructionsToTrack(instruction: instruction,
-                                           videoTrack: video,
-                                           transitionTime: transitionTime,
-                                           atTime: fadeInTime,
-                                           videoComposition: videoComposition)
-                }
-                fadeInTime = video.timeRange.end
-            }
-        }
-        
+        //TODO: SOLVE issue with custom compositor
+//        let eagl = EAGLContext(api: EAGLRenderingAPI.openGLES2)
+//        let context = CIContext(eaglContext: eagl!, options: [kCIContextWorkingColorSpace : NSNull()])
+//        let instruction = VideoFilterCompositionInstruction(track: videoTrack,
+//                                                            filters: filters, context: context,transitionColor:transitionColor,
+//                                                            transitionTime:transitionTime,
+//                                                            fadeInTransitionTimeRanges: videonaComposition.fadeInTransitionTimeRanges,
+//                                                            fadeOutTransitionTimeRanges: videonaComposition.fadeOutTransitionTimeRanges)
         instruction.timeRange = CMTimeRangeMake(kCMTimeZero, mutableComposition.duration)
+
+        setInstructionsToTrack(instruction: instruction,
+                                       videoTrack: videoTrack,
+                                       transitionTime: transitionTime,
+                                       atTime: kCMTimeZero,
+                                       videonaComposition: videonaComposition)
         
         videoComposition.instructions = [instruction]
     }
@@ -62,10 +49,8 @@ class VideoTransitions {
                                 videoTrack:AVAssetTrack,
                                 transitionTime:CMTime,
                                 atTime:CMTime,
-                                videoComposition:AVMutableVideoComposition){
-        
+                                videonaComposition:VideoComposition){        
         let timeRangeFadeIn:CMTimeRange!
-        
         if atTime.seconds != 0{
             timeRangeFadeIn = CMTimeRangeMake(atTime, transitionTime)
         }else{
@@ -81,24 +66,20 @@ class VideoTransitions {
         let timeRangeFadeOut = CMTimeRangeMake(newTransitionTime, transitionTime)
         
         layerInstruction.setOpacityRamp(fromStartOpacity: 1, toEndOpacity: 0, timeRange: timeRangeFadeOut)
-        
+       
         //Adjust size
-        setTransformToLayer(desireSize: videoComposition.renderSize,
-                            actualSize: videoTrack.naturalSize,
-                            layer: layerInstruction)
-        
+        videonaComposition.resolutions.forEach { (resolutionTime) in
+            layerInstruction.setTransform( getTransform(desireSize: videonaComposition.resolution?.size ?? videoTrack.naturalSize,
+                                                        actualSize: resolutionTime.resolution), at: resolutionTime.time)
+        }
         instruction.layerInstructions.append(layerInstruction)
     }
     
-    func setTransformToLayer(desireSize:CGSize,
-                             actualSize:CGSize,
-                             layer:AVMutableVideoCompositionLayerInstruction){
-        let scaleToTransformX = desireSize.width / actualSize.width
-        let scaleToTransformY = desireSize.height / actualSize.height
+    func getTransform(desireSize:CGSize,
+                             actualSize:CGSize) -> CGAffineTransform{
+        let scaleToTransformX = (desireSize.width / actualSize.width)
+        let scaleToTransformY = (desireSize.height / actualSize.height)
         
-        if scaleToTransformX != 1 && scaleToTransformY != 1 {
-            let transform = CGAffineTransform(scaleX: scaleToTransformX, y: scaleToTransformY)
-            layer.setTransform(transform, at: kCMTimeZero)
-        }
+        return CGAffineTransform(scaleX: scaleToTransformX, y: scaleToTransformY)
     }
 }

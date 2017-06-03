@@ -43,7 +43,7 @@ open class Profile: NSObject {
     }
     
     open func setResolution(_ resolution:String) {
-            self.resolution = resolution
+        self.resolution = resolution
     }
     
     //getter and setter video quality

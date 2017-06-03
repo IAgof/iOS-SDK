@@ -68,8 +68,6 @@ class ResolutionsSelectorInteractor: ResolutionsSelectorInteractorInterface {
         else if (deviceModel == "iPhone 5"
             || deviceModel == "iPhone 5c"
             || deviceModel == "iPhone 5s"
-            || deviceModel == "iPhone 6"
-            || deviceModel == "iPhone 6 Plus"
             || deviceModel == "iPhone7,2"
             || deviceModel == "iPhone SE") {
             
@@ -106,7 +104,9 @@ class ResolutionsSelectorInteractor: ResolutionsSelectorInteractorInterface {
         }
             // iPad 2
         else if (deviceModel == "iPad 2"
-            || deviceModel == "iPod Touch 6") {
+            || deviceModel == "iPod Touch 6"
+            || deviceModel == "iPhone 6"
+            || deviceModel == "iPhone 6 Plus") {
             
             resolutionsList.append(ResolutionViewModel(title: "1920x1080", avFrameworkSet: AVCaptureSessionPreset1920x1080))
             
