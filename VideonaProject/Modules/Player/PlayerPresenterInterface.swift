@@ -38,6 +38,7 @@ public protocol PlayerPresenterInterface {
 
 
 public protocol PlayerDelegate {
+    var isPlaying: Bool{get set}
     func createVideoPlayer()
     func createVideoPlayerByPath(_ videoURL:URL)
     func setPlayerMovieComposition(_ composition:AVMutableComposition)

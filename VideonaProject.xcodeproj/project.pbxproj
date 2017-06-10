@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A92060B21E4DEF8600656558 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A92060B11E4DEF8600656558 /* Media.xcassets */; };
+		A950F5D41EEB313A00E4B8A0 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A92060B11E4DEF8600656558 /* Media.xcassets */; };
 		A9928A101E5370CE002A4E60 /* VideonaProjectTarget.h in Headers */ = {isa = PBXBuildFile; fileRef = A9928A0E1E5370CE002A4E60 /* VideonaProjectTarget.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A9BD5FC11D9120F40080CE97 /* VideonaProject.h in Headers */ = {isa = PBXBuildFile; fileRef = A9BD5FC01D9120F40080CE97 /* VideonaProject.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A9CA73E91E567860009C4E88 /* MBCircularProgressBar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9CA73E81E567860009C4E88 /* MBCircularProgressBar.framework */; };
@@ -801,10 +801,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A950F5D41EEB313A00E4B8A0 /* Media.xcassets in Resources */,
 				A9CABBD01EC37B9500AB6CE8 /* AudioLevelBarView.xib in Resources */,
 				A9CABC281EC37D6900AB6CE8 /* InputSoundGainControlView.xib in Resources */,
 				A9CABCA61EC37F5600AB6CE8 /* SpaceOnDiskView.xib in Resources */,
-				A92060B21E4DEF8600656558 /* Media.xcassets in Resources */,
 				A9CABC941EC37F2900AB6CE8 /* ResolutionsSelectorCell.xib in Resources */,
 				A9CABCDE1EC3804600AB6CE8 /* ZoomSliderView.xib in Resources */,
 				A9CABCD21EC3802200AB6CE8 /* WhiteBalanceView.xib in Resources */,

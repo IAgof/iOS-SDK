@@ -18,7 +18,13 @@ open class PlayerPresenter:NSObject,PlayerPresenterInterface{
     open var wireframe: PlayerWireframe?
     
     //MARK: - Variables
-    open var isPlaying = false
+    open var isPlaying = false{
+        didSet{
+            isPlaying ? playerDelegate?.playVideoPlayer() : playerDelegate?.pauseVideoPlayer()
+            
+            playerDelegate?.isPlaying = isPlaying
+        }
+    }
     
     //MARK: - Init
     open func createVideoPlayer(_ composition:VideoComposition) {
@@ -77,32 +83,18 @@ open class PlayerPresenter:NSObject,PlayerPresenterInterface{
     }
     
     open func pauseVideo() {
-        if isPlaying {
-            isPlaying = false
-            playerDelegate?.pauseVideoPlayer()
-        }
+        isPlaying = false
     }
     
     open func pushPlayButton() {
-        if(isPlaying){
-            playerDelegate?.pauseVideoPlayer()
-            isPlaying = false
-        }else{
-            playPlayer()
-        }
+        isPlaying = !isPlaying
     }
     
     open func videoPlayerViewTapped() {
-        if(isPlaying){
-            playerDelegate?.pauseVideoPlayer()
-            isPlaying = false
-        }else{
-            playPlayer()
-        }
+        isPlaying = !isPlaying
     }
     
     open func playPlayer() {
-        playerDelegate?.playVideoPlayer()
         isPlaying = true
     }
     

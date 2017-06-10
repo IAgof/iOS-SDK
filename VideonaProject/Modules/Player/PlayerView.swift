@@ -28,20 +28,21 @@ import AVFoundation
     @IBOutlet weak public var playOrPauseButton: UIButton!
     @IBOutlet weak var playerContainer: UIView!
     @IBOutlet weak var seekSlider: UISlider!
-    @IBOutlet weak var actualSliderValueLabel: UILabel!
-    @IBOutlet weak var totalTimeValueLabel: UILabel!
 
     var playerRateBeforeSeek: Float = 0
     var isPlayerMuted = false
     var singleFingerTap:UITapGestureRecognizer?
-
+    
+    public var isPlaying: Bool = false{
+        didSet{
+            self.bringSubview(toFront: playOrPauseButton)
+            self.playOrPauseButton.setImage( self.isPlaying ? #imageLiteral(resourceName: "pausePlayerIcon"):#imageLiteral(resourceName: "playPlayerIcon"), for: .normal)
+        }
+    }
+    
     open class func instanceFromNib() -> UIView {
         let view = UINib(nibName: "PlayerView", bundle: Bundle(for: PlayerView.self)).instantiate(withOwner: nil, options: nil)[0] as! UIView
         return view
-    }
-    
-    override open func awakeFromNib() {
-
     }
     
     open func setPlayerMovieComposition(_ composition: AVMutableComposition) {
@@ -113,7 +114,7 @@ import AVFoundation
             setUpVideoPlayer(withPlayerItem: playerItem)
             
             addFinishObserver()
-            self.disablePlayAndSeekBar()
+//            self.disablePlayAndSeekBar()
         }
     }
     
@@ -127,7 +128,8 @@ import AVFoundation
                 if self.player!.currentItem?.status == .readyToPlay && (self.player!.rate != 0) && (self.player!.error == nil) {//Playing
                     self.eventHandler?.updateSeekBar()
                     guard let time = self.player?.currentTime().seconds else{return}
-                    self.actualSliderValueLabel.text = "\(self.timeToStringInMinutesAndseconds(time))"
+                    //TODO: Update seekbar timer with new seekbar?
+//                    self.actualSliderValueLabel.text = "\(self.timeToStringInMinutesAndseconds(time))"
                 }
             }
             
@@ -145,8 +147,8 @@ import AVFoundation
         }
         
         guard let time = self.player?.currentTime().seconds else{return}
-        self.actualSliderValueLabel.text = "\(self.timeToStringInMinutesAndseconds(time))"
-        self.totalTimeValueLabel.text = "\(self.timeToStringInMinutesAndseconds(movieComposition.duration.seconds))"
+        //TODO: Update seekbar timer with new seekbar?
+        //self.actualSliderValueLabel.text = "\(self.timeToStringInMinutesAndseconds(time))"
         if !playerItem.duration.seconds.isNaN{
             self.seekSlider.maximumValue = Float(playerItem.duration.seconds)
         }
@@ -255,7 +257,8 @@ import AVFoundation
             if completed{
                 self.delegate?.seekBarUpdate(Float(self.seekSlider.value))
                 if let time = self.player?.currentTime().seconds {
-                    self.actualSliderValueLabel.text = "\(self.timeToStringInMinutesAndseconds(time))"
+                    //TODO: Update seekbar timer with new seekbar?
+                    //self.actualSliderValueLabel.text = "\(self.timeToStringInMinutesAndseconds(time))"
                 }
 
                 if (self.player?.currentItem?.duration.seconds) != nil{
@@ -274,7 +277,6 @@ import AVFoundation
             self.player?.pause()
             self.player?.currentItem?.seek(to: CMTime.init(value: 0, timescale: 10))
             self.state?.playerSeeksTo(0)
-            //            self.playOrPauseButton.isHidden = false
         })
     }
     
@@ -289,9 +291,6 @@ import AVFoundation
         player.pause()
         state?.playerPause()
         
-        //TODO: remove all play and seek bar interactions
-//        playOrPauseButton.isHidden = false
-        
         #if DEBUG
             print("Video has stopped")
         #endif
@@ -303,8 +302,6 @@ import AVFoundation
         }
         player.play()
         state?.playerStartsToPlay()
-
-        playOrPauseButton.isHidden = true
         
         //Start timer
         
@@ -325,7 +322,8 @@ import AVFoundation
             let tolerance = CMTimeMake(1, 100)
             player.seek(to: timeToGo, toleranceBefore: tolerance, toleranceAfter: tolerance)
             seekSlider.value = time
-            self.actualSliderValueLabel.text = "\(self.timeToStringInMinutesAndseconds(Double(time)))"
+            //TODO: Update seekbar timer with new seekbar?
+            //self.actualSliderValueLabel.text = "\(self.timeToStringInMinutesAndseconds(Double(time)))"
         }
     }
     
@@ -401,15 +399,12 @@ import AVFoundation
         seekSlider.isHidden = true
         seekSlider.isEnabled = false
         singleFingerTap?.isEnabled = false
-        playOrPauseButton.isHidden = true
         playOrPauseButton.isEnabled = false
     }
     
     open func enableSliderAndInteractions(){
-//        seekSlider.isHidden = false
         seekSlider.isEnabled = true
         singleFingerTap?.isEnabled = true
-        playOrPauseButton.isHidden = false
         playOrPauseButton.isEnabled = true
     }
     
@@ -438,7 +433,7 @@ import AVFoundation
     }
     
     public func setTimeLabels(isHidden state: Bool) {
-        totalTimeValueLabel.isHidden = state
-        actualSliderValueLabel.isHidden = state
+            //TODO: Update seekbar timer with new seekbar?
+        //actualSliderValueLabel.isHidden = state
     }
 }

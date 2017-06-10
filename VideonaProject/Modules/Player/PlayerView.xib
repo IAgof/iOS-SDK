@@ -1,70 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16D30" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="PlayerView" customModule="VideonaPlayer" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="PlayerView" customModule="VideonaProject" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="212"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8f9-Er-ZVm">
-                    <rect key="frame" x="159.5" y="89.5" width="1" height="1"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gv3-4N-IXm">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="1" id="hCY-Os-xdg"/>
-                        <constraint firstAttribute="height" constant="1" id="rr6-ae-fH0"/>
+                        <constraint firstAttribute="width" secondItem="Gv3-4N-IXm" secondAttribute="height" multiplier="16:9" id="vHX-8h-i3I"/>
                     </constraints>
+                </view>
+                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Cww-rs-SeF">
+                    <rect key="frame" x="30" y="184" width="288" height="25"/>
+                    <color key="minimumTrackTintColor" red="0.94901960780000005" green="0.29411764709999999" blue="0.31764705879999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="thumbTintColor" red="0.94901960780000005" green="0.29411764709999999" blue="0.31764705879999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </slider>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8f9-Er-ZVm">
+                    <rect key="frame" x="4" y="185.5" width="12" height="22"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <state key="normal" image="playPlayerIcon"/>
                     <connections>
                         <action selector="pushPlayButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="6Fq-Va-9fq"/>
                     </connections>
                 </button>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gv3-4N-IXm">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
-                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                </view>
-                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Cww-rs-SeF">
-                    <rect key="frame" x="42.5" y="146" width="235" height="31"/>
-                    <color key="minimumTrackTintColor" red="0.94901960780000005" green="0.29411764709999999" blue="0.31764705879999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <color key="thumbTintColor" red="0.94901960780000005" green="0.29411764709999999" blue="0.31764705879999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                </slider>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HmX-8k-QN0">
-                    <rect key="frame" x="4" y="153" width="36.5" height="16"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                    <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bzE-jT-alV">
-                    <rect key="frame" x="279.5" y="153" width="36.5" height="16"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                    <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="bzE-jT-alV" firstAttribute="leading" secondItem="Cww-rs-SeF" secondAttribute="trailing" constant="4" id="6dD-Bh-6db"/>
                 <constraint firstItem="Gv3-4N-IXm" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="7Md-47-nXV"/>
-                <constraint firstItem="HmX-8k-QN0" firstAttribute="centerY" secondItem="Cww-rs-SeF" secondAttribute="centerY" id="Bbj-CE-IlI"/>
                 <constraint firstItem="Gv3-4N-IXm" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="C7e-d2-fGC"/>
-                <constraint firstItem="8f9-Er-ZVm" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="CpC-SQ-16M"/>
                 <constraint firstItem="Gv3-4N-IXm" firstAttribute="bottom" secondItem="Cww-rs-SeF" secondAttribute="bottom" id="H9I-oU-tLc"/>
                 <constraint firstItem="Gv3-4N-IXm" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="HR8-Bu-kxZ"/>
-                <constraint firstItem="8f9-Er-ZVm" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="NgH-pl-73U"/>
-                <constraint firstAttribute="trailing" secondItem="bzE-jT-alV" secondAttribute="trailing" constant="4" id="RBI-2J-dms"/>
-                <constraint firstItem="Cww-rs-SeF" firstAttribute="leading" secondItem="HmX-8k-QN0" secondAttribute="trailing" constant="4" id="Ycv-qQ-HbS"/>
-                <constraint firstItem="HmX-8k-QN0" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="4" id="Z6a-hK-Txr"/>
+                <constraint firstItem="8f9-Er-ZVm" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="4" id="Kyt-91-YAS"/>
                 <constraint firstItem="Gv3-4N-IXm" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="ZE9-6Q-KJD"/>
-                <constraint firstItem="bzE-jT-alV" firstAttribute="centerY" secondItem="Cww-rs-SeF" secondAttribute="centerY" id="aDz-cF-9Ek"/>
                 <constraint firstAttribute="trailing" secondItem="Gv3-4N-IXm" secondAttribute="trailing" id="ab9-c4-NiE"/>
                 <constraint firstAttribute="bottom" secondItem="Cww-rs-SeF" secondAttribute="bottom" constant="4" id="b0N-s3-HmE"/>
-                <constraint firstItem="Gv3-4N-IXm" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="nTI-VB-3cw"/>
+                <constraint firstItem="8f9-Er-ZVm" firstAttribute="centerY" secondItem="Cww-rs-SeF" secondAttribute="centerY" id="dog-Wx-5EC"/>
+                <constraint firstItem="Cww-rs-SeF" firstAttribute="leading" secondItem="8f9-Er-ZVm" secondAttribute="trailing" constant="16" id="iHz-Nz-Mjo"/>
+                <constraint firstItem="Cww-rs-SeF" firstAttribute="top" secondItem="Gv3-4N-IXm" secondAttribute="bottom" constant="4" id="o6s-xk-H3r"/>
+                <constraint firstAttribute="trailing" secondItem="Cww-rs-SeF" secondAttribute="trailing" constant="4" id="vq0-fu-PRp"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <variation key="default">
@@ -74,13 +60,14 @@
                 </mask>
             </variation>
             <connections>
-                <outlet property="actualSliderValueLabel" destination="HmX-8k-QN0" id="VKt-6B-jsr"/>
-                <outlet property="playOrPauseButton" destination="8f9-Er-ZVm" id="j4y-ev-ofB"/>
+                <outlet property="playOrPauseButton" destination="8f9-Er-ZVm" id="OJa-Jd-Kx6"/>
                 <outlet property="playerContainer" destination="Gv3-4N-IXm" id="vWD-I5-TC4"/>
                 <outlet property="seekSlider" destination="Cww-rs-SeF" id="rgW-1n-blY"/>
-                <outlet property="totalTimeValueLabel" destination="bzE-jT-alV" id="gLX-7u-5Wn"/>
             </connections>
-            <point key="canvasLocation" x="50" y="124"/>
+            <point key="canvasLocation" x="50" y="140"/>
         </view>
     </objects>
+    <resources>
+        <image name="playPlayerIcon" width="12" height="12"/>
+    </resources>
 </document>

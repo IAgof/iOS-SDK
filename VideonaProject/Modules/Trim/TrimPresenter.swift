@@ -101,7 +101,6 @@ TrimInteractorDelegate {
     open func pushAcceptHandler() {
         interactor?.setParametersOnVideoSelectedOnProjectList(lowerValue,
                                                               stopTime: upperValue)
-        
         delegate?.acceptFinished()
     }
     
@@ -151,14 +150,12 @@ TrimInteractorDelegate {
     }
     
     open func updateParamsFinished() {
-        updateVideoParams()
-        
+        updateVideoParams()        
         DispatchQueue.main.async(execute: { () -> Void in
             self.delegate?.configureRangeSlider(self.lowerValue,
                 upperValue: self.upperValue,
                 maximumValue: self.maximumValue )
         })
-
     }
     
     
