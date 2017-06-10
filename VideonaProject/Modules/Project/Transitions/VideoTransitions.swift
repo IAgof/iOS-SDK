@@ -49,24 +49,10 @@ class VideoTransitions {
                                 videoTrack:AVAssetTrack,
                                 transitionTime:CMTime,
                                 atTime:CMTime,
-                                videonaComposition:VideoComposition){        
-        let timeRangeFadeIn:CMTimeRange!
-        if atTime.seconds != 0{
-            timeRangeFadeIn = CMTimeRangeMake(atTime, transitionTime)
-        }else{
-            timeRangeFadeIn = CMTimeRangeMake(atTime, transitionTime)
-        }
-        
+                                videonaComposition:VideoComposition){
         let layerInstruction = AVMutableVideoCompositionLayerInstruction(assetTrack: videoTrack)
-        //Fade in
-        layerInstruction.setOpacityRamp(fromStartOpacity: 0, toEndOpacity: 1, timeRange: timeRangeFadeIn)
-        
-        //Fade out
-        let newTransitionTime = CMTimeSubtract(videoTrack.timeRange.end, transitionTime)
-        let timeRangeFadeOut = CMTimeRangeMake(newTransitionTime, transitionTime)
-        
-        layerInstruction.setOpacityRamp(fromStartOpacity: 1, toEndOpacity: 0, timeRange: timeRangeFadeOut)
-       
+        layerInstruction.setOpacity(1, at: kCMTimeZero)
+
         //Adjust size
         videonaComposition.resolutions.forEach { (resolutionTime) in
             layerInstruction.setTransform( getTransform(desireSize: videonaComposition.resolution?.size ?? videoTrack.naturalSize,
