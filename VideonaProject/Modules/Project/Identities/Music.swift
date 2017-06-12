@@ -33,6 +33,7 @@ open class Music: Audio {
         self.musicSelectedResourceId = musicSelectedResourceId
         
         self.setDefaultParameters()
+        self.musicResource = .music
     }
     
     open func getMusicTitle()->String{

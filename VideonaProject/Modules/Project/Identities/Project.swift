@@ -50,12 +50,14 @@ open class Project: NSObject {
      * Music to add to export video ( may be nil)
      */
     
-    fileprivate var music = Music(title: "",
+    open var music:Music? = Music(title: "",
                               author: "",
                               iconResourceId: "",
                               musicResourceId: "",
                               musicSelectedResourceId: "")
-    open var isMusicSet:Bool = false
+    open var isMusicSet:Bool {
+        return music != nil
+    }
     
     open var voiceOver:[Audio] = []
     
@@ -115,7 +117,6 @@ open class Project: NSObject {
         copy.videoList = videoList
         copy.duration = duration
         copy.music = music
-        copy.isMusicSet = isMusicSet
         copy.voiceOver = voiceOver
         copy.projectOutputAudioLevel = projectOutputAudioLevel
         copy.transitionTime = transitionTime
@@ -133,7 +134,6 @@ open class Project: NSObject {
         voiceOver = project.voiceOver
         projectOutputAudioLevel = project.projectOutputAudioLevel
         music = project.music
-        isMusicSet = project.isMusicSet
         transitionTime = project.transitionTime
         
         videoList = project.videoList
@@ -191,15 +191,10 @@ open class Project: NSObject {
         updateModificationDate()
         
         videoList = Array<Video>()
-        isMusicSet = false
         projectOutputAudioLevel = 1
         voiceOver = Array<Audio>()
         
-        music = Music(title: "",
-                      author: "",
-                      iconResourceId: "",
-                      musicResourceId: "",
-                      musicSelectedResourceId: "")
+        music = nil
         
         videoOutputParameters = VideoOutputParameters()
         videoFilter = nil
@@ -230,17 +225,7 @@ open class Project: NSObject {
     open func getExportedPath() -> String? {
         return self.exportedPath
     }
-    
-    open func setMusic(_ music:Music){
-        isMusicSet = (music.getTitle() != "")
-        
-        self.music = music
-    }
-    
-    open func getMusic() ->Music{
-        return music
-    }
-    
+
     public func updateModificationDate(){
         modificationDate = NSDate()
     }

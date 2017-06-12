@@ -28,8 +28,6 @@ open class Video: Media {
     fileprivate var position:Int!
     open var textToVideo:String = ""
     open var textPositionToVideo:Int = 0
-    open var originAudioLevel:Float = 1
-    open var secondAudioLevel:Float = 0
 
     override public init(title: String, mediaPath: String) {
         super.init(title: title, mediaPath: mediaPath)
@@ -47,8 +45,6 @@ open class Video: Media {
         copy.setStartTime(trimStartTime)
         copy.textToVideo = textToVideo
         copy.textPositionToVideo = textPositionToVideo
-        copy.originAudioLevel = originAudioLevel
-        copy.secondAudioLevel = secondAudioLevel
         copy.videoURL = videoURL
         copy.uuid = UUID().uuidString
         
