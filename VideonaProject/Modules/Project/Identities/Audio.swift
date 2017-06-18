@@ -19,11 +19,11 @@ public enum MusicResource {
         //TODO: Set correct icons
         switch self {
         case .music:
-            return #imageLiteral(resourceName: "common_icon_play_normal")
+            return #imageLiteral(resourceName: "activity_edit_audio_music_expand")
         case .originalAudio:
-            return #imageLiteral(resourceName: "common_icon_play_normal")
+            return #imageLiteral(resourceName: "activity_edit_audio_sound_expand")
         case .voiceOver:
-            return #imageLiteral(resourceName: "common_icon_play_normal")
+            return #imageLiteral(resourceName: "activity_edit_audio_voiceover_expand")
         case .externalAudio:
             return #imageLiteral(resourceName: "common_icon_play_normal")
         }

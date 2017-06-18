@@ -50,11 +50,8 @@ open class Project: NSObject {
      * Music to add to export video ( may be nil)
      */
     
-    open var music:Music? = Music(title: "",
-                              author: "",
-                              iconResourceId: "",
-                              musicResourceId: "",
-                              musicSelectedResourceId: "")
+    open var music:Music?
+    
     open var isMusicSet:Bool {
         return music != nil
     }

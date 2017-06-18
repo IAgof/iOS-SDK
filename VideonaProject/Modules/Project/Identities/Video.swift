@@ -17,13 +17,29 @@ open class Video: Media {
             self.PHAssetForFileURL(url: videoURL as NSURL, completion: {
                 phAsset,hasAsset in
                 if hasAsset{
-                    self.videoPHAsset = phAsset!
+                    if let asset = phAsset { self.videoPHAsset = asset }
                 }
             })
         }
     }
     
-    open var videoPHAsset:PHAsset = PHAsset()
+    open var videoPHAsset:PHAsset = PHAsset(){
+        didSet{
+            DispatchQueue.main.async{
+                PHImageManager.default().requestImage(for: self.videoPHAsset,
+                                                      targetSize: CGSize(width: 100, height: 80),
+                                                      contentMode: .aspectFill,
+                                                      options: nil,
+                                                      resultHandler: {(result, info)in
+                                                        if let resultImage = result {
+                                                            self.thumbnailImage = resultImage
+                                                        }
+                })
+            }
+        }
+    }
+    open var thumbnailImage: UIImage?
+    
     fileprivate var isSplit:Bool!
     fileprivate var position:Int!
     open var textToVideo:String = ""
