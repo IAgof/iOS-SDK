@@ -35,38 +35,37 @@ public class GetActualProjectAVCompositionUseCase: NSObject {
                                                         preferredTrackID: Int32(kCMPersistentTrackID_Invalid))
 
         videosArray.forEach { (video) in
-            //                let videoURL: NSURL = NSURL.init(fileURLWithPath: video.getMediaPath())
-            let videoURL: NSURL = video.videoURL as NSURL
-            let videoAsset = AVAsset(url: videoURL as URL)
+            let videoAsset = AVAsset(url: video.videoURL)
             
             do {
-                
                 let startTime = CMTimeMake(Int64(video.getStartTime() * 600), 600)
                 let stopTime = CMTimeMake(Int64(video.getStopTime() * 600), 600)
                 let duration = stopTime - startTime
                 let range = CMTimeRangeMake(startTime, duration)
                 
-                let videoAssetTrack = videoAsset.tracks(withMediaType: AVMediaTypeVideo)[0]
-                try videoTrack.insertTimeRange(range,
-                                               of: videoAssetTrack,
-                                               at: videoTotalTime)
-                
-                try audioTrack.insertTimeRange(range,
-                                               of: videoAsset.tracks(withMediaType: AVMediaTypeAudio)[0] ,
-                                               at: videoTotalTime)
-                
-                let audiocParam: AVMutableAudioMixInputParameters = AVMutableAudioMixInputParameters(track: audioTrack)
-                audiocParam.trackID = audioTrack.trackID
-                audiocParam.setVolume(video.audioLevel, at: kCMTimeZero)
-                audioMixParam.append(audiocParam)
-                
-                playerComposition.addTransition(trackTimeRange: CMTimeRangeMake(videoTotalTime, duration),
-                                                transitionTime: CMTimeMakeWithSeconds(project.transitionTime, 600))
-                playerComposition.resolutions.append(ResolutionTime(resolution: videoAssetTrack.naturalSize, time: videoTotalTime))
-                
-                videoTotalTime = CMTimeAdd(videoTotalTime, duration)
-                
-                               Utils().debugLog("el tiempo total del video es: \(videoTotalTime.seconds)")
+                if let videoAssetTrack = videoAsset.tracks(withMediaType: AVMediaTypeVideo).first,
+                    let audioAssetTrack = videoAsset.tracks(withMediaType: AVMediaTypeAudio).first{
+                    try videoTrack.insertTimeRange(range,
+                                                   of: videoAssetTrack,
+                                                   at: videoTotalTime)
+                    
+                    try audioTrack.insertTimeRange(range,
+                                                   of: audioAssetTrack,
+                                                   at: videoTotalTime)
+                    
+                    let audiocParam: AVMutableAudioMixInputParameters = AVMutableAudioMixInputParameters(track: audioTrack)
+                    audiocParam.trackID = audioTrack.trackID
+                    audiocParam.setVolume(video.audioLevel, at: kCMTimeZero)
+                    audioMixParam.append(audiocParam)
+                    
+                    playerComposition.addTransition(trackTimeRange: CMTimeRangeMake(videoTotalTime, duration),
+                                                    transitionTime: CMTimeMakeWithSeconds(project.transitionTime, 600))
+                    playerComposition.resolutions.append(ResolutionTime(resolution: videoAssetTrack.naturalSize, time: videoTotalTime))
+                    
+                    videoTotalTime = CMTimeAdd(videoTotalTime, duration)
+                    
+                    Utils().debugLog("el tiempo total del video es: \(videoTotalTime.seconds)")
+                }
             } catch _ {
                 Utils().debugLog("Error trying to create videoTrack")
             }

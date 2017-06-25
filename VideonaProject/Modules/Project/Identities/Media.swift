@@ -13,16 +13,13 @@ open class Media: NSObject {
     /**
      * Title of the media. Should be the video name in the social network
      */
-    var title:String!
+    var title:String = ""
     
     /**
      * The path of the media resource
      */
-    var mediaPath:String!
-    
-    // TODO(jliarte): 14/06/16 seems to not being used. If so, maybe initialize in getter?
-    //    protected File source;
-    
+    var mediaPath:String = ""
+ 
     /**
      * The start time of the media resource within the file it represents.
      */
@@ -47,7 +44,7 @@ open class Media: NSObject {
     }
         
     open func getTitle() -> String {
-        return title!
+        return title
     }
     
     open func setMediaTitle(_ title:String)  {
@@ -55,7 +52,7 @@ open class Media: NSObject {
     }
     
     open func getMediaPath() -> String {
-        return mediaPath!
+        return mediaPath
     }
     
     open func setVideonaMediaPath(_ path:String) {

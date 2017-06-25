@@ -26,7 +26,7 @@ open class Project: NSObject {
      */
     fileprivate var exportedPath:String?{
         didSet{
-            exportDate = NSDate()
+            exportDate = Date()
         }
     }
     
@@ -72,9 +72,9 @@ open class Project: NSObject {
     
     public var  uuid = UUID().uuidString
 
-    public var modificationDate:NSDate?
+    public var modificationDate:Date?
     
-    public var exportDate:NSDate?
+    public var exportDate:Date?
     
     public var videoOutputParameters:VideoOutputParameters = VideoOutputParameters()
 
@@ -91,7 +91,7 @@ open class Project: NSObject {
         self.duration = 0
 
         videoList = Array<Video>()
-        modificationDate = NSDate()
+        modificationDate = Date()
         
         self.title = setUpTitle()
     }
@@ -102,7 +102,7 @@ open class Project: NSObject {
         self.profile = profile
       
         videoList = Array<Video>()
-        modificationDate = NSDate()
+        modificationDate = Date()
     }
     
     open func copyWithZone(_ zone: NSZone?) -> AnyObject {
@@ -224,7 +224,7 @@ open class Project: NSObject {
     }
 
     public func updateModificationDate(){
-        modificationDate = NSDate()
+        modificationDate = Date()
     }
     
     public func reorderVideoList(){
