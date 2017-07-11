@@ -10,8 +10,6 @@ import Foundation
 import AVFoundation
 
 public class GetActualProjectAVCompositionUseCase: NSObject {    
-    public var compositionInSeconds:Double = 0.0
-
     public func getComposition(project:Project) -> VideoComposition{
         var videoTotalTime:CMTime = kCMTimeZero
         let transitionSeconds = project.transitionTime
@@ -69,8 +67,6 @@ public class GetActualProjectAVCompositionUseCase: NSObject {
             } catch _ {
                 Utils().debugLog("Error trying to create videoTrack")
             }
-            
-            compositionInSeconds = videoTotalTime.seconds
         }
         
         if let music  = project.music{
