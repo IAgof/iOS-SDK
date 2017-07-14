@@ -21,6 +21,10 @@ public protocol ZoomSliderDelegate {
     var view: UIView!
     
     @IBOutlet weak var zoomSlider: UISlider!
+    @IBOutlet weak var zoomButtonUp: UIButton!
+    @IBOutlet weak var zoomButtonDown: UIButton!
+    
+    var longPressGesture: UILongPressGestureRecognizer?
 
     @IBInspectable var lowerValueImage: UIImage? {
         get {
@@ -90,6 +94,24 @@ public protocol ZoomSliderDelegate {
         return view
     }
     
+    override open func awakeFromNib() {
+        super.awakeFromNib()
+        
+        let zoomUpTapGesture = UITapGestureRecognizer(target: self, action: #selector(zoomUp(_:)))
+        let zoomDownTapGesture = UILongPressGestureRecognizer(target: self, action: #selector(zoomDown(_:)))
+        let zoomUpLongGesture = UILongPressGestureRecognizer(target: self, action: #selector(zoomUp(_:)))
+        let zoomDownLongGesture = UILongPressGestureRecognizer(target: self, action: #selector(zoomDown(_:)))
+        
+        zoomUpTapGesture.numberOfTapsRequired = 1
+        zoomDownTapGesture.numberOfTapsRequired = 1
+        
+        zoomButtonUp.addGestureRecognizer(zoomUpTapGesture)
+        zoomButtonUp.addGestureRecognizer(zoomUpLongGesture)
+        
+        zoomButtonDown.addGestureRecognizer(zoomDownTapGesture)
+        zoomButtonDown.addGestureRecognizer(zoomDownLongGesture)
+    }
+    
     open func rotateLabelsSlider(){
         guard let slider = zoomSlider else{return}
         
@@ -101,7 +123,6 @@ public protocol ZoomSliderDelegate {
         let maxImage = UIImage(cgImage: maximumImage.cgImage!, scale: slider.maximumValueImage!.scale, orientation: .right)
         slider.maximumValueImage = maxImage
     }
-    
 }
 
 import AVFoundation
@@ -122,6 +143,20 @@ extension ZoomSliderView{
     public func setDefaultZoom(_ value:Float) {
         eventHandler?.sliderValueHasChangedTo(value)
         zoomSlider.value = value
+    }
+    
+    func zoomUp(_ sender: UIGestureRecognizer){
+        if zoomSlider.value < 10 {
+            eventHandler?.sliderValueHasChangedTo(zoomSlider.value + 0.5)
+            zoomSlider.value = zoomSlider.value + 0.5
+        }
+    }
+    
+    func zoomDown(_ sender: UIGestureRecognizer){
+        if zoomSlider.value > 1 {
+            eventHandler?.sliderValueHasChangedTo(zoomSlider.value - 0.5)
+            zoomSlider.value = zoomSlider.value - 0.5
+        }
     }
 }
 

@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZoomSliderView" customModule="ZoomCameraSlider" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZoomSliderView" customModule="VideonaProject" customModuleProvider="target">
             <connections>
+                <outlet property="zoomButtonDown" destination="hd9-Ua-2af" id="qLv-DX-7A4"/>
+                <outlet property="zoomButtonUp" destination="LcX-5K-dcF" id="0Y2-7z-nGf"/>
                 <outlet property="zoomSlider" destination="2xD-k0-z2M" id="esu-yR-4l9"/>
             </connections>
         </placeholder>
@@ -27,11 +30,31 @@
                         <action selector="sliderValueChanged:" destination="-1" eventType="valueChanged" id="2dm-dQ-Ilg"/>
                     </connections>
                 </slider>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LcX-5K-dcF">
+                    <rect key="frame" x="492" y="0.0" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="LcX-5K-dcF" secondAttribute="height" multiplier="1:1" id="jxN-Lr-rRs"/>
+                    </constraints>
+                    <state key="normal" image="activity_rec_plus"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hd9-Ua-2af">
+                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="hd9-Ua-2af" secondAttribute="height" multiplier="1:1" id="NDR-sj-D6y"/>
+                    </constraints>
+                    <state key="normal" image="activity_rec_minus"/>
+                </button>
             </subviews>
             <constraints>
+                <constraint firstItem="hd9-Ua-2af" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="6Co-bn-f1M"/>
+                <constraint firstItem="LcX-5K-dcF" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="IXQ-Tn-hnU"/>
                 <constraint firstItem="2xD-k0-z2M" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="ScF-9T-00J"/>
                 <constraint firstItem="2xD-k0-z2M" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="4" id="ZUX-hJ-gC5"/>
                 <constraint firstAttribute="trailing" secondItem="2xD-k0-z2M" secondAttribute="trailing" constant="16" id="ZmF-JT-tJH"/>
+                <constraint firstAttribute="trailing" secondItem="LcX-5K-dcF" secondAttribute="trailing" id="dt0-Et-dqr"/>
+                <constraint firstAttribute="bottom" secondItem="hd9-Ua-2af" secondAttribute="bottom" id="gl5-Da-o9L"/>
+                <constraint firstAttribute="bottom" secondItem="LcX-5K-dcF" secondAttribute="bottom" id="pvj-Ii-oYR"/>
+                <constraint firstItem="hd9-Ua-2af" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="tcS-Nt-Z6d"/>
                 <constraint firstAttribute="bottom" secondItem="2xD-k0-z2M" secondAttribute="bottom" constant="4" id="xr2-Dy-GEW"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
@@ -39,4 +62,8 @@
             <point key="canvasLocation" x="496" y="105"/>
         </view>
     </objects>
+    <resources>
+        <image name="activity_rec_minus" width="11" height="11"/>
+        <image name="activity_rec_plus" width="11" height="11"/>
+    </resources>
 </document>
