@@ -98,16 +98,12 @@ public protocol ZoomSliderDelegate {
         super.awakeFromNib()
         
         let zoomUpTapGesture = UITapGestureRecognizer(target: self, action: #selector(zoomUp(_:)))
-        let zoomDownTapGesture = UILongPressGestureRecognizer(target: self, action: #selector(zoomDown(_:)))
         let zoomUpLongGesture = UILongPressGestureRecognizer(target: self, action: #selector(zoomUp(_:)))
+        let zoomDownTapGesture = UITapGestureRecognizer(target: self, action: #selector(zoomDown(_:)))
         let zoomDownLongGesture = UILongPressGestureRecognizer(target: self, action: #selector(zoomDown(_:)))
-        
-        zoomUpTapGesture.numberOfTapsRequired = 1
-        zoomDownTapGesture.numberOfTapsRequired = 1
         
         zoomButtonUp.addGestureRecognizer(zoomUpTapGesture)
         zoomButtonUp.addGestureRecognizer(zoomUpLongGesture)
-        
         zoomButtonDown.addGestureRecognizer(zoomDownTapGesture)
         zoomButtonDown.addGestureRecognizer(zoomDownLongGesture)
     }
