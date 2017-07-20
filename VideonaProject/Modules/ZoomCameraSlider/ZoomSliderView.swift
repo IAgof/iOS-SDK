@@ -119,6 +119,10 @@ extension ZoomSliderView{
         eventHandler?.setZoomWithPinch(scale,
                                        velocity: velocity)
     }
+    public func setDefaultZoom(_ value:Float) {
+        eventHandler?.sliderValueHasChangedTo(value)
+        zoomSlider.value = value
+    }
 }
 
 
