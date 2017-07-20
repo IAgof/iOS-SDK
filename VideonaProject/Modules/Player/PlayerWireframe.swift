@@ -32,7 +32,9 @@ open class PlayerWireframe : NSObject{
         playerView.state = playerStateDelegate
         playerPresenter?.playerDelegate = playerView
         
-        presentedView = playerView        
+        presentedView = playerView
+        
+        
         guard let setter = playerSetter else{return}
         setter.addPlayerAsSubview(playerView)
     }
