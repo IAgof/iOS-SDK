@@ -10,8 +10,6 @@ import Foundation
 import AVFoundation
 
 public class GetActualProjectAVCompositionUseCase: NSObject {    
-    public var compositionInSeconds:Double = 0.0
-
     public func getComposition(project:Project) -> VideoComposition{
         var videoTotalTime:CMTime = kCMTimeZero
         let transitionSeconds = project.transitionTime
@@ -55,7 +53,7 @@ public class GetActualProjectAVCompositionUseCase: NSObject {
                     
                     let audiocParam: AVMutableAudioMixInputParameters = AVMutableAudioMixInputParameters(track: audioTrack)
                     audiocParam.trackID = audioTrack.trackID
-                    audiocParam.setVolume(video.audioLevel, at: kCMTimeZero)
+                    audiocParam.setVolume(video.audioLevel * project.projectOutputAudioLevel, at: kCMTimeZero)
                     audioMixParam.append(audiocParam)
                     
                     playerComposition.addTransition(trackTimeRange: CMTimeRangeMake(videoTotalTime, duration),
@@ -69,8 +67,6 @@ public class GetActualProjectAVCompositionUseCase: NSObject {
             } catch _ {
                 Utils().debugLog("Error trying to create videoTrack")
             }
-            
-            compositionInSeconds = videoTotalTime.seconds
         }
         
         if let music  = project.music{
@@ -78,13 +74,15 @@ public class GetActualProjectAVCompositionUseCase: NSObject {
                                   mixComposition: mixComposition,
                                   musicPath: music.getMusicResourceId(),
                                   volume: Float(music.audioLevel))
-        }else{
-            AudioTransitions(transitionTime: transitionTime).setAudioTransition(mutableComposition: mixComposition,
-                                                                                audioMixParams: &audioMixParam,
-                                                                                maxVolume: project.projectOutputAudioLevel)
         }
         
-        if isVoiceOverSet {            
+        //TODO: Chech if this is neccesary
+//        AudioTransitions(transitionTime: transitionTime)
+//            .setAudioTransition(mutableComposition: mixComposition,
+//                                audioMixParams: &audioMixParam,
+//                                maxVolume: video.audioLevel * project.projectOutputAudioLevel)
+//        
+        if isVoiceOverSet {
             setVoiceOverToProject(audioMixParams: &audioMixParam,
                                   mixComposition: mixComposition,
                                   audios: project.voiceOver)
