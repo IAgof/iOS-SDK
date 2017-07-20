@@ -14,7 +14,7 @@ public enum MusicResource {
     case voiceOver
     case externalAudio
     
-    public var iconExpand: UIImage{
+    public var icon: UIImage{
         
         //TODO: Set correct icons
         switch self {
@@ -24,21 +24,6 @@ public enum MusicResource {
             return #imageLiteral(resourceName: "activity_edit_audio_sound_expand")
         case .voiceOver:
             return #imageLiteral(resourceName: "activity_edit_audio_voiceover_expand")
-        case .externalAudio:
-            return #imageLiteral(resourceName: "common_icon_play_normal")
-        }
-    }
-    
-    public var iconShrink: UIImage{
-        
-        //TODO: Set correct icons
-        switch self {
-        case .music:
-            return #imageLiteral(resourceName: "activity_edit_audio_music_shrink")
-        case .originalAudio:
-            return #imageLiteral(resourceName: "activity_edit_audio_sound_shrink")
-        case .voiceOver:
-            return #imageLiteral(resourceName: "activity_edit_audio_voiceover_shrink")
         case .externalAudio:
             return #imageLiteral(resourceName: "common_icon_play_normal")
         }
