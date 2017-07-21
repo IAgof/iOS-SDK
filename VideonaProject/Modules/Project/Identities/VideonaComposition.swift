@@ -10,11 +10,11 @@ import Foundation
 import AVFoundation
 
 public class VideoComposition{
-    public static let videoTimeScale: Int32 = 600
-    public var resolution: Resolution?
     public var mutableComposition:AVMutableComposition?
     public var audioMix:AVAudioMix?
     public var videoComposition:AVMutableVideoComposition?
+    public static let videoTimeScale: Int32 = 600
+    public var resolution: Resolution?
     public var layerAnimation:CALayer?
     public var fadeInTransitionTimeRanges: [CMTimeRange] = []
     public var fadeOutTransitionTimeRanges: [CMTimeRange] = []
