@@ -9,6 +9,21 @@
 import Foundation
 import UIKit
 import AVFoundation
+import TTRangeSlider
+
+private class ElapsedTimeFormatter: NumberFormatter {
+    
+    lazy var dateFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "mm:ss"
+        return dateFormatter
+    }()
+    
+    override func string(from number: NSNumber) -> String? {
+        let timeInterval = TimeInterval(number)
+        return dateFormatter.string(from: Date(timeIntervalSinceReferenceDate: timeInterval))
+    }
+}
 
 @IBDesignable open class PlayerView: UIView,PlayerDelegate {
     //MARK: - VIPER
@@ -27,8 +42,23 @@ import AVFoundation
     //MARK: - Outlets
     @IBOutlet weak public var playOrPauseButton: UIButton!
     @IBOutlet weak var playerContainer: UIView!
-    @IBOutlet weak var seekSlider: UISlider!
+    @IBOutlet weak var seekSlider: TTRangeSlider!
+    @IBOutlet weak var actualSliderValueLabel: UILabel!
 
+    public var seekBarColor: UIColor = .red {
+        didSet{
+            seekSlider.tintColor = seekBarColor
+            seekSlider.tintColorBetweenHandles = seekBarColor
+            seekSlider.handleColor = seekBarColor
+        }
+    }
+    
+    public var seekBarTextColor: UIColor = .lightGray {
+        didSet{
+            seekSlider.maxLabelColour = seekBarTextColor
+        }
+    }
+    
     var playerRateBeforeSeek: Float = 0
     var isPlayerMuted = false
     var singleFingerTap:UITapGestureRecognizer?
@@ -38,6 +68,12 @@ import AVFoundation
             self.bringSubview(toFront: playOrPauseButton)
             self.playOrPauseButton.setImage( self.isPlaying ? #imageLiteral(resourceName: "pausePlayerIcon"):#imageLiteral(resourceName: "playPlayerIcon"), for: .normal)
         }
+    }
+    
+    open override func awakeFromNib() {
+        super.awakeFromNib()
+        seekSlider.numberFormatterOverride = ElapsedTimeFormatter()
+        seekSlider.delegate = self
     }
     
     open class func instanceFromNib() -> UIView {
@@ -101,7 +137,6 @@ import AVFoundation
     //MARK: - Player Interface
     open func createVideoPlayer(){
         self.setViewPlayerTappable()
-        self.initSeekEvents()
         if (movieComposition != nil) {
             let playerItem: AVPlayerItem = AVPlayerItem(asset: movieComposition)
             
@@ -128,8 +163,7 @@ import AVFoundation
                 if self.player!.currentItem?.status == .readyToPlay && (self.player!.rate != 0) && (self.player!.error == nil) {//Playing
                     self.eventHandler?.updateSeekBar()
                     guard let time = self.player?.currentTime().seconds else{return}
-                    //TODO: Update seekbar timer with new seekbar?
-//                    self.actualSliderValueLabel.text = "\(self.timeToStringInMinutesAndseconds(time))"
+                    self.actualSliderValueLabel.text = "\(self.timeToStringInMinutesAndseconds(time))"
                 }
             }
             
@@ -147,10 +181,9 @@ import AVFoundation
         }
         
         guard let time = self.player?.currentTime().seconds else{return}
-        //TODO: Update seekbar timer with new seekbar?
-        //self.actualSliderValueLabel.text = "\(self.timeToStringInMinutesAndseconds(time))"
+        self.actualSliderValueLabel.text = "\(self.timeToStringInMinutesAndseconds(time))"
         if !playerItem.duration.seconds.isNaN{
-            self.seekSlider.maximumValue = Float(playerItem.duration.seconds)
+            self.seekSlider.maxValue = Float(playerItem.duration.seconds)
         }
         self.seekToTime(0.05)
         
@@ -204,7 +237,8 @@ import AVFoundation
         
         let sliderValue = Float((currentTime))
         
-        seekSlider.setValue( Float(currentTime), animated: true)
+        
+        self.seekSlider.selectedMaximum = Float(currentTime)
         if oldSliderValue != sliderValue {
             self.delegate?.seekBarUpdate(sliderValue)
         }
@@ -216,15 +250,6 @@ import AVFoundation
             singleFingerTap = UITapGestureRecognizer.init(target: self, action:#selector(PlayerView.videoPlayerViewTapped))
             playerContainer.addGestureRecognizer(singleFingerTap!)
         }
-    }
-    
-    open func initSeekEvents(){
-        seekSlider.addTarget(self, action: #selector(PlayerView.sliderBeganTracking),
-                             for: UIControlEvents.touchDown)
-        seekSlider.addTarget(self, action: #selector(PlayerView.sliderEndedTracking),
-                             for: UIControlEvents.touchUpInside)
-        seekSlider.addTarget(self, action: #selector(PlayerView.sliderValueChanged),
-                             for: UIControlEvents.valueChanged)
     }
     
     open func videoPlayerViewTapped(){
@@ -245,7 +270,7 @@ import AVFoundation
     }
     
     open func sliderValueChanged(){
-        let timeToGo = CMTimeMakeWithSeconds(Float64(seekSlider.value), 1000)
+        let timeToGo = CMTimeMakeWithSeconds(Float64(seekSlider.selectedMaximum), 1000)
         let tolerance = CMTimeMake(1, 100)
         
         player?.seek(to: timeToGo, toleranceBefore: tolerance, toleranceAfter: tolerance, completionHandler: {
@@ -255,14 +280,13 @@ import AVFoundation
             }
             
             if completed{
-                self.delegate?.seekBarUpdate(Float(self.seekSlider.value))
+                self.delegate?.seekBarUpdate(Float(self.seekSlider.selectedMaximum))
                 if let time = self.player?.currentTime().seconds {
-                    //TODO: Update seekbar timer with new seekbar?
-                    //self.actualSliderValueLabel.text = "\(self.timeToStringInMinutesAndseconds(time))"
+                    self.actualSliderValueLabel.text = "\(self.timeToStringInMinutesAndseconds(time))"
                 }
 
                 if (self.player?.currentItem?.duration.seconds) != nil{
-                    self.state?.playerSeeksTo(self.seekSlider.value)
+                    self.state?.playerSeeksTo(Float(self.seekSlider.selectedMaximum))
                 }
             }
         })
@@ -321,9 +345,8 @@ import AVFoundation
             let timeToGo = CMTimeMakeWithSeconds(Double(time), 1000)
             let tolerance = CMTimeMake(1, 100)
             player.seek(to: timeToGo, toleranceBefore: tolerance, toleranceAfter: tolerance)
-            seekSlider.value = time
-            //TODO: Update seekbar timer with new seekbar?
-            //self.actualSliderValueLabel.text = "\(self.timeToStringInMinutesAndseconds(Double(time)))"
+            self.seekSlider.selectedMaximum = time
+            self.actualSliderValueLabel.text = "\(self.timeToStringInMinutesAndseconds(Double(time)))"
         }
     }
     
@@ -435,5 +458,19 @@ import AVFoundation
     public func setTimeLabels(isHidden state: Bool) {
             //TODO: Update seekbar timer with new seekbar?
         //actualSliderValueLabel.isHidden = state
+    }
+}
+
+extension PlayerView: TTRangeSliderDelegate {
+    public func rangeSlider(_ sender: TTRangeSlider!, didChangeSelectedMinimumValue selectedMinimum: Float, andMaximumValue selectedMaximum: Float) {
+        sliderValueChanged()
+    }
+    
+    public func didStartTouches(in sender: TTRangeSlider!) {
+        sliderBeganTracking()
+    }
+    
+    public func didEndTouches(in sender: TTRangeSlider!) {
+        sliderEndedTracking()
     }
 }
