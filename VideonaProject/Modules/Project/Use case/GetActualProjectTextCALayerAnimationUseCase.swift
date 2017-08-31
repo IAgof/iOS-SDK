@@ -118,6 +118,19 @@ public class GetActualProjectTextCALayerAnimationUseCase:NSObject {
                 timeToInsertAnimate += video.getDuration()
             }
         }
+
+        let watermarkLayer = CALayer()
+        watermarkLayer.frame = CGRect(x: 0, y: 0, width: 1920, height: 1080)
+        
+        addAnimationToLayer(overlay: watermarkLayer,
+                            timeAt: 0.0,
+                            duration: (videonaComposition.mutableComposition?.duration.seconds)!)
+        
+        let image = UIImage(named: "watermark")?.cgImage
+        watermarkLayer.contents = image
+        
+        layers.append(watermarkLayer)
+        
         return layers
     }
 
