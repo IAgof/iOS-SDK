@@ -1,5 +1,5 @@
 //
-//  GetActualProjectTextCALayerAnimationUseCase.swift
+//  GetActualProjectCALayerAnimationUseCase.swift
 //  vimojo
 //
 //  Created by Alejandro Arjonilla Garcia on 20/10/16.
@@ -10,7 +10,7 @@ import Foundation
 import AVFoundation
 import UIKit
 
-public class GetActualProjectTextCALayerAnimationUseCase:NSObject {
+public class GetActualProjectCALayerAnimationUseCase:NSObject {
     typealias orderType = () -> ([Double])
     var videonaComposition: VideoComposition
     static let numberPasos:Int = 100
@@ -32,7 +32,7 @@ public class GetActualProjectTextCALayerAnimationUseCase:NSObject {
     
     var keyTimes:[NSNumber] {
         var newTimes:[NSNumber] = []
-        let numberPasos = GetActualProjectTextCALayerAnimationUseCase.numberPasos
+        let numberPasos = GetActualProjectCALayerAnimationUseCase.numberPasos
         for i in 0...numberPasos{ newTimes.append(NSNumber(value: Double(i)/Double(numberPasos))) }
         return newTimes
     }
@@ -73,6 +73,10 @@ public class GetActualProjectTextCALayerAnimationUseCase:NSObject {
         for layer in layers{
             parentLayer.addSublayer(layer)
         }
+        
+        let watermarkLayer = getWatermarkLayersAnimated()
+        parentLayer.addSublayer(watermarkLayer)
+        
         return parentLayer
     }
     
@@ -93,6 +97,24 @@ public class GetActualProjectTextCALayerAnimationUseCase:NSObject {
         layer.add(animation, forKey:"animateOpacity")
 
         return layer
+    }
+    
+    public func getWatermarkLayersAnimated()-> CALayer{
+        let watermarkLayer = CALayer()
+        
+        watermarkLayer.frame = CGRect(x: 0, y: 0, width: 1920, height: 1080)
+        
+        guard let duration = videonaComposition.mutableComposition?.duration.seconds else { return watermarkLayer }
+        
+        addAnimationToLayer(overlay: watermarkLayer,
+                            timeAt: 0.0,
+                            duration: duration)
+        
+        
+        guard let image = UIImage(named: "watermark")?.cgImage else { return watermarkLayer }
+        watermarkLayer.contents = image
+        
+        return watermarkLayer
     }
     
     public func getTextLayersAnimated(videoList:[Video], outputSize: CGSize? = nil)-> [CALayer]{
@@ -118,18 +140,6 @@ public class GetActualProjectTextCALayerAnimationUseCase:NSObject {
                 timeToInsertAnimate += video.getDuration()
             }
         }
-
-        let watermarkLayer = CALayer()
-        watermarkLayer.frame = CGRect(x: 0, y: 0, width: 1920, height: 1080)
-        
-        addAnimationToLayer(overlay: watermarkLayer,
-                            timeAt: 0.0,
-                            duration: (videonaComposition.mutableComposition?.duration.seconds)!)
-        
-        let image = UIImage(named: "watermark")?.cgImage
-        watermarkLayer.contents = image
-        
-        layers.append(watermarkLayer)
         
         return layers
     }
