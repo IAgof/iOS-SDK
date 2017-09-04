@@ -74,8 +74,10 @@ public class GetActualProjectCALayerAnimationUseCase:NSObject {
             parentLayer.addSublayer(layer)
         }
         
-        let watermarkLayer = getWatermarkLayersAnimated()
-        parentLayer.addSublayer(watermarkLayer)
+        if project.hasWatermark {
+            let watermarkLayer = getWatermarkLayersAnimated()
+            parentLayer.addSublayer(watermarkLayer)
+        }
         
         return parentLayer
     }
