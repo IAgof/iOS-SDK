@@ -23,7 +23,7 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8f9-Er-ZVm">
-                    <rect key="frame" x="10" y="190" width="26" height="26"/>
+                    <rect key="frame" x="15" y="200" width="26" height="26"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <state key="normal" image="playPlayerIcon"/>
                     <connections>
@@ -31,7 +31,7 @@
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ifi-Wj-miw" customClass="TTRangeSlider">
-                    <rect key="frame" x="46" y="190" width="217.5" height="26"/>
+                    <rect key="frame" x="56" y="200" width="197.5" height="26"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="hideLabels" value="NO"/>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="disableRange" value="YES"/>
@@ -52,7 +52,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VSq-GD-FQ5">
-                    <rect key="frame" x="273.5" y="190" width="36.5" height="26"/>
+                    <rect key="frame" x="268.5" y="200" width="36.5" height="26"/>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -60,21 +60,21 @@
             </subviews>
             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="ifi-Wj-miw" secondAttribute="bottom" constant="10" id="18F-o4-Hj9"/>
-                <constraint firstItem="8f9-Er-ZVm" firstAttribute="top" secondItem="Gv3-4N-IXm" secondAttribute="bottom" constant="10" id="4jY-LF-bJC"/>
+                <constraint firstAttribute="bottom" secondItem="ifi-Wj-miw" secondAttribute="bottom" id="18F-o4-Hj9"/>
+                <constraint firstItem="8f9-Er-ZVm" firstAttribute="top" secondItem="Gv3-4N-IXm" secondAttribute="bottom" constant="20" id="4jY-LF-bJC"/>
                 <constraint firstItem="Gv3-4N-IXm" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="7Md-47-nXV"/>
-                <constraint firstItem="VSq-GD-FQ5" firstAttribute="top" secondItem="Gv3-4N-IXm" secondAttribute="bottom" constant="10" id="BvP-EN-nVE"/>
+                <constraint firstItem="VSq-GD-FQ5" firstAttribute="top" secondItem="Gv3-4N-IXm" secondAttribute="bottom" constant="20" id="BvP-EN-nVE"/>
                 <constraint firstItem="Gv3-4N-IXm" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="C7e-d2-fGC"/>
-                <constraint firstAttribute="bottom" secondItem="VSq-GD-FQ5" secondAttribute="bottom" constant="10" id="FaR-LY-GYG"/>
+                <constraint firstAttribute="bottom" secondItem="VSq-GD-FQ5" secondAttribute="bottom" id="FaR-LY-GYG"/>
                 <constraint firstItem="Gv3-4N-IXm" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="HR8-Bu-kxZ"/>
-                <constraint firstItem="8f9-Er-ZVm" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="Hzk-bq-iBY"/>
-                <constraint firstItem="ifi-Wj-miw" firstAttribute="leading" secondItem="8f9-Er-ZVm" secondAttribute="trailing" constant="10" id="JGl-vq-DP8"/>
-                <constraint firstAttribute="bottom" secondItem="8f9-Er-ZVm" secondAttribute="bottom" constant="10" id="LFW-UQ-P2s"/>
+                <constraint firstItem="8f9-Er-ZVm" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="Hzk-bq-iBY"/>
+                <constraint firstItem="ifi-Wj-miw" firstAttribute="leading" secondItem="8f9-Er-ZVm" secondAttribute="trailing" constant="15" id="JGl-vq-DP8"/>
+                <constraint firstAttribute="bottom" secondItem="8f9-Er-ZVm" secondAttribute="bottom" id="LFW-UQ-P2s"/>
                 <constraint firstItem="Gv3-4N-IXm" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="ZE9-6Q-KJD"/>
                 <constraint firstAttribute="trailing" secondItem="Gv3-4N-IXm" secondAttribute="trailing" id="ab9-c4-NiE"/>
-                <constraint firstAttribute="trailing" secondItem="VSq-GD-FQ5" secondAttribute="trailing" constant="10" id="jol-3N-Gtc"/>
-                <constraint firstItem="ifi-Wj-miw" firstAttribute="top" secondItem="Gv3-4N-IXm" secondAttribute="bottom" constant="10" id="oRs-0c-Trl"/>
-                <constraint firstItem="VSq-GD-FQ5" firstAttribute="leading" secondItem="ifi-Wj-miw" secondAttribute="trailing" constant="10" id="rBs-ua-mYy"/>
+                <constraint firstAttribute="trailing" secondItem="VSq-GD-FQ5" secondAttribute="trailing" constant="15" id="jol-3N-Gtc"/>
+                <constraint firstItem="ifi-Wj-miw" firstAttribute="top" secondItem="Gv3-4N-IXm" secondAttribute="bottom" constant="20" id="oRs-0c-Trl"/>
+                <constraint firstItem="VSq-GD-FQ5" firstAttribute="leading" secondItem="ifi-Wj-miw" secondAttribute="trailing" constant="15" id="rBs-ua-mYy"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <variation key="default">
