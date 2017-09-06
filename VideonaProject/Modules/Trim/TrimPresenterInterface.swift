@@ -24,6 +24,14 @@ public protocol TrimPresenterInterface {
     func trimSliderBegan()
     func getVideoSelectedIndex()->Int
     func setVideoSelectedIndex(_ index:Int)
+    
+    func setTrimLeftDecreaseTime()
+    func setTrimLeftIncreaseTime()
+    func setTrimRightDecreaseTime()
+    func setTrimRightIncreaseTime()
+    func setMilisecondsLow()
+    func setMilisecondsMedium()
+    func setMilisecondsHigh()
 }
 
 public protocol TrimPresenterDelegate {
@@ -42,4 +50,10 @@ public protocol TrimPresenterDelegate {
     func setPlayerToSeekTime(_ time:Float)
     func setStopToVideo()
     func updatePlayerOnView(_ composition:VideoComposition)
+    func milisecondsLowSelect()
+    func milisecondsLowUnselect()
+    func milisecondsMediumSelect()
+    func milisecondsMediumUnselect()
+    func milisecondsHighSelect()
+    func milisecondsHighUnselect()
 }

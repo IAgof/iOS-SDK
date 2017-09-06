@@ -165,4 +165,32 @@ TrimInteractorDelegate {
             self.delegate?.updatePlayerOnView(composition)
         })
     }
+    
+    open func setTrimLeftDecreaseTime() {
+        
+    }
+    
+    open func setTrimLeftIncreaseTime() {
+        
+    }
+    
+    open func setTrimRightDecreaseTime() {
+        
+    }
+    
+    open func setTrimRightIncreaseTime() {
+        
+    }
+
+    open func setMilisecondsLow() {
+        
+    }
+    
+    open func setMilisecondsMedium() {
+        
+    }
+    
+    open func setMilisecondsHigh() {
+        
+    }
 }
