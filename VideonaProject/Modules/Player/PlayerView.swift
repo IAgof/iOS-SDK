@@ -162,7 +162,7 @@ private class ElapsedTimeFormatter: NumberFormatter {
             player!.addPeriodicTimeObserver(forInterval: CMTimeMake(1, 1000), queue: DispatchQueue.main) { _ in
                 if self.player!.currentItem?.status == .readyToPlay && (self.player!.rate != 0) && (self.player!.error == nil) {//Playing
                     self.eventHandler?.updateSeekBar()
-                    guard let time = self.player?.currentTime().seconds else{return}
+                    guard let time = self.player?.currentItem?.asset.duration.seconds else{return}
                     self.actualSliderValueLabel.text = "\(self.timeToStringInMinutesAndseconds(time))"
                 }
             }
@@ -180,7 +180,7 @@ private class ElapsedTimeFormatter: NumberFormatter {
             player?.replaceCurrentItem(with: playerItem)
         }
         
-        guard let time = self.player?.currentTime().seconds else{return}
+        guard let time = self.player?.currentItem?.asset.duration.seconds else{return}
         self.actualSliderValueLabel.text = "\(self.timeToStringInMinutesAndseconds(time))"
         if !playerItem.duration.seconds.isNaN{
             self.seekSlider.maxValue = Float(playerItem.duration.seconds)
@@ -281,9 +281,6 @@ private class ElapsedTimeFormatter: NumberFormatter {
             
             if completed{
                 self.delegate?.seekBarUpdate(Float(self.seekSlider.selectedMaximum))
-                if let time = self.player?.currentTime().seconds {
-                    self.actualSliderValueLabel.text = "\(self.timeToStringInMinutesAndseconds(time))"
-                }
 
                 if (self.player?.currentItem?.duration.seconds) != nil{
                     self.state?.playerSeeksTo(Float(self.seekSlider.selectedMaximum))
@@ -346,7 +343,6 @@ private class ElapsedTimeFormatter: NumberFormatter {
             let tolerance = CMTimeMake(1, 100)
             player.seek(to: timeToGo, toleranceBefore: tolerance, toleranceAfter: tolerance)
             self.seekSlider.selectedMaximum = time
-            self.actualSliderValueLabel.text = "\(self.timeToStringInMinutesAndseconds(Double(time)))"
         }
     }
     
