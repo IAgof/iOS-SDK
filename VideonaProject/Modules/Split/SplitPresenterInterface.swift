@@ -18,6 +18,12 @@ public protocol SplitPresenterInterface{
     func setSplitValue(_ value:Float)
     func updateSplitValueByPlayer(_ value:Float)
     func expandPlayer()
+    func setSplitAccurateLeftLowValue()
+    func setSplitAccurateLeftMediumValue()
+    func setSplitAccurateLeftHighValue()
+    func setSplitAccurateRightLowValue()
+    func setSplitAccurateRightMediumValue()
+    func setSplitAccurateRightHighValue()
 }
 
 public protocol SplitPresenterDelegate {

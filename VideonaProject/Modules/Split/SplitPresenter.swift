@@ -115,4 +115,55 @@ open class SplitPresenter: NSObject,SplitPresenterInterface,SplitInteractorDeleg
     open func setMaximumValue(_ value: Float) {
         maximumValue = value
     }
+    
+    func calculateSplitAccurateLeftValue (_ value: Float) -> Float {
+        let valueUpdated = splitValue + value
+        
+        if valueUpdated < 0 {
+            return 0
+        }
+        
+        return valueUpdated
+    }
+    
+    func calculateSplitAccurateRightValue (_ value: Float) -> Float {
+        let valueUpdated = splitValue + value
+        
+        if valueUpdated > maximumValue {
+            return maximumValue
+        }
+        
+        return valueUpdated
+    }
+    
+    open func setSplitAccurateLeftLowValue() {
+        splitValue = calculateSplitAccurateLeftValue(-0.3)
+        delegate?.setSliderValue(splitValue)
+    }
+    
+    open func setSplitAccurateLeftMediumValue() {
+        splitValue = calculateSplitAccurateLeftValue(-0.6)
+        delegate?.setSliderValue(splitValue)
+    }
+    
+    open func setSplitAccurateLeftHighValue() {
+        splitValue = calculateSplitAccurateLeftValue(-1.2)
+        delegate?.setSliderValue(splitValue)
+    }
+    
+    open func setSplitAccurateRightLowValue() {
+        splitValue = calculateSplitAccurateRightValue(0.3)
+        delegate?.setSliderValue(splitValue)
+    }
+    
+    open func setSplitAccurateRightMediumValue() {
+        splitValue = calculateSplitAccurateRightValue(0.6)
+        delegate?.setSliderValue(splitValue)
+    }
+    
+    open func setSplitAccurateRightHighValue() {
+        splitValue = calculateSplitAccurateRightValue(1.2)
+        delegate?.setSliderValue(splitValue)
+    }
+    
 }
