@@ -56,4 +56,5 @@ public protocol TrimPresenterDelegate {
     func milisecondsMediumUnselect()
     func milisecondsHighSelect()
     func milisecondsHighUnselect()
+	func swapImageLow()
 }

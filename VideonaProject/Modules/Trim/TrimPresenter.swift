@@ -14,7 +14,16 @@ TrimInteractorDelegate {
     //MARK: - Variables VIPER
     open var delegate:TrimPresenterDelegate?
     open var interactor: TrimInteractorInterface?
-    
+	
+	// Custom miliseconds selection
+	enum Miliseconds:Int {
+		case low = 300
+		case medium = 600
+		case high = 1200
+	}
+	
+	var milisecondsTrimCustom:Miliseconds = .low
+	
     //MARK: - Variables
     var videoSelectedIndex:Int!{
         didSet{
@@ -183,7 +192,9 @@ TrimInteractorDelegate {
     }
 
     open func setMilisecondsLow() {
-        
+		milisecondsTrimCustom = .low
+		delegate?.swapImageLow()
+		delegate?.milisecondsLowSelect()
     }
     
     open func setMilisecondsMedium() {
