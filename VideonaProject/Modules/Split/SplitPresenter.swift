@@ -118,22 +118,12 @@ open class SplitPresenter: NSObject,SplitPresenterInterface,SplitInteractorDeleg
     
     func calculateSplitAccurateLeftValue (_ value: Float) -> Float {
         let valueUpdated = splitValue + value
-        
-        if valueUpdated < 0 {
-            return 0
-        }
-        
-        return valueUpdated
+        return valueUpdated < 0 ? 0 : valueUpdated
     }
     
     func calculateSplitAccurateRightValue (_ value: Float) -> Float {
         let valueUpdated = splitValue + value
-        
-        if valueUpdated > maximumValue {
-            return maximumValue
-        }
-        
-        return valueUpdated
+        return valueUpdated > maximumValue ? maximumValue : valueUpdated
     }
     
     open func setSplitAccurateLeftLowValue() {
