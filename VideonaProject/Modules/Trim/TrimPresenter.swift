@@ -14,7 +14,27 @@ TrimInteractorDelegate {
     //MARK: - Variables VIPER
     open var delegate:TrimPresenterDelegate?
     open var interactor: TrimInteractorInterface?
-    
+	
+	// Custom miliseconds selection
+	enum Miliseconds {
+		case low
+		case medium
+		case high
+		func getValue() -> Float {
+			switch self {
+			case .low:
+				return 0.3
+			case .medium:
+				return 0.6
+			case .high:
+				return 1.2
+			}
+			
+		}
+	}
+	
+	var milisecondsTrimCustom = Miliseconds.low.getValue()
+	
     //MARK: - Variables
     var videoSelectedIndex:Int!{
         didSet{
@@ -85,8 +105,8 @@ TrimInteractorDelegate {
     //MARK: - Interface
     open func viewDidLoad() {
         delegate?.bringToFrontExpandPlayerButton()
-
         interactor?.getVideoParams()
+		setMilisecondsLow()
     }
     
     open func viewWillDissappear() {
@@ -164,5 +184,69 @@ TrimInteractorDelegate {
         interactor?.setUpComposition({composition in
             self.delegate?.updatePlayerOnView(composition)
         })
+    }
+    
+    open func setTrimLeftDecreaseTime() {
+		let value = lowerValue - milisecondsTrimCustom
+		
+		if value > 0 {
+			setLowerValue(value)
+			updateRangeVal()
+			updateParamsFinished()
+		}
+    }
+    
+    open func setTrimLeftIncreaseTime() {
+		let value = lowerValue + milisecondsTrimCustom
+		
+		if value < upperValue {
+			setLowerValue(value)
+			updateRangeVal()
+			updateParamsFinished()
+		}
+    }
+    
+    open func setTrimRightDecreaseTime() {
+		let value = upperValue - milisecondsTrimCustom
+		
+		if value > lowerValue {
+			setUpperValue(value)
+			updateRangeVal()
+			updateParamsFinished()
+		}
+    }
+	
+    open func setTrimRightIncreaseTime() {
+		let value = upperValue + milisecondsTrimCustom
+		
+		if value < maximumValue {
+			setUpperValue(value)
+			updateRangeVal()
+			updateParamsFinished()
+		}
+    }
+
+    open func setMilisecondsLow() {
+		milisecondsTrimCustom = Miliseconds.low.getValue()
+		delegate?.swapImageLow()
+		delegate?.milisecondsMediumUnselect()
+		delegate?.milisecondsHighUnselect()
+		delegate?.milisecondsLowSelect()
+    }
+    
+    open func setMilisecondsMedium() {
+		milisecondsTrimCustom = Miliseconds.medium.getValue()
+		delegate?.swapImageMedium()
+		delegate?.milisecondsLowUnselect()
+		delegate?.milisecondsHighUnselect()
+		delegate?.milisecondsMediumSelect()
+    }
+    
+    open func setMilisecondsHigh() {
+		milisecondsTrimCustom = Miliseconds.high.getValue()
+		delegate?.swapImageHigh()
+		delegate?.milisecondsLowUnselect()
+		delegate?.milisecondsMediumUnselect()
+		delegate?.milisecondsHighSelect()
     }
 }

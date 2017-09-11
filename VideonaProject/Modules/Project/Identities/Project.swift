@@ -82,14 +82,15 @@ open class Project: NSObject {
     
     public var transitionColor = CIColor(red: 255, green: 255, blue: 255)
 //    public var transitionColor = CIColor(red: 0, green: 0, blue: 0)
-    
+    public var hasWatermark: Bool
     override public init() {
+        //TODO: Default value?
+        self.hasWatermark = true
         super.init()
         self.title = ""
         self.projectPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
         self.profile = Profile()
         self.duration = 0
-
         videoList = Array<Video>()
         modificationDate = Date()
         
@@ -97,6 +98,8 @@ open class Project: NSObject {
     }
     
     public init(title:String, rootPath:String, profile:Profile) {
+        //TODO: Default value?
+        self.hasWatermark = true
         self.title = title
         self.projectPath = rootPath
         self.profile = profile
@@ -119,6 +122,7 @@ open class Project: NSObject {
         copy.transitionTime = transitionTime
         copy.modificationDate = modificationDate
         copy.exportDate = exportDate
+        copy.hasWatermark = hasWatermark
         
         return copy
     }
@@ -138,6 +142,7 @@ open class Project: NSObject {
         
         videoOutputParameters = project.videoOutputParameters
         videoFilter = project.videoFilter
+        hasWatermark = project.hasWatermark
         
         self.uuid = project.uuid
     }
@@ -196,6 +201,7 @@ open class Project: NSObject {
         videoOutputParameters = VideoOutputParameters()
         videoFilter = nil
         exportedPath = nil
+        hasWatermark = true
     }
     
     open func numberOfClips() -> Int{
