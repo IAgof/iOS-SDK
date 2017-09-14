@@ -8,10 +8,10 @@
 
 import Foundation
 
-protocol ExposureInteractorInterface{
-    func setExposureToDevice(_ value:Float)
+protocol ExposureInteractorInterface {
+    func setExposureToDevice(_ value: Float)
 }
 
-protocol ExposureInteractorDelegate{
-   
+protocol ExposureInteractorDelegate {
+
 }

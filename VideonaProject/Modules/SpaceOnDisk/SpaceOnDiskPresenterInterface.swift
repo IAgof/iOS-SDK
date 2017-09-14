@@ -8,12 +8,12 @@
 
 import UIKit
 
-protocol SpaceOnDiskPresenterInterface{
+protocol SpaceOnDiskPresenterInterface {
     func updateSpaceLeftLevel()
 }
 
-protocol SpaceOnDiskPresenterDelegate{
+protocol SpaceOnDiskPresenterDelegate {
     func updateBarValue(_ value: CGFloat)
-    func updateBarColor(_ color:UIColor)
-    func updateTextSpaceLeft(_ text:String)
+    func updateBarColor(_ color: UIColor)
+    func updateTextSpaceLeft(_ text: String)
 }

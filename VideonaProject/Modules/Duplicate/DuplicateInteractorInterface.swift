@@ -10,13 +10,13 @@ import Foundation
 import AVFoundation
 
 public protocol DuplicateInteractorInterface {
-    func setUpComposition(_ videoSelectedIndex: Int,completion:(VideoComposition)->Void)
-    func setVideoPosition(_ position:Int)
-    func setDuplicateVideoToProject(_ numberDuplicates:Int)
-    func getThumbnail(_ frame:CGRect)
+    func setUpComposition(_ videoSelectedIndex: Int, completion: (VideoComposition) -> Void)
+    func setVideoPosition(_ position: Int)
+    func setDuplicateVideoToProject(_ numberDuplicates: Int)
+    func getThumbnail(_ frame: CGRect)
 }
 
 public protocol DuplicateInteractorDelegate {
-    func setThumbnail(_ image:UIImage)
+    func setThumbnail(_ image: UIImage)
     func duplicateActionFinished()
 }

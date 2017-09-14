@@ -8,10 +8,10 @@
 
 import Foundation
 
-protocol WhiteBalanceInteractorInterface{
-    func setWBToDevice(_ value:WhiteBalanceGain)
+protocol WhiteBalanceInteractorInterface {
+    func setWBToDevice(_ value: WhiteBalanceGain)
 }
 
-protocol WhiteBalanceInteractorDelegate{
-   
+protocol WhiteBalanceInteractorDelegate {
+
 }

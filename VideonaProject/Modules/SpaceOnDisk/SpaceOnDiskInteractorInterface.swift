@@ -8,11 +8,11 @@
 
 import Foundation
 
-protocol SpaceOnDiskInteractorInterface{
+protocol SpaceOnDiskInteractorInterface {
     func getSpaceOnDiskValues()
 }
 
-protocol SpaceOnDiskInteractorDelegate{
-    func setPercentValue(_ level:Float)
-    func setFreeMemory(freeMemory:String)
+protocol SpaceOnDiskInteractorDelegate {
+    func setPercentValue(_ level: Float)
+    func setFreeMemory(freeMemory: String)
 }

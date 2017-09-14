@@ -10,6 +10,6 @@ import Foundation
 import Photos
 
 public protocol VideoGalleryInterface {
-    var albumName:String {get set}
+    var albumName: String {get set}
     func getVideosSelectedURL(_ completion: @escaping ([URL]) -> Void)
 }

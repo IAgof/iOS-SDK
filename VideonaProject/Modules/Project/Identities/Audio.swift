@@ -13,9 +13,9 @@ public enum MusicResource {
     case originalAudio
     case voiceOver
     case externalAudio
-    
-    public var iconExpand: UIImage{
-        
+
+    public var iconExpand: UIImage {
+
         //TODO: Set correct icons
         switch self {
         case .music:
@@ -28,9 +28,9 @@ public enum MusicResource {
             return #imageLiteral(resourceName: "common_icon_play_normal")
         }
     }
-    
-    public var iconShrink: UIImage{
-        
+
+    public var iconShrink: UIImage {
+
         //TODO: Set correct icons
         switch self {
         case .music:
@@ -47,7 +47,7 @@ public enum MusicResource {
 
 open class Audio: Media {
     public var musicResource: MusicResource
-    
+
     public init(title: String, mediaPath: String, musicResource: MusicResource = .externalAudio) {
         self.musicResource = musicResource
         super.init(title: title, mediaPath: mediaPath)

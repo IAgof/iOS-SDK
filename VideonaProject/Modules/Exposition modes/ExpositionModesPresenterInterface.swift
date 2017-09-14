@@ -8,25 +8,25 @@
 
 import UIKit
 
-protocol ExpositionModesPresenterInterface{
+protocol ExpositionModesPresenterInterface {
     func autoModePushed()
     func manualModePushed()
     func centerModePushed()
     func manualSliderPushed()
-    
+
     func checkIfHadToShowSlider()
-    func setFocusAtPoint(_ point:CGPoint,
-                         frame:CGRect)
+    func setFocusAtPoint(_ point: CGPoint,
+                         frame: CGRect)
 }
 
-protocol ExpositionModesPresenterDelegate{
-    func setAutoButtonSelected(_ state:Bool)
-    func setSliderManualButtonSelected(_ state:Bool)
-    func setManualButtonSelected(_ state:Bool)
-    func setCenterButtonSelected(_ state:Bool)
-    
+protocol ExpositionModesPresenterDelegate {
+    func setAutoButtonSelected(_ state: Bool)
+    func setSliderManualButtonSelected(_ state: Bool)
+    func setManualButtonSelected(_ state: Bool)
+    func setCenterButtonSelected(_ state: Bool)
+
     func showExpositionSlider()
     func hideExpositionSlider()
-    
+
     func sendFocusPoint(_ point: CGPoint)
 }

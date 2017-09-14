@@ -8,16 +8,16 @@
 
 import Foundation
 
-protocol ExpositionModesInteractorInterface{
+protocol ExpositionModesInteractorInterface {
     func setAutoExposureMode()
     func setManualExposureMode()
     func setManualExposureModeOff()
-    
+
     func setExpositionCenterMode()
-    func expositionToPoint(_ tapLocation:CGPoint,
-                      viewFrame:CGRect)
+    func expositionToPoint(_ tapLocation: CGPoint,
+                      viewFrame: CGRect)
 }
 
-protocol ExpositionModesInteractorDelegate{
+protocol ExpositionModesInteractorDelegate {
     func sendFocusPoint(_ point: CGPoint)
 }

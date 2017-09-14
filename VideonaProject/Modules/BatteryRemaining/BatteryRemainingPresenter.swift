@@ -8,34 +8,34 @@
 
 import UIKit
 
-open class BatteryRemainingPresenter:BatteryRemainingPresenterInterface,BatteryRemainingInteractorDelegate{
+open class BatteryRemainingPresenter: BatteryRemainingPresenterInterface, BatteryRemainingInteractorDelegate {
     //MARK : VIPER
-    var delegate:BatteryRemainingPresenterDelegate
-    var interactor:BatteryRemainingInteractorInterface?
-    
-    init(controller:BatteryRemainingView){
+    var delegate: BatteryRemainingPresenterDelegate
+    var interactor: BatteryRemainingInteractorInterface?
+
+    init(controller: BatteryRemainingView) {
         delegate = controller
         interactor = BatteryRemainingInteractor(presenter: self)
     }
-    
+
     func updateBatteryLevel() {
         interactor?.getBatteryUpdateValues()
     }
-    
+
     //Interactor Delegate
     func setPercentValue(_ level: Float) {
         delegate.updateBarValue(CGFloat(level))
         self.updateBatteryLevelColor(level)
     }
-    
-    func setRemainingTimeText(_ text:String) {
+
+    func setRemainingTimeText(_ text: String) {
         delegate.updateTextTimeLeft(text)
     }
-    
-    //MARK: - Inner function
-    func updateBatteryLevelColor(_ level:Float){
+
+    // MARK: - Inner function
+    func updateBatteryLevelColor(_ level: Float) {
         var color = UIColor.red
-        
+
         switch level {
         case 0...20:
             color = UIColor.red
@@ -45,12 +45,12 @@ open class BatteryRemainingPresenter:BatteryRemainingPresenterInterface,BatteryR
             break
         case 45...100:
             color = UIColor.green
-            break            
+            break
         default:
             color = UIColor.red
             break
         }
-        
+
         delegate.updateBarColor(color)
     }
 }

@@ -11,20 +11,20 @@ import Foundation
 import UIKit
 
 public struct TrackModel {
-    public var lowerValue:CGFloat
-    public var width:CGFloat
-    public var color:CGColor
-    
-    public init(maxValue:Float,
-         lowerValue:Float,
-         upperValue:Float,
-         color:CGColor) {
-        
+    public var lowerValue: CGFloat
+    public var width: CGFloat
+    public var color: CGColor
+
+    public init(maxValue: Float,
+         lowerValue: Float,
+         upperValue: Float,
+         color: CGColor) {
+
         self.lowerValue = CGFloat(lowerValue/maxValue)
-        
+
         let innerUpperValue = CGFloat(upperValue/maxValue)
         self.width = max(0, innerUpperValue - self.lowerValue)
-        
+
         self.color = color
     }
 }

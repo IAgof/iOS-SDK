@@ -8,10 +8,10 @@
 
 import Foundation
 
-protocol ISOConfigurationInteractorInterface{
-    func setISOToDevice(_ value:Int)
+protocol ISOConfigurationInteractorInterface {
+    func setISOToDevice(_ value: Int)
 }
 
-protocol ISOConfigurationInteractorDelegate{
-   
+protocol ISOConfigurationInteractorDelegate {
+
 }

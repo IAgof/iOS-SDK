@@ -8,14 +8,14 @@
 
 import Foundation
 
-protocol ResolutionsSelectorInteractorInterface{
+protocol ResolutionsSelectorInteractorInterface {
     func getResolutions()
-    func findInitResolutionInList(_ resolution:String)
-    func setResolutionToDevice(_ resolutionPositionActive:Int)
+    func findInitResolutionInList(_ resolution: String)
+    func setResolutionToDevice(_ resolutionPositionActive: Int)
 }
 
-protocol ResolutionsSelectorInteractorDelegate{
-    func setResolutionsTitle(_ titleList:[String])
-    func setActiveResolution(_ position:Int)
-    func retrieveAVResolutionPresset(_ resolution:String)
+protocol ResolutionsSelectorInteractorDelegate {
+    func setResolutionsTitle(_ titleList: [String])
+    func setActiveResolution(_ position: Int)
+    func retrieveAVResolutionPresset(_ resolution: String)
 }

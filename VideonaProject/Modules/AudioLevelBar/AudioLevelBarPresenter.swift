@@ -8,21 +8,21 @@
 
 import UIKit
 
-open class AudioLevelBarPresenter:AudioLevelBarPresenterInterface,AudioLevelBarInteractorDelegate{
+open class AudioLevelBarPresenter: AudioLevelBarPresenterInterface, AudioLevelBarInteractorDelegate {
     //MARK : VIPER
-    var delegate:AudioLevelBarPresenterDelegate
-    var interactor:AudioLevelBarInteractorInterface?
-    
-    init(controller:AudioLevelBarView){
+    var delegate: AudioLevelBarPresenterDelegate
+    var interactor: AudioLevelBarInteractorInterface?
+
+    init(controller: AudioLevelBarView) {
         delegate = controller
         interactor = AudioLevelBarInteractor(presenter: self)
     }
-    
+
     func getAudioLevel() {
         interactor?.startToGetAudioLevel()
     }
-    
-    //MARK: Interactor Delegate
+
+    // MARK: Interactor Delegate
 
     func setAudioLevel(_ value: Float) {
         let level = 1 - (value / (-50))

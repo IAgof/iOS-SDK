@@ -8,15 +8,15 @@
 
 import Foundation
 
-protocol FocusInteractorInterface{
+protocol FocusInteractorInterface {
     func setAutoFocusMode()
     func setManualFocusMode()
     func setManualFocusModeOff()
-    
-    func focusToPoint(_ tapLocation:CGPoint,
-                      viewFrame:CGRect)
+
+    func focusToPoint(_ tapLocation: CGPoint,
+                      viewFrame: CGRect)
 }
 
-protocol FocusInteractorDelegate{
+protocol FocusInteractorDelegate {
     func sendFocusPoint(_ point: CGPoint)
 }

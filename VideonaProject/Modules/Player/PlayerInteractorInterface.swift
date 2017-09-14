@@ -9,5 +9,5 @@
 import Foundation
 
 public protocol PlayerInteractorInterface {
-    func findVideosToPlay()->(URL)
+    func findVideosToPlay() -> (URL)
 }

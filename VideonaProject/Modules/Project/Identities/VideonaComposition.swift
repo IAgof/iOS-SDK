@@ -9,27 +9,27 @@
 import Foundation
 import AVFoundation
 
-public class VideoComposition{
-    public var mutableComposition:AVMutableComposition?
-    public var audioMix:AVAudioMix?
-    public var videoComposition:AVMutableVideoComposition?
+public class VideoComposition {
+    public var mutableComposition: AVMutableComposition?
+    public var audioMix: AVAudioMix?
+    public var videoComposition: AVMutableVideoComposition?
     public static let videoTimeScale: Int32 = 600
     public var resolution: Resolution?
-    public var layerAnimation:CALayer?
+    public var layerAnimation: CALayer?
     public var fadeInTransitionTimeRanges: [CMTimeRange] = []
     public var fadeOutTransitionTimeRanges: [CMTimeRange] = []
     public var resolutions: [ResolutionTime] = []
-    
-    public init(mutableComposition:AVMutableComposition){
+
+    public init(mutableComposition: AVMutableComposition) {
         self.mutableComposition = mutableComposition
     }
-    
+
     public func addTransition(trackTimeRange: CMTimeRange,
-                              transitionTime: CMTime){
-        
+                              transitionTime: CMTime) {
+
         fadeInTransitionTimeRanges.append(CMTimeRange(start: trackTimeRange.start,
                                                       duration: transitionTime))
-        
+
         fadeOutTransitionTimeRanges.append(CMTimeRange(start: CMTimeSubtract(trackTimeRange.end, transitionTime),
                                                        duration: transitionTime))
     }

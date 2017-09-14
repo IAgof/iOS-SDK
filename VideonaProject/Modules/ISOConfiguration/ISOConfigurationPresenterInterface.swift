@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol ISOConfigurationPresenterInterface{
+protocol ISOConfigurationPresenterInterface {
     func autoISOPushed()
     func fiftyISOPushed()
     func oneHundredISOPushed()
@@ -17,7 +17,7 @@ protocol ISOConfigurationPresenterInterface{
     func maxISOPushed()
 }
 
-protocol ISOConfigurationPresenterDelegate{
+protocol ISOConfigurationPresenterDelegate {
     func deselectAllButtons()
     func selectAutoButton()
     func selectFiftyButton()

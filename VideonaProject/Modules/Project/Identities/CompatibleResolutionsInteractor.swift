@@ -10,10 +10,10 @@ import Foundation
 import AVFoundation
 
 public class CompatibleResolutionsInteractor: NSObject {
-    
+
     public func getCompatibleResolutions() -> Array<String> {
         var compatibleResolutions = Array<String>()
-        
+
         if #available(iOS 9.0, *) {
             compatibleResolutions.append(AVCaptureSessionPreset3840x2160)
         }
