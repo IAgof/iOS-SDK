@@ -6,11 +6,10 @@
 //  Copyright © 2016 Videona. All rights reserved.
 //
 
-
-protocol FocalLensSliderPresenterInterface{
-    func sliderValueHasChangedTo(_ value:Float)
+protocol FocalLensSliderPresenterInterface {
+    func sliderValueHasChangedTo(_ value: Float)
 }
 
-protocol FocalLensSliderPresenterDelegate{
+protocol FocalLensSliderPresenterDelegate {
 
 }

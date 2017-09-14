@@ -15,25 +15,25 @@ public protocol DuplicatePresenterInterface {
     func pushCancelHandler()
     func pushAcceptHandler()
     func pushBack()
-    
+
     func pushLessClips()
     func pushPlusClips()
     func expandPlayer()
 }
 
 public protocol DuplicatePresenterDelegate {
-    func setNumberDuplicates(_ text:String)
-    func setCloneYourClipText(_ text:String)
-    func setThumbnails(_ image:UIImage)
-    func getThumbSize()->CGRect
+    func setNumberDuplicates(_ text: String)
+    func setCloneYourClipText(_ text: String)
+    func setThumbnails(_ image: UIImage)
+    func getThumbSize() -> CGRect
     func showMinusButton()
     func hideMinusButton()
     func bringToFrontExpandPlayerButton()
-    
+
     func acceptFinished()
     func pushBackFinished()
     func expandPlayerToView()
     func setStopToVideo()
-    func updatePlayerOnView(_ composition:VideoComposition)
-    func trackNumberOfDuplicates(numberOfDuplicates number:Int)
+    func updatePlayerOnView(_ composition: VideoComposition)
+    func trackNumberOfDuplicates(numberOfDuplicates number: Int)
 }

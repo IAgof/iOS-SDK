@@ -8,10 +8,10 @@
 
 import Foundation
 
-protocol AudioLevelBarInteractorInterface{
+protocol AudioLevelBarInteractorInterface {
     func startToGetAudioLevel()
 }
 
-protocol AudioLevelBarInteractorDelegate{
-    func setAudioLevel(_ value:Float)
+protocol AudioLevelBarInteractorDelegate {
+    func setAudioLevel(_ value: Float)
 }

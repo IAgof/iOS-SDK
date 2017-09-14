@@ -8,16 +8,16 @@
 
 import UIKit
 
-open class FocalLensSliderPresenter:FocalLensSliderPresenterInterface,FocalLensSliderInteractorDelegate{
+open class FocalLensSliderPresenter: FocalLensSliderPresenterInterface, FocalLensSliderInteractorDelegate {
     //MARK : VIPER
-    var delegate:FocalLensSliderPresenterDelegate
-    var interactor:FocalLensSliderInteractorInterface?
-    
-    init(controller:FocalLensSliderView){
+    var delegate: FocalLensSliderPresenterDelegate
+    var interactor: FocalLensSliderInteractorInterface?
+
+    init(controller: FocalLensSliderView) {
         delegate = controller
         interactor = FocalLensSliderInteractor(presenter: self)
     }
-    
+
     func sliderValueHasChangedTo(_ value: Float) {
         interactor?.setLensDistanceTo(value)
     }

@@ -8,12 +8,12 @@
 
 import UIKit
 
-protocol BatteryRemainingPresenterInterface{
+protocol BatteryRemainingPresenterInterface {
     func updateBatteryLevel()
 }
 
-protocol BatteryRemainingPresenterDelegate{
+protocol BatteryRemainingPresenterDelegate {
     func updateBarValue(_ value: CGFloat)
-    func updateBarColor(_ color:UIColor)
-    func updateTextTimeLeft(_ text:String)
+    func updateBarColor(_ color: UIColor)
+    func updateTextTimeLeft(_ text: String)
 }

@@ -8,11 +8,11 @@
 
 import Foundation
 
-protocol BatteryRemainingInteractorInterface{
+protocol BatteryRemainingInteractorInterface {
     func getBatteryUpdateValues()
 }
 
-protocol BatteryRemainingInteractorDelegate{
-    func setPercentValue(_ level:Float)
-    func setRemainingTimeText(_ text:String)
+protocol BatteryRemainingInteractorDelegate {
+    func setPercentValue(_ level: Float)
+    func setRemainingTimeText(_ text: String)
 }

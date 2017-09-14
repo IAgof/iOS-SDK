@@ -10,17 +10,17 @@ import Foundation
 
 class VideonaRangeSliderThumbLayer: CALayer {
     var highlighted = false
-    weak var rangeSlider : VideonaRangeSlider?
-    var image:UIImage?
-    
+    weak var rangeSlider: VideonaRangeSlider?
+    var image: UIImage?
+
     override func layoutSublayers() {
         super.layoutSublayers()
-        
-        guard let height = rangeSlider?.frame.height else{
+
+        guard let height = rangeSlider?.frame.height else {
             print("no range slider height")
             return
         }
-        
+
         self.cornerRadius = self.bounds.width / 2
         self.frame = CGRect(x: self.frame.origin.x,
                                 y: (height-self.frame.height)/2,
@@ -28,13 +28,13 @@ class VideonaRangeSliderThumbLayer: CALayer {
                                 height: self.frame.height)
         self.setNeedsDisplay()
     }
-    
+
     override func draw(in ctx: CGContext) {
-        if image == nil{
+        if image == nil {
             ctx.strokePath()
-        }else{
+        } else {
             ctx.drawFlipped(image: image!.cgImage!, rect: CGRect(x: 0, y: 0, width: image!.size.width, height: image!.size.height))
-            
+
             self.backgroundColor = UIColor.clear.cgColor
         }
     }

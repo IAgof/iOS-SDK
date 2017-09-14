@@ -8,10 +8,10 @@
 
 import Foundation
 
-protocol FocalLensSliderInteractorInterface{
-    func setLensDistanceTo(_ value:Float)
+protocol FocalLensSliderInteractorInterface {
+    func setLensDistanceTo(_ value: Float)
 }
 
-protocol FocalLensSliderInteractorDelegate{
+protocol FocalLensSliderInteractorDelegate {
 
 }

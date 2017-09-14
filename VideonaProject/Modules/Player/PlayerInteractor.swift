@@ -8,9 +8,9 @@
 
 import Foundation
 
-open class PlayerInteractor: NSObject,PlayerInteractorInterface {
-    
-    open func findVideosToPlay()->(URL){
+open class PlayerInteractor: NSObject, PlayerInteractorInterface {
+
+    open func findVideosToPlay() -> (URL) {
         return PlayerProvider().getTestVideo() as (URL)
     }
 }

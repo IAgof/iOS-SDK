@@ -8,10 +8,10 @@
 
 import UIKit
 
-protocol AudioLevelBarPresenterInterface{
+protocol AudioLevelBarPresenterInterface {
     func getAudioLevel()
 }
 
-protocol AudioLevelBarPresenterDelegate{
-    func setAudioLevelToView(_ value:Float)
+protocol AudioLevelBarPresenterDelegate {
+    func setAudioLevelToView(_ value: Float)
 }

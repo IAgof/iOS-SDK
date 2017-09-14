@@ -6,13 +6,12 @@
 //  Copyright © 2016 Videona. All rights reserved.
 //
 
-
-protocol ZoomSliderPresenterInterface{
-    func sliderValueHasChangedTo(_ value:Float)
-    func setZoomWithPinch(_ scale:CGFloat,
-                          velocity:CGFloat)
+protocol ZoomSliderPresenterInterface {
+    func sliderValueHasChangedTo(_ value: Float)
+    func setZoomWithPinch(_ scale: CGFloat,
+                          velocity: CGFloat)
 }
 
-protocol ZoomSliderPresenterDelegate{
-    func updateSliderValue(_ value:Float)
+protocol ZoomSliderPresenterDelegate {
+    func updateSliderValue(_ value: Float)
 }

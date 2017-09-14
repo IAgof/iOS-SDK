@@ -8,21 +8,21 @@
 
 import UIKit
 
-open class ExposurePresenter:ExposurePresenterInterface,ExposureInteractorDelegate{
+open class ExposurePresenter: ExposurePresenterInterface, ExposureInteractorDelegate {
     //MARK : VIPER
-    var delegate:ExposurePresenterDelegate
-    var interactor:ExposureInteractorInterface?
-    
-    init(controller:ExposureView){
+    var delegate: ExposurePresenterDelegate
+    var interactor: ExposureInteractorInterface?
+
+    init(controller: ExposureView) {
         delegate = controller
         interactor = ExposureInteractor(presenter: self)
     }
-    
-    //MARK: Interface
+
+    // MARK: Interface
     func exposureValueChanged(_ value: Float) {
         interactor?.setExposureToDevice(value)
     }
-    
-    //MARK: Interactor Delegate
+
+    // MARK: Interactor Delegate
 
 }

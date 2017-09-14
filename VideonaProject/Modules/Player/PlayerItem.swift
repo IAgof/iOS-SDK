@@ -8,19 +8,19 @@
 
 import Foundation
 
-open class PlayerItem:NSObject{
-    
-    var movieURL:URL
-    
-    init(movieURL:URL) {
+open class PlayerItem: NSObject {
+
+    var movieURL: URL
+
+    init(movieURL: URL) {
         self.movieURL = movieURL
     }
-    
-    open func setVideoURL(_ movieURL:URL){
+
+    open func setVideoURL(_ movieURL: URL) {
         self.movieURL = movieURL
     }
-    
-    open func getMovieURL()->URL{
+
+    open func getMovieURL() -> URL {
         return movieURL
     }
 }

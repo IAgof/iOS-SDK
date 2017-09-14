@@ -8,41 +8,41 @@
 
 import UIKit
 
-open class ExpositionModesPresenter:ExpositionModesPresenterInterface{
+open class ExpositionModesPresenter: ExpositionModesPresenterInterface {
     //MARK : VIPER
-    var delegate:ExpositionModesPresenterDelegate
-    var interactor:ExpositionModesInteractorInterface?
-    
+    var delegate: ExpositionModesPresenterDelegate
+    var interactor: ExpositionModesInteractorInterface?
+
     var manualSliderIsShowing = false
-    
-    init(controller:ExpositionModesView){
+
+    init(controller: ExpositionModesView) {
         delegate = controller
         interactor = ExpositionModesInteractor(presenter: self)
     }
-    
+
     func autoModePushed() {
         interactor?.setAutoExposureMode()
-        
+
         hideManualSliderIfYouCan()
 
         setAllButtonsUnSelected()
         delegate.setAutoButtonSelected(true)
     }
-    
+
     func manualSliderPushed() {
         if manualSliderIsShowing {
             hideManualSliderIfYouCan()
-        }else{
+        } else {
             delegate.showExpositionSlider()
-            
+
             interactor?.setManualExposureModeOff()
             setAllButtonsUnSelected()
             delegate.setSliderManualButtonSelected(true)
-            
+
             manualSliderIsShowing = true
         }
     }
-    
+
     func centerModePushed() {
         interactor?.setExpositionCenterMode()
         hideManualSliderIfYouCan()
@@ -50,7 +50,7 @@ open class ExpositionModesPresenter:ExpositionModesPresenterInterface{
         setAllButtonsUnSelected()
         delegate.setCenterButtonSelected(true)
     }
-    
+
     func manualModePushed() {
         interactor?.setManualExposureMode()
         hideManualSliderIfYouCan()
@@ -58,35 +58,35 @@ open class ExpositionModesPresenter:ExpositionModesPresenterInterface{
         setAllButtonsUnSelected()
         delegate.setManualButtonSelected(true)
     }
-    
-    func hideManualSliderIfYouCan(){
+
+    func hideManualSliderIfYouCan() {
         if manualSliderIsShowing {
             delegate.hideExpositionSlider()
-            
+
             manualSliderIsShowing = false
         }
     }
-    
+
     func checkIfHadToShowSlider() {
-        if manualSliderIsShowing{
+        if manualSliderIsShowing {
             delegate.showExpositionSlider()
         }
     }
-    
-    func setAllButtonsUnSelected(){
+
+    func setAllButtonsUnSelected() {
         delegate.setAutoButtonSelected(false)
         delegate.setCenterButtonSelected(false)
         delegate.setManualButtonSelected(false)
         delegate.setSliderManualButtonSelected(false)
     }
-    
+
     func setFocusAtPoint(_ point: CGPoint, frame: CGRect) {
         interactor?.expositionToPoint(point,
                                       viewFrame: frame)
     }
 }
-extension ExpositionModesPresenter:ExpositionModesInteractorDelegate{
-    func sendFocusPoint(_ point: CGPoint){
+extension ExpositionModesPresenter:ExpositionModesInteractorDelegate {
+    func sendFocusPoint(_ point: CGPoint) {
         delegate.sendFocusPoint(point)
     }
 }

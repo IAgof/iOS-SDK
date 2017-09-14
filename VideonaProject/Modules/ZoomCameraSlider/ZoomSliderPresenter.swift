@@ -8,27 +8,27 @@
 
 import UIKit
 
-open class ZoomSliderPresenter:ZoomSliderPresenterInterface,ZoomSliderInteractorDelegate{
+open class ZoomSliderPresenter: ZoomSliderPresenterInterface, ZoomSliderInteractorDelegate {
     //MARK : VIPER
-    var delegate:ZoomSliderPresenterDelegate
-    var interactor:ZoomSliderInteractorInterface?
-    
-    init(controller:ZoomSliderView){
+    var delegate: ZoomSliderPresenterDelegate
+    var interactor: ZoomSliderInteractorInterface?
+
+    init(controller: ZoomSliderView) {
         delegate = controller
         interactor = ZoomSliderInteractor(presenter: self)
     }
-    
+
     func sliderValueHasChangedTo(_ value: Float) {
         interactor?.setZoomTo(value)
     }
-    
-    func setZoomWithPinch(_ scale:CGFloat,
-                          velocity:CGFloat){
+
+    func setZoomWithPinch(_ scale: CGFloat,
+                          velocity: CGFloat) {
         interactor?.setZoomTo(scale,
                               velocity: velocity)
     }
-    
-    //MARK: - Delegate
+
+    // MARK: - Delegate
     func zoomPinchedValueUpdate(_ value: Float) {
         delegate.updateSliderValue(value)
     }

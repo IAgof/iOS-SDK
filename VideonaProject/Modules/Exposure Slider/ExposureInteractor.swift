@@ -12,38 +12,38 @@ import AVFoundation
 
 class ExposureInteractor: ExposureInteractorInterface {
     //MARK : VIPER
-    var delegate:ExposureInteractorDelegate?
-    
-    init(presenter:ExposurePresenter){
+    var delegate: ExposureInteractorDelegate?
+
+    init(presenter: ExposurePresenter) {
         delegate = presenter
     }
-    
+
     func setExposureToDevice(_ value: Float) {
         updateExposure(value)
     }
-    
-    func updateExposure(_ exposureValue : Float) {
-        do{
+
+    func updateExposure(_ exposureValue: Float) {
+        do {
             let captureDevices = AVCaptureDevice.devices(withMediaType: AVMediaTypeVideo)
-            for captureDevice in captureDevices!{
+            for captureDevice in captureDevices! {
                 let device = captureDevice as! AVCaptureDevice
                 do {
                     try device.lockForConfiguration()
-                
+
                     device.exposureMode = .locked
-                    
+
                     device.setExposureTargetBias(exposureValue, completionHandler: {
                         time in
                         print("set exposure time:\n\(time)")
                     })
-                    
+
                     device.unlockForConfiguration()
-                    
-                }catch{
+
+                } catch {
                     return
                 }
             }
         }
     }
-    
+
 }

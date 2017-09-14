@@ -10,19 +10,19 @@ import Foundation
 import AVFoundation
 
 public struct Resolution {
-    public var width:CGFloat
-    public var height:CGFloat
-    
-    public var front:String = AVCaptureSessionPreset1280x720
-    public var back:String
-    
-    public var size: CGSize{
+    public var width: CGFloat
+    public var height: CGFloat
+
+    public var front: String = AVCaptureSessionPreset1280x720
+    public var back: String
+
+    public var size: CGSize {
         return CGSize(width: width, height: height)
     }
-    
-    public init(AVResolution:String){
+
+    public init(AVResolution: String) {
         back = AVResolution
-        
+
         switch AVResolution {
         case AVCaptureSessionPreset352x288:
             width = 352
@@ -48,11 +48,11 @@ public struct Resolution {
 }
 
 public struct CameraResolution {
-    public var frontCameraResolution:String
-    public var rearCameraResolution:String
-    
-    public init(AVResolution:String){
-        
+    public var frontCameraResolution: String
+    public var rearCameraResolution: String
+
+    public init(AVResolution: String) {
+
         if #available(iOS 9.0, *) {
             switch AVResolution {
             case AVCaptureSessionPreset3840x2160:
@@ -76,27 +76,27 @@ public struct CameraResolution {
             frontCameraResolution = AVCaptureSessionPreset1280x720
             rearCameraResolution = AVCaptureSessionPreset1280x720
         }
-    }    
+    }
 }
 
 public class AVResolutionParse: NSObject {
     var regularResolution = Utils().getStringByKeyFromSettings("regular_resolution_name")
     var mediumResolution =  Utils().getStringByKeyFromSettings("medium_resolution_name")
     var goodResolution =  Utils().getStringByKeyFromSettings("good_resolution_name")
-    
-    public func resolutionsToView() -> Array<String>  {
+
+    public func resolutionsToView() -> Array<String> {
         var resolutionsToTheTableView = Array<String>()
-        
+
         let resolutionsCompatibles = CompatibleResolutionsInteractor().getCompatibleResolutions()
-        
-        for resolution in resolutionsCompatibles{
+
+        for resolution in resolutionsCompatibles {
             resolutionsToTheTableView.append(self.parseResolutionToView(resolution))
         }
-        
+
         return resolutionsToTheTableView
     }
-    
-    public func parseResolutionToView(_ resolution:String) -> String {
+
+    public func parseResolutionToView(_ resolution: String) -> String {
         if #available(iOS 9.0, *) {
             switch resolution {
             case AVCaptureSessionPreset3840x2160:
@@ -112,8 +112,8 @@ public class AVResolutionParse: NSObject {
             return mediumResolution
         }
     }
-    
-    public func parseResolutionsToInteractor(_ textResolution:String) -> String {
+
+    public func parseResolutionsToInteractor(_ textResolution: String) -> String {
         switch textResolution {
         case goodResolution:
             if #available(iOS 9.0, *) {

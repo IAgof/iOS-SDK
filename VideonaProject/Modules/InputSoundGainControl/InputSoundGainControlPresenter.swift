@@ -8,14 +8,14 @@
 
 import UIKit
 
-open class InputSoundGainControlPresenter:InputSoundGainControlPresenterInterface,InputSoundGainControlInteractorDelegate{
+open class InputSoundGainControlPresenter: InputSoundGainControlPresenterInterface, InputSoundGainControlInteractorDelegate {
     //MARK : VIPER
-    var interactor:InputSoundGainControlInteractorInterface?
-    
-    init(){
+    var interactor: InputSoundGainControlInteractorInterface?
+
+    init() {
         interactor = InputSoundGainControlInteractor(presenter: self)
     }
-    
+
     func sliderValueHasChangedTo(_ value: Float) {
         interactor?.setInputGainLevel(value)
     }

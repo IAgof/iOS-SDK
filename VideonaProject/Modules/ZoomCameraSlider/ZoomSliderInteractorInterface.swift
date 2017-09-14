@@ -8,12 +8,12 @@
 
 import Foundation
 
-protocol ZoomSliderInteractorInterface{
-    func setZoomTo(_ value:Float)
-    func setZoomTo(_ scale:CGFloat,
-              velocity:CGFloat)
+protocol ZoomSliderInteractorInterface {
+    func setZoomTo(_ value: Float)
+    func setZoomTo(_ scale: CGFloat,
+              velocity: CGFloat)
 }
 
-protocol ZoomSliderInteractorDelegate{
-    func zoomPinchedValueUpdate(_ value:Float)
+protocol ZoomSliderInteractorDelegate {
+    func zoomPinchedValueUpdate(_ value: Float)
 }

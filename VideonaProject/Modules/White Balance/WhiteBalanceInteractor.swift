@@ -12,62 +12,62 @@ import AVFoundation
 
 class WhiteBalanceInteractor: WhiteBalanceInteractorInterface {
     //MARK : VIPER
-    var delegate:WhiteBalanceInteractorDelegate?
-    
-    init(presenter:WhiteBalancePresenter){
+    var delegate: WhiteBalanceInteractorDelegate?
+
+    init(presenter: WhiteBalancePresenter) {
         delegate = presenter
     }
-    
-    var WBValue:Int = -1{
-        didSet{
+
+    var WBValue: Int = -1 {
+        didSet {
             if WBValue == WhiteBalanceGain.auto.rawValue {
                 setAutoWB()
-            }else{
+            } else {
                 updateWB(Float(WBValue))
             }
         }
     }
-    
+
     func setWBToDevice(_ value: WhiteBalanceGain) {
         WBValue = value.rawValue
     }
-    
-    func updateWB(_ wbValue : Float) {
-        do{
+
+    func updateWB(_ wbValue: Float) {
+        do {
             let captureDevices = AVCaptureDevice.devices(withMediaType: AVMediaTypeVideo)
-            for captureDevice in captureDevices!{
+            for captureDevice in captureDevices! {
                 let device = captureDevice as! AVCaptureDevice
                 do {
                     try device.lockForConfiguration()
-                                        
+
                    let tempAndTint = device.deviceWhiteBalanceGains(for: AVCaptureWhiteBalanceTemperatureAndTintValues.init(temperature: wbValue, tint: 0))
-                    
+
                     device.setWhiteBalanceModeLockedWithDeviceWhiteBalanceGains(tempAndTint, completionHandler: {
                         time in
                         print("Set temperature completion time: \n \(time) ")
                     })
-                    
+
                     device.unlockForConfiguration()
-                    
-                }catch{
+
+                } catch {
                     return
                 }
             }
         }
     }
-    
+
     func setAutoWB() {
-        do{
+        do {
             let captureDevices = AVCaptureDevice.devices(withMediaType: AVMediaTypeVideo)
-            for captureDevice in captureDevices!{
+            for captureDevice in captureDevices! {
                 let device = captureDevice as! AVCaptureDevice
                 do {
                     try device.lockForConfiguration()
-                    
+
                     device.whiteBalanceMode = .continuousAutoWhiteBalance
-                    
+
                     device.unlockForConfiguration()
-                }catch{
+                } catch {
                     return
                 }
             }

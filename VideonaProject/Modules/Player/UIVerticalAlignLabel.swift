@@ -8,27 +8,27 @@
 
 import Foundation
 
-public enum VerticalAlignment : Int {
+public enum VerticalAlignment: Int {
     case VerticalAlignmentTop = 0
     case VerticalAlignmentMiddle = 1
     case VerticalAlignmentBottom = 2
 }
 
 class UIVerticalAlignLabel: UILabel {
-    
-    var verticalAlignment : VerticalAlignment = .VerticalAlignmentTop {
+
+    var verticalAlignment: VerticalAlignment = .VerticalAlignmentTop {
         didSet {
             setNeedsDisplay()
         }
     }
-    
-    required init(coder aDecoder: NSCoder){
+
+    required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
     }
-    
+
     override func textRect(forBounds bounds: CGRect, limitedToNumberOfLines: Int) -> CGRect {
         let rect = super.textRect(forBounds: bounds, limitedToNumberOfLines: limitedToNumberOfLines)
-        
+
         switch(verticalAlignment) {
         case .VerticalAlignmentTop:
             return CGRect(x: bounds.origin.x,
@@ -47,7 +47,7 @@ class UIVerticalAlignLabel: UILabel {
                           height: rect.size.height)
         }
     }
-    
+
     override func drawText(in rect: CGRect) {
         let r = self.textRect(forBounds: rect, limitedToNumberOfLines: self.numberOfLines)
         super.drawText(in: r)

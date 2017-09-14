@@ -10,13 +10,13 @@ import Foundation
 import AVFoundation
 
 public protocol SplitInteractorInterface {
-    func setVideoPosition(_ position:Int)
+    func setVideoPosition(_ position: Int)
     func getVideoParams()
-    func setUpComposition(_ completion:(VideoComposition)->Void)
-    func setSplitVideosToProject(_ splitTime:Double)
+    func setUpComposition(_ completion: (VideoComposition) -> Void)
+    func setSplitVideosToProject(_ splitTime: Double)
 }
 
 public protocol SplitInteractorDelegate {
-    func settSplitValue(_ value:Float)
-    func setMaximumValue(_ value:Float)
+    func settSplitValue(_ value: Float)
+    func setMaximumValue(_ value: Float)
 }

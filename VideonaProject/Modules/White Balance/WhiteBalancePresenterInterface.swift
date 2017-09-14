@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol WhiteBalancePresenterInterface{
+protocol WhiteBalancePresenterInterface {
     func autoPushed()
     func cloudyPushed()
     func daylightPushed()
@@ -17,7 +17,7 @@ protocol WhiteBalancePresenterInterface{
     func tungstenPushed()
 }
 
-protocol WhiteBalancePresenterDelegate{
+protocol WhiteBalancePresenterDelegate {
     func deselectAllButtons()
     func selectAutoButton()
     func selectCloudyButton()

@@ -8,10 +8,10 @@
 
 import UIKit
 
-protocol ExposurePresenterInterface{
-    func exposureValueChanged(_ value:Float)
+protocol ExposurePresenterInterface {
+    func exposureValueChanged(_ value: Float)
 }
 
-protocol ExposurePresenterDelegate{
+protocol ExposurePresenterDelegate {
 
 }

@@ -10,15 +10,15 @@ import UIKit
 
 public let reuseIdentifier = "VideoCell"
 open class VideoThumbnail: UICollectionViewCell {
-    
-    @IBOutlet var imgView : UIImageView!
-    @IBOutlet var timeLabel : UILabel!
 
-    func setThumbnailImage(_ thumbnailImage: UIImage){
+    @IBOutlet var imgView: UIImageView!
+    @IBOutlet var timeLabel: UILabel!
+
+    func setThumbnailImage(_ thumbnailImage: UIImage) {
         self.imgView.image = thumbnailImage
     }
-    
-    func setTimeText(_ time:String){
+
+    func setTimeText(_ time: String) {
         self.timeLabel.text = time
     }
 }

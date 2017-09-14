@@ -6,11 +6,10 @@
 //  Copyright © 2016 Videona. All rights reserved.
 //
 
-
-protocol InputSoundGainControlPresenterInterface{
-    func sliderValueHasChangedTo(_ value:Float)
+protocol InputSoundGainControlPresenterInterface {
+    func sliderValueHasChangedTo(_ value: Float)
 }
 
-protocol InputSoundGainControlPresenterDelegate{
+protocol InputSoundGainControlPresenterDelegate {
 
 }

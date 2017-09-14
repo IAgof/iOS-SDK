@@ -10,10 +10,10 @@ public protocol VideonaRangeSliderDelegate {
     func rangeSliderLowerThumbValueChanged()
     func rangeSliderMiddleThumbValueChanged()
     func rangeSliderUpperThumbValueChanged()
-    
+
     func rangeSliderLowerValueStartToChange()
     func rangeSliderUpperValueStartToChange()
-    
+
     func rangeSliderLowerValueStopToChange()
     func rangeSliderUpperValueStopToChange()
 }

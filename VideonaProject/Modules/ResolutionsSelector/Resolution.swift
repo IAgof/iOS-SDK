@@ -8,8 +8,7 @@
 
 import Foundation
 
-
 struct ResolutionViewModel {
-    var title:String?
-    var avFrameworkSet:String?
+    var title: String?
+    var avFrameworkSet: String?
 }

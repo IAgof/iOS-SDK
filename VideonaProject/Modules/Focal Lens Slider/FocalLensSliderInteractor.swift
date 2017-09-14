@@ -13,31 +13,30 @@ import CoreAudio
 
 class FocalLensSliderInteractor: FocalLensSliderInteractorInterface {
     //MARK : VIPER
-    var delegate:FocalLensSliderInteractorDelegate?
-    var audioSession:AVCaptureSession?
-    
+    var delegate: FocalLensSliderInteractorDelegate?
+    var audioSession: AVCaptureSession?
+
     var isManualModeEnabled = false
-    
-    init(presenter:FocalLensSliderPresenter){
+
+    init(presenter: FocalLensSliderPresenter) {
         delegate = presenter
     }
 
-    func setLensDistanceTo(_ value:Float){
+    func setLensDistanceTo(_ value: Float) {
         let device = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
         do {
             try device?.lockForConfiguration()
             let captureDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
-            
+
             if (captureDevice?.isFocusModeSupported(AVCaptureFocusMode.locked))! {
                 captureDevice?.setFocusModeLockedWithLensPosition(value, completionHandler: {
                     time in
                     print("time in \(time)")
                 })
             }
-            
-        }catch{
+
+        } catch {
             return
         }
     }
 }
-

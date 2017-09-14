@@ -9,7 +9,7 @@
 import Foundation
 import Photos
 
-public protocol VideoGalleryDelegate{
+public protocol VideoGalleryDelegate {
     func cancelPushed()
     func saveVideos(_ URLs: [URL])
 }

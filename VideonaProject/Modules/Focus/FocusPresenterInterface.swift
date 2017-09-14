@@ -8,23 +8,23 @@
 
 import UIKit
 
-protocol FocusPresenterInterface{
+protocol FocusPresenterInterface {
     func autoModePushed()
     func manualModePushed()
     func focusLensModePushed()
-    
+
     func checkFocalLensEnabled()
-    
-    func setFocusAtPoint(_ point:CGPoint,
-                         frame:CGRect)
+
+    func setFocusAtPoint(_ point: CGPoint,
+                         frame: CGRect)
 }
 
-protocol FocusPresenterDelegate{
+protocol FocusPresenterDelegate {
     func showFocalLens()
     func hideFocalLens()
-    
-    func setAutoButtonSelected(_ state:Bool)
-    func setTapManualButtonSelected(_ state:Bool)
-    func setFocalLensManualButtonSelected(_ state:Bool)
+
+    func setAutoButtonSelected(_ state: Bool)
+    func setTapManualButtonSelected(_ state: Bool)
+    func setFocalLensManualButtonSelected(_ state: Bool)
     func sendFocusPoint(_ point: CGPoint)
 }

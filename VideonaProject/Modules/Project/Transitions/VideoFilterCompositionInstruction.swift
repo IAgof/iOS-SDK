@@ -18,34 +18,34 @@ import Foundation
 import AVFoundation
 import CoreImage
 
-class VideoFilterCompositionInstruction : AVMutableVideoCompositionInstruction{
-    
+class VideoFilterCompositionInstruction: AVMutableVideoCompositionInstruction {
+
    // For implementation in Swift 2.x, look at the history of this file at
    // https://github.com/jojodmo/VideoFilterExporter/blob/1d506238a445b6684ef40d2701419cc01158331e/VideoFilterCompositionInstruction.swift
-   
+
     let filters: [CIFilter]
     let context: CIContext
     let track: AVAssetTrack
-    let transitionColor:CIColor
+    let transitionColor: CIColor
     public var fadeInTransitionTimeRanges: [CMTimeRange] = []
     public var fadeOutTransitionTimeRanges: [CMTimeRange] = []
-    
-    override var containsTweening: Bool{get{return false}}
-    
-    init(track: AVAssetTrack , filters: [CIFilter], context: CIContext,transitionColor color: CIColor,transitionTime: CMTime, fadeInTransitionTimeRanges: [CMTimeRange], fadeOutTransitionTimeRanges: [CMTimeRange]){
+
+    override var containsTweening: Bool {get {return false}}
+
+    init(track: AVAssetTrack, filters: [CIFilter], context: CIContext, transitionColor color: CIColor, transitionTime: CMTime, fadeInTransitionTimeRanges: [CMTimeRange], fadeOutTransitionTimeRanges: [CMTimeRange]) {
         self.track = track
         self.filters = filters
         self.context = context
         self.transitionColor = color
         self.fadeInTransitionTimeRanges = fadeInTransitionTimeRanges
         self.fadeOutTransitionTimeRanges = fadeOutTransitionTimeRanges
-        
+
         super.init()
-        
+
         self.enablePostProcessing = true
     }
-    
-    required init?(coder aDecoder: NSCoder){
+
+    required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }

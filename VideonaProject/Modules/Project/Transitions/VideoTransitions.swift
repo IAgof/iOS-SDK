@@ -11,21 +11,21 @@ import AVFoundation
 import CoreImage
 
 class VideoTransitions {
-    let transitionTime:CMTime
-    
-    init(transitionTime:CMTime){
+    let transitionTime: CMTime
+
+    init(transitionTime: CMTime) {
         self.transitionTime = transitionTime
     }
-    
+
     func setInstructions(videonaComposition: VideoComposition,
-                         transitionColor:CIColor,
-                         filters:[CIFilter]){
-        
+                         transitionColor: CIColor,
+                         filters: [CIFilter]) {
+
         guard let mutableComposition = videonaComposition.mutableComposition else {return}
         guard let videoComposition = videonaComposition.videoComposition else {return}
         let instruction = AVMutableVideoCompositionInstruction()
-        guard let videoTrack = mutableComposition.tracks(withMediaType: AVMediaTypeVideo).first else{return}
-        
+        guard let videoTrack = mutableComposition.tracks(withMediaType: AVMediaTypeVideo).first else {return}
+
         //TODO: SOLVE issue with custom compositor
 //        let eagl = EAGLContext(api: EAGLRenderingAPI.openGLES2)
 //        let context = CIContext(eaglContext: eagl!, options: [kCIContextWorkingColorSpace : NSNull()])
@@ -41,15 +41,15 @@ class VideoTransitions {
                                        transitionTime: transitionTime,
                                        atTime: kCMTimeZero,
                                        videonaComposition: videonaComposition)
-        
+
         videoComposition.instructions = [instruction]
     }
-    
-    func setInstructionsToTrack(instruction:AVMutableVideoCompositionInstruction,
-                                videoTrack:AVAssetTrack,
-                                transitionTime:CMTime,
-                                atTime:CMTime,
-                                videonaComposition:VideoComposition){
+
+    func setInstructionsToTrack(instruction: AVMutableVideoCompositionInstruction,
+                                videoTrack: AVAssetTrack,
+                                transitionTime: CMTime,
+                                atTime: CMTime,
+                                videonaComposition: VideoComposition) {
         let layerInstruction = AVMutableVideoCompositionLayerInstruction(assetTrack: videoTrack)
         layerInstruction.setOpacity(1, at: kCMTimeZero)
 
@@ -60,12 +60,12 @@ class VideoTransitions {
         }
         instruction.layerInstructions.append(layerInstruction)
     }
-    
-    func getTransform(desireSize:CGSize,
-                             actualSize:CGSize) -> CGAffineTransform{
+
+    func getTransform(desireSize: CGSize,
+                             actualSize: CGSize) -> CGAffineTransform {
         let scaleToTransformX = (desireSize.width / actualSize.width)
         let scaleToTransformY = (desireSize.height / actualSize.height)
-        
+
         return CGAffineTransform(scaleX: scaleToTransformX, y: scaleToTransformY)
     }
 }

@@ -10,16 +10,16 @@ import Foundation
 import UIKit
 
 public protocol PlayerViewDelegate {
-    func seekBarUpdate(_ value:Float)
+    func seekBarUpdate(_ value: Float)
 }
 
-public protocol PlayerViewFinishedDelegate{
+public protocol PlayerViewFinishedDelegate {
     func playerHasLoaded()
     func playerStartsToPlay()
     func playerPause()
-    func playerSeeksTo(_ value:Float)
+    func playerSeeksTo(_ value: Float)
 }
 
 public protocol PlayerViewSetter {
-    func addPlayerAsSubview(_ player:PlayerView)
+    func addPlayerAsSubview(_ player: PlayerView)
 }

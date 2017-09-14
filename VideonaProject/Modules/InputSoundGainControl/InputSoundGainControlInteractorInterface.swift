@@ -8,10 +8,10 @@
 
 import Foundation
 
-protocol InputSoundGainControlInteractorInterface{
-    func setInputGainLevel(_ value:Float)
+protocol InputSoundGainControlInteractorInterface {
+    func setInputGainLevel(_ value: Float)
 }
 
-protocol InputSoundGainControlInteractorDelegate{
+protocol InputSoundGainControlInteractorDelegate {
 
 }
