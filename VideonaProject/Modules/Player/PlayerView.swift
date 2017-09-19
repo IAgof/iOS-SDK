@@ -32,7 +32,7 @@ private class ElapsedTimeFormatter: NumberFormatter {
     var state: PlayerViewFinishedDelegate?
 
     // MARK: - Variables
-    public var player: AVPlayer?
+    public var player: AVPlayer = AVPlayer()
     var playerLayer: AVPlayerLayer?
     var movieComposition: AVMutableComposition!
     var audioMix: AVAudioMix?
@@ -92,7 +92,7 @@ private class ElapsedTimeFormatter: NumberFormatter {
     open func setPlayerVideoComposition(_ videoComposition: AVMutableVideoComposition) {
         self.videoComposition = videoComposition
 
-        if let playerItem = self.player?.currentItem { playerItem.videoComposition = videoComposition }
+        if let playerItem = self.player.currentItem { playerItem.videoComposition = videoComposition }
     }
 
     override open func layoutSubviews() {
@@ -154,15 +154,15 @@ private class ElapsedTimeFormatter: NumberFormatter {
     }
 
     func setUpVideoPlayer(withPlayerItem playerItem: AVPlayerItem) {
+		
+        if player.currentItem == nil {
+			
+			let player = AVPlayer.init(playerItem: playerItem)
 
-        if player == nil {
-
-            player = AVPlayer.init(playerItem: playerItem)
-
-            player!.addPeriodicTimeObserver(forInterval: CMTimeMake(1, 1000), queue: DispatchQueue.main) { _ in
-                if self.player!.currentItem?.status == .readyToPlay && (self.player!.rate != 0) && (self.player!.error == nil) {//Playing
+            player.addPeriodicTimeObserver(forInterval: CMTimeMake(1, 1000), queue: DispatchQueue.main) { _ in
+                if self.player.currentItem?.status == .readyToPlay && (self.player.rate != 0) && (self.player.error == nil) {//Playing
                     self.eventHandler?.updateSeekBar()
-                    guard let time = self.player?.currentItem?.asset.duration.seconds else {return}
+                    guard let time = self.player.currentItem?.asset.duration.seconds else {return}
                     self.actualSliderValueLabel.text = "\(self.timeToStringInMinutesAndseconds(time))"
                 }
             }
@@ -177,10 +177,10 @@ private class ElapsedTimeFormatter: NumberFormatter {
             addSwipeGesture()
 
         } else {
-            player?.replaceCurrentItem(with: playerItem)
+            player.replaceCurrentItem(with: playerItem)
         }
 
-        guard let time = self.player?.currentItem?.asset.duration.seconds else {return}
+        guard let time = self.player.currentItem?.asset.duration.seconds else {return}
         self.actualSliderValueLabel.text = "\(self.timeToStringInMinutesAndseconds(time))"
         if !playerItem.duration.seconds.isNaN {
             self.seekSlider.maxValue = Float(playerItem.duration.seconds)
@@ -199,21 +199,20 @@ private class ElapsedTimeFormatter: NumberFormatter {
         if let swipeGesture = gesture as? UIPanGestureRecognizer {
             let velocity = swipeGesture.velocity(in: playerContainer)
             debugPrint(velocity)
-            if let actualTime = player?.currentTime() {
-                guard let maxTime = player?.currentItem?.duration.seconds else {return}
-
-                var timeSeekTo = Float(actualTime.seconds) + Float(velocity.x/100)
-
-                if timeSeekTo > Float(maxTime) {
-                    timeSeekTo = timeSeekTo - Float(maxTime)
-                } else if timeSeekTo < 0 {
-                    timeSeekTo = Float(maxTime) - timeSeekTo
-                }
-
-                self.seekToTime(timeSeekTo)
-                self.state?.playerSeeksTo(timeSeekTo)
-                self.delegate?.seekBarUpdate(timeSeekTo)
-            }
+            let actualTime = player.currentTime()
+			guard let maxTime = player.currentItem?.duration.seconds else {return}
+			
+			var timeSeekTo = Float(actualTime.seconds) + Float(velocity.x/100)
+			
+			if timeSeekTo > Float(maxTime) {
+				timeSeekTo = timeSeekTo - Float(maxTime)
+			} else if timeSeekTo < 0 {
+				timeSeekTo = Float(maxTime) - timeSeekTo
+			}
+			
+			self.seekToTime(timeSeekTo)
+			self.state?.playerSeeksTo(timeSeekTo)
+			self.delegate?.seekBarUpdate(timeSeekTo)
         }
     }
 
@@ -228,13 +227,10 @@ private class ElapsedTimeFormatter: NumberFormatter {
     }
 
     open func updateSeekBarOnUI() {
-        guard (player?.currentItem?.duration.seconds) != nil else {
+        guard (player.currentItem?.duration.seconds) != nil else {
             return
         }
-        guard let currentTime = player?.currentTime().seconds else {
-            return
-        }
-
+        let currentTime = player.currentTime().seconds
         let sliderValue = Float((currentTime))
 
         self.seekSlider.selectedMaximum = Float(currentTime)
@@ -260,8 +256,8 @@ private class ElapsedTimeFormatter: NumberFormatter {
     }
 
     open func sliderBeganTracking() {
-        playerRateBeforeSeek = player!.rate
-        player!.pause()
+        playerRateBeforeSeek = player.rate
+        player.pause()
     }
 
     open func sliderEndedTracking() {
@@ -272,16 +268,16 @@ private class ElapsedTimeFormatter: NumberFormatter {
         let timeToGo = CMTimeMakeWithSeconds(Float64(seekSlider.selectedMaximum), 1000)
         let tolerance = CMTimeMake(1, 100)
 
-        player?.seek(to: timeToGo, toleranceBefore: tolerance, toleranceAfter: tolerance, completionHandler: {
+        player.seek(to: timeToGo, toleranceBefore: tolerance, toleranceAfter: tolerance, completionHandler: {
             completed in
             if (self.playerRateBeforeSeek > 0) {
-                self.player!.play()
+                self.player.play()
             }
 
             if completed {
                 self.delegate?.seekBarUpdate(Float(self.seekSlider.selectedMaximum))
 
-                if (self.player?.currentItem?.duration.seconds) != nil {
+                if (self.player.currentItem?.duration.seconds) != nil {
                     self.state?.playerSeeksTo(Float(self.seekSlider.selectedMaximum))
                 }
             }
@@ -294,8 +290,8 @@ private class ElapsedTimeFormatter: NumberFormatter {
                 print("Set up video finished")
             #endif
 
-            self.player?.pause()
-            self.player?.currentItem?.seek(to: CMTime.init(value: 0, timescale: 10))
+            self.player.pause()
+            self.player.currentItem?.seek(to: CMTime.init(value: 0, timescale: 10))
             self.state?.playerSeeksTo(0)
         })
     }
@@ -305,10 +301,7 @@ private class ElapsedTimeFormatter: NumberFormatter {
     }
 
     open func pauseVideoPlayer() {
-        guard let player = self.player else {
-            return
-        }
-        player.pause()
+		player.pause()
         state?.playerPause()
 
         #if DEBUG
@@ -317,10 +310,7 @@ private class ElapsedTimeFormatter: NumberFormatter {
     }
 
     open func playVideoPlayer() {
-        guard let player = self.player else {
-            return
-        }
-        player.play()
+		player.play()
         state?.playerStartsToPlay()
 
         //Start timer
@@ -334,9 +324,6 @@ private class ElapsedTimeFormatter: NumberFormatter {
     open func seekToTime(_ time: Float) {
 //        print("Seek to time manually to --\(time)")
 
-        guard let player = self.player else {
-            return
-        }
         if !player.currentItem!.duration.isIndefinite {
             let timeToGo = CMTimeMakeWithSeconds(Double(time), 1000)
             let tolerance = CMTimeMake(1, 100)
@@ -348,9 +335,6 @@ private class ElapsedTimeFormatter: NumberFormatter {
     open func setAVSyncLayer(_ layer: CALayer) {
         print("Animated layer frame: \(layer.frame)")
 
-        guard let player = self.player else {
-            return
-        }
         guard let currentItem = player.currentItem else {return}
         let newLayer = layer
 
@@ -384,7 +368,7 @@ private class ElapsedTimeFormatter: NumberFormatter {
     }
 
     public func setAudioMix(audioMix value: AVAudioMix) {
-        self.player?.currentItem?.audioMix = value
+        self.player.currentItem?.audioMix = value
     }
 
     func timeToStringInMinutesAndseconds(_ time: Double) -> String {
@@ -399,16 +383,10 @@ private class ElapsedTimeFormatter: NumberFormatter {
     }
 
     open func setPlayerVolume(_ level: Float) {
-        guard let player = self.player else {
-            return
-        }
         player.volume = level
     }
 
     open func setPlayerMuted(_ state: Bool) {
-        guard let player = self.player else {
-            return
-        }
         isPlayerMuted = state
         player.isMuted = isPlayerMuted
     }
@@ -435,16 +413,16 @@ private class ElapsedTimeFormatter: NumberFormatter {
     }
 
     public func removePlayer() {
-        self.player?.pause()
+        self.player.pause()
         playerLayer?.removeFromSuperlayer()
         playerLayer = nil
-        self.player = nil
+        player.replaceCurrentItem(with: nil)
     }
 
     func addFinishObserver() {
         NotificationCenter.default.addObserver(self, selector: #selector(self.onVideoStops),
                                                name: NSNotification.Name.AVPlayerItemDidPlayToEndTime,
-                                               object: player?.currentItem)
+                                               object: player.currentItem)
     }
     open func removeFinishObserver() {
         NotificationCenter.default.removeObserver(self)
