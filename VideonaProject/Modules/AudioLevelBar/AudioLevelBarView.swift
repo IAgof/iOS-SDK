@@ -92,8 +92,7 @@ public protocol AudioLevelBarDelegate {
     func setAudioLevelToView(_ value: Float) {
         DispatchQueue.main.async(execute: { () -> Void in
             self.audioLevelBar?.setProgress(value, animated: true)
+            self.delegate?.audioLevelChange(value)
         })
-
-        delegate?.audioLevelChange(value)
     }
 }
