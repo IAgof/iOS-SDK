@@ -11,6 +11,7 @@ import MBCircularProgressBar
 
 public protocol SpaceOnDiskDelegate {
     func closeSpaceOnDiskPushed()
+    func memoryValuesUpdated(_ value: Float)
 }
 
 open class SpaceOnDiskView: UIView, SpaceOnDiskPresenterDelegate {
@@ -84,6 +85,7 @@ open class SpaceOnDiskView: UIView, SpaceOnDiskPresenterDelegate {
     // MARK: presenter delegate
     func updateBarValue(_ value: CGFloat) {
         spaceProgressBar.value = value
+        delegate?.memoryValuesUpdated(Float(value))
     }
     func updateBarColor(_ color: UIColor) {
         spaceProgressBar.progressColor = color
