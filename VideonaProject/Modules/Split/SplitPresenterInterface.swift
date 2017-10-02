@@ -11,6 +11,7 @@ import AVFoundation
 
 public protocol SplitPresenterInterface {
     func viewDidLoad()
+	func viewDidLayoutSubviews(_ value: CGFloat)
     func viewWillDissappear()
     func pushCancelHandler()
     func pushAcceptHandler()
@@ -38,4 +39,5 @@ public protocol SplitPresenterDelegate {
     func setStopToVideo()
     func updatePlayerOnView(_ composition: VideoComposition)
     func setPlayerToSeekTime(_ time: Float)
+	func updateSplitRangeSliderDiameter(_ value: CGFloat)
 }
