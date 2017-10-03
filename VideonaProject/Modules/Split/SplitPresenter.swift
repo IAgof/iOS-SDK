@@ -71,6 +71,12 @@ open class SplitPresenter: NSObject, SplitPresenterInterface, SplitInteractorDel
                                         self.delegate?.updatePlayerOnView(composition)
         })
     }
+	
+	open func viewDidLayoutSubviews(_ value: CGFloat) {
+		DispatchQueue.main.async(execute: {
+			self.delegate?.updateSplitRangeSliderDiameter(value)
+		})
+	}
 
     open func viewWillDissappear() {
         if !isGoingToExpandPlayer {
