@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		A950F5D41EEB313A00E4B8A0 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A92060B11E4DEF8600656558 /* Media.xcassets */; };
 		A9928A101E5370CE002A4E60 /* VideonaProjectTarget.h in Headers */ = {isa = PBXBuildFile; fileRef = A9928A0E1E5370CE002A4E60 /* VideonaProjectTarget.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A9B31E881F9526BD00ED24BE /* VideonaPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B31E871F9526BD00ED24BE /* VideonaPlayer.swift */; };
+		A9B31E8A1F9528B100ED24BE /* VideonaPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B31E871F9526BD00ED24BE /* VideonaPlayer.swift */; };
+		A9B31E8C1F95370600ED24BE /* VideonaPlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9B31E8B1F95370600ED24BE /* VideonaPlayerView.xib */; };
 		A9BD5FC11D9120F40080CE97 /* VideonaProject.h in Headers */ = {isa = PBXBuildFile; fileRef = A9BD5FC01D9120F40080CE97 /* VideonaProject.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A9CA73E91E567860009C4E88 /* MBCircularProgressBar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9CA73E81E567860009C4E88 /* MBCircularProgressBar.framework */; };
 		A9CABBCB1EC37B9500AB6CE8 /* AudioLevelBarInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABBC51EC37B9500AB6CE8 /* AudioLevelBarInteractor.swift */; };
@@ -153,6 +156,8 @@
 		A9928A0C1E5370CE002A4E60 /* VideonaProjectTarget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VideonaProjectTarget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9928A0E1E5370CE002A4E60 /* VideonaProjectTarget.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideonaProjectTarget.h; sourceTree = "<group>"; };
 		A9928A0F1E5370CE002A4E60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A9B31E871F9526BD00ED24BE /* VideonaPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VideonaPlayer.swift; path = Modules/Player/VideonaPlayer.swift; sourceTree = "<group>"; };
+		A9B31E8B1F95370600ED24BE /* VideonaPlayerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = VideonaPlayerView.xib; path = Modules/Player/VideonaPlayerView.xib; sourceTree = "<group>"; };
 		A9BD5FBD1D9120F40080CE97 /* VideonaProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VideonaProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9BD5FC01D9120F40080CE97 /* VideonaProject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideonaProject.h; sourceTree = "<group>"; };
 		A9BD5FC21D9120F40080CE97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -522,6 +527,8 @@
 		A92061951E4E09B500656558 /* Player */ = {
 			isa = PBXGroup;
 			children = (
+				A9B31E871F9526BD00ED24BE /* VideonaPlayer.swift */,
+				A9B31E8B1F95370600ED24BE /* VideonaPlayerView.xib */,
 				A9CABC351EC37DC700AB6CE8 /* PlayerInteractor.swift */,
 				A9CABC361EC37DC700AB6CE8 /* PlayerInteractorInterface.swift */,
 				A9CABC371EC37DC700AB6CE8 /* PlayerInterface.swift */,
@@ -805,6 +812,7 @@
 				A9CABBD01EC37B9500AB6CE8 /* AudioLevelBarView.xib in Resources */,
 				A9CABC281EC37D6900AB6CE8 /* InputSoundGainControlView.xib in Resources */,
 				A9CABCA61EC37F5600AB6CE8 /* SpaceOnDiskView.xib in Resources */,
+				A9B31E8C1F95370600ED24BE /* VideonaPlayerView.xib in Resources */,
 				A9CABC941EC37F2900AB6CE8 /* ResolutionsSelectorCell.xib in Resources */,
 				A9CABCDE1EC3804600AB6CE8 /* ZoomSliderView.xib in Resources */,
 				A9CABCD21EC3802200AB6CE8 /* WhiteBalanceView.xib in Resources */,
@@ -826,6 +834,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9B31E8A1F9528B100ED24BE /* VideonaPlayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -922,6 +931,7 @@
 				A9CABC411EC37DC700AB6CE8 /* PlayerInteractorInterface.swift in Sources */,
 				A9CABBEF1EC37C3300AB6CE8 /* ExpositionModesView.swift in Sources */,
 				A9CABCB61EC37F9B00AB6CE8 /* TrimPresenterInterface.swift in Sources */,
+				A9B31E881F9526BD00ED24BE /* VideonaPlayer.swift in Sources */,
 				A9CABBE21EC37C0500AB6CE8 /* DuplicateInteractorInterface.swift in Sources */,
 				A9CABC031EC37CF800AB6CE8 /* FocalLensSliderInteractor.swift in Sources */,
 				A9CABC691EC37E8300AB6CE8 /* TimeNumberFormatter.swift in Sources */,
