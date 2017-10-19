@@ -110,27 +110,30 @@ public class GetActualProjectCALayerAnimationUseCase: NSObject {
                             timeAt: 0.0,
                             duration: duration)
         
+        print(resolution)
+        
         switch resolution {
-        case .log:
+        case "AVCaptureSessionPreset1280x720":
             watermarkLayer.frame = CGRect(x: 0, y: 0, width: 1280, height: 720)
-            guard let image = UIImage(named: "watermark_low")?.cgImage else { return watermarkLayer }
+            guard let image = UIImage(named: "watermark_720")?.cgImage else { return watermarkLayer }
+            watermarkLayer.contents = image
             break
-        case .medium:
+        case "AVCaptureSessionPreset1920x1050":
             watermarkLayer.frame = CGRect(x: 0, y: 0, width: 1920, height: 1050)
-            guard let image = UIImage(named: "watermark_medium")?.cgImage else { return watermarkLayer }
+            guard let image = UIImage(named: "watermark_1080")?.cgImage else { return watermarkLayer }
+            watermarkLayer.contents = image
             break
-        case .high:
+        case "AVCaptureSessionPreset3840x2160":
             watermarkLayer.frame = CGRect(x: 0, y: 0, width: 3840, height: 2160)
-            guard let image = UIImage(named: "watermark_high")?.cgImage else { return watermarkLayer }
+            guard let image = UIImage(named: "watermark_4k")?.cgImage else { return watermarkLayer }
+            watermarkLayer.contents = image
             break
         default:
             watermarkLayer.frame = CGRect(x: 0, y: 0, width: 1920, height: 1050)
-            guard let image = UIImage(named: "watermark_medium")?.cgImage else { return watermarkLayer }
+            guard let image = UIImage(named: "watermark_1080")?.cgImage else { return watermarkLayer }
+            watermarkLayer.contents = image
             break
         }
-
-        guard let image = UIImage(named: "watermark_low")?.cgImage else { return watermarkLayer }
-        watermarkLayer.contents = image
 
         return watermarkLayer
     }
