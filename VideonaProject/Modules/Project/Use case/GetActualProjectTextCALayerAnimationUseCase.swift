@@ -57,6 +57,7 @@ public class GetActualProjectCALayerAnimationUseCase: NSObject {
 
     public func getCALayerAnimation(project: Project) -> CALayer {
         let videos = project.getVideoList()
+        let resolution = project.getProfile().getResolution()
 
         var layers: [CALayer] = getTextLayersAnimated(videoList: videos)
         let parentLayer = CALayer()
@@ -74,7 +75,7 @@ public class GetActualProjectCALayerAnimationUseCase: NSObject {
         }
 
         if project.hasWatermark {
-            let watermarkLayer = getWatermarkLayersAnimated()
+            let watermarkLayer = getWatermarkLayersAnimated(resolution: resolution)
             parentLayer.addSublayer(watermarkLayer)
         }
 
@@ -100,18 +101,35 @@ public class GetActualProjectCALayerAnimationUseCase: NSObject {
         return layer
     }
 
-    public func getWatermarkLayersAnimated() -> CALayer {
+    public func getWatermarkLayersAnimated(resolution: String) -> CALayer {
         let watermarkLayer = CALayer()
-
-        watermarkLayer.frame = CGRect(x: 0, y: 0, width: 1920, height: 1080)
 
         guard let duration = videonaComposition.mutableComposition?.duration.seconds else { return watermarkLayer }
 
         addAnimationToLayer(overlay: watermarkLayer,
                             timeAt: 0.0,
                             duration: duration)
+        
+        switch resolution {
+        case .log:
+            watermarkLayer.frame = CGRect(x: 0, y: 0, width: 1280, height: 720)
+            guard let image = UIImage(named: "watermark_low")?.cgImage else { return watermarkLayer }
+            break
+        case .medium:
+            watermarkLayer.frame = CGRect(x: 0, y: 0, width: 1920, height: 1050)
+            guard let image = UIImage(named: "watermark_medium")?.cgImage else { return watermarkLayer }
+            break
+        case .high:
+            watermarkLayer.frame = CGRect(x: 0, y: 0, width: 3840, height: 2160)
+            guard let image = UIImage(named: "watermark_high")?.cgImage else { return watermarkLayer }
+            break
+        default:
+            watermarkLayer.frame = CGRect(x: 0, y: 0, width: 1920, height: 1050)
+            guard let image = UIImage(named: "watermark_medium")?.cgImage else { return watermarkLayer }
+            break
+        }
 
-        guard let image = UIImage(named: "watermark")?.cgImage else { return watermarkLayer }
+        guard let image = UIImage(named: "watermark_low")?.cgImage else { return watermarkLayer }
         watermarkLayer.contents = image
 
         return watermarkLayer
