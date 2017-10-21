@@ -144,6 +144,7 @@
 		A9CABCDC1EC3804600AB6CE8 /* ZoomSliderPresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABCD61EC3804600AB6CE8 /* ZoomSliderPresenterInterface.swift */; };
 		A9CABCDD1EC3804600AB6CE8 /* ZoomSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABCD71EC3804600AB6CE8 /* ZoomSliderView.swift */; };
 		A9CABCDE1EC3804600AB6CE8 /* ZoomSliderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9CABCD81EC3804600AB6CE8 /* ZoomSliderView.xib */; };
+		A9D3F33E1F9BBD760097E820 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D3F33D1F9BBD760097E820 /* String+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -290,6 +291,7 @@
 		A9CABCD61EC3804600AB6CE8 /* ZoomSliderPresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ZoomSliderPresenterInterface.swift; path = Modules/ZoomCameraSlider/ZoomSliderPresenterInterface.swift; sourceTree = "<group>"; };
 		A9CABCD71EC3804600AB6CE8 /* ZoomSliderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ZoomSliderView.swift; path = Modules/ZoomCameraSlider/ZoomSliderView.swift; sourceTree = "<group>"; };
 		A9CABCD81EC3804600AB6CE8 /* ZoomSliderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ZoomSliderView.xib; path = Modules/ZoomCameraSlider/ZoomSliderView.xib; sourceTree = "<group>"; };
+		A9D3F33D1F9BBD760097E820 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		B2F4A0D364C97E57476CD3C1 /* Pods-VideonaProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideonaProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VideonaProject/Pods-VideonaProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -633,6 +635,7 @@
 		A9BD5FBF1D9120F40080CE97 /* VideonaProject */ = {
 			isa = PBXGroup;
 			children = (
+				A9D3F33C1F9BBD640097E820 /* Extensions */,
 				A92060B11E4DEF8600656558 /* Media.xcassets */,
 				A960A85E1E4DD6B00069F487 /* Modules */,
 				A9BD5FC01D9120F40080CE97 /* VideonaProject.h */,
@@ -683,6 +686,14 @@
 				A9CABC621EC37E8300AB6CE8 /* Utils.swift */,
 			);
 			name = "Use case";
+			sourceTree = "<group>";
+		};
+		A9D3F33C1F9BBD640097E820 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A9D3F33D1F9BBD760097E820 /* String+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		BE86A4B8FC6F069D31EAD2F7 /* Pods */ = {
@@ -933,6 +944,7 @@
 				A9CABC321EC37D8A00AB6CE8 /* ISOConfigurationPresenterInterface.swift in Sources */,
 				A9CABC231EC37D6900AB6CE8 /* InputSoundGainControlInteractor.swift in Sources */,
 				A9CABBE31EC37C0500AB6CE8 /* DuplicatePresenter.swift in Sources */,
+				A9D3F33E1F9BBD760097E820 /* String+Extensions.swift in Sources */,
 				A9CABCBD1EC37FC900AB6CE8 /* VideonaRangeSliderThumbLayer.swift in Sources */,
 				A9CABC4A1EC37DC700AB6CE8 /* UIVerticalAlignLabel.swift in Sources */,
 				A9CABC311EC37D8A00AB6CE8 /* ISOConfigurationPresenter.swift in Sources */,
