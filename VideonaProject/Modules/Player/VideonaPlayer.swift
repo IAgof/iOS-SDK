@@ -27,7 +27,7 @@ public enum VideonaPlayerNotifications {
         }
     }
     
-   public func postNotification(){
+    public func postNotification(){
         switch self {
         case .seekBarUpdate(let value):
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: self.notificationName) , object: value)
@@ -139,11 +139,12 @@ public protocol VideonaPlayerInterface {
         seekSlider.numberFormatterOverride = ElapsedTimeFormatter()
         seekSlider.delegate = self
     }
-    private func registerNotifications(){
-        NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: VideonaPlayerNotifications.onVideoStops.notificationName), object: nil, queue: nil, using: {
-            notification in
-            self.onVideoStops()
-        })
+    public func registerNotifications(){
+        NotificationCenter.default.addObserver(self, selector: #selector(self.onVideoStops), name: NSNotification.Name(rawValue: VideonaPlayerNotifications.onVideoStops.notificationName), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.seekToTimeNotification(_:)), name: NSNotification.Name(rawValue: VideonaPlayerNotifications.seekBarUpdate(value: 0).notificationName), object: nil)
+    }
+    public func removeNotifications(){
+        NotificationCenter.default.removeObserver(self)
     }
     open func setPlayerMovieComposition(_ composition: AVMutableComposition) {
         self.movieComposition = composition
@@ -160,7 +161,7 @@ public protocol VideonaPlayerInterface {
     }
     public override func layoutSubviews() {
         super.layoutSubviews()
-        self.playerLayer?.frame = self.frame
+        self.playerLayer?.frame = self.playerContainer.frame
     }
     func disablePlayAndSeekBar() {
         playOrPauseButton.isHidden = true
@@ -193,9 +194,7 @@ public protocol VideonaPlayerInterface {
     func setUpVideoPlayer(withPlayerItem playerItem: AVPlayerItem) {
         
         if player == nil {
-            
             player = AVPlayer.init(playerItem: playerItem)
-            
             player!.addPeriodicTimeObserver(forInterval: CMTimeMake(1, 1000), queue: DispatchQueue.main) { _ in
                 if self.player!.currentItem?.status == .readyToPlay && (self.player!.rate != 0) && (self.player!.error == nil) {//Playing
                     self.updateSeekBarOnUI()
@@ -205,7 +204,7 @@ public protocol VideonaPlayerInterface {
             }
             
             playerLayer = AVPlayerLayer(player: player)
-            playerLayer!.frame = playerContainer.frame
+            playerLayer?.frame = playerContainer.frame
             self.playerContainer.layer.addSublayer(playerLayer!)
             addSwipeGesture()
         } else {
@@ -258,7 +257,7 @@ public protocol VideonaPlayerInterface {
     open func updateSeekBarOnUI() {
         guard (player?.currentItem?.duration.seconds) != nil ,
             let currentTime = player?.currentTime().seconds else {
-            return
+                return
         }
         let sliderValue = Float((currentTime))
         
@@ -352,7 +351,10 @@ public protocol VideonaPlayerInterface {
         player.play()
         VideonaPlayerNotifications.playerStartsToPlay.postNotification()
     }
-    
+    @objc private func seekToTimeNotification(_ notification: Notification) {
+        guard let time = notification.object as? Float else { return }
+        self.seekToTime(time)
+    }
     open func seekToTime(_ time: Float) {
         //        print("Seek to time manually to --\(time)")
         
@@ -491,3 +493,4 @@ extension VideonaPlayerView: TTRangeSliderDelegate {
         sliderEndedTracking()
     }
 }
+
