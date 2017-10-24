@@ -11,5 +11,6 @@ import Photos
 
 public protocol VideoGalleryDelegate {
     func cancelPushed()
+	func getVideosFromGalleryAndSave()
     func saveVideos(_ URLs: [URL])
 }

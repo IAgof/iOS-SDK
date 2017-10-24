@@ -43,7 +43,7 @@ open class VideosGalleryViewController: UICollectionViewController {
     }
 
     func configureNavigationBarWithBackButton() {
-        let saveItem = UIBarButtonItem(title: ChooseTitleForLanguage().title, style: .plain, target: self, action: #selector(saveButtonPushed(_:)))
+        let saveItem = UIBarButtonItem(title: ChooseTitleForLanguage().title, style: .plain, target: self, action: #selector(saveButtonPushed))
         let cancelItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelButtonPushed(_:)))
 
         UIApplication.topViewController()?.parent?.navigationItem.leftBarButtonItem = cancelItem
@@ -51,7 +51,7 @@ open class VideosGalleryViewController: UICollectionViewController {
     }
 
     override open func viewWillAppear(_ animated: Bool) {
-        configureNavigationBarWithBackButton()
+        // configureNavigationBarWithBackButton()
 
         // Get size of the collectionView cell for thumbnail image
         if let layout = self.collectionView!.collectionViewLayout as? UICollectionViewFlowLayout {
