@@ -68,7 +68,7 @@ open class Project: NSObject {
 
     open var projectOutputAudioLevel: Float = 1.0
 
-    open var transitionTime: Double = 1
+    open var transitionTime: Double = 0.125
 
     public var  uuid = UUID().uuidString
 
