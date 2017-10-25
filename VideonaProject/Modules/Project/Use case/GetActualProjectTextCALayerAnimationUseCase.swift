@@ -57,6 +57,7 @@ public class GetActualProjectCALayerAnimationUseCase: NSObject {
 
     public func getCALayerAnimation(project: Project) -> CALayer {
         let videos = project.getVideoList()
+        let resolution = project.getProfile().getResolution()
 
         var layers: [CALayer] = getTextLayersAnimated(videoList: videos)
         let parentLayer = CALayer()
@@ -74,7 +75,7 @@ public class GetActualProjectCALayerAnimationUseCase: NSObject {
         }
 
         if project.hasWatermark {
-            let watermarkLayer = getWatermarkLayersAnimated()
+            let watermarkLayer = getWatermarkLayersAnimated(resolution: resolution)
             parentLayer.addSublayer(watermarkLayer)
         }
 
@@ -100,19 +101,19 @@ public class GetActualProjectCALayerAnimationUseCase: NSObject {
         return layer
     }
 
-    public func getWatermarkLayersAnimated() -> CALayer {
+    public func getWatermarkLayersAnimated(resolution: String) -> CALayer {
         let watermarkLayer = CALayer()
-
-        watermarkLayer.frame = CGRect(x: 0, y: 0, width: 1920, height: 1080)
 
         guard let duration = videonaComposition.mutableComposition?.duration.seconds else { return watermarkLayer }
 
         addAnimationToLayer(overlay: watermarkLayer,
                             timeAt: 0.0,
                             duration: duration)
-
-        guard let image = UIImage(named: "watermark")?.cgImage else { return watermarkLayer }
-        watermarkLayer.contents = image
+        
+        print(resolution)
+        guard let watermarkImage = resolution.watermarkImage else{ return watermarkLayer }
+        watermarkLayer.frame = CGRect(x: 0, y: 0, width: watermarkImage.width, height: watermarkImage.height)
+        watermarkLayer.contents = watermarkImage
 
         return watermarkLayer
     }
