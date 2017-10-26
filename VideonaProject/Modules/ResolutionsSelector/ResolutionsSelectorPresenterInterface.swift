@@ -12,7 +12,6 @@ protocol ResolutionsSelectorPresenterInterface {
     func getResolutions()
     func setResolutionAtInitEvent(_ resolution: String)
     func switchResolutionStateChanged(_ position: Int)
-    func accepButtonEvent()
 }
 
 protocol ResolutionsSelectorPresenterDelegate {

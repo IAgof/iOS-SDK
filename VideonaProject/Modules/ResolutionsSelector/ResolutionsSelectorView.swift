@@ -24,52 +24,12 @@ public protocol ResolutionsSelectorDelegate {
     let resolutionsNibName = "ResolutionsSelectorCell"
     let reuseIdentifierCell = "resolutionsSelectorCell"
 
-    @IBOutlet weak var cancelButton: UIButton!
-    @IBOutlet weak var validateButton: UIButton!
     @IBOutlet weak var resolutionsTableView: UITableView!
     @IBOutlet weak var resolutionsLabel: UILabel!
 
     var resolutions: [String] = [] {
         didSet {
             resolutionsTableView.reloadData()
-        }
-    }
-
-    @IBInspectable var cancelImageNormal: UIImage? {
-        get {
-            return cancelButton.currentImage
-        }
-        set(cancelImage) {
-            cancelButton.setImage(cancelImage, for: UIControlState())
-        }
-    }
-
-    @IBInspectable var cancelImageHighlightedAndPressed: UIImage? {
-        get {
-            return cancelButton.currentImage
-        }
-        set(cancelImageHighlightedAndPressed) {
-            cancelButton.setImage(cancelImageHighlightedAndPressed, for: .highlighted)
-            cancelButton.setImage(cancelImageHighlightedAndPressed, for: .selected)
-        }
-    }
-
-    @IBInspectable var validateImageNormal: UIImage? {
-        get {
-            return validateButton.currentImage
-        }
-        set(validateImage) {
-            validateButton.setImage(validateImage, for: UIControlState())
-        }
-    }
-
-    @IBInspectable var validateImageHighlightedAndPressed: UIImage? {
-        get {
-            return validateButton.currentImage
-        }
-        set(validateImageHighlightedAndPressed) {
-            validateButton.setImage(validateImageHighlightedAndPressed, for: .highlighted)
-            validateButton.setImage(validateImageHighlightedAndPressed, for: .selected)
         }
     }
 
@@ -143,18 +103,6 @@ public protocol ResolutionsSelectorDelegate {
     // MARK: - Actions outside module
     open func setResolutionAtInit(_ resolution: String) {
         eventHandler?.setResolutionAtInitEvent(resolution)
-    }
-
-    // MARK: - Actions 
-
-    @IBAction func cancelButtonPushed(_ sender: AnyObject) {
-        delegate?.removeResolutionsView()
-    }
-
-    @IBAction func acceptButtonPushed(_ sender: AnyObject) {
-        delegate?.removeResolutionsView()
-
-        eventHandler?.accepButtonEvent()
     }
 
     // MARK: - Delegate
