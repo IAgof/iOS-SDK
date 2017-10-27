@@ -37,10 +37,8 @@ open class ResolutionsSelectorPresenter: ResolutionsSelectorPresenterInterface, 
         delegate.setResolutionSwitchState(position,
                                           state: true)
         resolutionPositionActive = position
-    }
-
-    func accepButtonEvent() {
-        interactor?.setResolutionToDevice(resolutionPositionActive)
+		
+		interactor?.setResolutionToDevice(resolutionPositionActive)
     }
 
     // MARK: - Delegate
