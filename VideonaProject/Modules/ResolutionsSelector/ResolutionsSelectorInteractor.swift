@@ -36,7 +36,7 @@ class ResolutionsSelectorInteractor: ResolutionsSelectorInteractorInterface {
     }
 
     func setResolutionToDevice(_ resolutionPositionActive: Int) {
-        if let resolutionToDevice = ressList[resolutionPositionActive].avFrameworkSet {
+        if ressList.indices.contains(resolutionPositionActive), let resolutionToDevice = ressList[resolutionPositionActive].avFrameworkSet {
             delegate?.retrieveAVResolutionPresset(resolutionToDevice)
         }
     }
