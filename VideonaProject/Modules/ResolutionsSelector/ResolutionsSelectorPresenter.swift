@@ -33,12 +33,10 @@ open class ResolutionsSelectorPresenter: ResolutionsSelectorPresenterInterface, 
             delegate.setResolutionSwitchState(resolutionPositionActive,
                                               state: false)
         }
-
         delegate.setResolutionSwitchState(position,
                                           state: true)
         resolutionPositionActive = position
-		
-		interactor?.setResolutionToDevice(resolutionPositionActive)
+        interactor?.setResolutionToDevice(resolutionPositionActive)
     }
 
     // MARK: - Delegate
