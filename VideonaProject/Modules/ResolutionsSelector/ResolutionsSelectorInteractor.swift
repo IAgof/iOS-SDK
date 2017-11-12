@@ -14,33 +14,19 @@ import CoreAudio
 class ResolutionsSelectorInteractor: ResolutionsSelectorInteractorInterface {
     //MARK : VIPER
     var delegate: ResolutionsSelectorInteractorDelegate?
-
     var ressList: [ResolutionViewModel] = []
-
     init(presenter: ResolutionsSelectorPresenter) {
         delegate = presenter
     }
-
     func getResolutions() {
-        let list = cameraResolutions()
-
-        var resListString: [String] = []
-
-        for resolution in list {
-            resListString.append(resolution.title!)
-        }
-
-        delegate?.setResolutionsTitle(resListString)
-
-        ressList = list
+        ressList = cameraResolutions()
+        delegate?.setResolutionsTitle(ressList.map({ $0.title ?? ""}))
     }
-
     func setResolutionToDevice(_ resolutionPositionActive: Int) {
-        if let resolutionToDevice = ressList[resolutionPositionActive].avFrameworkSet {
+        if ressList.indices.contains(resolutionPositionActive), let resolutionToDevice = ressList[resolutionPositionActive].avFrameworkSet {
             delegate?.retrieveAVResolutionPresset(resolutionToDevice)
         }
     }
-
     func findInitResolutionInList(_ resolution: String) {
         var positionInList = 0
         for listResolution in ressList {
@@ -51,120 +37,60 @@ class ResolutionsSelectorInteractor: ResolutionsSelectorInteractorInterface {
             positionInList += 1
         }
     }
-
     func cameraResolutions() -> [ResolutionViewModel] {
+
         let deviceModel = UIDevice.current.modelName
         var resolutionsList: [ResolutionViewModel] = []
-
-//        deviceModel == ""
-
-        // iPhone 4S
         if (deviceModel == "iPhone 4s") {
             resolutionsList.append(ResolutionViewModel(title: "640x480", avFrameworkSet: AVCaptureSessionPreset640x480))
             resolutionsList.append(ResolutionViewModel(title: "480x360", avFrameworkSet: AVCaptureSessionPresetMedium))
-
         }
-            // iPhone 5/5C/5S/6/6+/iPod 6
         else if (deviceModel == "iPhone 5"
             || deviceModel == "iPhone 5c"
             || deviceModel == "iPhone 5s"
-            || deviceModel == "iPhone7,2"
-            || deviceModel == "iPhone SE") {
-
-            if #available(iOS 9.0, *) {
-                resolutionsList.append(ResolutionViewModel(title: "3840x2160", avFrameworkSet: AVCaptureSessionPreset3840x2160))
-            } else {
-                // Fallback on earlier versions
-            }
-
-            resolutionsList.append(ResolutionViewModel(title: "1920x1080", avFrameworkSet: AVCaptureSessionPreset1920x1080))
-
-            resolutionsList.append(ResolutionViewModel(title: "1280x720", avFrameworkSet: AVCaptureSessionPreset1280x720))
-
-//            resolutionsList.append(ResolutionViewModel(title: "640x480", avFrameworkSet: AVCaptureSessionPreset640x480))
-        }
-            // iPhone 6S/6S+
-        else if (deviceModel == "iPhone 6s"
-            || deviceModel == "iPhone 6s Plus") {
-            if #available(iOS 9.0, *) {
-                resolutionsList.append(ResolutionViewModel(title: "3840x2160", avFrameworkSet: AVCaptureSessionPreset3840x2160))
-            } else {
-                // Fallback on earlier versions
-            }
-
-            resolutionsList.append(ResolutionViewModel(title: "1920x1080", avFrameworkSet: AVCaptureSessionPreset1920x1080))
-
-            resolutionsList.append(ResolutionViewModel(title: "1280x720", avFrameworkSet: AVCaptureSessionPreset1280x720))
-
-//            resolutionsList.append(ResolutionViewModel(title: "640x480", avFrameworkSet: AVCaptureSessionPreset640x480))
-
-//            let lFrontCam = "1280x960,1280x720,640x480,480x360,192x144";
-//            let lBackCam = "4032x3024,1920x1080,1280x720,640x480,480x360,192x144";
-
-        }
-            // iPad 2
-        else if (deviceModel == "iPad 2"
-            || deviceModel == "iPod Touch 6"
+            || deviceModel == "iPhone SE"
             || deviceModel == "iPhone 6"
-            || deviceModel == "iPhone 6 Plus") {
-
-            resolutionsList.append(ResolutionViewModel(title: "1920x1080", avFrameworkSet: AVCaptureSessionPreset1920x1080))
-
-            resolutionsList.append(ResolutionViewModel(title: "1280x720", avFrameworkSet: AVCaptureSessionPreset1280x720))
-
-//            resolutionsList.append(ResolutionViewModel(title: "640x480", avFrameworkSet: AVCaptureSessionPreset640x480))
-        }
-            // iPad 3
-        else if (deviceModel == "iPad 3") {
-
-            resolutionsList.append(ResolutionViewModel(title: "1920x1080", avFrameworkSet: AVCaptureSessionPreset1920x1080))
-
-            resolutionsList.append(ResolutionViewModel(title: "1280x720", avFrameworkSet: AVCaptureSessionPreset1280x720))
-
-//            resolutionsList.append(ResolutionViewModel(title: "640x480", avFrameworkSet: AVCaptureSessionPreset640x480))
-
-//            let lFrontCam = "640x480,480x360,192x144";
-//            let lBackCam = "2592x1936,1920x1080,1280x720,640x480,480x360,192x144";
-
-        }
-
-            // iPad 4/Air/Mini/Mini 2/Mini 3/iPod 5G
-        else if (deviceModel == "iPad 4"
+            || deviceModel == "iPhone 6 Plus"
+            || deviceModel == "iPhone 6s"
+            || deviceModel == "iPhone 6s Plus"
+            || deviceModel == "iPhone 7"
+            || deviceModel == "iPhone 7 Plus"
+            || deviceModel == "iPhone 8"
+            || deviceModel == "iPhone 8 Plus"
+            || deviceModel == "iPhone X"
+            || deviceModel == "iPad 2"
+            || deviceModel == "iPad 3"
+            || deviceModel == "iPad 4"
             || deviceModel == "iPad Air"
             || deviceModel == "iPad Mini 2"
             || deviceModel == "iPad Mini 3"
-            || deviceModel == "iPad Mini 4") {
-
+            || deviceModel == "iPad Mini 4"
+            || deviceModel == "iPad Pro"
+            || deviceModel == "iPod Touch 6") {
             resolutionsList.append(ResolutionViewModel(title: "1920x1080", avFrameworkSet: AVCaptureSessionPreset1920x1080))
-
             resolutionsList.append(ResolutionViewModel(title: "1280x720", avFrameworkSet: AVCaptureSessionPreset1280x720))
-
-//            resolutionsList.append(ResolutionViewModel(title: "640x480", avFrameworkSet: AVCaptureSessionPreset640x480))
-
-//            let lFrontCam = "1280x960,1280x720,640x480,480x360,192x144";
-//            let lBackCam = "2592x1936,1920x1080,1280x720,640x480,480x360,192x144";
-
         }
-            // iPad Air 2/Mini 4/Pro
-        else if (deviceModel == "iPad Pro") {
-
-            resolutionsList.append(ResolutionViewModel(title: "1920x1080", avFrameworkSet: AVCaptureSessionPreset1920x1080))
-
-            resolutionsList.append(ResolutionViewModel(title: "1280x720", avFrameworkSet: AVCaptureSessionPreset1280x720))
-
-//            resolutionsList.append(ResolutionViewModel(title: "640x480", avFrameworkSet: AVCaptureSessionPreset640x480))
-
-//            let lFrontCam = "1280x960,1280x720,640x480,480x360,192x144";
-//            let lBackCam = "3264x2448,1920x1080,1280x720,640x480,480x360,192x144";
-
+        
+        if (deviceModel == "iPhone SE"
+            || deviceModel == "iPhone 6"
+            || deviceModel == "iPhone 6 Plus"
+            || deviceModel == "iPhone 6s"
+            || deviceModel == "iPhone 6s Plus"
+            || deviceModel == "iPhone 7"
+            || deviceModel == "iPhone 7 Plus"
+            || deviceModel == "iPhone 8"
+            || deviceModel == "iPhone 8 Plus"
+            || deviceModel == "iPhone X") {
+            if #available(iOS 9.0, *) {
+                resolutionsList.append(ResolutionViewModel(title: "3840x2160", avFrameworkSet: AVCaptureSessionPreset3840x2160))
+            }
         }
-
         return resolutionsList
     }
 }
 
 public extension UIDevice {
-
+    
     var modelName: String {
         var systemInfo = utsname()
         uname(&systemInfo)
@@ -173,7 +99,7 @@ public extension UIDevice {
             guard let value = element.value as? Int8, value != 0 else { return identifier }
             return identifier + String(UnicodeScalar(UInt8(value)))
         }
-
+        
         switch identifier {
         case "iPod5,1":                                 return "iPod Touch 5"
         case "iPod7,1":                                 return "iPod Touch 6"
@@ -186,6 +112,11 @@ public extension UIDevice {
         case "iPhone7,1":                               return "iPhone 6 Plus"
         case "iPhone8,1":                               return "iPhone 6s"
         case "iPhone8,2":                               return "iPhone 6s Plus"
+        case "iPhone9,1","iPhone9,3":                   return "iPhone 7"
+        case "iPhone9,2","iPhone9,4":                   return "iPhone 7 Plus"
+        case "iPhone10,1","iPhone10,4":                 return "iPhone 8"
+        case "iPhone10,2","iPhone10,4":                 return "iPhone 8 plus"
+        case "iPhone10,3","iPhone10,6":                 return "iPhone X"
         case "iPhone8,4":                               return "iPhone SE"
         case "iPad2,1", "iPad2,2", "iPad2,3", "iPad2,4":return "iPad 2"
         case "iPad3,1", "iPad3,2", "iPad3,3":           return "iPad 3"
@@ -202,5 +133,5 @@ public extension UIDevice {
         default:                                        return identifier
         }
     }
-
+    
 }
