@@ -11,122 +11,123 @@ import AVFoundation
 import AVKit
 
 open class TrimInteractor: NSObject, TrimInteractorInterface {
-    open var delegate: TrimInteractorDelegate?
-    open var project: Project?
+	open var delegate: TrimInteractorDelegate?
+	open var project: Project?
 
-    var videoPosition: Int?
-    var videoSelected: Video?
+	var videoPosition: Int?
+	var videoSelected: Video?
 
-    var startTime: Float = 0.0
-    var stopTime: Float = 0.0
+	var startTime: Float = 0.0
+	var stopTime: Float = 0.0
 
-    public init(project: Project) {
-        self.project = project
-    }
+	public init(project: Project) {
+		self.project = project
+	}
 
-    open func setVideoPosition(_ position: Int) {
-        self.videoPosition = position
-    }
+	open func setVideoPosition(_ position: Int) {
+		self.videoPosition = position
+	}
 
-    open func getVideoParams() {
-        guard let video = project?.getVideoList()[videoPosition!]else {return}
+	open func getVideoParams() {
+		guard let position = videoPosition,
+			let video = project?.getVideoList()[position]else {return}
+		
+		startTime = Float(video.getStartTime())
+		stopTime = Float(video.getStopTime())
+		let duration = video.getFileStopTime()
+		
+		delegate?.setLowerValue(startTime)
+		delegate?.setUpperValue(stopTime)
+		delegate?.setMaximumValue(Float(duration))
+		
+		delegate?.updateParamsFinished()
+	}
 
-        startTime = Float(video.getStartTime())
-        stopTime = Float(video.getStopTime())
-        let duration = video.getFileStopTime()
+	open func setParametersOnVideoSelectedOnProjectList(_ startTime: Float,
+														stopTime: Float) {
+		guard let position = videoPosition,
+			let videoList = project?.getVideoList() else {return}
+		
+		videoList[position].setStopTime(Double(stopTime))
+		videoList[position].setStartTime(Double(startTime))
+		
+		project?.setVideoList(videoList)
+	}
 
-        delegate?.setLowerValue(startTime)
-        delegate?.setUpperValue(stopTime)
-        delegate?.setMaximumValue(Float(duration))
+	open func setParametersOnVideoSelected(_ startTime: Float,
+										   stopTime: Float) {
+		guard let position = videoPosition else {return}
+		videoSelected = project?.getVideoList()[position].copy() as? Video
 
-        delegate?.updateParamsFinished()
-    }
+		//        videoSelected!.setStopTime(Double(stopTime))
+		//        videoSelected!.setStartTime(Double(startTime))
 
-    open func setParametersOnVideoSelectedOnProjectList(_ startTime: Float,
-                                                   stopTime: Float) {
-        guard let videoList = project?.getVideoList() else {return}
+		self.startTime = startTime
+		self.stopTime = stopTime
+	}
 
-        videoList[videoPosition!].setStopTime(Double(stopTime))
-        videoList[videoPosition!].setStartTime(Double(startTime))
+	open func setUpComposition(_ completion: (VideoComposition) -> Void) {
+		var videoTotalTime: CMTime = kCMTimeZero
 
-        project?.setVideoList(videoList)
-    }
+		guard let position = videoPosition else {return}
 
-    open func setParametersOnVideoSelected(_ startTime: Float,
-                                      stopTime: Float) {
-        videoSelected = project?.getVideoList()[videoPosition!].copy() as? Video
+		guard let video = project?.getVideoList()[position]else {return}
 
-//        videoSelected!.setStopTime(Double(stopTime))
-//        videoSelected!.setStartTime(Double(startTime))
+		let mixComposition = AVMutableComposition()
 
-        self.startTime = startTime
-        self.stopTime = stopTime
-    }
+		let videoTrack = mixComposition.addMutableTrack(withMediaType: AVMediaTypeVideo,
+														preferredTrackID: Int32(kCMPersistentTrackID_Invalid))
+		let audioTrack = mixComposition.addMutableTrack(withMediaType: AVMediaTypeAudio,
+														preferredTrackID: Int32(kCMPersistentTrackID_Invalid))
 
-    open func setUpComposition(_ completion: (VideoComposition) -> Void) {
-        var videoTotalTime: CMTime = kCMTimeZero
+		// 2 - Get Video asset
+		let videoAsset = AVAsset.init(url: video.videoURL)
 
-        guard let videoPos = videoPosition else {
-            return
-        }
+		do {
+			let startTime = CMTimeMake(Int64(self.startTime * 600), 600)
+			let stopTime = CMTimeMake(Int64(self.stopTime * 600), 600)
 
-        guard let video = project?.getVideoList()[videoPos]else {return}
+			let timeRangeInsert = CMTimeRangeMake(startTime, stopTime)
 
-        let mixComposition = AVMutableComposition()
+			try videoTrack.insertTimeRange(timeRangeInsert,
+										   of: videoAsset.tracks(withMediaType: AVMediaTypeVideo)[0] ,
+										   at: kCMTimeZero)
 
-        let videoTrack = mixComposition.addMutableTrack(withMediaType: AVMediaTypeVideo,
-                                                                     preferredTrackID: Int32(kCMPersistentTrackID_Invalid))
-        let audioTrack = mixComposition.addMutableTrack(withMediaType: AVMediaTypeAudio,
-                                                                     preferredTrackID: Int32(kCMPersistentTrackID_Invalid))
+			try audioTrack.insertTimeRange(timeRangeInsert,
+										   of: videoAsset.tracks(withMediaType: AVMediaTypeAudio)[0] ,
+										   at: kCMTimeZero)
+			videoTotalTime = CMTimeAdd(videoTotalTime, (stopTime - startTime))
 
-        // 2 - Get Video asset
-        let videoAsset = AVAsset.init(url: video.videoURL)
+			mixComposition.removeTimeRange(CMTimeRangeMake((videoTotalTime), (stopTime + videoTotalTime)))
+		} catch _ {
+			debugPrint("Error trying to create videoTrack")
+			//                completionHandler("Error trying to create videoTrack",0.0)
+		}
 
-        do {
-            let startTime = CMTimeMake(Int64(self.startTime * 600), 600)
-            let stopTime = CMTimeMake(Int64(self.stopTime * 600), 600)
+		videoSelected = nil
+		let videonaComposition = VideoComposition(mutableComposition: mixComposition)
+		if let position = videoPosition, let actualProject = project {
+			let video = actualProject.getVideoList()[position]
 
-            let timeRangeInsert = CMTimeRangeMake(startTime, stopTime)
+			let layer = getLayerToPlayer(video)
+			videonaComposition.layerAnimation = layer
+		}
+		completion(videonaComposition)
+	}
 
-            try videoTrack.insertTimeRange(timeRangeInsert,
-                                           of: videoAsset.tracks(withMediaType: AVMediaTypeVideo)[0] ,
-                                           at: kCMTimeZero)
+	func getLayerToPlayer(_ video: Video) -> CALayer {
+		guard let align = CATextLayerAttributes.VerticalAlignment(rawValue: video.textPositionToVideo) else {return CALayer()}
+		let text = video.textToVideo
 
-            try audioTrack.insertTimeRange(timeRangeInsert,
-                                           of: videoAsset.tracks(withMediaType: AVMediaTypeAudio)[0] ,
-                                           at: kCMTimeZero)
-            videoTotalTime = CMTimeAdd(videoTotalTime, (stopTime - startTime))
+		let alignmentAttributes = CATextLayerAttributes().getAlignmentAttributesByType(type: align)
 
-            mixComposition.removeTimeRange(CMTimeRangeMake((videoTotalTime), (stopTime + videoTotalTime)))
-        } catch _ {
-            debugPrint("Error trying to create videoTrack")
-            //                completionHandler("Error trying to create videoTrack",0.0)
-        }
+		let image = GetImageByTextUseCase().getTextImage(text: text, attributes: alignmentAttributes)
+		let textImageLayer = CALayer()
+		textImageLayer.contents = image.cgImage
+		textImageLayer.frame = CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height)
+		textImageLayer.contentsScale = UIScreen.main.scale
 
-        videoSelected = nil
-        let videonaComposition = VideoComposition(mutableComposition: mixComposition)
-        if let actualProject = project {
-            let video = actualProject.getVideoList()[videoPosition!]
-
-            let layer = getLayerToPlayer(video)
-            videonaComposition.layerAnimation = layer
-        }
-
-        completion(videonaComposition)
-    }
-
-    func getLayerToPlayer(_ video: Video) -> CALayer {
-        guard let align = CATextLayerAttributes.VerticalAlignment(rawValue: video.textPositionToVideo) else {return CALayer()}
-        let text = video.textToVideo
-
-        let alignmentAttributes = CATextLayerAttributes().getAlignmentAttributesByType(type: align)
-
-        let image = GetImageByTextUseCase().getTextImage(text: text, attributes: alignmentAttributes)
-        let textImageLayer = CALayer()
-        textImageLayer.contents = image.cgImage
-        textImageLayer.frame = CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height)
-        textImageLayer.contentsScale = UIScreen.main.scale
-
-        return textImageLayer
-    }
+		return textImageLayer
+	}
 }
+
