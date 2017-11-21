@@ -38,6 +38,7 @@ open class Video: Media {
             }
         }
     }
+	open var  internalFileURL: URL = URL(fileURLWithPath: "")
     open var thumbnailImage: UIImage?
 
     fileprivate var isSplit: Bool!
@@ -45,11 +46,10 @@ open class Video: Media {
     open var textToVideo: String = ""
     open var textPositionToVideo: Int = 0
 
-    override public init(title: String, mediaPath: String) {
-        super.init(title: title, mediaPath: mediaPath)
-
-        isSplit = false
-    }
+	override public init(title: String, mediaPath: String) {
+		super.init(title: title, mediaPath: mediaPath)
+		isSplit = false
+	}
 
     open func copyWithZone(_ zone: NSZone?) -> AnyObject {
         let copy = Video(title: title,
@@ -98,6 +98,14 @@ open class Video: Media {
     open func setPosition(_ position: Int) {
         self.position = position
     }
+
+	open func addInternalFileURL(_ fileURL: URL) {
+		self.internalFileURL = fileURL
+	}
+
+	open func getInternalFileURL() -> URL {
+		return self.internalFileURL
+	}
 
     private func PHAssetForFileURL(url: NSURL, completion:@escaping (_ asset: PHAsset?, _ isHaveFound: Bool) -> Void) {
         let imageRequestOptions = PHImageRequestOptions()
