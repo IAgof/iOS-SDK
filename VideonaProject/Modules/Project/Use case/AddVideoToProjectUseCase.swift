@@ -10,14 +10,12 @@ import Foundation
 
 public class AddVideoToProjectUseCase: NSObject {
 
-	public func add(fileURL: URL,
-					videoPath: String,
+	public func add(videoPath: String,
 					title: String,
 					project: Project) {
 		var videoList = project.getVideoList()
 		let video = Video.init(title: title,
 							   mediaPath: videoPath)
-		video.addInternalFileURL(fileURL)
 		video.setPosition(videoList.count + 1)
 		videoList.append(video)
 		project.setVideoList(videoList)
