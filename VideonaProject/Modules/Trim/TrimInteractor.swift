@@ -28,8 +28,9 @@ open class TrimInteractor: NSObject, TrimInteractorInterface {
         self.videoPosition = position
     }
 
-    open func getVideoParams() {
-        guard let video = project?.getVideoList()[videoPosition!]else {return}
+	open func getVideoParams() {
+		guard let position = videoPosition,
+			let video = project?.getVideoList()[position]else {return}
 
         startTime = Float(video.getStartTime())
         stopTime = Float(video.getStopTime())
@@ -42,22 +43,24 @@ open class TrimInteractor: NSObject, TrimInteractorInterface {
         delegate?.updateParamsFinished()
     }
 
-    open func setParametersOnVideoSelectedOnProjectList(_ startTime: Float,
-                                                   stopTime: Float) {
-        guard let videoList = project?.getVideoList() else {return}
+	open func setParametersOnVideoSelectedOnProjectList(_ startTime: Float,
+														stopTime: Float) {
+		guard let position = videoPosition,
+			let videoList = project?.getVideoList() else {return}
 
-        videoList[videoPosition!].setStopTime(Double(stopTime))
-        videoList[videoPosition!].setStartTime(Double(startTime))
+		videoList[position].setStopTime(Double(stopTime))
+		videoList[position].setStartTime(Double(startTime))
 
         project?.setVideoList(videoList)
     }
 
-    open func setParametersOnVideoSelected(_ startTime: Float,
-                                      stopTime: Float) {
-        videoSelected = project?.getVideoList()[videoPosition!].copy() as? Video
+	open func setParametersOnVideoSelected(_ startTime: Float,
+										   stopTime: Float) {
+		guard let position = videoPosition else {return}
+		videoSelected = project?.getVideoList()[position].copy() as? Video
 
-//        videoSelected!.setStopTime(Double(stopTime))
-//        videoSelected!.setStartTime(Double(startTime))
+		//        videoSelected!.setStopTime(Double(stopTime))
+		//        videoSelected!.setStartTime(Double(startTime))
 
         self.startTime = startTime
         self.stopTime = stopTime
@@ -66,11 +69,9 @@ open class TrimInteractor: NSObject, TrimInteractorInterface {
     open func setUpComposition(_ completion: (VideoComposition) -> Void) {
         var videoTotalTime: CMTime = kCMTimeZero
 
-        guard let videoPos = videoPosition else {
-            return
-        }
+		guard let position = videoPosition else {return}
 
-        guard let video = project?.getVideoList()[videoPos]else {return}
+		guard let video = project?.getVideoList()[position]else {return}
 
         let mixComposition = AVMutableComposition()
 
@@ -105,8 +106,8 @@ open class TrimInteractor: NSObject, TrimInteractorInterface {
 
         videoSelected = nil
         let videonaComposition = VideoComposition(mutableComposition: mixComposition)
-        if let actualProject = project {
-            let video = actualProject.getVideoList()[videoPosition!]
+	  	if let position = videoPosition, let actualProject = project {
+			let video = actualProject.getVideoList()[position]
 
             let layer = getLayerToPlayer(video)
             videonaComposition.layerAnimation = layer
@@ -130,3 +131,4 @@ open class TrimInteractor: NSObject, TrimInteractorInterface {
         return textImageLayer
     }
 }
+

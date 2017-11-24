@@ -45,11 +45,10 @@ open class Video: Media {
     open var textToVideo: String = ""
     open var textPositionToVideo: Int = 0
 
-    override public init(title: String, mediaPath: String) {
-        super.init(title: title, mediaPath: mediaPath)
-
-        isSplit = false
-    }
+	override public init(title: String, mediaPath: String) {
+		super.init(title: title, mediaPath: mediaPath)
+		isSplit = false
+	}
 
     open func copyWithZone(_ zone: NSZone?) -> AnyObject {
         let copy = Video(title: title,

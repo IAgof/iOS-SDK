@@ -10,33 +10,30 @@ import Foundation
 
 public class AddVideoToProjectUseCase: NSObject {
 
-    public func add(videoPath: String,
-             title: String,
-             project: Project) {
-        var videoList = project.getVideoList()
+	public func add(videoPath: String,
+					title: String,
+					project: Project) {
+		var videoList = project.getVideoList()
+		let video = Video.init(title: title,
+							   mediaPath: videoPath)
+		video.setPosition(videoList.count + 1)
+		videoList.append(video)
+		project.setVideoList(videoList)
+	}
 
-        let video = Video.init(title: title,
-                               mediaPath: videoPath)
-        video.setPosition(videoList.count + 1)
+	public func add(video: Video,
+					position: Int,
+					project: Project) {
 
-        videoList.append(video)
+		var videoList = project.getVideoList()
 
-        project.setVideoList(videoList)
-    }
+		videoList.insert(video, at: position)
 
-    public func add(video: Video,
-             position: Int,
-             project: Project) {
+		project.setVideoList(videoList)
+	}
 
-        var videoList = project.getVideoList()
-
-        videoList.insert(video, at: position)
-
-        project.setVideoList(videoList)
-    }
-
-    public func updateVideoParams(project: Project) {
-        let videoList = project.getVideoList()
-        videoList.last?.mediaRecordedFinished()
-    }
+	public func updateVideoParams(project: Project) {
+		let videoList = project.getVideoList()
+		videoList.last?.mediaRecordedFinished()
+	}
 }
