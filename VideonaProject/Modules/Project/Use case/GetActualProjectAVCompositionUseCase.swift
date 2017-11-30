@@ -38,7 +38,7 @@ public class GetActualProjectAVCompositionUseCase: NSObject {
             do {
                 let startTime = CMTimeMake(Int64(video.getStartTime() * 600), 600)
                 let stopTime = CMTimeMake(Int64(video.getStopTime() * 600), 600)
-                let duration = stopTime - startTime
+                let duration = CMTimeSubtract(stopTime, startTime)
                 let range = CMTimeRangeMake(startTime, duration)
 
                 if let videoAssetTrack = videoAsset.tracks(withMediaType: AVMediaTypeVideo).first,
@@ -63,7 +63,9 @@ public class GetActualProjectAVCompositionUseCase: NSObject {
                     videoTotalTime = CMTimeAdd(videoTotalTime, duration)
 
                     Utils().debugLog("el tiempo total del video es: \(videoTotalTime.seconds)")
-                }
+				} else {
+					Utils().debugLog("Video or audio track is null")
+				}
             } catch _ {
                 Utils().debugLog("Error trying to create videoTrack")
             }
