@@ -27,7 +27,7 @@ open class Media: NSObject {
     /**
      * The stop time of the media resource within the file it represents.
      */
-    var fileStopTime: Double = 0.0
+    public var fileStopTime: Double = 0.0
 
     var trimStartTime: Double = 0.0
 
