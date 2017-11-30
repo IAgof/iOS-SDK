@@ -11,9 +11,15 @@ import AVFoundation
 import Photos
 
 open class Video: Media {
+	open var thumbnailImage: UIImage?
+	fileprivate var isSplit: Bool!
+	fileprivate var position: Int!
+	open var textToVideo: String = ""
+	open var textPositionToVideo: Int = 0
 
     open var videoURL: URL = URL(fileURLWithPath: "") {
         didSet {
+			guard thumbnailImage == nil else { return }
             self.PHAssetForFileURL(url: videoURL as NSURL, completion: {
                 phAsset, hasAsset in
                 if hasAsset {
@@ -25,9 +31,9 @@ open class Video: Media {
 
     open var videoPHAsset: PHAsset = PHAsset() {
         didSet {
-            DispatchQueue.main.async {
+            DispatchQueue.global().async {
                 PHImageManager.default().requestImage(for: self.videoPHAsset,
-                                                      targetSize: CGSize(width: 100, height: 80),
+                                                      targetSize: CGSize(width: 100, height: 100),
                                                       contentMode: .aspectFill,
                                                       options: nil,
                                                       resultHandler: {(result, _)in
@@ -38,12 +44,7 @@ open class Video: Media {
             }
         }
     }
-    open var thumbnailImage: UIImage?
 
-    fileprivate var isSplit: Bool!
-    fileprivate var position: Int!
-    open var textToVideo: String = ""
-    open var textPositionToVideo: Int = 0
 
     override public init(title: String, mediaPath: String) {
         super.init(title: title, mediaPath: mediaPath)
@@ -56,12 +57,13 @@ open class Video: Media {
                          mediaPath: mediaPath)
         copy.setIsSplit(isSplit)
         copy.setPosition(position)
-        copy.fileStopTime = fileStopTime
         copy.setStopTime(trimStopTime)
         copy.setStartTime(trimStartTime)
         copy.textToVideo = textToVideo
         copy.textPositionToVideo = textPositionToVideo
-        copy.videoURL = videoURL
+		copy.fileStopTime = fileStopTime
+		copy.thumbnailImage = thumbnailImage
+		copy.videoURL = videoURL
         copy.uuid = UUID().uuidString
 
         return copy
