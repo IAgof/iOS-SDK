@@ -145,6 +145,7 @@
 		A9CABCDD1EC3804600AB6CE8 /* ZoomSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABCD71EC3804600AB6CE8 /* ZoomSliderView.swift */; };
 		A9CABCDE1EC3804600AB6CE8 /* ZoomSliderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9CABCD81EC3804600AB6CE8 /* ZoomSliderView.xib */; };
 		A9D3F33E1F9BBD760097E820 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D3F33D1F9BBD760097E820 /* String+Extensions.swift */; };
+		B28561B120227589002E08E1 /* TTRangeSlider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B28561B020227589002E08E1 /* TTRangeSlider.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -292,6 +293,7 @@
 		A9CABCD71EC3804600AB6CE8 /* ZoomSliderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ZoomSliderView.swift; path = Modules/ZoomCameraSlider/ZoomSliderView.swift; sourceTree = "<group>"; };
 		A9CABCD81EC3804600AB6CE8 /* ZoomSliderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ZoomSliderView.xib; path = Modules/ZoomCameraSlider/ZoomSliderView.xib; sourceTree = "<group>"; };
 		A9D3F33D1F9BBD760097E820 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		B28561B020227589002E08E1 /* TTRangeSlider.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TTRangeSlider.framework; sourceTree = "<group>"; };
 		B2F4A0D364C97E57476CD3C1 /* Pods-VideonaProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideonaProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VideonaProject/Pods-VideonaProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -308,6 +310,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9CA73E91E567860009C4E88 /* MBCircularProgressBar.framework in Frameworks */,
+				B28561B120227589002E08E1 /* TTRangeSlider.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -614,6 +617,7 @@
 		A9BD5FB31D9120F40080CE97 = {
 			isa = PBXGroup;
 			children = (
+				B28561B020227589002E08E1 /* TTRangeSlider.framework */,
 				A9CA73E81E567860009C4E88 /* MBCircularProgressBar.framework */,
 				A9BD5FBF1D9120F40080CE97 /* VideonaProject */,
 				A9928A0D1E5370CE002A4E60 /* VideonaProjectTarget */,
@@ -1123,6 +1127,10 @@
 				INFOPLIST_FILE = VideonaProject/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.videona.VideonaProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1147,6 +1155,10 @@
 				INFOPLIST_FILE = VideonaProject/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.videona.VideonaProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
