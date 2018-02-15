@@ -138,8 +138,9 @@ public class GetActualProjectCALayerAnimationUseCase: NSObject {
                                     duration: video.getDuration())
 
                 layers.append(textImageLayer)
-                timeToInsertAnimate += video.getDuration()
             }
+
+			timeToInsertAnimate += video.getDuration()
         }
 
         return layers
