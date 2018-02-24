@@ -58,8 +58,9 @@ public class GetActualProjectCALayerAnimationUseCase: NSObject {
     public func getCALayerAnimation(project: Project) -> CALayer {
         let videos = project.getVideoList()
         let resolution = project.getProfile().getResolution()
+        let resolutionSize = Resolution(AVResolution: resolution)
 
-        var layers: [CALayer] = getTextLayersAnimated(videoList: videos)
+        var layers: [CALayer] = getTextLayersAnimated(videoList: videos, outputSize: CGSize(width: resolutionSize.width, height: resolutionSize.height))
         let parentLayer = CALayer()
 
         for fadeInTimeRange in videonaComposition.fadeInTransitionTimeRanges {
