@@ -34,27 +34,22 @@ open class SplitInteractor: NSObject, SplitInteractorInterface {
     open func setUpComposition(_ completion: (VideoComposition) -> Void) {
         var videoTotalTime: CMTime = kCMTimeZero
 
-        guard let videoPos = videoPosition else {
+        guard let videoPos = videoPosition,
+        let project = self.project,
+        project.getVideoList().indices.contains(videoPos) else {
             return
         }
-
-        guard let video = project?.getVideoList()[videoPos] else {return}
-
+        let video = project.getVideoList()[videoPos]
         let mixComposition = AVMutableComposition()
-
         let videoTrack = mixComposition.addMutableTrack(withMediaType: AVMediaTypeVideo,
                                                                      preferredTrackID: Int32(kCMPersistentTrackID_Invalid))
         let audioTrack = mixComposition.addMutableTrack(withMediaType: AVMediaTypeAudio,
                                                                      preferredTrackID: Int32(kCMPersistentTrackID_Invalid))
-
         let videoAsset = AVAsset.init(url: video.videoURL)
-
         do {
             let startTime = CMTimeMake(Int64(video.getStartTime() * 600), 600)
             let stopTime = CMTimeMake(Int64(video.getStopTime() * 600), 600)
-
             let timeRangeInsert = CMTimeRangeMake(startTime, stopTime)
-
             try videoTrack.insertTimeRange(timeRangeInsert,
                                            of: videoAsset.tracks(withMediaType: AVMediaTypeVideo)[0] ,
                                            at: kCMTimeZero)
@@ -63,21 +58,14 @@ open class SplitInteractor: NSObject, SplitInteractorInterface {
                                            of: videoAsset.tracks(withMediaType: AVMediaTypeAudio)[0] ,
                                            at: kCMTimeZero)
             videoTotalTime = CMTimeAdd(videoTotalTime, (stopTime - startTime))
-
             mixComposition.removeTimeRange(CMTimeRangeMake((videoTotalTime), (stopTime + videoTotalTime)))
         } catch _ {
             print("Error trying to create videoTrack")
         }
 
         let videonaComposition = VideoComposition(mutableComposition: mixComposition)
-
-        if let actualProject = project {
-            let video = actualProject.getVideoList()[videoPosition!]
-
-            let layer = getLayerToPlayer(video)
-            videonaComposition.layerAnimation = layer
-        }
-
+        let layer = getLayerToPlayer(video)
+        videonaComposition.layerAnimation = layer
         completion(videonaComposition)
     }
 
@@ -97,24 +85,16 @@ open class SplitInteractor: NSObject, SplitInteractorInterface {
     }
 
     open func setSplitVideosToProject(_ splitTime: Double) {
-        guard var videoList = project?.getVideoList() else {return}
-
-        if videoList.indices.contains(videoPosition!) {
-            if (videoPosition != nil) { //Create a copy and add to the list
-                let videoCopy = videoList[videoPosition!].copy() as? Video
-
-                videoCopy?.setStartTime((videoCopy?.getStartTime())! + splitTime)
-                videoCopy?.setIsSplit(true)
-
-                //Add video to the Project video list
-
-                videoList.insert(videoCopy!, at: (videoPosition! + 1))
-
-                let video = videoList[videoPosition!]
-
-                video.setStopTime(video.getStartTime() + splitTime)
-                video.setIsSplit(true)
-            }
+        guard var videoList = project?.getVideoList(),
+        let videoPosition = self.videoPosition else {return}
+        if videoList.indices.contains(videoPosition) {
+            let videoCopy = videoList[videoPosition].copy() as? Video
+            videoCopy?.setStartTime((videoCopy?.getStartTime())! + splitTime)
+            videoCopy?.setIsSplit(true)
+            videoList.insert(videoCopy!, at: (videoPosition + 1))
+            let video = videoList[videoPosition]
+            video.setStopTime(video.getStartTime() + splitTime)
+            video.setIsSplit(true)
         }
         project?.setVideoList(videoList)
         project?.reorderVideoList()
