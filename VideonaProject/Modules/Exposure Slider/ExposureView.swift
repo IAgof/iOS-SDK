@@ -106,7 +106,8 @@ public protocol ExposureDelegate {
     @IBAction func exposureSliderValueChanged(_ sender: AnyObject) {
         eventHandler?.exposureValueChanged(exposureSlider.value)
     }
-
-    // MARK: presenter delegate
-
+    
+    public func setDefaultExposure() {
+        exposureSlider.value = 0.5
+    }
 }
