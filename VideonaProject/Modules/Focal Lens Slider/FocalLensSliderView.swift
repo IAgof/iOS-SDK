@@ -83,7 +83,7 @@ public protocol FocalLensSliderDelegate {
         let bundle = Bundle(for: FocalLensSliderView.self)
 
         let nib = UINib(nibName: "FocalLensSliderView", bundle: bundle)
-
+        
         // Assumes UIView is top level and only object in CustomView.xib file
         let view = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
         return view
@@ -120,8 +120,10 @@ public protocol FocalLensSliderDelegate {
 
 import AVFoundation
 extension FocalLensSliderView {
-
     @IBAction func sliderValueChanged(_ sender: AnyObject) {
         eventHandler?.sliderValueHasChangedTo(focalLensSlider.value)
+    }
+    public func setDefaultFocus() {
+        focalLensSlider.value = 0.5
     }
 }
