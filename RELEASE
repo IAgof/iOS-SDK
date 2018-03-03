@@ -1,0 +1,2 @@
+v0.12.2
+- Fix a bug at export for what the app was crashing at setting the player up.

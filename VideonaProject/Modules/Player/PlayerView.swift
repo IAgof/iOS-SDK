@@ -156,37 +156,33 @@ private class ElapsedTimeFormatter: NumberFormatter {
     func setUpVideoPlayer(withPlayerItem playerItem: AVPlayerItem) {
 
         if player == nil {
-
-            player = AVPlayer.init(playerItem: playerItem)
-
-            player!.addPeriodicTimeObserver(forInterval: CMTimeMake(1, 1000), queue: DispatchQueue.main) { _ in
-                if self.player!.currentItem?.status == .readyToPlay && (self.player!.rate != 0) && (self.player!.error == nil) {//Playing
+            let player = AVPlayer(playerItem: playerItem)
+            player.addPeriodicTimeObserver(forInterval: CMTimeMake(1, 1000), queue: DispatchQueue.main) { _ in
+                if player.currentItem?.status == .readyToPlay && (player.rate != 0) && (player.error == nil) {
+                    //Playing
                     self.eventHandler?.updateSeekBar()
-                    guard let time = self.player?.currentItem?.asset.duration.seconds else {return}
+                    guard let time = player.currentItem?.asset.duration.seconds else {return}
                     self.actualSliderValueLabel.text = "\(self.timeToStringInMinutesAndseconds(time))"
                 }
             }
-
-            playerLayer = AVPlayerLayer(player: player)
-            playerLayer!.frame = playerContainer.frame
-
+            let playerLayer = AVPlayerLayer(player: player)
+            playerLayer.frame = playerContainer.frame
             self.playerContainer.layoutIfNeeded()
-            self.playerContainer.layer.addSublayer(playerLayer!)
+            self.playerContainer.layer.addSublayer(playerLayer)
             self.playerContainer.bringSubview(toFront: seekSlider)
             self.playerContainer.bringSubview(toFront: playOrPauseButton)
             addSwipeGesture()
-
+            self.player = player
+            self.playerLayer = playerLayer
         } else {
             player?.replaceCurrentItem(with: playerItem)
         }
-
         guard let time = self.player?.currentItem?.asset.duration.seconds else {return}
         self.actualSliderValueLabel.text = "\(self.timeToStringInMinutesAndseconds(time))"
         if !playerItem.duration.seconds.isNaN {
             self.seekSlider.maxValue = Float(playerItem.duration.seconds)
         }
         self.seekToTime(0.05)
-
         state?.playerHasLoaded()
     }
 

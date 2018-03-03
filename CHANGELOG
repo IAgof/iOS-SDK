@@ -1,0 +1,4 @@
+v0.12.1
+- Fix a bug in edition for what the app was crashing by splitting a clip up.
+v0.12.0
+- Right now, by default, there is no transition time between clips anymore.
