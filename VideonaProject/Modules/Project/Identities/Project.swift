@@ -17,6 +17,10 @@ public struct ProjectInfo {
     public var author: String = ""
     public var location: String = ""
     public var description: String = ""
+    public var resolution: String = ""
+    public var frameRate: Int = 0
+    public var quality: String = ""
+    public var duration: Double = 0.0
 }
 
 open class Project: NSObject {
