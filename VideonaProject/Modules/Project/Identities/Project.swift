@@ -17,6 +17,11 @@ public struct ProjectInfo {
     public var author: String = ""
     public var location: String = ""
     public var description: String = ""
+    public var fakeDirect: Bool = false
+    public var bruteVideo: Bool = false
+    public var queue: Bool = false
+    public var grafic: Bool = false
+    public var pieces: Bool = false
 }
 
 open class Project: NSObject {
