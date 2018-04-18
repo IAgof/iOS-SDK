@@ -9,13 +9,24 @@
 import Foundation
 import UIKit
 import CoreImage
+import CoreLocation
+
+public struct ProjectInfo {
+    public var title: String = ""
+    public var date: Date = Date()
+    public var author: String = ""
+    public var location: String = ""
+    public var description: String = ""
+    public var liveOnTape: Bool = false
+    public var bRoll: Bool = false
+    public var natVO: Bool = false
+    public var interview: Bool = false
+    public var graphics: Bool = false
+    public var piece: Bool = false
+}
 
 open class Project: NSObject {
-
-    /**
-     * Project name. Also it will be the name of the exported video
-     */
-    fileprivate var title: String = ""
+    public var projectInfo: ProjectInfo
     /**
      * The folder where de temp files of the project are stored
      */
@@ -85,31 +96,31 @@ open class Project: NSObject {
     public var hasWatermark: Bool
     override public init() {
         //TODO: Default value?
+        self.projectInfo = ProjectInfo()
         self.hasWatermark = true
         super.init()
-        self.title = ""
         self.projectPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
         self.profile = Profile()
         self.duration = 0
         videoList = Array<Video>()
         modificationDate = Date()
-
-        self.title = setUpTitle()
+        
+        self.projectInfo.title = setUpTitle()
     }
 
     public init(title: String, rootPath: String, profile: Profile) {
         //TODO: Default value?
         self.hasWatermark = true
-        self.title = title
+        self.projectInfo = ProjectInfo()
+        self.projectInfo.title = title
         self.projectPath = rootPath
         self.profile = profile
-
         videoList = Array<Video>()
         modificationDate = Date()
     }
 
     open func copyWithZone(_ zone: NSZone?) -> AnyObject {
-        let copy = Project(title: title,
+        let copy = Project(title: projectInfo.title,
                            rootPath: projectPath,
                            profile: profile)
 
@@ -123,12 +134,13 @@ open class Project: NSObject {
         copy.modificationDate = modificationDate
         copy.exportDate = exportDate
         copy.hasWatermark = hasWatermark
-
+        copy.projectInfo = projectInfo
+        
         return copy
     }
 
     public func reloadProjectWith(project: Project) {
-        self.title = project.title
+        self.projectInfo = project.projectInfo
         self.projectPath = project.projectPath
         self.profile = project.profile
         self.duration = project.duration
@@ -145,15 +157,6 @@ open class Project: NSObject {
         hasWatermark = project.hasWatermark
 
         self.uuid = project.uuid
-    }
-
-    // getters & setters
-    open func getTitle() -> String {
-        return self.title
-    }
-
-    open func setTitle(_ title: String) {
-        self.title = title
     }
 
     open func getProjectPath() -> String {
@@ -185,7 +188,8 @@ open class Project: NSObject {
     }
 
     open func clear() {
-        self.title = setUpTitle()
+        self.projectInfo = ProjectInfo()
+        self.projectInfo.title = setUpTitle()
         self.projectPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
         self.profile = Profile()
         self.duration = 0
