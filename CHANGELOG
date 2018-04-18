@@ -1,3 +1,6 @@
+v0.12.3
+- Disable 4k resolution due to app crashes until we find the problem
+
 v0.12.2
 - Fix a bug at export for what the app was crashing at setting the player up.
 
