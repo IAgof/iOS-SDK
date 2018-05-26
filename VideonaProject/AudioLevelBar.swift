@@ -17,7 +17,7 @@ public class AudioLevelBar: UIProgressView, AVAudioRecorderDelegate {
     var audioValue: Float = 0 {
         didSet {
             DispatchQueue.main.async {
-                UIView.animate(withDuration: 0.1, animations: {
+                UIView.animate(withDuration: 0.5, animations: {
                   self.setProgress(self.audioValue, animated: true)
                 })
                 self.progressTintColor = self.audioColor
@@ -38,25 +38,21 @@ public class AudioLevelBar: UIProgressView, AVAudioRecorderDelegate {
     }
     var audioColor: UIColor {
         switch audioValue {
-        case 0 ... 0.1:
-            return #colorLiteral(red: 0.1281484365, green: 0.9427838326, blue: 0.3152770996, alpha: 1)
-        case 0 ... 0.2:
-            return #colorLiteral(red: 0.3523011804, green: 0.9153547883, blue: 0.3023841381, alpha: 1)
-        case 0 ... 0.3:
-            return #colorLiteral(red: 0.5789520144, green: 0.908506155, blue: 0.4232984185, alpha: 1)
-        case 0 ... 0.4:
-            return #colorLiteral(red: 0.8792234659, green: 0.908806622, blue: 0.4312223196, alpha: 1)
         case 0 ... 0.5:
-            return #colorLiteral(red: 0.9170933366, green: 0.9365313649, blue: 0.03573020548, alpha: 1)
-        case 0 ... 0.6:
+            return #colorLiteral(red: 0.1294117647, green: 0.9411764706, blue: 0.3137254902, alpha: 1)
+        case 0.5 ... 0.6:
+            return #colorLiteral(red: 0.5803921569, green: 0.9098039216, blue: 0.4235294118, alpha: 1)
+        case 0.6 ... 0.7:
+            return #colorLiteral(red: 0.8186162114, green: 0.9107052684, blue: 0.4261362553, alpha: 1)
+        case 0.75 ... 0.8:
             return #colorLiteral(red: 0.9173641205, green: 0.7471006513, blue: 0.2405435443, alpha: 1)
-        case 0 ... 0.7:
+        case 0.8 ... 0.85:
             return #colorLiteral(red: 0.917493403, green: 0.6114624143, blue: 0.2497968078, alpha: 1)
-        case 0 ... 0.8:
+        case 0.85 ... 0.9:
             return #colorLiteral(red: 0.9107058644, green: 0.5811718106, blue: 0.411336422, alpha: 1)
-        case 0 ... 0.9:
+        case 0.9 ... 0.95:
             return #colorLiteral(red: 0.9142243266, green: 0.347694397, blue: 0.2898082733, alpha: 1)
-        case 0 ... 1:
+        case 0.9 ... 1:
             return #colorLiteral(red: 0.999489367, green: 0.08244409412, blue: 0, alpha: 1)
         default: return .clear
         }
@@ -129,7 +125,7 @@ public class AudioLevelBar: UIProgressView, AVAudioRecorderDelegate {
     
     func levelTimerCallback() {
         update()
-        audioValue = 1 - (decibels / -50)
+        audioValue = (1.0 / 60.0) * (decibels + 60.0)
     }
     func start() {
         recorder?.record()
