@@ -205,7 +205,6 @@ open class Project: NSObject {
         videoOutputParameters = VideoOutputParameters()
         videoFilter = nil
         exportedPath = nil
-        hasWatermark = true
     }
 
     open func numberOfClips() -> Int {
