@@ -17,7 +17,7 @@ public class AudioLevelBar: UIProgressView, AVAudioRecorderDelegate {
     var audioValue: Float = 0 {
         didSet {
             DispatchQueue.main.async {
-                UIView.animate(withDuration: 0.5, animations: {
+                UIView.animate(withDuration: 0.2, animations: {
                   self.setProgress(self.audioValue, animated: true)
                 })
                 self.progressTintColor = self.audioColor
@@ -38,21 +38,11 @@ public class AudioLevelBar: UIProgressView, AVAudioRecorderDelegate {
     }
     var audioColor: UIColor {
         switch audioValue {
-        case 0 ... 0.5:
+        case 0 ... 0.89:
             return #colorLiteral(red: 0.1294117647, green: 0.9411764706, blue: 0.3137254902, alpha: 1)
-        case 0.5 ... 0.6:
-            return #colorLiteral(red: 0.5803921569, green: 0.9098039216, blue: 0.4235294118, alpha: 1)
-        case 0.6 ... 0.7:
-            return #colorLiteral(red: 0.8186162114, green: 0.9107052684, blue: 0.4261362553, alpha: 1)
-        case 0.75 ... 0.8:
-            return #colorLiteral(red: 0.9173641205, green: 0.7471006513, blue: 0.2405435443, alpha: 1)
-        case 0.8 ... 0.85:
-            return #colorLiteral(red: 0.917493403, green: 0.6114624143, blue: 0.2497968078, alpha: 1)
-        case 0.85 ... 0.9:
-            return #colorLiteral(red: 0.9107058644, green: 0.5811718106, blue: 0.411336422, alpha: 1)
-        case 0.9 ... 0.95:
-            return #colorLiteral(red: 0.9142243266, green: 0.347694397, blue: 0.2898082733, alpha: 1)
-        case 0.9 ... 1:
+        case 0.89 ... 0.95:
+            return #colorLiteral(red: 1, green: 0.9253002472, blue: 0, alpha: 1)
+        case 0.95 ... 1:
             return #colorLiteral(red: 0.999489367, green: 0.08244409412, blue: 0, alpha: 1)
         default: return .clear
         }
@@ -125,7 +115,7 @@ public class AudioLevelBar: UIProgressView, AVAudioRecorderDelegate {
     
     func levelTimerCallback() {
         update()
-        audioValue = (1.0 / 60.0) * (decibels + 60.0)
+        audioValue = (1 / 160.0) * (decibels + 160.0)
     }
     func start() {
         recorder?.record()
