@@ -7,16 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		610D348720A446B400B87EBB /* AudioLevelBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610D348620A446B400B87EBB /* AudioLevelBar.swift */; };
 		A950F5D41EEB313A00E4B8A0 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A92060B11E4DEF8600656558 /* Media.xcassets */; };
 		A9928A101E5370CE002A4E60 /* VideonaProjectTarget.h in Headers */ = {isa = PBXBuildFile; fileRef = A9928A0E1E5370CE002A4E60 /* VideonaProjectTarget.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A9BD5FC11D9120F40080CE97 /* VideonaProject.h in Headers */ = {isa = PBXBuildFile; fileRef = A9BD5FC01D9120F40080CE97 /* VideonaProject.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A9CA73E91E567860009C4E88 /* MBCircularProgressBar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9CA73E81E567860009C4E88 /* MBCircularProgressBar.framework */; };
-		A9CABBCB1EC37B9500AB6CE8 /* AudioLevelBarInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABBC51EC37B9500AB6CE8 /* AudioLevelBarInteractor.swift */; };
-		A9CABBCC1EC37B9500AB6CE8 /* AudioLevelBarInteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABBC61EC37B9500AB6CE8 /* AudioLevelBarInteractorInterface.swift */; };
-		A9CABBCD1EC37B9500AB6CE8 /* AudioLevelBarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABBC71EC37B9500AB6CE8 /* AudioLevelBarPresenter.swift */; };
-		A9CABBCE1EC37B9500AB6CE8 /* AudioLevelBarPresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABBC81EC37B9500AB6CE8 /* AudioLevelBarPresenterInterface.swift */; };
-		A9CABBCF1EC37B9500AB6CE8 /* AudioLevelBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABBC91EC37B9500AB6CE8 /* AudioLevelBarView.swift */; };
-		A9CABBD01EC37B9500AB6CE8 /* AudioLevelBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9CABBCA1EC37B9500AB6CE8 /* AudioLevelBarView.xib */; };
 		A9CABBD71EC37BDA00AB6CE8 /* BatteryRemainingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABBD11EC37BDA00AB6CE8 /* BatteryRemainingInteractor.swift */; };
 		A9CABBD81EC37BDA00AB6CE8 /* BatteryRemainingInteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABBD21EC37BDA00AB6CE8 /* BatteryRemainingInteractorInterface.swift */; };
 		A9CABBD91EC37BDA00AB6CE8 /* BatteryRemainingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CABBD31EC37BDA00AB6CE8 /* BatteryRemainingPresenter.swift */; };
@@ -150,6 +145,7 @@
 
 /* Begin PBXFileReference section */
 		53816917F743EE2503F7FD87 /* Pods-VideonaProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideonaProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-VideonaProject/Pods-VideonaProject.release.xcconfig"; sourceTree = "<group>"; };
+		610D348620A446B400B87EBB /* AudioLevelBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioLevelBar.swift; sourceTree = "<group>"; };
 		9C833A5003C6FCD472D2E8E0 /* Pods_VideonaProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VideonaProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A92060B11E4DEF8600656558 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		A9928A0C1E5370CE002A4E60 /* VideonaProjectTarget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VideonaProjectTarget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -159,12 +155,6 @@
 		A9BD5FC01D9120F40080CE97 /* VideonaProject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideonaProject.h; sourceTree = "<group>"; };
 		A9BD5FC21D9120F40080CE97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A9CA73E81E567860009C4E88 /* MBCircularProgressBar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MBCircularProgressBar.framework; sourceTree = "<group>"; };
-		A9CABBC51EC37B9500AB6CE8 /* AudioLevelBarInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AudioLevelBarInteractor.swift; path = Modules/AudioLevelBar/AudioLevelBarInteractor.swift; sourceTree = "<group>"; };
-		A9CABBC61EC37B9500AB6CE8 /* AudioLevelBarInteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AudioLevelBarInteractorInterface.swift; path = Modules/AudioLevelBar/AudioLevelBarInteractorInterface.swift; sourceTree = "<group>"; };
-		A9CABBC71EC37B9500AB6CE8 /* AudioLevelBarPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AudioLevelBarPresenter.swift; path = Modules/AudioLevelBar/AudioLevelBarPresenter.swift; sourceTree = "<group>"; };
-		A9CABBC81EC37B9500AB6CE8 /* AudioLevelBarPresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AudioLevelBarPresenterInterface.swift; path = Modules/AudioLevelBar/AudioLevelBarPresenterInterface.swift; sourceTree = "<group>"; };
-		A9CABBC91EC37B9500AB6CE8 /* AudioLevelBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AudioLevelBarView.swift; path = Modules/AudioLevelBar/AudioLevelBarView.swift; sourceTree = "<group>"; };
-		A9CABBCA1EC37B9500AB6CE8 /* AudioLevelBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AudioLevelBarView.xib; path = Modules/AudioLevelBar/AudioLevelBarView.xib; sourceTree = "<group>"; };
 		A9CABBD11EC37BDA00AB6CE8 /* BatteryRemainingInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BatteryRemainingInteractor.swift; path = Modules/BatteryRemaining/BatteryRemainingInteractor.swift; sourceTree = "<group>"; };
 		A9CABBD21EC37BDA00AB6CE8 /* BatteryRemainingInteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BatteryRemainingInteractorInterface.swift; path = Modules/BatteryRemaining/BatteryRemainingInteractorInterface.swift; sourceTree = "<group>"; };
 		A9CABBD31EC37BDA00AB6CE8 /* BatteryRemainingPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BatteryRemainingPresenter.swift; path = Modules/BatteryRemaining/BatteryRemainingPresenter.swift; sourceTree = "<group>"; };
@@ -582,12 +572,7 @@
 		A960A8601E4DD6C60069F487 /* AudioLevelBar */ = {
 			isa = PBXGroup;
 			children = (
-				A9CABBC51EC37B9500AB6CE8 /* AudioLevelBarInteractor.swift */,
-				A9CABBC61EC37B9500AB6CE8 /* AudioLevelBarInteractorInterface.swift */,
-				A9CABBC71EC37B9500AB6CE8 /* AudioLevelBarPresenter.swift */,
-				A9CABBC81EC37B9500AB6CE8 /* AudioLevelBarPresenterInterface.swift */,
-				A9CABBC91EC37B9500AB6CE8 /* AudioLevelBarView.swift */,
-				A9CABBCA1EC37B9500AB6CE8 /* AudioLevelBarView.xib */,
+				610D348620A446B400B87EBB /* AudioLevelBar.swift */,
 			);
 			name = AudioLevelBar;
 			sourceTree = "<group>";
@@ -817,7 +802,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A950F5D41EEB313A00E4B8A0 /* Media.xcassets in Resources */,
-				A9CABBD01EC37B9500AB6CE8 /* AudioLevelBarView.xib in Resources */,
 				A9CABC281EC37D6900AB6CE8 /* InputSoundGainControlView.xib in Resources */,
 				A9CABCA61EC37F5600AB6CE8 /* SpaceOnDiskView.xib in Resources */,
 				A9CABC941EC37F2900AB6CE8 /* ResolutionsSelectorCell.xib in Resources */,
@@ -895,7 +879,6 @@
 				A9CABBEB1EC37C3300AB6CE8 /* ExpositionModesInteractor.swift in Sources */,
 				A9CABC861EC37F0300AB6CE8 /* VideoFilterCompositionInstruction.swift in Sources */,
 				A9CABBFA1EC37CA200AB6CE8 /* ExposureteractorInterface.swift in Sources */,
-				A9CABBCC1EC37B9500AB6CE8 /* AudioLevelBarInteractorInterface.swift in Sources */,
 				A9CABC451EC37DC700AB6CE8 /* PlayerPresenterInterface.swift in Sources */,
 				A9CABC681EC37E8300AB6CE8 /* GetImageByTextUseCase.swift in Sources */,
 				A9CABCDC1EC3804600AB6CE8 /* ZoomSliderPresenterInterface.swift in Sources */,
@@ -912,10 +895,8 @@
 				A9CABC7F1EC37E9700AB6CE8 /* VideonaComposition.swift in Sources */,
 				A9CABBDB1EC37BDA00AB6CE8 /* BatteryRemainingView.swift in Sources */,
 				A9CABC921EC37F2900AB6CE8 /* Resolution.swift in Sources */,
-				A9CABBCE1EC37B9500AB6CE8 /* AudioLevelBarPresenterInterface.swift in Sources */,
 				A9CABC131EC37D1900AB6CE8 /* FocusView.swift in Sources */,
 				A9CABC191EC37D3C00AB6CE8 /* VideoGalleryDelegateInterface.swift in Sources */,
-				A9CABBCF1EC37B9500AB6CE8 /* AudioLevelBarView.swift in Sources */,
 				A9CABC871EC37F0300AB6CE8 /* VideoFilterCompositor.swift in Sources */,
 				A9CABC7A1EC37E9700AB6CE8 /* Media.swift in Sources */,
 				A9CABC881EC37F0300AB6CE8 /* VideoTransitions.swift in Sources */,
@@ -926,7 +907,6 @@
 				A9CABCB41EC37F9B00AB6CE8 /* TrimInteractorInterface.swift in Sources */,
 				A9CABBED1EC37C3300AB6CE8 /* ExpositionModesPresenter.swift in Sources */,
 				A9CABC671EC37E8300AB6CE8 /* GetActualProjectTextCALayerAnimationUseCase.swift in Sources */,
-				A9CABBCD1EC37B9500AB6CE8 /* AudioLevelBarPresenter.swift in Sources */,
 				A9CABC961EC37F2900AB6CE8 /* ResolutionsSelectorInteractorInterface.swift in Sources */,
 				A9CABC6A1EC37E8300AB6CE8 /* Utils.swift in Sources */,
 				A9CABCAD1EC37F7900AB6CE8 /* SplitPresenter.swift in Sources */,
@@ -959,8 +939,8 @@
 				A9CABCAE1EC37F7900AB6CE8 /* SplitPresenterInterface.swift in Sources */,
 				A9CABC7B1EC37E9700AB6CE8 /* Music.swift in Sources */,
 				A9CABC421EC37DC700AB6CE8 /* PlayerInterface.swift in Sources */,
+				610D348720A446B400B87EBB /* AudioLevelBar.swift in Sources */,
 				A9CABC041EC37CF800AB6CE8 /* FocalLensSliderInteractorInterface.swift in Sources */,
-				A9CABBCB1EC37B9500AB6CE8 /* AudioLevelBarInteractor.swift in Sources */,
 				A9CABC801EC37E9700AB6CE8 /* VideoOutputParameters.swift in Sources */,
 				A9CABCDA1EC3804600AB6CE8 /* ZoomSliderInteractorInterface.swift in Sources */,
 				A9CABCBC1EC37FC900AB6CE8 /* VideonaRangeSliderDelegateProtocol.swift in Sources */,
