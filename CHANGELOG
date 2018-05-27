@@ -1,3 +1,7 @@
+v0.12.6
+- Fix issue for what audioLevelBar was making the app crash.
+- Refactor of audioLevelBar.
+
 v0.12.5
 - Fix issue for what changing between projects, restore its watermark configuration.
 
