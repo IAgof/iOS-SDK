@@ -40,9 +40,9 @@ public class AudioLevelBar: UIView, AVAudioRecorderDelegate {
     }
     var audioColor: UIColor {
         switch audioValue {
-        case 0 ... 0.89:
+        case 0 ... 0.80:
             return #colorLiteral(red: 0.1294117647, green: 0.9411764706, blue: 0.3137254902, alpha: 1)
-        case 0.89 ... 0.95:
+        case 0.80 ... 0.95:
             return #colorLiteral(red: 1, green: 0.9253002472, blue: 0, alpha: 1)
         case 0.95 ... 1:
             return #colorLiteral(red: 0.999489367, green: 0.08244409412, blue: 0, alpha: 1)
