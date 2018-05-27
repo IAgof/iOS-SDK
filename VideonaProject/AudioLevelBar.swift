@@ -8,8 +8,10 @@
 
 import Foundation
 import AVFoundation
+import SnapKit
 
-public class AudioLevelBar: UIProgressView, AVAudioRecorderDelegate {
+public class AudioLevelBar: UIView, AVAudioRecorderDelegate {
+    var progressView: UIProgressView!
     // MARK: Variables
     var audioSession: AVAudioSession?
     var recorder: AVAudioRecorder!
@@ -18,9 +20,9 @@ public class AudioLevelBar: UIProgressView, AVAudioRecorderDelegate {
         didSet {
             DispatchQueue.main.async {
                 UIView.animate(withDuration: 0.2, animations: {
-                  self.setProgress(self.audioValue, animated: true)
+                    self.progressView.setProgress(self.audioValue, animated: false)
+                    self.progressView.progressTintColor = self.audioColor
                 })
-                self.progressTintColor = self.audioColor
             }
         }
     }
@@ -56,9 +58,17 @@ public class AudioLevelBar: UIProgressView, AVAudioRecorderDelegate {
         configure()
     }
     func configure() {
-        self.backgroundColor = .clear
-        self.tintColor = .clear
-        self.trackTintColor = .clear
+        progressView = UIProgressView(progressViewStyle: .bar)
+        self.addSubview(progressView)
+        progressView.snp.makeConstraints {
+            $0.height.equalToSuperview().dividedBy(2)
+            $0.width.equalToSuperview()
+            $0.center.equalToSuperview()
+        }
+        backgroundColor = .clear
+        progressView.backgroundColor = .clear
+        progressView.tintColor = .clear
+        progressView.trackTintColor = .clear
         initRecorder()
         start()
         self.levelTimer = Timer.scheduledTimer(timeInterval: 0.02, target: self, selector: #selector(AudioLevelBar.levelTimerCallback), userInfo: nil, repeats: true)
@@ -115,7 +125,8 @@ public class AudioLevelBar: UIProgressView, AVAudioRecorderDelegate {
     
     func levelTimerCallback() {
         update()
-        audioValue = (1 / 160.0) * (decibels + 160.0)
+        let minThresold: Float = -60.0
+        audioValue = 1 - (decibels) / minThresold
     }
     func start() {
         recorder?.record()
