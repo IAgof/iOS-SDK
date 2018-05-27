@@ -46,7 +46,7 @@ public class AudioLevelBar: UIView, AVAudioRecorderDelegate {
             return #colorLiteral(red: 1, green: 0.9253002472, blue: 0, alpha: 1)
         case 0.95 ... 1:
             return #colorLiteral(red: 0.999489367, green: 0.08244409412, blue: 0, alpha: 1)
-        default: return .clear
+        default: return #colorLiteral(red: 0.1294117647, green: 0.9411764706, blue: 0.3137254902, alpha: 1)
         }
     }
     override public init(frame: CGRect) {
@@ -58,10 +58,10 @@ public class AudioLevelBar: UIView, AVAudioRecorderDelegate {
         configure()
     }
     func configure() {
-        progressView = UIProgressView(progressViewStyle: .bar)
+        progressView = UIProgressView()
         self.addSubview(progressView)
         progressView.snp.makeConstraints {
-            $0.height.equalToSuperview().dividedBy(2)
+            $0.height.equalToSuperview().dividedBy(3)
             $0.width.equalToSuperview()
             $0.center.equalToSuperview()
         }
