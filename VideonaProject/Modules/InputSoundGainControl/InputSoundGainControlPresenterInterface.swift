@@ -8,6 +8,7 @@
 
 protocol InputSoundGainControlPresenterInterface {
     func sliderValueHasChangedTo(_ value: Float)
+	func isInputGainSettable() -> Bool
 }
 
 protocol InputSoundGainControlPresenterDelegate {

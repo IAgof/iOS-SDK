@@ -16,6 +16,11 @@ open class InputSoundGainControlPresenter: InputSoundGainControlPresenterInterfa
         interactor = InputSoundGainControlInteractor(presenter: self)
     }
 
+	func isInputGainSettable() -> Bool {
+		guard let isSettable = interactor?.isInputGainSettable() else { return false }
+		return isSettable
+	}
+
     func sliderValueHasChangedTo(_ value: Float) {
         interactor?.setInputGainLevel(value)
     }
