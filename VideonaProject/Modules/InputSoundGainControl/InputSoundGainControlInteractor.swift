@@ -12,26 +12,29 @@ import AVFoundation
 import CoreAudio
 
 class InputSoundGainControlInteractor: InputSoundGainControlInteractorInterface {
+	
     //MARK : VIPER
     var delegate: InputSoundGainControlInteractorDelegate?
-    var audioSession: AVCaptureSession?
+
+	let audioSession = AVAudioSession.sharedInstance()
 
     var maxZoomFactor = CGFloat(10)
+
+//	var isInputGainSettable: Bool = audioSession.isInputGainSettable
+
+	var isInputGainSettable: Bool {
+		get {
+			return audioSession.isInputGainSettable
+		}
+	}
 
     init(presenter: InputSoundGainControlPresenter) {
         delegate = presenter
     }
 
     func setInputGainLevel(_ value: Float) {
-        let session = AVAudioSession.sharedInstance()
-
         do {
-            print("Input gain settable \(session.isInputGainSettable)")
-            try session.setInputGain(value)
-
-            print("AVCaptureSession gain")
-            print(session.inputGain)
-
+            try audioSession.setInputGain(value)
         } catch _ as NSError {
 //            print(e.localizedDescription, e.localizedFailureReason, e.localizedRecoveryOptions, e.localizedRecoverySuggestion)
         }

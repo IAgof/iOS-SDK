@@ -1,3 +1,6 @@
+v0.12.7
+- Update picometer colors & size
+
 v0.12.6
 - Fix issue for what audioLevelBar was making the app crash.
 - Refactor of audioLevelBar.

@@ -8,6 +8,10 @@
 
 import UIKit
 
+public protocol InputSoundGainControlDelegate {
+	func isSettable() -> Bool
+}
+
 @IBDesignable open class InputSoundGainControlView: UIView {
     // MARK: - VIPER
     var eventHandler: InputSoundGainControlPresenterInterface?
@@ -109,4 +113,9 @@ extension InputSoundGainControlView {
     public func setInputSoundGainControlValue(_ value: Float) {
         gainControlSlider.value = value
     }
+
+	public func isSettable() -> Bool {
+		guard let settable = eventHandler?.isInputGainSettable() else { return false }
+		return settable
+	}
 }
