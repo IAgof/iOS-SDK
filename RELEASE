@@ -1,2 +1,2 @@
-v0.12.8
-- Add variable to check if gain mode is available.
+v0.12.9
+- Fix issue with exposure and focus at point
