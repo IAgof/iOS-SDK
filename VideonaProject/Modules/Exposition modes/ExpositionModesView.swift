@@ -11,7 +11,7 @@ import UIKit
 public protocol ExpositionModesDelegate {
     func showExpositionSlider()
     func hideExpositionSlider()
-    func showFocusAtPoint(_ point: CGPoint)
+    func showExposureAtPoint(_ point: CGPoint)
 }
 
 @IBDesignable open class ExpositionModesView: UIView {
@@ -209,6 +209,6 @@ extension ExpositionModesView:ExpositionModesPresenterDelegate {
         delegate?.hideExpositionSlider()
     }
     func sendFocusPoint(_ point: CGPoint) {
-        delegate?.showFocusAtPoint(point)
+        delegate?.showExposureAtPoint(point)
     }
 }
