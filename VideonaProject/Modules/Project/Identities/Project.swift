@@ -12,17 +12,18 @@ import CoreImage
 import CoreLocation
 
 public struct ProjectInfo {
+    public enum ProductTypes: Int {
+        case liveOnTape = 0
+        case bRoll, natVO, interview, graphics, piece
+        
+        public static var allValues: [ProductTypes] = [.liveOnTape, .bRoll, .natVO, .interview, .graphics, .piece]
+    }
     public var title: String = ""
     public var date: Date = Date()
     public var author: String = ""
     public var location: String = ""
     public var description: String = ""
-    public var liveOnTape: Bool = false
-    public var bRoll: Bool = false
-    public var natVO: Bool = false
-    public var interview: Bool = false
-    public var graphics: Bool = false
-    public var piece: Bool = false
+    public var productTypes: [ProductTypes] = []
 }
 
 open class Project: NSObject {

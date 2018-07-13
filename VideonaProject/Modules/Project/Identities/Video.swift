@@ -20,12 +20,14 @@ open class Video: Media {
     open var videoURL: URL = URL(fileURLWithPath: "") {
         didSet {
 			guard thumbnailImage == nil else { return }
-            self.PHAssetForFileURL(url: videoURL as NSURL, completion: {
-                phAsset, hasAsset in
-                if hasAsset {
-                    if let asset = phAsset { self.videoPHAsset = asset }
-                }
-            })
+            DispatchQueue.global().async {
+                self.PHAssetForFileURL(url: self.videoURL as NSURL, completion: {
+                    phAsset, hasAsset in
+                    if hasAsset {
+                        if let asset = phAsset { self.videoPHAsset = asset }
+                    }
+                })
+            }
         }
     }
 
